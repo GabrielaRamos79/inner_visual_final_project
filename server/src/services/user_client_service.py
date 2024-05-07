@@ -1,6 +1,6 @@
 from src.database.db_mysql import get_connection
-# from werkzeug.security import generate_password_hash
-# from src.models.user_model import User
+from werkzeug.security import generate_password_hash
+from src.models.user_model import User
 
 # from werkzeug.security import generate_password_hash
 
@@ -11,42 +11,44 @@ class UserClientService():
             connection  = get_connection()
             print(connection)
             with connection.cursor() as cursor:
-                cursor.execute('SELECT * FROM user')
-                # cursor.callproc('select_user')
+                # cursor.execute('SELECT * FROM user')
+                cursor.callproc('sp_get_user_client')
                 result = cursor.fetchall()
                 print(result)
 
-            # users_json = [{"id_user": row[0], "name_person_user": row[1], "surname_person_user": row[2], "name_user": row[3], "password_user": row[4], "user_typeFK": row[5]} for row in result]
-            # connection.close()
-            # return users_json
+            users_json = [{"id_user": row[0], "name": row[1], "surname": row[2], "password": row[3], "email": row[4], "phone": row[5], "photo": row[6], "user_typeFK": row[7]} for row in result]
+            connection.close()
+            return users_json
         except Exception as ex:
             print(ex)
             
-    # @classmethod
-    # def post_user(cls, user_table:User):
-    #     try:
-    #         connection  = get_connection()
-    #         print(connection)
-    #         #id_user = user_table.id_user
-    #         name_person_user = user_table.name_person_user
-    #         surname_person_user = user_table.surname_person_user
-    #         name_user = user_table.name_user
-    #         password_user = user_table.password_user
-    #         user_typeFK = user_table.user_typeFK
+    @classmethod
+    def post_user(cls, user_table:User):
+        try:
+            connection  = get_connection()
+            print(connection)
+            #id_user = user_table.id_user
+            name = user_table.name
+            surname = user_table.surname
+            password = user_table.password
+            email = user_table.email
+            phone = user_table.phone
+            photo = user_table.photo
+            user_typeFK = user_table.user_typeFK
             
-    #         encriped_password = generate_password_hash(password_user, 'pbkdf2', 30)
+            encriped_password = generate_password_hash(password, 'pbkdf2', 30)
             
-    #         with connection.cursor() as cursor:
+            with connection.cursor() as cursor:
                 
-    #             # cursor.execute("INSERT INTO user(id_user, name_user, password_user, id_user_typeFK) VALUES ({0}, '{1}', '{2}', {3})"
-    #                         #    .format(id_user,name_user,password_user,user_typeFK))
-    #             cursor.callproc('post_user', (name_person_user,surname_person_user,name_user,encriped_password,user_typeFK))
-    #             connection.commit()
-    #             print('User added successfully')
-    #         connection.close()
-    #         return "Data base is close"
-    #     except Exception as ex:
-    #         print(ex)
+                # cursor.execute("INSERT INTO user(id_user, name_user, password_user, id_user_typeFK) VALUES ({0}, '{1}', '{2}', {3})"
+                            #    .format(id_user,name_user,password_user,user_typeFK))
+                cursor.callproc('sp_post_user', (name,surname,encriped_password,email,phone,photo,user_typeFK))
+                connection.commit()
+                print('User added successfully')
+            connection.close()
+            return "Data base is close"
+        except Exception as ex:
+            print(ex)
             
     # @classmethod
     # def patch_user(cls, user_table:User):
