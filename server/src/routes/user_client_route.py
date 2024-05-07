@@ -33,31 +33,29 @@ def post_user():
     print(post_user)
     return 'Registro exitoso'
 
-# @main.route('/update_user/<id>', methods = ['PATCH'])
-# def updade_user(id):
-#     print("Hola patch, user_router")
-#     id_user = id
-#     name_person_user = request.json['name_person_user'] 
-#     surname_person_user = request.json['surname_person_user']
-#     name_user = request.json['name_user']
-#     password_user = request.json['password_user']
-#     user_typeFK = request.json['user_typeFK']
-#     user_table = User(id_user,
-#                     name_person_user,
-#                     surname_person_user,
-#                     name_user,
-#                     password_user,
-#                     user_typeFK)
-#     patch_user = UserService.patch_user(user_table)
-#     print(patch_user)
-#     return 'Update exitoso'
+@main.route('/update_user/<id>', methods = ['PATCH'])
+def updade_user(id):
+    print("Hola patch, user_router")
+    id_user = id
+    name = request.json['name'] 
+    surname = request.json['surname']
+    password = request.json['password']
+    email = request.json['email']
+    phone = request.json['phone']
+    photo = request.json['photo']
+    user_typeFK = request.json['user_typeFK']
+    
+    user_table = User(id_user, name, surname, password, email, phone, photo, user_typeFK)
+    patch_user = UserClientService.patch_user(user_table)
+    print(patch_user)
+    return 'Update exitoso'
 
-# @main.route('/delete_user', methods = ['DELETE'])
-# def delete_user():
-#     print("Hola delete, user_router")
-#     id_user = request.json['id_user']
-#     delete_user = UserService.delete_user(id_user)
-#     print(delete_user)
-#     print(id_user)
-#     # print('Esto se imprime en consola')
-#     return 'Esto se ve en la pagina'
+@main.route('/delete_user/<id>', methods = ['DELETE'])
+def delete_user(id):
+    print("Hola delete, user_router")
+    id_user = id
+    delete_user = UserClientService.delete_user(id_user)
+    print(delete_user)
+    print(id_user)
+    # print('Esto se imprime en consola')
+    return 'Esto se ve en la pagina'

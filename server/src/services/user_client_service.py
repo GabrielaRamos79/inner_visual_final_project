@@ -50,43 +50,45 @@ class UserClientService():
         except Exception as ex:
             print(ex)
             
-    # @classmethod
-    # def patch_user(cls, user_table:User):
-    #     try:
-    #         connection  = get_connection()
-    #         id_user = user_table.id_user
-    #         name_person_user = user_table.name_person_user
-    #         surname_person_user = user_table.surname_person_user
-    #         name_user = user_table.name_user
-    #         password_user = user_table.password_user
-    #         user_typeFK = user_table.user_typeFK
+    @classmethod
+    def patch_user(cls, user_table:User):
+        try:
+            connection  = get_connection()
+            id_user = user_table.id_user
+            name = user_table.name
+            surname = user_table.surname
+            password = user_table.password
+            email = user_table.email
+            phone = user_table.phone
+            photo = user_table.photo
+            user_typeFK = user_table.user_typeFK
             
-    #         encriped_password = generate_password_hash(password_user, 'pbkdf2', 30)
+            encriped_password = generate_password_hash(password, 'pbkdf2', 30)
             
-    #         with connection.cursor() as cursor:
-    #             # cursor.execute("UPDATE user SET  name_user = '{0}', password_user = '{1}', id_user_typeFK = {2}  WHERE user.id_user = {3}".format(name_user,password_user,user_typeFK,id_user))
-    #             cursor.callproc('update_user', (id_user,name_person_user,surname_person_user,name_user,encriped_password,user_typeFK))
-    #             connection.commit()
-    #             print('User updated successfully')
-    #         connection.close()
-    #         return "Data base is close"
-    #     except Exception as ex:
-    #         print(ex)
+            with connection.cursor() as cursor:
+                # cursor.execute("UPDATE user SET  name_user = '{0}', password_user = '{1}', id_user_typeFK = {2}  WHERE user.id_user = {3}".format(name_user,password_user,user_typeFK,id_user))
+                cursor.callproc('sp_update_user', (id_user,name,surname,encriped_password,email,phone,photo,user_typeFK))
+                connection.commit()
+                print('User updated successfully')
+            connection.close()
+            return "Data base is close"
+        except Exception as ex:
+            print(ex)
             
-    # @classmethod
-    # def delete_user(cls, id_user):
-    #     try:
-    #         connection  = get_connection()
-    #         print(connection)
-    #         print(id_user)
-    #         with connection.cursor() as cursor:
-    #             # cursor.execute('DELETE FROM user WHERE user.id_user = %s', (id_user)) 
-    #             cursor.callproc('delete_user', (id_user,)) # Aqui uso otro metodo callproc para trabajar con procedimientos
-    #             connection.commit()
-    #         connection.close()
-    #         return "Data base is close"
-    #     except Exception as ex:
-    #         print(ex)
+    @classmethod
+    def delete_user(cls, id_user):
+        try:
+            connection  = get_connection()
+            print(connection)
+            print(id_user)
+            with connection.cursor() as cursor:
+                # cursor.execute('DELETE FROM user WHERE user.id_user = %s', (id_user)) 
+                cursor.callproc('sp_delete_user', (id_user,)) # Aqui uso otro metodo callproc para trabajar con procedimientos
+                connection.commit()
+            connection.close()
+            return "Data base is close"
+        except Exception as ex:
+            print(ex)
 
 
 
