@@ -1,0 +1,12 @@
+
+
+.photoUsp1, .photoUsp2{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start
+}
+
+.photo1, .photo2{
+    width: 540px;
+    height: 360px;
+}
