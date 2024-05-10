@@ -21,6 +21,21 @@ class UserClientService():
             return users_json
         except Exception as ex:
             print(ex)
+    
+    @classmethod
+    def get_id_user(cls, id_user):
+        try:
+            connection  = get_connection()
+            print(connection)
+            print(id_user)
+            with connection.cursor() as cursor:
+                # cursor.execute('DELETE FROM user WHERE user.id_user = %s', (id_user)) 
+                cursor.callproc('sp_get_client_by_id', (id_user,)) # Aqui uso otro metodo callproc para trabajar con procedimientos
+                connection.commit()
+            connection.close()
+            return "Data base is close"
+        except Exception as ex:
+            print(ex)
             
     @classmethod
     def post_user(cls, user_table:User):
