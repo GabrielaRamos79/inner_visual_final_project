@@ -13,13 +13,13 @@ def get_user():
     return jsonify(get_user)
 
 
-@main.route('/get_id_user/<id>', methods = ['GET'])
-def get_user(id):
+@main.route('/get_user/<id>', methods = ['GET'])
+def get_id_user(id):
     id_user = id
-    print("Hola get, user_router")
-    get_user = UserClientService.get_user(id_user)
-    print('Estoy dentro de metodo get')
-    return jsonify(get_user)
+    print("Hola get_by_id")
+    get_id_user = UserClientService.get_id_user(id_user)
+    print('Estoy dentro de metodo get_by_id')
+    return jsonify(get_id_user)
 
 @main.route('/post_user', methods = ['POST'])
 def post_user():

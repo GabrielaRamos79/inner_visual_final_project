@@ -27,15 +27,28 @@ class UserClientService():
         try:
             connection  = get_connection()
             print(connection)
-            print(id_user)
             with connection.cursor() as cursor:
-                # cursor.execute('DELETE FROM user WHERE user.id_user = %s', (id_user)) 
-                cursor.callproc('sp_get_client_by_id', (id_user,)) # Aqui uso otro metodo callproc para trabajar con procedimientos
-                connection.commit()
+                # cursor.execute('SELECT * FROM user')
+                cursor.callproc('sp_get_client_by_id', (id_user))
+                result = cursor.fetchone()
+                print(result)
+            users_json = {
+                "id_user": result[0],
+                "name": result[1],
+                "surname": result[2],
+                "password": result[3],
+                "email": result[4],
+                "phone": result[5],
+                "photo": result[6],
+                "user_typeFK": result[7]
+            }
+            # users_json = [{"id_user": row[0], "name": row[1], "surname": row[2], "password": row[3], "email": row[4], "phone": row[5], "photo": row[6], "user_typeFK": row[7]} for row in result]
             connection.close()
-            return "Data base is close"
+            return users_json
         except Exception as ex:
             print(ex)
+    
+  
             
     @classmethod
     def post_user(cls, user_table:User):
