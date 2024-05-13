@@ -16,4 +16,6 @@ Werkzeug==3.0.1
 PyJWT==2.8.0
 pytz==2024.1
 Flask-Cors==4.0.0
+pytest==8.2.0
 #  Installation: pip install -r ./requirements.txt
+# Si el pytest no funciona se puede forzar el comando con python -m pytest
