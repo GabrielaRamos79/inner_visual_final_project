@@ -1,8 +1,6 @@
 from src.database.db_mysql import get_connection
-from werkzeug.security import generate_password_hash
 from src.models.user_content_model import User_content
 
-# from werkzeug.security import generate_password_hash
 
 class UserContentService():
     @classmethod
@@ -22,21 +20,18 @@ class UserContentService():
         except Exception as ex:
             print(ex)
 
-@classmethod
-def post_user_content(cls, user_table:User_content):
+    @classmethod
+    def post_user_content(cls, user_content_table:User_content):
         try:
             connection  = get_connection()
             print(connection)
-            #id_user = user_table.id_user
-            userFK = User_content.userFK
-            contentFK = User_content.contentFK
-            status_video = User_content.status_video
+            
+            userFK = user_content_table.userFK
+            contentFK = user_content_table.contentFK
+            status_video = user_content_table.status_video
             
                  
             with connection.cursor() as cursor:
-                
-                # cursor.execute("INSERT INTO user(id_user, name_user, password_user, id_user_typeFK) VALUES ({0}, '{1}', '{2}', {3})"
-                            #    .format(id_user,name_user,password_user,user_typeFK))
                 cursor.callproc('sp_post_user_content', (userFK,contentFK,status_video))
                 connection.commit()
                 print('User_content added successfully')
