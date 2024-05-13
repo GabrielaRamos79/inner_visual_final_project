@@ -1,12 +1,96 @@
 
-
-.photoUsp1, .photoUsp2{
+.photoUsp1,
+.photoUsp2 {
     display: flex;
     align-items: center;
-    justify-content:flex-start
+    justify-content: flex-start;
 }
 
-.photo1, .photo2{
+.photoUsp2 {
+    margin-bottom: 70px;
+}
+
+.photo1,
+.photo2 {
     width: 540px;
     height: 360px;
+    border-radius: 20px;
+}
+
+.photo1 {
+    margin-bottom: 20px;
+}
+
+.buttonUsp {
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttonUsp:hover {
+    background-color: rgb(0, 0, 141);
+}
+
+.textPhoto1,
+.textPhoto2 {
+    margin-left: 100px;
+}
+
+.titleUsp1,
+.titleUsp2 {
+    margin-bottom: 20px;
+}
+
+.titleUsp2 {
+    margin-right: 20px;
+}
+
+.uspSection {
+    margin: 0 100px 50px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .uspSection {
+        margin: 0 50px 50px;
+    }
+
+    .textPhoto1,
+    .textPhoto2 {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+
+@media screen and (max-width: 940px) {
+    .photoUsp1,
+    .photoUsp2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .textPhoto1,
+    .textPhoto2 {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .textPhoto2 {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .photo1,
+    .photo2 {
+        width: 440px;
+        height: 260px;
+    }
 }
