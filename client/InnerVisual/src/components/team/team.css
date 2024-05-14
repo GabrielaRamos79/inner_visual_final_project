@@ -1,0 +1,49 @@
+/* src/components/Team.css */
+.team-container {
+    background-color: #b3e5fc; /* Color celeste */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .team-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .team-member {
+    width: 45%;
+  }
+  
+  .member-photo-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #007bff; /* Borde azul pitufo */
+    object-fit: cover;
+  }
+  
+  .member-name {
+    color: #007bff; /* Color azul pitufo */
+    margin-top: 10px;
+  }
+  
+  .member-description {
+    background-color: #007bff; /* Fondo azul pitufo */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
