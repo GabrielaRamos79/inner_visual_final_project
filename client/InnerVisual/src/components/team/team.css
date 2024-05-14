@@ -1,49 +1,63 @@
 /* src/components/Team.css */
 .team-container {
-    background-color: #b3e5fc; /* Color celeste */
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
+  background-color: #b3e5fc; /* Color celeste */
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center; /* Centrando los miembros del equipo horizontalmente */
+  align-items: flex-start; /* Asegura que los elementos estén alineados al inicio verticalmente */
+  gap: 200px; /* Aumenta el espacio entre las fotos */
+}
+
+.team-member {
+  text-align: center; /* Centrar el texto dentro de cada miembro */
+  width: 400px; /* Ajusta el ancho según sea necesario */
+}
+
+.member-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Añade un margen inferior para separar la foto del nombre */
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #007bff; /* Borde azul pitufo */
+  object-fit: cover
+}
+
+.member-name {
+  color: #007bff; /* Color azul pitufo */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.member-description {
   
-  .team-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .team-members {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
-  
-  .team-member {
-    width: 45%;
-  }
-  
-  .member-photo-container {
-    position: relative;
-    text-align: center;
-  }
-  
-  .member-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid #007bff; /* Borde azul pitufo */
-    object-fit: cover;
-  }
-  
-  .member-name {
-    color: #007bff; /* Color azul pitufo */
-    margin-top: 10px;
-  }
-  
-  .member-description {
-    background-color: #007bff; /* Fondo azul pitufo */
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-  
+  background: repeating-linear-gradient(
+    0deg,
+    #007bff,
+    #007bff 1.1em,
+    #b3e5fc 1em,
+    #b3e5fc 1.5em
+  );
+  color: white;
+  padding: 0px;
+  border-radius: 3px;
+  margin-top: 10px;
+  text-align: left; /* Ajusta la alineación del texto si es necesario */
+  line-height: 1.5em; /* Ajusta la altura de línea para que coincida con el patrón */
+  font-size: 16px; /* Tamaño de fuente para asegurar que el patrón se ajuste */
+}
