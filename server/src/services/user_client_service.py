@@ -22,16 +22,57 @@ class UserClientService():
         except Exception as ex:
             print(ex)
     
+    # @classmethod
+    # def get_id_user(cls, id_user):
+    #     try:
+    #         connection  = get_connection()
+    #         # print(connection)
+    #         with connection.cursor() as cursor:
+    #             # cursor.execute('SELECT * FROM user')
+    #             cursor.callproc('sp_get_client_by_id', (id_user))
+    #             result = cursor.fetchone()
+    #             if result is None:
+    #                 print("No se encontró el usuario con el ID proporcionado.")
+    #                 return None
+    #                         # Asegurarse de que result es un iterable antes de acceder a sus elementos
+    #             if not isinstance(result, tuple):
+    #              print("El resultado no es un iterable válido.")
+    #              return None
+    #         users_json = {
+    #             "id_user": result[0],
+    #             "name": result[1],
+    #             "surname": result[2],
+    #             "password": result[3],
+    #             "email": result[4],
+    #             "phone": result[5],
+    #             "photo": result[6],
+    #             "user_typeFK": result[7]
+    #         }
+    #         # users_json = [{"id_user": row[0], "name": row[1], "surname": row[2], "password": row[3], "email": row[4], "phone": row[5], "photo": row[6], "user_typeFK": row[7]} for row in result]
+    #         # connection.close()
+    #         return users_json
+    #     except Exception as ex:
+    #         print(f"Error al obtener el ID del usuario: {ex}")
+    #         return None
+    #     finally:
+    #         connection.close()
+    
     @classmethod
     def get_id_user(cls, id_user):
         try:
             connection  = get_connection()
-            print(connection)
+            # print(connection)
             with connection.cursor() as cursor:
                 # cursor.execute('SELECT * FROM user')
                 cursor.callproc('sp_get_client_by_id', (id_user))
                 result = cursor.fetchone()
-                print(result)
+                if result is None:
+                    print("No se encontró el usuario con el ID proporcionado.")
+                    return None
+                # Asegurarse de que result es un iterable antes de acceder a sus elementos
+                if not isinstance(result, tuple):
+                 print("El resultado no es un iterable válido.")
+                 return None
             users_json = {
                 "id_user": result[0],
                 "name": result[1],
@@ -43,12 +84,14 @@ class UserClientService():
                 "user_typeFK": result[7]
             }
             # users_json = [{"id_user": row[0], "name": row[1], "surname": row[2], "password": row[3], "email": row[4], "phone": row[5], "photo": row[6], "user_typeFK": row[7]} for row in result]
-            connection.close()
+            # connection.close()
+            print(users_json)
             return users_json
         except Exception as ex:
-            print(ex)
-    
-  
+            print(f"Error al obtener el ID del usuario: {ex}")
+            return None
+        finally:
+            connection.close()
             
     @classmethod
     def post_user(cls, user_table:User):

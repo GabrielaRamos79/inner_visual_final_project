@@ -19,7 +19,7 @@ def get_id_user(id):
     print("Hola get_by_id")
     get_id_user = UserClientService.get_id_user(id_user)
     print('Estoy dentro de metodo get_by_id')
-    return jsonify(get_id_user)
+    return jsonify({'user_by_id': get_id_user})
 
 @main.route('/post_user', methods = ['POST'])
 def post_user():

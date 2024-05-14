@@ -8,4 +8,3 @@ class User():
         self.phone = phone
         self.photo = photo
         self.user_typeFK = user_typeFK
-
