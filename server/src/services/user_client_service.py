@@ -21,6 +21,32 @@ class UserClientService():
             return users_json
         except Exception as ex:
             print(ex)
+
+@classmethod
+def get_by_id_user(cls, id_user):
+    try:
+        connection = get_connection()
+        with connection.cursor() as cursor:
+            cursor.execute('SELECT * FROM user WHERE id_user = %s', (id_user,))
+            result = cursor.fetchone()
+            if result:
+                user = {
+                    "id_user": result[0],
+                    "name": result[1],
+                    "surname": result[2],
+                    "password": result[3],
+                    "email": result[4],
+                    "phone": result[5],
+                    "photo": result[6],
+                    "user_typeFK": result[7]
+                }
+                connection.close()
+                return user
+            else:
+                connection.close()
+                return None
+    except Exception as ex:
+        print(ex)            
             
     @classmethod
     def post_user(cls, user_table:User):
