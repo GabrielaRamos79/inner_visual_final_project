@@ -1,18 +1,4 @@
-// import './team.css'
 
-// const Team = () => {
-//   return (
-//     <>
-//     <p>Equipo</p>
-//     </>
-//   )
-// }
-
-// export default Team
-
-
-// src/components/Team.jsx
-// src/components/Team.jsx
 import React from 'react';
 import './team.css'; // Importa el archivo de estilos
 import Kike from '../../assets/img/Kike.png';
