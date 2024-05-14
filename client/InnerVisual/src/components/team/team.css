@@ -1,6 +1,6 @@
 /* src/components/Team.css */
 .team-container {
-  background-color: #b3e5fc; /* Color celeste */
+  background-color: #b3e5fc; 
   padding: 30px;
   border-radius: 8px;
   text-align: center;
@@ -27,19 +27,19 @@
 .member-photo-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; /* Añade un margen inferior para separar la foto del nombre */
+  margin-bottom: 20px; 
 }
 
 .member-photo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 5px solid #007bff; /* Borde azul pitufo */
+  border: 5px solid #007bff; 
   object-fit: cover
 }
 
 .member-name {
-  color: #007bff; /* Color azul pitufo */
+  color: #007bff; 
   margin-top: 10px;
   margin-bottom: 20px;
 }

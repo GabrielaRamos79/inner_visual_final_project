@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './team.css'; // Importa el archivo de estilos
+import './team.css'; 
 import Kike from '../../assets/img/Kike.png';
 import Juan from '../../assets/img/juan.jpg';
 
@@ -21,7 +21,7 @@ const Team = () => {
 
         </div>
         <div className="team-member">
-        <h3 className="member-name">Juan</h3>
+        <h3 className="member-name">Juan </h3>
           <div className="member-photo-container">
           <img src={Juan} alt="Miembro 2" className="member-photo" />
           </div>
