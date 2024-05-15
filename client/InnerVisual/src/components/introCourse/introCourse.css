@@ -1,0 +1,39 @@
+.introCourse-container {
+    background-color:grey; 
+    padding: 30px;
+    border-radius: 8px;
+  }
+
+   
+  .introCourse-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .course {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .course_video {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre el botón y el texto */
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .video {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  .video_title {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  

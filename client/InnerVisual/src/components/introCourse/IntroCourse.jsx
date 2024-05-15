@@ -4,7 +4,7 @@ import React from 'react'
 const IntroCourse = () => {
   return (
     <>
-      <div className="introCourse">
+      <div className="introCourse-container">
         <h3 className="introCourse-title">INTRO</h3>
         <div className="course">
           <div className="course_video">
