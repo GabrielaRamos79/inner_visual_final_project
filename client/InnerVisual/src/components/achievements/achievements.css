@@ -13,9 +13,9 @@
 
 .icons_achievements {
   display: flex;
-  justify-content: center; /* Centrar los iconos horizontalmente */
-  align-items: center; /* Centrar los iconos verticalmente */
-  gap: 20px; /* Espacio entre los iconos */
+  justify-content: center;
+  align-items: center; 
+  gap: 20px; 
 }
 
 .icon_picture {
@@ -30,8 +30,8 @@
 }
 
 .achievement1, .achievement2, .achievement3, .achievement4, .achievement5 {
-  flex: 0 1 auto; /* Permitir que los elementos se reduzcan pero no crezcan */
-  max-width: 100px; /* Ancho máximo de los iconos */
+  flex: 0 1 auto; 
+  max-width: 100px; 
 }
 
 .text_achievement {
@@ -42,23 +42,21 @@
   font-size: 18px;
 }
 
-/* Media Queries para ajustar el tamaño de los iconos en pantallas más pequeñas */
-
 @media (max-width: 1200px) {
   .achievement1, .achievement2, .achievement3, .achievement4, .achievement5 {
-    max-width: 80px; /* Reducir el tamaño máximo de los iconos */
+    max-width: 80px; 
   }
 }
 
 @media (max-width: 768px) {
   .achievement1, .achievement2, .achievement3, .achievement4, .achievement5 {
-    max-width: 60px; /* Reducir el tamaño máximo de los iconos */
+    max-width: 60px; 
   }
 }
 
 @media (max-width: 480px) {
   .achievement1, .achievement2, .achievement3, .achievement4, .achievement5 {
-    max-width: 50px; /* Reducir el tamaño máximo de los iconos */
+    max-width: 50px; 
   }
   
   .achievements-title {
