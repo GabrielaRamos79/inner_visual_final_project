@@ -28,7 +28,6 @@ import './jobs.css';
       return;
     }
 
-    // Mostrar la alerta y limpiar los campos
     setShowAlert(true);
     setEmail('');
     setMessage('');
@@ -41,24 +40,12 @@ import './jobs.css';
     window.location.href = '/'; // Redirige a la página de inicio
   };
 
-
-    // try {
-    //   // Aquí iría tu lógica para enviar el correo electrónico al administrador
-    //   console.log(`Correo electrónico enviado al administrador: admin@example.com`);
-    //   console.log(`Mensaje al administrador: ${message}`);
-    //   alert('Mensaje enviado al administrador');
-    // } catch (error) {
-    //   console.error('Error al enviar el correo electrónico:', error);
-    //   alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
-    // }
-
   return (
     <>
         <div className='jobs-container-about'>
            <h2 className='titleJobs'>Contacta con Nosotros</h2>
            <div className='jobs-section'>
-          <button onClick={handleCloseForm} className="close-form-button">X</button>
-          
+      
               <form onSubmit={handleSubmit}>
              <div>
                     <label htmlFor="email">Correo Electrónico:</label>

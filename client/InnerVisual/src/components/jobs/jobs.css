@@ -1,5 +1,3 @@
-/* Estilos del formulario de contacto */
-
 .contact-form {
     max-width: 225px;
     margin: 0 auto;
@@ -53,23 +51,17 @@
     transform: none;
   } 
   
-   /* Estilos para la sección del formulario */
 .jobs-section {
       position: relative;
   width: 50%;
   margin: 0 auto;
-  background-color: #f9f9f9; /* Color de fondo para la sección */
-  padding: 20px; /* Espaciado interno para la sección */
-  border-radius: 10px; /* Bordes redondeados para la sección */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para la sección */
-  margin-top: 20px; /* Margen superior para separar la sección del contenido anterior */
-}
+  background-color: #f9f9f9;   padding: 20px;   border-radius: 10px;   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   margin-top: 20px; }
 
 .jobs-section form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* Espacio entre los elementos del formulario */
+  gap: 10px; 
   justify-content: center;
 }
 
@@ -93,18 +85,3 @@
   font-weight: bold;
 }
 
-
-.close-form-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-}
-
-.close-form-button:hover {
-  color: blue;
-}
