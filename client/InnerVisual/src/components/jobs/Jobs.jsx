@@ -28,24 +28,25 @@ import './jobs.css';
       return;
     }
 
+    if (missing.length > 0) {
+      setMissingFields(missing);
+      return;
+    }
+
     setShowAlert(true);
     setEmail('');
     setMessage('');
+    setMissingFields([]);
   };
     const handleCloseAlert = () => {
      setShowAlert(false);
-  };
-
-  const handleCloseForm = () => {
-    window.location.href = '/'; // Redirige a la página de inicio
   };
 
   return (
     <>
         <div className='jobs-container-about'>
            <h2 className='titleJobs'>Contacta con Nosotros</h2>
-           <div className='jobs-section'>
-      
+           <div className='jobs-section'>      
               <form onSubmit={handleSubmit}>
              <div>
                     <label htmlFor="email">Correo Electrónico:</label>
@@ -54,21 +55,20 @@ import './jobs.css';
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        onBlur={() => setEmailTouched(true)} // Marcar como tocado cuando se pierde el foco
-                        required
-                        style={{ border: missingFields.includes('Introduce email') && emailTouched ? '2px solid red' : '1px solid #ccc' }} // Aplicar estilo de borde rojo si falta
-                      />
-                </div>
+                        onBlur={() => setEmailTouched(true)}
+                        style={{ border: missingFields.includes('Introduce email') && emailTouched ? '2px solid red' : '1px solid #ccc' }}
+              />
+            </div>
                 <div>
                     <label htmlFor="message">Mensaje:</label>
                     <textarea
                         id="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        onBlur={() => setMessageTouched(true)} // Marcar como tocado cuando se pierde el foco
+                        onBlur={() => setMessageTouched(true)} 
                         required
-                        style={{ border: missingFields.includes('email') && emailTouched ? '2px solid red' : '1px solid #ccc' }} // Aplicar estilo de borde rojo si falta
-                        />
+                        className="message-textarea"
+                    />
                     </div>
                 <button type="submit" className="submit-button-contact">Enviar Mensaje</button>             
            </form>
@@ -76,12 +76,11 @@ import './jobs.css';
            {showAlert && (
             <div className="alert">
               <span className="close-btn" onClick={handleCloseAlert}>X</span>
-          <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
-        </div>
+              <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
+            </div>
       )}
       </div>
-    </>
-  );
+    </>);
 };
 
 export default Jobs;
