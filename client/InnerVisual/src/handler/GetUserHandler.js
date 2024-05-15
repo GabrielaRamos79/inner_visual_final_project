@@ -1,4 +1,4 @@
-import { GetUserService } from '../services/GetUserService'
+import GetUserService from '../services/GetUserService'
 
 export const UserHandler = {
 

@@ -1,11 +1,11 @@
 import './tableClients.css'
-import {GetUserHandler} from '../../handler/GetUserHandler'
+import {UserHandler} from '../../handler/GetUserHandler'
 import React, { useState, useEffect } from 'react';
 
 const TableClients = () => {
     const [users, setUsers] = useState([]);
     const fetchData = async () => {
-        const userData = await GetUserHandler.getUser();
+        const userData = await UserHandler.getUser();
         setUsers(userData);
     };
     useEffect(() => {
@@ -27,6 +27,7 @@ const TableClients = () => {
                 <tbody>
                     {users.map((user) => (
                         <tr key={user.id_user}>
+                            <td>{user.id_user}</td>
                             <td>{user.name}</td>
                             <td>{user.surname}</td>
                             <td>{user.email}</td>

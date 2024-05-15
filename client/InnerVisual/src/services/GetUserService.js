@@ -18,3 +18,5 @@ export const GetUserService = {
         }
     }
     }
+
+export default GetUserService;
