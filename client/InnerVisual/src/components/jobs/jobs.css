@@ -1,0 +1,110 @@
+/* Estilos del formulario de contacto */
+
+.contact-form {
+    max-width: 225px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #007bff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+   }
+  
+  .titleJobs {
+    margin: 0;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+   
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px; 
+  }
+  
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    height: 50px;
+  }
+  
+  .contact-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: none;
+  } 
+  
+   /* Estilos para la sección del formulario */
+.jobs-section {
+      position: relative;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #f9f9f9; /* Color de fondo para la sección */
+  padding: 20px; /* Espaciado interno para la sección */
+  border-radius: 10px; /* Bordes redondeados para la sección */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para la sección */
+  margin-top: 20px; /* Margen superior para separar la sección del contenido anterior */
+}
+
+.jobs-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos del formulario */
+  justify-content: center;
+}
+
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #007bff; /* #f8d7da;*/
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.close-form-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-form-button:hover {
+  color: blue;
+}
