@@ -20,7 +20,7 @@
   }
 
   .action-buttons button {
-    margin-bottom: 10px; /* Agrega espacio entre los botones */
+    margin-bottom: 10px; 
   }
   .btn-custom{
     width: 250px;
@@ -28,10 +28,9 @@
   
   
   .profile-picture {
-    width: 100px; /* Tamaño deseado */
-    height: 100px; /* Tamaño deseado */
-    /* margin: 0 auto 20px; Centra la imagen y agrega margen en la parte inferior */
-    margin-bottom: 10px;/* Margen inferior */
+    width: 100px; 
+    height: 100px; 
+    margin-bottom: 10px;
     border-radius: 50%;
   }
   
@@ -46,24 +45,22 @@
     .welcome-message {
       /* flex: 1; */
       margin-bottom: 0;
-      margin-right: auto; /* Separación entre el mensaje de bienvenida y la imagen */
+      margin-right: auto; 
     }
   
     .action-buttons {
-        margin-top: 0; /* Elimina el margen superior en pantallas grandes */
+        margin-top: 0; 
         flex-direction: column;
         align-items:center;
-      /* justify-content: flex-start; Cambia la alineación a la izquierda en pantallas grandes */
     }
 
     .action-buttons button {
-        margin-bottom: 10px; /* Agrega espacio entre los botones */
+        margin-bottom: 10px; 
       }
   
     .profile-picture {
-      margin: 0; /* Elimina el margen en pantallas grandes */
-      margin-bottom: 10px;/* Margen inferior */
-      /* margin-bottom: 20px; Añade margen inferior para separar la imagen de los botones */
+      margin: 0;
+      margin-bottom: 10px;
     }
   }
   @media screen and (min-width: 1024px) {
@@ -79,22 +76,20 @@
     }
 
     .action-buttons {
-        margin-top: 20%; /* Margen superior entre la imagen y los botones */
-        flex-direction: column; /* Cambia la dirección de los botones a columna */
-        align-items:center; /* Alinea los botones a la derecha */
+        margin-top: 20%;
+        flex-direction: column;
+        align-items:center;
         margin-bottom: 10%;
     }
     .action-buttons button {
-        margin-bottom: 10px; /* Agrega espacio entre los botones */
+        margin-bottom: 10px; 
       }
 
     .profile-picture {
-        margin-top: 5%; /* Elimina el margen en pantallas grandes */
+        margin-top: 5%; 
             .action-buttons button {
-        margin-bottom: 10px; /* Agrega espacio entre los botones */
-      }
-        /* Añade margen inferior para separar la imagen de los botones */
-        
+        margin-bottom: 10px; 
+      }   
       }
 
   }
