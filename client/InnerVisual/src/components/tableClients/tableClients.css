@@ -11,7 +11,6 @@
 /*Table*/
 
 #myTable {
-    border: 1px solid blue;
     border-collapse: collapse;
     width: 80%;
     margin: auto;
@@ -33,9 +32,6 @@ tr:nth-child(odd) {
     background-color: #FFFFFF;
 }
 
-.trTable {
-    border: 2px solid #007bff;
-}
 
 .tdTable {
     padding: 15px;
