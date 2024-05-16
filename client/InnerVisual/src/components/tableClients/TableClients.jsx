@@ -14,28 +14,31 @@ const TableClients = () => {
 
     return (
         <>
+        <h2 className='titleClient'>Lista de clientes</h2>
+            <section className='sectionForm'>
             <table id="myTable">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Surname</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
+                        <th className='thTable'>ID</th>
+                        <th className='thTable'>Name</th>
+                        <th className='thTable'>Surname</th>
+                        <th className='thTable'>Email</th>
+                        <th className='thTable'>Teléfono</th>
                     </tr>
                 </thead>
                 <tbody>
                     {users.map((users) => (
-                        <tr key={users.id_user}>
-                            <td>{users.id_user}</td>
-                            <td>{users.name}</td>
-                            <td>{users.surname}</td>
-                            <td>{users.email}</td>
-                            <td>{users.phone}</td>
+                        <tr className='trTable' key={users.id_user}>
+                            <td className='tdTable'>{users.id_user}</td>
+                            <td className='tdTable'>{users.name}</td>
+                            <td className='tdTable'>{users.surname}</td>
+                            <td className='tdTable'>{users.email}</td>
+                            <td className='tdTable'>{users.phone}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            </section>
         </>
     )
 }
