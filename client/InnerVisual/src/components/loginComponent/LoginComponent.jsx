@@ -12,15 +12,21 @@ const LoginComponent = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const authData = await handleLogin(email, password);
-      // Виведення токена у консоль замість використання SweetAlert
-      console.log('Токен:', authData.token);
+      handleLogin(email, password);
+      Swal.fire({
+        icon: 'success',
+        title: 'OK',
+        text: 'Tu solicitud ha sido procesada.',
+ 
+     }).then(() =>{
+       setEmail('');
+       setPassword('');
+     })
     } catch (error) {
-      // Використання SweetAlert для відображення помилки
       Swal.fire({
         icon: 'error',
-        title: 'Помилка',
-        text: 'Вхід не вдалося. Перевірте дані та спробуйте знову.',
+        title: 'Error',
+        text: 'Error al iniciar sesión. Compruebe sus datos e inténtelo de nuevo.',
       });
     }
   };
