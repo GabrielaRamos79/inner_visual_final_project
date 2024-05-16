@@ -19,8 +19,7 @@ const IntroCourse = () => {
           </div>
         </div>
       </div>
-      <p>Introducción al curso</p>
-    </>
+      </>
   )
 }
 
