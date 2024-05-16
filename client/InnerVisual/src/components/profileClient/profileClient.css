@@ -1,0 +1,95 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  .welcome-message {
+    margin-bottom: 20px;
+  }
+  
+  .action-buttons {
+    margin-top: 20px;
+    /* width: 15%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* display: flex;
+    justify-content: flex-end; */
+  }
+
+  .action-buttons button {
+    margin-bottom: 10px; 
+  }
+  .btn-custom{
+    width: 250px;
+  }
+  
+  
+  .profile-picture {
+    width: 100px; 
+    height: 100px; 
+    margin-bottom: 10px;
+    border-radius: 50%;
+  }
+  
+  
+  @media screen and (min-width: 768px) {
+    .profile-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .welcome-message {
+      /* flex: 1; */
+      margin-bottom: 0;
+      margin-right: auto; 
+    }
+  
+    .action-buttons {
+        margin-top: 0; 
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .action-buttons button {
+        margin-bottom: 10px; 
+      }
+  
+    .profile-picture {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .profile-container {
+        justify-content: space-between;
+        flex-direction: row;
+        /* align-items: center; */
+    }
+
+    .welcome-message{
+        width: 50%;
+        margin-right: 20%;
+    }
+
+    .action-buttons {
+        margin-top: 20%;
+        flex-direction: column;
+        align-items:center;
+        margin-bottom: 10%;
+    }
+    .action-buttons button {
+        margin-bottom: 10px; 
+      }
+
+    .profile-picture {
+        margin-top: 5%; 
+            .action-buttons button {
+        margin-bottom: 10px; 
+      }   
+      }
+
+  }
