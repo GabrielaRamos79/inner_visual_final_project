@@ -1,0 +1,45 @@
+.titleClient {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 80px;
+}
+
+.sectionForm {
+    margin-bottom: 100px;
+}
+
+/*Table*/
+
+#myTable {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+.thTable {
+    background-color: #007bff;
+    padding: 15px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+
+}
+
+tr:nth-child(even) {
+    background-color: #dfeaf7;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+
+.tdTable {
+    padding: 15px;
+}
+
+
+@media screen and (max-width: 405px) {
+    .titleClient {
+        padding: 60px;
+    }
+}
