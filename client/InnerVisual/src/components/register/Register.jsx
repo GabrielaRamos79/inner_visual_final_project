@@ -16,22 +16,23 @@ const Register = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Evita el comportamiento predeterminado del formulario
+    event.preventDefault(); 
   
-    const formData = new FormData();
-    formData.append('name', userName);
-    formData.append('surname', surname);
-    formData.append('email', email);
-    formData.append('password', password);
-    formData.append('phone', phone);
-    formData.append('photo', selectedFile); 
+    const formObject = {
+      name: userName,
+      surname: surname,
+      email: email,
+      password: password,
+      phone: phone,
+      photo: selectedFile? URL.createObjectURL(selectedFile) : null, 
+      user_typeFK: 2 
+    };
   
     try {
-      await UserHandler.postUser(formData); 
+      await UserHandler.postUser(formObject);
       Swal.fire('Éxito', 'Usuario creado exitosamente.', 'success');
     } catch (error) {
       console.error(error);
-      console.log(selectedFile)
       Swal.fire('Error', 'Hubo un problema al crear el usuario.', 'error');
     }
   };
