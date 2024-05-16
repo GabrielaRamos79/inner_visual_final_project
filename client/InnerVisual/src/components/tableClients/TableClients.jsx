@@ -1,5 +1,5 @@
 import './tableClients.css'
-import {UserHandler} from '../../handler/GetUserHandler'
+import {UserHandler} from '../../handler/UserHandler'
 import React, { useState, useEffect } from 'react';
 
 const TableClients = () => {
