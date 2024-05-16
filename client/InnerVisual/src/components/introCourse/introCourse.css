@@ -1,39 +1,50 @@
 .introCourse-container {
-    background-color:grey; 
-    padding: 30px;
+    background-color: lightgray; 
+    padding: 80px;
     border-radius: 8px;
-  }
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-   
-  .introCourse-title {
+.introCourse-title {
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 20px;
-  }
-  
-  .course {
+    text-align: left;
+    margin-left: 300px; /* Ajusta según sea necesario */
+}
+
+.course {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  .course_video {
+    align-items: flex-start;
+    margin-left: 300px; /* Ajusta según sea necesario */
+}
+
+.course_video {
+    display: flex;
+    align-items: center;  
+    gap: 20px;
+}
+
+.button {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espacio entre el botón y el texto */
-  }
-  
-  .button {
-    display: flex;
-    align-items: center;
-  }
-  
-  .video {
-    padding: 10px 20px;
+    justify-content: center;
+}
+
+.video {
+    padding: 5px 50px;
     font-size: 16px;
-  }
-  
-  .video_title {
-    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.video_title {
     font-size: 16px;
-  }
-  
+    margin-left: 50px;
+}
+
