@@ -71,15 +71,15 @@ const Jobs = () => {
   return (
     <>
       <div className='jobs-container-about'>
-        <h2 className='titleJobs'>Contacta con Nosotros</h2>
+        <h2 className='titleJobs'>Trabaja con Nosotros</h2>
         <div className='jobs-section'>
           <form onSubmit={handleSubmit}>
-            <div className="contact-form">
-              <div className="input-group-email">
-                <label htmlFor="email-contact">Correo Electrónico:</label>
+            <div className="contact-form-work-with-us">
+              <div className="input-group-email-work-with-us">
+                <label htmlFor="email-contact-work-with-us">Correo Electrónico:</label>
                 <input
                   type="email"
-                  id="email-contact"
+                  id="email-contact-work-with-us"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => {
@@ -93,11 +93,11 @@ const Jobs = () => {
                 {emailError && <p>{emailError}</p>}
               </div>
 
-              <div className='input-group-name'>
-                <label htmlFor="name-contact">Nombre:</label>
+              <div className='input-group-name-work-with-us'>
+                <label htmlFor="name-contact-work-with-us">Nombre:</label>
                 <input
                   type="text"
-                  id="name-contact"
+                  id="name-contact-work-with-us"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   onBlur={() => {
@@ -111,11 +111,11 @@ const Jobs = () => {
                 {nameError && <p>{nameError}</p>}
               </div>
 
-              <div className='input-group-surname'>
-                <label htmlFor="surname-contact">Apellido:</label>
+              <div className='input-group-surname-work-with-us'>
+                <label htmlFor="surname-contact-work-with-us">Apellido:</label>
                 <input
                   type="text"
-                  id="surname-contact"
+                  id="surname-contact-work-with-us"
                   value={surname}
                   onChange={(e) => setSurname(e.target.value)}
                   onBlur={() => {
@@ -129,11 +129,11 @@ const Jobs = () => {
                 {surnameError && <p>{surnameError}</p>}
               </div>
 
-              <div className='input-group-telephone'>
-                <label htmlFor="telephone-contact">Teléfono:</label>
+              <div className='input-group-telephone-work-with-us'>
+                <label htmlFor="telephone-contact-work-with-us">Teléfono:</label>
                 <input
                   type="tel"
-                  id="telephone-contact"
+                  id="telephone-contact-work-with-us"
                   value={telephone}
                   onChange={(e) => setTelephone(e.target.value)}
                   onBlur={() =>{
@@ -148,10 +148,10 @@ const Jobs = () => {
                   {telephoneError && <p>{telephoneError}</p>}
               </div>
 
-              <div className='input-group-message'>
-                <label htmlFor="message-contact">Mensaje:</label>
+              <div className='input-group-message-work-with-us'>
+                <label htmlFor="message-contact-work-with-us">Mensaje:</label>
                 <textarea
-                  id="message-contact"
+                  id="message-contact-work-with-us"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   onBlur={() => {
@@ -166,14 +166,14 @@ const Jobs = () => {
                 {messageError && <p>{messageError}</p>}
               </div>
 
-              <div className="submit-button-wrapper">
-                <button type="submit" className="submit-button-contact">Enviar Mensaje</button>
+              <div className="submit-button-wrapper-work-with-us">
+                <button type="submit" className="submit-button-contact-work-with-us">Enviar Mensaje</button>
               </div>
             </div>
           </form>
           {showAlert && (
             <div className="alert">
-              <span className="close-btn" onClick={handleCloseAlert}>X</span>
+              <span className="close-btn-work-with-us" onClick={handleCloseAlert}>X</span>
               <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
             </div>
           )}
@@ -184,281 +184,3 @@ const Jobs = () => {
 };
 
 export default Jobs;
-
-
-/*
-PRIMERA PRUEBA
-
-
-
-
-import React, { useState } from 'react';
-import './jobs.css';
-
-const Jobs = () => {
-  const [email, setEmail] = useState('');
-  const [emailTouched, setEmailTouched] = useState(false);
-  const [message, setMessage] = useState('');
-  const [messageTouched, setMessageTouched] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
-  const [missingFields, setMissingFields] = useState([]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const emailRegex = /^\S+@\S+\.\S+$/;
-    const missing = [];
-
-    if (!emailRegex.test(email)) {
-      missing.push('Introduce email');
-      alert('Por favor, introduce un correo electrónico válido.');
-      return;
-    }
-
-    if (message.length < 5) {
-      setMissingFields(missing);
-      alert('El mensaje debe tener al menos 5 caracteres.');
-      return;
-    }
-
-    if (missing.length > 0) {
-      setMissingFields(missing);
-      return;
-    }
-
-    setShowAlert(true);
-    setEmail('');
-    setMessage('');
-    setMissingFields([]);
-  };
-
-  const handleCloseAlert = () => {
-    setShowAlert(false);
-  };
-
-  return (
-    <>
-      <div className='jobs-container-about'>
-        <h2 className='titleJobs'>Contacta con Nosotros</h2>
-        <div className='jobs-section'>
-          <form onSubmit={handleSubmit}>
-            <div className="contact-form">
-              <div>
-                <label htmlFor="email-contact">Correo Electrónico:</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onBlur={() => setEmailTouched(true)}
-                  className={`input-field ${missingFields.includes('Introduce email') && emailTouched ? 'error' : ''}`}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="name-contact">Mensaje:</label>
-
-                <input textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  onBlur={() => setMessageTouched(true)}
-                  required
-                  className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="msurname-contact">Mensaje:</label>
-
-                <input textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  onBlur={() => setMessageTouched(true)}
-                  required
-                  className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                />
-              </div>
-              <div>
-                <label htmlFor="telephone-contact">Mensaje:</label>
-
-                <input textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  onBlur={() => setMessageTouched(true)}
-                  required
-                  className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message-contact">Mensaje:</label>
-
-                <input textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  onBlur={() => setMessageTouched(true)}
-                  required
-                  className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                />
-              </div>
-
-
-              <div className="submit-button-wrapper">
-                <button type="submit" className="submit-button-contact">Enviar Mensaje</button>
-              </div>
-            </div>
-          </form>
-          {showAlert && (
-            <div className="alert">
-              <span className="close-btn" onClick={handleCloseAlert}>X</span>
-              <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
-            </div>
-          )}
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Jobs;
-
-
-
-
-
-ORIGINAL
-
-
-// import React, { useState } from 'react';
-// import './jobs.css';
-
-//   const Jobs = () => {
-//     const [email, setEmail] = useState('');
-//     const [emailTouched, setEmailTouched] = useState(false); // Nuevo estado para el campo de correo electrónico
-//     const [message, setMessage] = useState('');
-//     const [messageTouched, setMessageTouched] = useState(false); // Nuevo estado para el campo de mensaje
-//     const [showAlert, setShowAlert] = useState(false);
-//     const [missingFields, setMissingFields] = useState([]);
-
- 
-//     const handleSubmit = async (e) => {
-//       e.preventDefault();
-        
-//       const emailRegex = /^\S+@\S+\.\S+$/;
-//       const missing = [];
-
-//     if (!emailRegex.test(email)) {
-//       missing.push('Introduce email');
-//       alert('Por favor, introduce un correo electrónico válido.');
-//       return;
-//     }
-
-//     if (message.length < 5) {
-//       setMissingFields(missing);
-//       alert('El mensaje debe tener al menos 5 caracteres.');
-//       return;
-//     }
-
-//     if (missing.length > 0) {
-//       setMissingFields(missing);
-//       alert('')
-//       return;
-//     }
-
-//     setShowAlert(true);
-//     setEmail('');
-//     setMessage('');
-//     setMissingFields([]);
-//   };
-//     const handleCloseAlert = () => {
-//      setShowAlert(false);
-//   };
-
-//   return (
-//     <>
-//       <div className='jobs-container-about'>
-//         <h2 className='titleJobs'>Contacta con Nosotros</h2>
-//         <div className='jobs-section'>      
-//           <form onSubmit={handleSubmit}>
-//             <div className="contact-form">
-//               <div>
-//                 <label htmlFor="email">Correo Electrónico:</label>
-//                 <input
-//                   type="email"
-//                   id="email"
-//                   value={email}
-//                   onChange={(e) => setEmail(e.target.value)}
-//                   onBlur={() => setEmailTouched(true)}
-//                   style={{ border: missingFields.includes('Introduce email') && emailTouched? '2px solid red' : '1px solid #ccc' }}
-//                 />
-//               </div>
-
-//               <div>
-//                  <label htmlFor="name-contact">Nombre:</label>
-//                  <textarea
-//                   id="name-contact"
-//                   value={message}
-//                   onChange={(e) => setMessage(e.target.value)}
-//                   onBlur={() => setMessageTouched(true)} 
-//                   required
-//                   className="name-contacttextarea"
-//                 />
-//               </div>
-
-//               <div>
-//                  <label htmlFor="surname-contact-textarea">Apellido:</label>
-//                  <textarea
-//                   id="surname-contact-textarea"
-//                   value={message}
-//                   onChange={(e) => setMessage(e.target.value)}
-//                   onBlur={() => setMessageTouched(true)} 
-//                   required
-//                   className="surname-contact-textarea"
-//                 />
-//               </div>
-
-//               <div>
-//                  <label htmlFor="telephone-contact-textarea">Teléfono:</label>
-//                  <textarea
-//                   id="telephone-contact-textarea"
-//                   value={message}
-//                   onChange={(e) => setMessage(e.target.value)}
-//                   onBlur={() => setMessageTouched(true)} 
-//                   required
-//                   className="telephone-contact-textarea"
-//                 />
-//               </div>
-
-//               <div>
-//                 <label htmlFor="message">Mensaje:</label>
-//                 <textarea
-//                   id="message"
-//                   value={message}
-//                   onChange={(e) => setMessage(e.target.value)}
-//                   onBlur={() => setMessageTouched(true)} 
-//                   required
-//                   className="message-textarea"
-//                 />
-//               </div>
-//               <div className="submit-button-wrapper">
-//                 <button type="submit" className="submit-button-contact">Enviar Mensaje</button>
-//               </div>
-//             </div>
-//           </form>
-//           {showAlert && (
-//             <div className="alert">
-//               <span className="close-btn" onClick={handleCloseAlert}>X</span>
-//               <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Jobs;*/
