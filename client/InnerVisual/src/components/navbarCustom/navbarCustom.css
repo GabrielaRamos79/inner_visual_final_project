@@ -1,16 +1,7 @@
 .navbar-custom {
-    background-color: #ffff; /* Cambia el color de fondo del Navbar */
+    background-color: #ffff;
   }
-/*   
-.navbar-brand-custom {
-    color: hsl(347, 83%, 54%); /* Cambia el color del texto del Navbar.Brand */
-    /* font-size: 50px;
-  }
-   */
-/* .nav-link-custom {
-    color: #0D99FF; Cambia el color del texto de los enlaces del Navbar */
-    /* font-size: 50px;
-  } */
+
 .navbar-nav {
     --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 0.5rem;
