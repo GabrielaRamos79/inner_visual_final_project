@@ -25,13 +25,13 @@ const TableClients = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map((user) => (
-                        <tr key={user.id_user}>
-                            <td>{user.id_user}</td>
-                            <td>{user.name}</td>
-                            <td>{user.surname}</td>
-                            <td>{user.email}</td>
-                            <td>{user.phone}</td>
+                    {users.map((users) => (
+                        <tr key={users.id_user}>
+                            <td>{users.id_user}</td>
+                            <td>{users.name}</td>
+                            <td>{users.surname}</td>
+                            <td>{users.email}</td>
+                            <td>{users.phone}</td>
                         </tr>
                     ))}
                 </tbody>
