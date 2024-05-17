@@ -46,6 +46,7 @@ const Jobs = () => {
 
     if (missing.length > 0) {
       setMissingFields(missing);
+      alert('Hay campos vacios. Por favor, completa todos los campos son obligatorios.');     
       return;
     }
 
@@ -70,9 +71,9 @@ const Jobs = () => {
 
   return (
     <>
-      <div className='jobs-container-about'>
+      <div className='jobs-container-work-with-us'>
         <h2 className='titleJobs'>Trabaja con Nosotros</h2>
-        <div className='jobs-section'>
+        <div className='jobs-section-work-with-us'>
           <form onSubmit={handleSubmit}>
             <div className="contact-form-work-with-us">
               <div className="input-group-email-work-with-us">
