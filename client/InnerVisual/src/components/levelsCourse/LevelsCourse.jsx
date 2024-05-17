@@ -55,16 +55,21 @@ const LevelsCourse = () => {
 
     </Container>
 
-
-
-
-
-
-            
-
-
           </Accordion.Body>
         </Accordion.Item>
+
+        <Accordion.Item eventKey="1">
+        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus iste dignissimos, delectus excepturi ea quam alias soluta dolore voluptates animi reprehenderit sunt nulla deleniti possimus commodi neque quas praesentium?
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus repellat velit voluptatibus totam. Consectetur labore maxime, dicta, veritatis nemo repellendus eligendi vitae assumenda laborum hic similique incidunt, vel quidem totam.
+        </Accordion.Body>
+      </Accordion.Item>  
       </Accordion>
 
 
