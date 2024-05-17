@@ -1,16 +1,13 @@
-import UserService from "../services/UserService";
-
+import UserService from '../services/UserService'
 export const UserHandler = {
-    async getAlltUsers() {
-        let allUsers = await UserService.getAlltUsers();
-        return allUsers;
-    },
-
     async getUser() {
         let user = await UserService.getUser();
         return user;
     },
-
+    async getAlltUsers() {
+        let allUsers = await UserService.getAlltUsers();
+        return allUsers;
+    },
     async postUser(newUser) {
         return UserService.postUser(newUser).then((response) => {
             if (response.status === 200) {
@@ -20,7 +17,6 @@ export const UserHandler = {
             }
         });
     },
-
     async updateUser(id, updatedUser) {
         try {
             return await UserService.updateUser(id, updatedUser);
@@ -29,23 +25,37 @@ export const UserHandler = {
             throw error;
         }
     },
-
-    async getFilteredUsers(user_typeFK) {
-        let allUsers = await UserService.getUsers();
-
-        if (user_typeFK) {
-            allUsers = allUsers.filter(user => user.user_typeFK === user_typeFK);
-        }
-
-        return allUsers;
-    },
-
     async handleDelete(id) {
         const userToDelete = {
             id_user: id
         };
         await UserService.deleteUser(userToDelete);
-    }   
+    }
 }
-
 export default UserHandler;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
