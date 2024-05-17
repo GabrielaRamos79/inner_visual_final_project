@@ -10,3 +10,11 @@ def get_content():
     get_content = ContentService.get_content()
     print('Estoy dentro de metodo get')
     return jsonify(get_content)
+
+@main.route('/get_content/<id>', methods = ['GET'])
+def get_content_by_id(id):
+    id_content = id
+    print("Hola get, content_router")
+    get_content = ContentService.get_content_by_id(id_content)
+    print('Estoy dentro de metodo get')
+    return jsonify(get_content)
