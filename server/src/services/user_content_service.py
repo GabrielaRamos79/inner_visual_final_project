@@ -6,7 +6,7 @@ class UserContentService():
     @classmethod
     def get_user_content(cls):
         try:
-            connection  = get_connection()
+            connection = get_connection()
             print(connection)
             with connection.cursor() as cursor:
                 # cursor.execute('SELECT * FROM user_content')
