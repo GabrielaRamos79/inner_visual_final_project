@@ -42,7 +42,7 @@ function NavbarCustom() {
 
         <div className="iconHolder">
           <Link to="/" className="nav-link-custom">
-              <h3 className='links closeactive'>home</h3>
+            <h3 className='links closeactive'>home</h3>
           </Link>
 
           <Link to="/about" className="nav-link-custom">
@@ -57,11 +57,13 @@ function NavbarCustom() {
             </div>
           </Link>
 
-          <Link to="/client/dashboard" className="nav-link-custom">
-            <div className="areaLink">
-              <h3 className='links closeactive'>área privada</h3>
-            </div>
-          </Link>
+          {isLoggedIn && (
+            <Link to="/client/dashboard" className="nav-link-custom">
+              <div className="areaLink">
+                <h3 className='links closeactive'>área privada</h3>
+              </div>
+            </Link>
+          )}
 
           {isLoggedIn ? (
             <div className="nav-link-custom" onClick={handleLogout}>
@@ -77,8 +79,7 @@ function NavbarCustom() {
             </Link>
           )}
         </div>
-      </nav >
-      
+      </nav>
     </>
   );
 }
