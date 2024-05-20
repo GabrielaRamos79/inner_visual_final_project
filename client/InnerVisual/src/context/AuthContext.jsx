@@ -6,7 +6,7 @@ export const UserContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const UserProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedInd] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [cookies, removeCookie] = useCookies([
     "id_user", 
@@ -29,9 +29,9 @@ export const UserProvider = ({ children }) => {
         surnamePerson: cookies.photo,
         surnamePerson: cookies.user_type,
       });
-      setIsLoggedInd(true);
+      setIsLoggedIn(true);
     }else{
-      setIsLoggedInd(false)
+      setIsLoggedIn(false)
     }
   }, [cookies]);
 
@@ -47,7 +47,7 @@ export const UserProvider = ({ children }) => {
     // Actualizar el estado del usuario a null
     setUser(null);
     // Actualizar el estado de autenticación a false
-    setIsLoggedInd(false);
+    setIsLoggedIn(false);
  };
 
 

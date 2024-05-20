@@ -15,3 +15,24 @@
     margin-bottom: 0;
     list-style: none;
 }
+
+.nav-link-custom {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  }
+  a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: #0d6efd;
+  transition: left .8s;
+  }
+  a:hover:after {
+  left: 0;
+  }
