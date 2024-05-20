@@ -1,3 +1,4 @@
+import React from 'react';
 import './profileClient.css'
 import fotoperfil from '../../assets/img/fotoperfil.jpg'
 
@@ -23,7 +24,7 @@ const ProfileClient = () => {
   )
 };
 const handleContinue = () => {
-  console.log('Continuar prácticas');
+  console.log('Continuar Prácticas');
 };
 
 const handleNotes = () => {

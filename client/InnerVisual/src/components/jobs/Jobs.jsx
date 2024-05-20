@@ -208,7 +208,7 @@ const Jobs = () => {
             </div>
           </form>
           {showAlert && (
-            <div className="alert">
+            <div className="alert" data-testid="success-message">
               <span className="close-btn-contact-work-with-us" onClick={handleCloseAlert}>X</span>
               <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
             </div>
