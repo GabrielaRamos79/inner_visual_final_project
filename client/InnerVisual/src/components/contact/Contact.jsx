@@ -5,25 +5,19 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [emailTouched, setEmailTouched] = useState(false);
   const [emailError, setEmailError] = useState('');
-
   const [name, setName] = useState('');
   const [nameTouched, setNameTouched] = useState(false);
   const [nameError, setNameError] = useState('');
-
   const [surname, setSurname] = useState('');
   const [surnameTouched, setSurnameTouched] = useState(false);
   const [surnameError, setSurnameError] = useState('');
-
   const [telephone, setTelephone] = useState('');
   const [telephoneTouched, setTelephoneTouched] = useState(false);
   const [telephoneError, setTelephoneError] = useState('');
-
   const [message, setMessage] = useState('');
   const [messageTouched, setMessageTouched] = useState(false);
   const [messageError, setMessageError] = useState('');
-
   const [showAlert, setShowAlert] = useState(false);
-
   const [missingFields, setMissingFields] = useState([]);
 
   const handleSubmit = async (e) => {
@@ -46,6 +40,7 @@ const Contact = () => {
 
     if (missing.length > 0) {
       setMissingFields(missing);
+      alert('Hay campos vacios. Por favor, completa todos los campos son obligatorios.');
       return;
     }
 
@@ -64,6 +59,7 @@ const Contact = () => {
     setMessageError('');
   };
 
+
   const handleCloseAlert = () => {
     setShowAlert(false);
   };
@@ -71,113 +67,121 @@ const Contact = () => {
   return (
     <>
       <div className='jobs-container-contact-with-us'>
-        <h2 className='titleJobs'>Contacta con Nosotros</h2>
-        <div className='jobs-section-contact-with-us'>
-          <form onSubmit={handleSubmit}>
-            <div className="contact-form-contact-with-us">
-              <div className='input-group-row'>
-                <div className='input-group-name-contact-with-us'>
-                    <label htmlFor="name-contact-with-us">Nombre:</label>
-                    <input
-                      type="text"
-                      id="name-contact-with-us"
-                      value={name}
-                      placeholder='Introduce tu nombre'
-                      onChange={(e) => setName(e.target.value)}
-                      onBlur={() => {
-                        setNameTouched(true);
-                            if (!name.trim()) {
-                            setNameError();
-                        }
-                      }}
-                      className={`input-field ${nameError && nameTouched? 'error' : ''}`}
-                    />
-                    {nameError && <p>{nameError}</p>}
-                  </div>
 
-                  <div className='input-group-surname-contact-with-us'>
-                    <label htmlFor="surname-contact-with-us">Apellido:</label>
-                    <input
-                      type="text"
-                      id="surname-contact-with-us"
-                      value={surname}
-                      placeholder='Introduce tu apellido'
-                      onChange={(e) => setSurname(e.target.value)}
-                      onBlur={() => {
-                        setSurnameTouched(true);
+        <h2 className='titleJobs'>¿Quieres mas información? <br></br>Contacta con Nosotros</h2>
+        <br></br>
+        
+        <form onSubmit={handleSubmit}>
+
+            <div className="contact-form-contact-with-us">
+              
+                  <div className="input-group-contact-row">
+
+                    <div className="input-group-name-contact-with-us">
+                      <label htmlFor="name-contact-with-us">Nombre:</label>
+                      <input
+                        type="text"
+                        id="name-contact-with-us"
+                        value={name}
+                        placeholder="Introduce tu nombre"
+                        onChange={(e) => setName(e.target.value)}
+                        onBlur={() => {
+                          setNameTouched(true);
+                          if (!name.trim()) {
+                            setNameError();
+                          }
+                        }}
+                        className={`input-field ${nameError && nameTouched ? 'error' : ''}`}
+                      />
+                      {nameError && <p>{nameError}</p>}
+                    </div>
+
+                    <div className="input-group-surname-contact-with-us">
+                      <label htmlFor="surname-contact-with-us">Apellido:</label>
+                      <input
+                        type="text"
+                        id="surname-contact-with-us"
+                        value={surname}
+                        placeholder="Introduce tu apellido"
+                        onChange={(e) => setSurname(e.target.value)}
+                        onBlur={() => {
+                          setSurnameTouched(true);
                           if (!surname.trim()) {
                             setSurnameError();
-                            }
-                      }}
-                      className={`input-field ${surnameError && surnameTouched? 'error' : ''}`}
-                    />
-                    {surnameError && <p>{surnameError}</p>}
-                  </div>
-              </div>
-             <div className='input-group-row'>         
-                  <div className='input-group-telephone-contact-with-us'>
-                    <label htmlFor="telephone-contact-with-us">Teléfono:</label>
-                    <input
-                      type="tel"
-                      id="telephone-contact-with-us"
-                      value={telephone}
-                      placeholder='Introduce tu telféfono'
-                      onChange={(e) => setTelephone(e.target.value)}
-                      onBlur={() =>{
-                        setTelephoneTouched(true);
-                        if (!telephone.trim()) {
-                          setTelephoneError();
-                    }
-                      } }
+                          }
+                        }}
+                        className={`input-field ${surnameError && surnameTouched ? 'error' : ''}`}
+                      />
+                      {surnameError && <p>{surnameError}</p>}
+                    </div>
 
-                      className={`input-field ${telephoneError && telephoneTouched? 'error' : ''}`}
+                  </div>
+
+                  <div className="input-group-contact-row">
+
+                    <div className="input-group-telephone-contact-with-us">
+                      <label htmlFor="telephone-contact-with-us">Teléfono:</label>
+                      <input
+                        type="tel"
+                        id="telephone-contact-with-us"
+                        value={telephone}
+                        placeholder="Introduce tu telféfono"
+                        onChange={(e) => setTelephone(e.target.value)}
+                        onBlur={() => {
+                          setTelephoneTouched(true);
+                          if (!telephone.trim()) {
+                            setTelephoneError();
+                          }
+                        }}
+                        className={`input-field ${telephoneError && telephoneTouched ? 'error' : ''}`}
                       />
                       {telephoneError && <p>{telephoneError}</p>}
+                    </div>
+
+                    <div className="input-group-email-contact-with-us">
+                      <label htmlFor="email-contact-with-us">Correo Electrónico:</label>
+                      <input
+                        type="email"
+                        id="email-contact-with-us"
+                        value={email}
+                        placeholder="Introduce tu correo electrónico"
+                        onChange={(e) => setEmail(e.target.value)}
+                        onBlur={() => {
+                          setEmailTouched(true);
+                          if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+                            setEmailError();
+                          }
+                        }}
+                        className={`input-field half-width ${missingFields.includes('Introduce email') && emailTouched ? 'error' : ''}`}
+                      />
+                      {emailError && <p>{emailError}</p>}
+                    </div>
+
                   </div>
 
-                  <div className='input-group-email-contact-with-us'>
-                    <label htmlFor="email-contact-with-us">Correo Electrónico:</label>
-                    <input
-                      type="email"
-                      id="email-contact-with-us"
-                      value={email}
-                      placeholder='Introduce tu correo electrónico'
-                      onChange={(e) => setEmail(e.target.value)}
+                  <div className="input-group-message-contact-with-us">
+                    <label htmlFor="message-contact-with-us">Mensaje:</label>
+                    <textarea
+                      id="message-contact-with-us"
+                      value={message}
+                      placeholder="Introduce tu consulta"
+                      onChange={(e) => setMessage(e.target.value)}
                       onBlur={() => {
-                        setEmailTouched(true); 
-                          if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-                          setEmailError();
+                        setMessageTouched(true);
+                        if (message.length < 5) {
+                          setMessageError();
                         }
                       }}
-                      className={`input-field half-width ${missingFields.includes('Introduce email') && emailTouched ? 'error' : ''}`}
+                      required
+                      className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
                     />
-                    {emailError && <p>{emailError}</p>}
-                  </div>             
+                    {messageError && <p>{messageError}</p>}
+                  </div>
+                      
+                  <div className="submit-button-wrapper-contact-with-us">
+                      <button type="submit" className="submit-button-contact-with-us">Enviar Mensaje</button>
+                  </div>
               </div>
-
-              <div className='input-group-message-contact-with-us'>
-                <label htmlFor="message-contact-with-us">Mensaje:</label>
-                <textarea
-                  id="message-contact-with-us"
-                  value={message}
-                  placeholder='Introduce tu consulta'
-                  onChange={(e) => setMessage(e.target.value)}
-                  onBlur={() => {
-                    setMessageTouched(true);
-                    if (message.length < 5) {
-                      setMessageError();
-                      }
-                    }}
-                  required
-                  className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                />
-                {messageError && <p>{messageError}</p>}
-              </div>
-
-              <div className="submit-button-wrapper-contact-with-us">
-                <button type="submit" className="submit-button-contact-with-us">Enviar Mensaje</button>
-              </div>
-            </div>
           </form>
           {showAlert && (
             <div className="alert">
@@ -186,8 +190,7 @@ const Contact = () => {
             </div>
           )}
         </div>
-      </div>
-    </>
+      </>
   );
 };
 
