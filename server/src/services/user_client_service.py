@@ -74,12 +74,12 @@ class UserClientService():
             
             encrypted_password = generate_password_hash(password, 'pbkdf2', 30)
             
-            # Comprobamos si email y password son unicos
-            with connection.cursor() as cursor:
-                cursor.callproc('sp_check_user_uniqueness', (user_table.email, encrypted_password))
-                affected_rows = cursor.rowcount
-            if affected_rows > 0:
-                raise ValueError("Email or password already exists")
+            # # Comprobamos si email y password son unicos
+            # with connection.cursor() as cursor:
+            #     cursor.callproc('sp_check_user_uniqueness', (user_table.email, encrypted_password))
+            #     affected_rows = cursor.rowcount
+            # if affected_rows > 0:
+            #     raise ValueError("Email or password already exists")
             
             
             with connection.cursor() as cursor:
