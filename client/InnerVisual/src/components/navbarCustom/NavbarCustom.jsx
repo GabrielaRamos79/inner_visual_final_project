@@ -1,37 +1,85 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../../assets/img/logo.svg';
 import './navbarCustom.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/AuthContext';
 
-const NavbarCustom = () => {
-  const { isLoggedIn } = useContext(UserContext);
-  console.log('Navbar isLoggedIn:', isLoggedIn);
+function NavbarCustom() {
+  const { isLoggedIn, logout, user } = useContext(UserContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoginPage, setIsLoginPage] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  }
+
+  useEffect(() => {
+    setIsLoginPage(location.pathname === '/login');
+  }, [location.pathname]);
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar-custom">
-      <Container>
-        <Navbar.Brand as={Link} to="/" className="navbar-brand-custom fs-4">Inner-Visuals</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/" className='nav-link-custom'>Home</Nav.Link>
-            <Nav.Link as={Link} to="/cursos" className='nav-link-custom'>Cursos</Nav.Link>
-            <Nav.Link as={Link} to="/about" className='nav-link-custom'>About</Nav.Link>
-          </Nav>
-          <Nav>
-            {isLoggedIn && (
-              <Nav.Link as={Link} to="/area-personal" className='nav-link-custom'>Área Personal</Nav.Link>
-            )}
-            <Nav.Link as={Link} to="/login" className='nav-link-custom'>
-              Login/Registro
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <nav className={`navbar ${menuOpen ? 'menuOpen' : ''}`}>
+        <div className="burger" onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+
+        <div className="overlay" onClick={toggleMenu}></div>
+
+        <Link to="/">
+          <img className="link" id="logo" src={logo} alt="logo Inner Visuals" />
+        </Link>
+
+        <div className="iconHolder">
+          <Link to="/" className="nav-link-custom">
+              <h3 className='links closeactive'>home</h3>
+          </Link>
+
+          <Link to="/about" className="nav-link-custom">
+            <div className="aboutLink">
+              <h3 className='links closeactive'>about</h3>
+            </div>
+          </Link>
+
+          <Link to="/cursos" className="nav-link-custom">
+            <div className="cursosLink">
+              <h3 className='links closeactive'>cursos</h3>
+            </div>
+          </Link>
+
+          <Link to="/client/dashboard" className="nav-link-custom">
+            <div className="areaLink">
+              <h3 className='links closeactive'>área privada</h3>
+            </div>
+          </Link>
+
+          {isLoggedIn ? (
+            <div className="nav-link-custom" onClick={handleLogout}>
+              <div className="logoutLink">
+                <h3 className='links closeactive'>logout</h3>
+              </div>
+            </div>
+          ) : (
+            <Link to="/login" className="nav-link-custom">
+              <div className="loginLink">
+                <h3 className='links closeactive'>login</h3>
+              </div>
+            </Link>
+          )}
+        </div>
+      </nav >
+      
+    </>
   );
 }
 
