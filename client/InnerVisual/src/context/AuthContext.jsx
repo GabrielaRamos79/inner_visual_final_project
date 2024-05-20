@@ -4,12 +4,12 @@ import { useCookies } from 'react-cookie';
 
 export const UserContext = createContext();
 
-// eslint-disable-next-line react/prop-types
+
 export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-  const [cookies, removeCookie] = useCookies([
-    "id_user", 
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "id_user",
     "name",
     "surname",
     "email",
@@ -30,13 +30,12 @@ export const UserProvider = ({ children }) => {
         surnamePerson: cookies.user_type,
       });
       setIsLoggedIn(true);
-    }else{
+    } else {
       setIsLoggedIn(false)
     }
   }, [cookies]);
 
   const logout = () => {
-    // Borrar las cookies específicas
     removeCookie("id_user");
     removeCookie("name");
     removeCookie("surname");
@@ -44,17 +43,17 @@ export const UserProvider = ({ children }) => {
     removeCookie("phone");
     removeCookie("photo");
     removeCookie("user_type");
-    // Actualizar el estado del usuario a null
+
     setUser(null);
-    // Actualizar el estado de autenticación a false
+
     setIsLoggedIn(false);
- };
+  };
 
 
   return (
     <UserContext.Provider value={{ user, setUser, isLoggedIn, logout }}>
       {children}
     </UserContext.Provider>
- );
+  );
 
 };

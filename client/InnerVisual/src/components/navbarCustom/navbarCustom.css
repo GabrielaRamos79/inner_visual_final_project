@@ -23,7 +23,8 @@
   text-decoration: none;
   color: #333;
   }
-  a:after {
+  
+  .nav-link-custom:after {
   content: "";
   position: absolute;
   bottom: 0;
