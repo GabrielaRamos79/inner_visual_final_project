@@ -1,29 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import './VideoCard.css';
+import './videoCard.css'
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import ReactPlayer from 'react-player';
 
-const VideoCard = ({ match }) => {
-  const [video, setVideo] = useState({});
-
-  useEffect(() => {
-    const fetchVideoById = async () => {
-      try {
-        const response = await fetch(`http://localhost:5000/videos/${match.params.id}`);
-        const data = await response.json();
-        setVideo(data);
-      } catch (error) {
-        console.error("Error fetching video details:", error);
-      }
-    };
-
-    fetchVideoById();
-  }, [match]);
-
+const VideoCard = ({ video }) => {
   return (
-    <div className="video-card">
-      <h3>{video.title}</h3>
-      <p>{video.description}</p>
-      {/* Тут можна додати елементи для відтворення відео */}
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <ReactPlayer url={video.url_video} controls={true} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>{video.title_video}</Col>
+        <Col className="scrollable-text">{video.description}</Col>
+      </Row>
+      <Row>
+        <Col>NOTAS</Col>
+      </Row>
+    </Container>
   );
 };
 
