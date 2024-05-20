@@ -17,7 +17,31 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault(); 
-  
+    
+    let isValid = true;
+
+    if (!userName ||!surname ||!email ||!password ||!phone) {
+        isValid = false;
+        Swal.fire('Error', 'Debes completar todos los campos', 'error');
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        isValid = false;
+        Swal.fire('Error', 'El correo electrónico no es válido', 'error');
+        return;
+    }
+    if (password.length < 8) {
+        isValid = false;
+        Swal.fire('Error', 'La contraseña debe tener al menos 8 caracteres', 'error');
+        return;
+    }
+    if (phone.length < 8) {
+      isValid = false;
+      Swal.fire('Error', 'El teléfono debe tener al menos 9', 'error');
+      return;
+  }
     const formObject = {
       name: userName,
       surname: surname,
@@ -38,7 +62,7 @@ const Register = () => {
   };
   return (
     <>
-    <Container>
+    {/* <Container>
       <form className='registerForm'  onSubmit={handleSubmit} >
         <section className='containerForm'>
           <h2 className='dates_products d-flex justify-content-center'>Registro</h2>
@@ -73,7 +97,71 @@ const Register = () => {
           <button type="submit" className='sendBotton'>Comprar</button>
         </section>
       </form>
-    </Container>
+    </Container> */}
+
+<div className="container d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+  <form onSubmit={handleSubmit}>
+    <h2 className='title'>Registro</h2>
+    <div className="form-outline mb-4">
+      <label className="form-label" htmlFor="form2Example1">Nombre</label>
+      <input type="text"
+        id="form2Example1"
+        className="form-control" 
+        name="name"
+        value={userName}
+        onChange={(e) => setuserName(e.target.value)} /> 
+    </div>
+    <div className="form-outline mb-4">
+      <label className="form-label" htmlFor="form2Example2">Apellido</label>
+      <input type="text"
+        id="form2Example2"
+        className="form-control"
+        name="surname"
+        value={surname}
+        onChange={(e) => setSurname(e.target.value)} /> 
+    </div>
+    <div className="form-outline mb-4">
+      <label className="form-label" htmlFor="form2Example3">Teléfono</label>
+      <input type="text"
+        id="form2Example3"
+        className="form-control"
+        name="phone"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)} /> 
+         
+    </div>
+    <div className="form-outline mb-4">
+      <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Foto :</Form.Label>
+        <Form.Control type="file" onChange={(e) => setSelectedFile(e.target.files[0])} />
+      </Form.Group>
+    </div>
+    <div className="form-outline mb-4">
+      <label className="form-label" htmlFor="form2Example4">Email</label>
+      <input type="email"
+        id="form2Example4"
+        className="form-control"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)} />
+    </div>
+    {/* <div className="form-outline mb-4">
+      <label className="form-label" htmlFor="form2Example5">Password</label>
+      <input type="text"
+        id="form2Example5"
+        className="form-control"
+         />
+    </div> */}
+    <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+      <Form.Control
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+        type="password"
+        id="inputPassword5"
+        aria-describedby="passwordHelpBlock"
+      />
+    <button type="submit" className="btn btn-primary btn-block mb-4">Enviar</button>
+  </form>
+</div>
     </>
   )
 }
