@@ -22,12 +22,14 @@ const NavbarCustom = () => {
             <Nav.Link as={Link} to="/about" className='nav-link-custom'>About</Nav.Link>
           </Nav>
           <Nav>
-            {isLoggedIn && (
+            {!isLoggedIn && (
               <Nav.Link as={Link} to="/area-personal" className='nav-link-custom'>Área Personal</Nav.Link>
             )}
-            <Nav.Link as={Link} to="/login" className='nav-link-custom'>
-              Login/Registro
-            </Nav.Link>
+          
+              <Nav.Link as={Link} to="/login" className='nav-link-custom'>
+                Login/Registro
+              </Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
