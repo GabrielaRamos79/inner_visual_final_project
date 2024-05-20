@@ -14,7 +14,7 @@ class UserContentService():
                 result = cursor.fetchall()
                 print(result)
 
-            users_content_json = [{"id_user_content": row[0], "id_user": row[1], "name": row[2], "surname": row[3], "id_content": row[4],  "title_video": row[5], "status_video": row[6]} for row in result]
+            users_content_json = [{"id_user_content": row[0], "id_user": row[1], "name": row[2], "surname": row[3], "id_content": row[4],  "title_video": row[5], "status_video": row[6], "notes": row[7]} for row in result]
             connection.close()
             return users_content_json
         except Exception as ex:

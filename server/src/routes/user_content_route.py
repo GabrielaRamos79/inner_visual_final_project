@@ -19,8 +19,9 @@ def post_user_content():
     userFK = request.json['userFK']
     contentFK = request.json['contentFK']
     status_video = request.json['status_video']
+    
 
-    user_content_table = User_content(0, userFK, contentFK, status_video)
+    user_content_table = User_content(0, userFK, contentFK, status_video, None)
     post_user_content = UserContentService.post_user_content(user_content_table)
     print(post_user_content)
     return 'Registro exitoso'

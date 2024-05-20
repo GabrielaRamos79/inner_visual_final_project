@@ -1,16 +1,35 @@
 import './levelCourse.css'
-import React from 'react'
 import ReactPlayer from 'react-player'
 import Accordion from 'react-bootstrap/Accordion';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import React, { useEffect, useState } from 'react';
+import VideoCard from '../videoCard/VideoCard';
+
 // Render a YouTube video player
 
 const LevelsCourse = () => {
+
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/content/get_content/');
+        const data = await response.json();
+        setVideos(data);
+      } catch (error) {
+        console.error("Error fetching videos:", error);
+      }
+    };
+
+    fetchVideos();
+  }, []);
+
+
+
   return (
     <>
       <Accordion defaultActiveKey="0">
@@ -24,19 +43,20 @@ const LevelsCourse = () => {
         <Col>
 
         
-              <ButtonGroup vertical>
-                <Button>Button</Button>
-                <Button>Button</Button>
-                <Button>Button</Button>
-                <Button>Button</Button>
-              </ButtonGroup>
+        <ul>
+        {videos.map((video) => (
+          <li key={video.id} onClick={() => window.location.href = `/video/${video.id}`}>
+            {video.title_video}
+          </li>
+        ))}
+      </ul>
             
         </Col>
 
         <Col>
 
         <Container>
-              <Row>
+              {/* <Row>
                 <Col>
                   <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls={true} />
                 </Col>
@@ -47,7 +67,8 @@ const LevelsCourse = () => {
               </Row>
               <Row>
                 <Col>NOTAS</Col>
-              </Row>
+              </Row> */}
+              <VideoCard/>
             </Container>
 
         </Col>
@@ -76,6 +97,7 @@ const LevelsCourse = () => {
 
 
       <p>Niveles del curso</p>
+      
     </>
   )
 }

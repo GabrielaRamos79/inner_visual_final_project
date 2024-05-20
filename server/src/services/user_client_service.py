@@ -1,6 +1,6 @@
 from src.database.db_mysql import get_connection
-from werkzeug.security import generate_password_hash
 from src.models.user_model import User
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # from werkzeug.security import generate_password_hash
 
@@ -58,6 +58,43 @@ class UserClientService():
         finally:
             connection.close()
             
+    # @classmethod
+    # def post_user(cls, user_table:User):
+    #     try:
+    #         connection  = get_connection()
+    #         print(connection)
+    #         #id_user = user_table.id_user
+    #         name = user_table.name
+    #         surname = user_table.surname
+    #         password = user_table.password
+    #         email = user_table.email
+    #         phone = user_table.phone
+    #         photo = user_table.photo
+    #         user_typeFK = user_table.user_typeFK
+            
+    #         encrypted_password = generate_password_hash(password, 'pbkdf2', 30)
+            
+    #         # Comprobamos si email y password son unicos
+    #         with connection.cursor() as cursor:
+    #             cursor.callproc('sp_check_user_uniqueness', (user_table.email, encrypted_password))
+    #             affected_rows = cursor.rowcount
+    #         if affected_rows > 0:
+    #             raise ValueError("Email or password already exists")
+            
+            
+    #         with connection.cursor() as cursor:
+                
+    #             # cursor.execute("INSERT INTO user(id_user, name_user, password_user, id_user_typeFK) VALUES ({0}, '{1}', '{2}', {3})"
+    #                         #    .format(id_user,name_user,password_user,user_typeFK))
+    #             cursor.callproc('sp_post_user', (name,surname,encrypted_password,email,phone,photo,user_typeFK))
+    #             connection.commit()
+    #             print('User added successfully')
+    #         connection.close()
+    #         return "Data base is close"
+    #     except Exception as ex:
+    #         print(ex)
+    
+    
     @classmethod
     def post_user(cls, user_table:User):
         try:
@@ -72,16 +109,15 @@ class UserClientService():
             photo = user_table.photo
             user_typeFK = user_table.user_typeFK
             
-            encrypted_password = generate_password_hash(password, 'pbkdf2', 30)
-            
-            # Comprobamos si email y password son unicos
             with connection.cursor() as cursor:
-                cursor.callproc('sp_check_user_uniqueness', (user_table.email, encrypted_password))
-                affected_rows = cursor.rowcount
-            if affected_rows > 0:
+                cursor.execute("SELECT COUNT(*) FROM user WHERE email = %s", (email,))
+                result = cursor.fetchone()[0]
+            if result > 0:
                 raise ValueError("Email or password already exists")
             
             
+            encrypted_password = generate_password_hash(password, 'pbkdf2', 30)
+             
             with connection.cursor() as cursor:
                 
                 # cursor.execute("INSERT INTO user(id_user, name_user, password_user, id_user_typeFK) VALUES ({0}, '{1}', '{2}', {3})"
@@ -92,8 +128,10 @@ class UserClientService():
             connection.close()
             return "Data base is close"
         except Exception as ex:
-            print(ex)
+            print(ex)    
             
+            
+                
     @classmethod
     def patch_user(cls, user_table:User):
         try:
