@@ -1,16 +1,20 @@
-import './videoCard.css'
+import './videoCard.css';
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ReactPlayer from 'react-player';
 
-const VideoCard = ({ video }) => {
+const VideoCard = ({ video, onVideoComplete }) => {
   return (
     <Container>
       <Row>
         <Col>
-          <ReactPlayer url={video.url_video} controls={true} />
+          <ReactPlayer 
+            url={video.url_video} 
+            controls={true} 
+            onEnded={() => onVideoComplete(video)}  // Додаємо зворотний виклик для обробки завершення відео
+          />
         </Col>
       </Row>
       <Row>
