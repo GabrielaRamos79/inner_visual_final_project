@@ -1,3 +1,4 @@
+import React from 'react';
 import './review.css'
 import review1 from '../../assets/img/review1.jpg';
 import review2 from '../../assets/img/review2.jpg';
