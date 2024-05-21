@@ -1,46 +1,87 @@
-import React from 'react';
-import './navbarCustom.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from '../../assets/img/logo.svg';
+import './navbarCustom.css';
+import { UserContext } from '../../context/AuthContext';
 
+function NavbarCustom() {
+  const { isLoggedIn, logout, user } = useContext(UserContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoginPage, setIsLoginPage] = useState(false);
 
-const NavbarCustom = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  }
+
+  useEffect(() => {
+    setIsLoginPage(location.pathname === '/login');
+  }, [location.pathname]);
+
   return (
     <>
-    <Navbar collapseOnSelect expand="lg" className="navbar-custom">
-      <Container>
-        <Navbar.Brand href="#home" className="navbar-brand-custom fs-4">Inner-Visuals</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features" className='nav-link-custom'>Home</Nav.Link>
-            <Nav.Link href="#pricing" className='nav-link-custom'>Cursos</Nav.Link>
-            <Nav.Link href="#pricing" className='nav-link-custom'>About</Nav.Link>
-            {/* <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets" className='nav-link-custom'>Área Personal</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes" className='nav-link-custom'>
-              Login/Registro
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <nav className={`navbar ${menuOpen ? 'menuOpen' : ''}`}>
+        <div className="burger" onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+
+        <div className="overlay" onClick={toggleMenu}></div>
+
+        <Link to="/">
+          <img className="link" id="logo" src={logo} alt="logo Inner Visuals" />
+        </Link>
+
+        <div className="iconHolder">
+          <Link to="/" className="nav-link-custom">
+            <h3 className='links closeactive'>home</h3>
+          </Link>
+
+          <Link to="/about" className="nav-link-custom">
+            <div className="aboutLink">
+              <h3 className='links closeactive'>about</h3>
+            </div>
+          </Link>
+
+          <Link to="/cursos" className="nav-link-custom">
+            <div className="cursosLink">
+              <h3 className='links closeactive'>cursos</h3>
+            </div>
+          </Link>
+
+          {isLoggedIn && (
+            <Link to="/client/dashboard" className="nav-link-custom">
+              <div className="areaLink">
+                <h3 className='links closeactive'>área privada</h3>
+              </div>
+            </Link>
+          )}
+
+          {isLoggedIn ? (
+            <div className="nav-link-custom" onClick={handleLogout}>
+              <div className="logoutLink">
+                <h3 className='links closeactive'>logout</h3>
+              </div>
+            </div>
+          ) : (
+            <Link to="/login" className="nav-link-custom">
+              <div className="loginLink">
+                <h3 className='links closeactive'>login</h3>
+              </div>
+            </Link>
+          )}
+        </div>
+      </nav>
     </>
-  )
+  );
 }
 
-export default NavbarCustom
+export default NavbarCustom;
