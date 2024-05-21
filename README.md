@@ -85,8 +85,6 @@ pytest==8.2.0
 
 ## 👩‍💻FEMCODERS:
 
-
-
 - [Yamila Robles](https://github.com/Yamila17)- Scrum Master
 
 - [Inés Gallo](https://github.com/inesgallo)- Product Owner 
