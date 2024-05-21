@@ -1,0 +1,211 @@
+{
+  "hash": "5077060a",
+  "configHash": "0b2bfd55",
+  "lockfileHash": "a9768445",
+  "browserHash": "8b81c1a7",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "4093dfa3",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "0986276c",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "92ffd492",
+      "needsInterop": false
+    },
+    "react-cookie": {
+      "src": "../../node_modules/react-cookie/esm/index.mjs",
+      "file": "react-cookie.js",
+      "fileHash": "16218eb3",
+      "needsInterop": false
+    },
+    "sweetalert2": {
+      "src": "../../node_modules/sweetalert2/dist/sweetalert2.all.js",
+      "file": "sweetalert2.js",
+      "fileHash": "908cf5f6",
+      "needsInterop": true
+    },
+    "react-bootstrap/Container": {
+      "src": "../../node_modules/react-bootstrap/esm/Container.js",
+      "file": "react-bootstrap_Container.js",
+      "fileHash": "f947c208",
+      "needsInterop": false
+    },
+    "react-bootstrap/Row": {
+      "src": "../../node_modules/react-bootstrap/esm/Row.js",
+      "file": "react-bootstrap_Row.js",
+      "fileHash": "a4a65595",
+      "needsInterop": false
+    },
+    "react-bootstrap/Col": {
+      "src": "../../node_modules/react-bootstrap/esm/Col.js",
+      "file": "react-bootstrap_Col.js",
+      "fileHash": "03637cfa",
+      "needsInterop": false
+    },
+    "react-bootstrap/Form": {
+      "src": "../../node_modules/react-bootstrap/esm/Form.js",
+      "file": "react-bootstrap_Form.js",
+      "fileHash": "da4b41a1",
+      "needsInterop": false
+    },
+    "react-player": {
+      "src": "../../node_modules/react-player/lib/index.js",
+      "file": "react-player.js",
+      "fileHash": "ced4a670",
+      "needsInterop": true
+    },
+    "react-bootstrap/Accordion": {
+      "src": "../../node_modules/react-bootstrap/esm/Accordion.js",
+      "file": "react-bootstrap_Accordion.js",
+      "fileHash": "4195b616",
+      "needsInterop": false
+    },
+    "react-bootstrap/Button": {
+      "src": "../../node_modules/react-bootstrap/esm/Button.js",
+      "file": "react-bootstrap_Button.js",
+      "fileHash": "b0528c50",
+      "needsInterop": false
+    },
+    "react-bootstrap/ButtonGroup": {
+      "src": "../../node_modules/react-bootstrap/esm/ButtonGroup.js",
+      "file": "react-bootstrap_ButtonGroup.js",
+      "fileHash": "7919b0f2",
+      "needsInterop": false
+    },
+    "react-bootstrap/Carousel": {
+      "src": "../../node_modules/react-bootstrap/esm/Carousel.js",
+      "file": "react-bootstrap_Carousel.js",
+      "fileHash": "46a094a2",
+      "needsInterop": false
+    },
+    "react-bootstrap": {
+      "src": "../../node_modules/react-bootstrap/esm/index.js",
+      "file": "react-bootstrap.js",
+      "fileHash": "40aea6df",
+      "needsInterop": false
+    },
+    "react-rating-stars-component": {
+      "src": "../../node_modules/react-rating-stars-component/dist/react-stars.js",
+      "file": "react-rating-stars-component.js",
+      "fileHash": "a5368201",
+      "needsInterop": true
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "898ddf1f",
+      "needsInterop": false
+    },
+    "jwt-decode": {
+      "src": "../../node_modules/jwt-decode/build/esm/index.js",
+      "file": "jwt-decode.js",
+      "fileHash": "255a14fa",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "Wistia-PV7JYAMK": {
+      "file": "Wistia-PV7JYAMK.js"
+    },
+    "Twitch-M6DCFNLJ": {
+      "file": "Twitch-M6DCFNLJ.js"
+    },
+    "DailyMotion-3OR4QAM6": {
+      "file": "DailyMotion-3OR4QAM6.js"
+    },
+    "Mixcloud-B3RBU24F": {
+      "file": "Mixcloud-B3RBU24F.js"
+    },
+    "Vidyard-KVGVKQKC": {
+      "file": "Vidyard-KVGVKQKC.js"
+    },
+    "Kaltura-75RAMBTT": {
+      "file": "Kaltura-75RAMBTT.js"
+    },
+    "FilePlayer-LCP3FI55": {
+      "file": "FilePlayer-LCP3FI55.js"
+    },
+    "Preview-CV7644MU": {
+      "file": "Preview-CV7644MU.js"
+    },
+    "YouTube-AIXQOBRO": {
+      "file": "YouTube-AIXQOBRO.js"
+    },
+    "SoundCloud-22H5LE7T": {
+      "file": "SoundCloud-22H5LE7T.js"
+    },
+    "Vimeo-HVHHI3CX": {
+      "file": "Vimeo-HVHHI3CX.js"
+    },
+    "Mux-YEOG4USZ": {
+      "file": "Mux-YEOG4USZ.js"
+    },
+    "Facebook-2TV6ACKQ": {
+      "file": "Facebook-2TV6ACKQ.js"
+    },
+    "Streamable-CYAVZGA4": {
+      "file": "Streamable-CYAVZGA4.js"
+    },
+    "chunk-2IEUGLZN": {
+      "file": "chunk-2IEUGLZN.js"
+    },
+    "chunk-FHQTBV4O": {
+      "file": "chunk-FHQTBV4O.js"
+    },
+    "chunk-3GGCMYPV": {
+      "file": "chunk-3GGCMYPV.js"
+    },
+    "chunk-EPH4SQ2X": {
+      "file": "chunk-EPH4SQ2X.js"
+    },
+    "chunk-BKSJDMYA": {
+      "file": "chunk-BKSJDMYA.js"
+    },
+    "chunk-TEOI4WTH": {
+      "file": "chunk-TEOI4WTH.js"
+    },
+    "chunk-GRRBNRTN": {
+      "file": "chunk-GRRBNRTN.js"
+    },
+    "chunk-LPHAFMUU": {
+      "file": "chunk-LPHAFMUU.js"
+    },
+    "chunk-AK2TGJ2E": {
+      "file": "chunk-AK2TGJ2E.js"
+    },
+    "chunk-LOKWUUCY": {
+      "file": "chunk-LOKWUUCY.js"
+    },
+    "chunk-WXSKVWTA": {
+      "file": "chunk-WXSKVWTA.js"
+    },
+    "chunk-6BY3L3UO": {
+      "file": "chunk-6BY3L3UO.js"
+    },
+    "chunk-QI45BH4Y": {
+      "file": "chunk-QI45BH4Y.js"
+    },
+    "chunk-432SXDBO": {
+      "file": "chunk-432SXDBO.js"
+    },
+    "chunk-3GKG5X4J": {
+      "file": "chunk-3GKG5X4J.js"
+    },
+    "chunk-4JI2AD7N": {
+      "file": "chunk-4JI2AD7N.js"
+    },
+    "chunk-CEQRFMJQ": {
+      "file": "chunk-CEQRFMJQ.js"
+    }
+  }
+}
