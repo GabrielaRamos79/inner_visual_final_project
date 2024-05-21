@@ -86,11 +86,12 @@ pytest==8.2.0
 ## 👩‍💻FEMCODERS:
 
 
-- [Ana Lucena](https://github.com/Analucena53)- FrontEnd Developer
 
 - [Yamila Robles](https://github.com/Yamila17)- Scrum Master
 
 - [Inés Gallo](https://github.com/inesgallo)- Product Owner 
+
+- [Ana Lucena](https://github.com/Analucena53)- FrontEnd Developer
 
 - [Yuliia Bila](https://github.com/YuliiaBi1a)- BackEnd Developer
    
