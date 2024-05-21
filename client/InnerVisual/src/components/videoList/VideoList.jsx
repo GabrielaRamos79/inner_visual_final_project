@@ -9,7 +9,7 @@ const VideoList = ({ videos, onVideoSelect, watchedVideos }) => (
         action
         variant="info"
         onClick={() => onVideoSelect(video)}
-        disabled={index > 0 && !watchedVideos[index - 1]}  // Блокуємо відео, якщо попереднє не переглянуте
+        //disabled={index > 0 && !watchedVideos[index - 1]}  // Блокуємо відео, якщо попереднє не переглянуте
       >
         {video.title_video}
       </ListGroup.Item>
