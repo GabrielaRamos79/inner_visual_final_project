@@ -1,3 +1,7 @@
+.titleUsp {
+margin: 50px;
+}
+
 
 .photoUsp1,
 .photoUsp2 {
@@ -7,39 +11,24 @@
 }
 
 .photoUsp2 {
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 .photo1,
 .photo2 {
     width: 540px;
     height: 360px;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 
 .photo1 {
-    margin-bottom: 20px;
-}
-
-.buttonUsp {
-    margin-bottom: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.buttonUsp:hover {
-    background-color: rgb(0, 0, 141);
+    margin-bottom: 150px;
+    margin-left: 50px;
 }
 
 .textPhoto1,
 .textPhoto2 {
-    margin: 0 80px;
+   margin: 80px;
 }
 
 .titleUsp1,
@@ -58,7 +47,7 @@
     }
 
     .textPhoto1,
-    .textPhoto2 {
+    .divPhoto2 {
         margin-left: 50px;
         margin-right: 50px;
     }
