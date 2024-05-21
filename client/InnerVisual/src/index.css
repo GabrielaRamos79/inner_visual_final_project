@@ -35,11 +35,28 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    margin: 0;
-    font-family: 'Montserrat';
-}
-
+h6,
 p {
     margin: 0;
+    font-family: 'Raleway';
+}
+
+/* PALETA */
+:root {
+    --darkblue: #043B4E;
+    --lightblue: #00B1E2;
+    --orange: #E95115;
+    --black: #000;
+    --white: #FFFFFF;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
 }

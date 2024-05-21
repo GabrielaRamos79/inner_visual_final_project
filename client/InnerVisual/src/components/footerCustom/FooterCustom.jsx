@@ -1,3 +1,4 @@
+import React from 'react'
 import './footerCustom.css'
 import facebook from '../../assets/img/icons/facebook.png'
 import instagram from '../../assets/img/icons/instagram.png'

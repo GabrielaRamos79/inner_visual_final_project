@@ -3,11 +3,13 @@ import React, { useState } from "react";
 //import { faFacebookF, faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Swal from 'sweetalert2';
 import { useUserHandler } from '../../handler/AuthHandler';
+import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { handleLogin } = useUserHandler();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();

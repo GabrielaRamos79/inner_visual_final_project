@@ -1,3 +1,4 @@
+import React from 'react';
 import innerphoto from '../../assets/img/innerphoto.jpg';
 import innerphoto2 from '../../assets/img/innerphoto2.jpg';
 import './usp.css'
