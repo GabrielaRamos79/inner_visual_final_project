@@ -1,3 +1,6 @@
 .registerForm{
     background-color: antiquewhite;
 }
+.container-custom-register{
+    background-color: var(--lightgray);
+}
