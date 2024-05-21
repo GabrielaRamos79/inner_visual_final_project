@@ -34,7 +34,7 @@ export const useUserHandler = () => {
     }
  };
 
- return {handleLogin};
+ return { handleLogin };
 };
 
-export default useUserHandler
+export default useUserHandler;

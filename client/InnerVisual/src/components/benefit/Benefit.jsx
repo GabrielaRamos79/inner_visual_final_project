@@ -1,3 +1,4 @@
+import React from 'react';
 import benefit1 from '../../assets/img/benefit1.jpg';
 import benefit2 from '../../assets/img/benefit2.jpg';
 import './benefit.css'
