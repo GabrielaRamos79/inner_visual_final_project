@@ -79,7 +79,7 @@
 
 
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 840px) {
   .navbar {
     display: flex;
     flex-direction: row-reverse;
@@ -128,6 +128,7 @@
     background-color: var(--lightblue);
     padding-top: 10px;
     padding-right: 15px;
+    text-align: center;
 }
 
 .closeactive {

@@ -19,11 +19,20 @@ function NavbarCustom() {
   const handleLogout = () => {
     logout();
     navigate('/');
-  }
+  };
 
   useEffect(() => {
     setIsLoginPage(location.pathname === '/login');
   }, [location.pathname]);
+
+  const getDashboardLink = () => {
+    if (user?.role === 'admin') {
+      return "/admin/dashboard";
+    } else if (user?.role === 'client') {
+      return "/client/dashboard";
+    }
+    return "/";
+  };
 
   return (
     <>
@@ -57,8 +66,8 @@ function NavbarCustom() {
             </div>
           </Link>
 
-          {isLoggedIn && (
-            <Link to="/client/dashboard" className="nav-link-custom">
+          {isLoggedIn && (user?.role === 'admin' || user?.role === 'client') && (
+            <Link to={getDashboardLink()} className="nav-link-custom">
               <div className="areaLink">
                 <h3 className='links closeactive'>área privada</h3>
               </div>
