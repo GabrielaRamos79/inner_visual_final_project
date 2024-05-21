@@ -2,7 +2,7 @@
 ![InnerVisuals_Logo](https://github.com/GabrielaRamos79/inner_visual_final_project/assets/153823346/07158d6f-9108-4a4c-b99a-9734d3c1d8d6)
 
 
-¿En qué consiste nuestro proyecto?
+## ¿En qué consiste nuestro proyecto?
 
 El cliente desea una plataforma digital en la cual sus clientes puedan ingresar sus datos y logearse para acceder previo pago a su curso relacionado con la meditación y el deporte. 
 
@@ -19,12 +19,12 @@ El administrador gestionará los pagos de forma auromatizada en el futuro pero p
 
 La navegación a traves de la aplicación será intuitiva y fluida, facilitando a los usuarios la realización del curso a su ritmo.
 
-Distinción FORMAL de roles:
+## Distinción FORMAL de roles:
 
 Administrador: podrán mostrar, insertar, modificar y eliminar sus videos.
 Clientes: podrán explorar la aplicación, adquirir el curso, ver los videos y tomar notas de forma virtual.
 
-Instrucciones para iniciar la aplicación:
+## Instrucciones para iniciar la aplicación:
 Baja o has un fork del proyecto a tu pc. Abre en Visual Code el proyecto. Inicializa la aplicación.
 Fontend: Estando dentro del proyecto instalaremos todas las dependencias desde bash con el comando 'npm install'. Ingresar en /client/inner_visual_final_project y correr la aplicación con el comando 'npm run dev'.
 Backend: Estando dentro del proyecto iniciar MySQL desde la aplicación XAAMP. Ingresar en /inner_visual_final_project/server .Abriremos otro bash en nuestra terminal e instalaremos todo lo necesario utilizando el comando 'pip install-r.requirements.txt' para dependencias, una vez finalizada dicha insntalación iniciamos la aplicación utilizando el comando 'python index.py'.
@@ -42,9 +42,9 @@ Backend: Estando dentro del proyecto iniciar MySQL desde la aplicación XAAMP. I
 
 📱CANVA
 
-🔧 STACKS:
+## 🔧 STACKS:
 
-FRONTEND:
+## FRONTEND:
 
 Framework JavaScript: React
 Gestión de solicitudes HTTP: axios
@@ -57,7 +57,7 @@ Diseño y maquetación: Bootstrap / React-Bootstrap
 Renderizado de componentes: ReactDOM
 Lenguajes y tecnologías web: HTML5, CSS3
 
-BACKEND:
+## BACKEND:
 
 Lenguaje de Programación: Python
 Framework Web: Flask
@@ -83,17 +83,24 @@ pytz==2024.1
 Flask-Cors==4.0.0
 pytest==8.2.0
 
-👩‍💻MIEMBRAS DEL EQUIPO:
+## 👩‍💻FEMCODERS:
 
-Ana Lucena - FrontEnd Developer
-Yamila Robles - Scrum Master
-Inés Gallo - Product Owner 
-Yuliia Bila - BackEnd Developer
-Gabriela Ramos - BackEnd Developer
-Mercedes Suarez - BackEnd Developer
-Elle Sgromo - BackEnd Developer
 
-📚METODOLOGÍA:
+- [Ana Lucena](https://github.com/Analucena53)- FrontEnd Developer
+
+- [Yamila Robles](https://github.com/Yamila17)- Scrum Master
+
+- [Inés Gallo](https://github.com/inesgallo)- Product Owner 
+
+- [Yuliia Bila](https://github.com/YuliiaBi1a)- BackEnd Developer
+   
+- [Gabriela Ramos](https://github.com/GabrielaRamos79)- BackEnd Developer
+
+- [Mercedes Suarez](https://github.com/Mercedes-Suarez)- BackEnd Developer
+  
+- [Elle Sgromo](https://github.com/Elle-FullStack/Elle-FullStack)- BackEnd Developer
+
+## 📚METODOLOGÍA:
 
 Metodología Agile con Scrum
 Mob Programming
