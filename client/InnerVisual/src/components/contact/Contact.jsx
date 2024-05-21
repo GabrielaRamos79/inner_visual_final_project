@@ -24,51 +24,47 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    let hasError = false;
-
     if (!name.trim()) {
       CustomSweetAlertError('El nombre es obligatorio.');
-      hasError = true;
-
+      setNameTouched(true);
+      return;    
     }
 
     if (!surname.trim()) {
       CustomSweetAlertError('El apellido es obligatorio.');
-      hasError = true;  
+      setSurnameTouched(true);
+      return;   
     } 
 
     if (!telephone.trim() || !telephoneRegex.test(telephone)) {
       CustomSweetAlertError('Introduce un teléfono válido.');
-      hasError = true;
+      setTelephoneTouched(true);
+      return;
     } 
 
     if (!emailRegex.test(email)) {
       CustomSweetAlertError('Introduce un email válido.');
-      hasError = true;
+      setEmailTouched(true);
+      return;
     }
 
     if (message.length < 5) {      
       CustomSweetAlertError('El mensaje debe tener al menos 5 caracteres.');
-      hasError = true;
-    }
-
-    if (hasError) {
+      setMessageTouched(true);
       return;
     }
-
     CustomSweetAlertOk('Mensaje enviado correctamente, nuestro administrador se pondará en contacto usted. Gracias');
-
-    setEmail('');
+    
     setName('');
     setSurname('');
     setTelephone('');
+    setEmail('');
     setMessage('');
-    
-
-    setEmailTouched(false);
+       
     setNameTouched(false);
     setSurnameTouched(false);
     setTelephoneTouched(false);
+    setEmailTouched(false);
     setMessageTouched(false);
   };
 
