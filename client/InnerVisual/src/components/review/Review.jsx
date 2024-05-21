@@ -20,48 +20,54 @@ const Review = () => {
           <Carousel.Item>
             <div className='cardsReview'>
               <div className='card1Review'>
-                <h2 className='cardsName'>Lucía Lucena</h2>
-                <p className='cardsP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
+                <h2 className='cardName'>Lucía</h2>
+                <h2 className='cardSurname'>Lucena</h2>
+                <p className='cardP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
                 <img className='review1' src={review1} alt="mujer sonriente moño recogido" />
               </div>
 
               <div className='card2Review'>
-                <h2 className='cardsName'>Raúl González</h2>
-                <p className='cardsP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
+                <h2 className='cardName'>Raúl</h2>
+                <h2 className='cardSurname'>González</h2>
+                <p className='cardP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
                 <img className='review2' src={review2} alt="hombre sonriente pelo rizado" />
               </div>
 
               <div className='card3Review'>
-                <h2 className='cardsName'>María Hernández</h2>
-                <p className='cardsP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
+                <h2 className='cardName'>Ana</h2>
+                <h2 className='cardSurname'>Hernández</h2>
+                <p className='cardP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
                 <img className='review3' src={review3} alt="mujer sonriente pelirroja" />
               </div>
             </div>
           </Carousel.Item>
 
-          {/* <Carousel.Item>
+          <Carousel.Item>
             <div className='cardsReview'>
               <div className='card4Review'>
-                <h2 className='cardsName'>Gabriela Ramos</h2>
-                <p className='cardsP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
+                <h2 className='cardName'>Gabriela</h2>
+                <h2 className='cardSurname'>Ramos</h2>
+                <p className='cardP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
                 <img className='review4' src={review4} alt="mujer con gafas pasta negra, pelo largo liso" />
               </div>
 
               <div className='card5Review'>
-                <h2 className='cardsName'>Javier Escudero</h2>
-                <p className='cardsP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
+                <h2 className='cardName'>Javier</h2>
+                <h2 className='cardSurname'>Escudero</h2>
+                <p className='cardP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
                 <img className='review5' src={review5} alt="hombre moreno con barba" />
               </div>
 
               <div className='card6Review'>
-                <h2 className='cardsName'>Gonzalo Parra</h2>
-                <p className='cardsP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
+                <h2 className='cardName'>Gonzalo</h2>
+                <h2 className='cardSurname'>Parra</h2>
+                <p className='cardP'>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint"</p>
                 <img className='review6' src={review6} alt="hombre sonriente barbudo pelirrojo" />
               </div>
             </div>
-          </Carousel.Item> */}
+          </Carousel.Item>
+          
         </Carousel>
-        <div className='whiteSection'></div>
       </section>
     </>
   );
