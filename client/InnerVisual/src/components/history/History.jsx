@@ -1,3 +1,4 @@
+import React from 'react';
 import './history.css'
 import Carousel from 'react-bootstrap/Carousel';
 import history from '../../assets/img/history.jpg';

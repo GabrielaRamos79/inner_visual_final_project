@@ -7,4 +7,6 @@ module.exports = {
         '\\.css$':'identity-obj-proxy',
     },
     testEnvironment: 'jsdom',
+
+    setupFilesAfterEnv: ['../InnerVisual/jest.setup.js'],
 };

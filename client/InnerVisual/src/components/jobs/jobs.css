@@ -1,6 +1,89 @@
-/* Estilos Comunes para Inputs y Textareas */
-.input-field,
-.textarea-field {
+.jobs-container-contact-work-with-us {
+  text-align: center;
+  padding: 300px;
+}
+
+.titleJobs {
+  margin: 0;
+  font-size: 24px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.jobs-section-contact-work-with-us {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.jobs-section-contact-work-with-us form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-form-contact-work-with-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-group-name-contact-work-with-us-row,
+.input-group-contact-work-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input-group-name-contact-work-with-us,
+.input-group-surname-contact-work-with-us,
+.input-group-telephone-contact-work-with-us,
+.input-group-email-contact-work-with-us {
+  display: flex;
+  flex-direction: column;
+  width: 48%; 
+}
+
+.input-group-name-contact-work-with-us {
+  align-items: flex-start; 
+}
+
+.input-group-surname-contact-work-with-us {
+  align-items: flex-end; 
+}
+
+.input-group-email-contact-work-with-us,
+.input-group-telephone-contact-work-with-us {
+  align-items: flex-start;
+}
+
+.input-group-email-contact-work-with-us {
+  margin-left: 2%; 
+}
+
+.input-group-name-contact-work-with-us label,
+.input-group-surname-contact-work-with-us label,
+.input-group-telephone-contact-work-with-us label,
+.input-group-email-contact-work-with-us label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.input-field {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -9,36 +92,13 @@
   box-sizing: border-box;
 }
 
-/* Ajuste específico para Textareas */
 .textarea-field {
   resize: vertical;
   height: 200px;
   width: 100%;
 }
 
-/* Estilos Específicos para el Contenedor de Jobs */
-.jobs-container-about {
-  text-align: center;
-}
-
-.titleJobs {
-  margin: 0;
-  font-size: 20px;
-  white-space: nowrap;
-  line-height: 1;
-}
-
-.jobs-section {
-  width: 90%;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
-
-.jobs-section form {
+.input-group-message-contact-work-with-us {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,60 +107,19 @@
   width: 100%;
 }
 
-.contact-form-work-with-us {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  width: 80%;
-}
-
-/* .contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  width: 80%;
-} */
-
-.jobs-container-about label {
-  font-weight: bold;
+.input-group-message-contact-work-with-us label {
+  align-self: flex-start;
+  width: 100%; 
   margin-bottom: 5px;
-  display: inline-block;
 }
 
-.input-group-email-work-with-us,
-.input-group-name-work-with-us,
-.input-group-surname-work-with-us,
-.input-group-telephone-work-with-us,
-.input-group-message-work-with-us  {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-.input-group-message {
-  width: 100%;
-}
-
-.input-group-email-work-with-us .half-width,
-.input-group-name-work-with-us .half-width,
-.input-group-surname-work-with-us .half-width,
-.input-group-telephone-work-with-us .half-width {
-  width: 75%;
-}
-
-.submit-button-wrapper-work-with-us {
+.submit-button-wrapper-contact-work-with-us {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
 .submit-button-contact-work-with-us {
-  width: fit-content;
   padding: 10px 20px;
   color: black;
   border: none;
@@ -108,29 +127,65 @@
   cursor: pointer;
   font-size: 20px;
   text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .alert {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #007bff;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-  padding: 10px 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  width: 80%;
+  text-align: center;
+  position: relative;
 }
 
-.close-btn {
+.close-btn-contact-work-with-us {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 20px;
   cursor: pointer;
-  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .jobs-section-contact-work-with-us {
+    padding: 10px;
+  }
+
+  .contact-form-contact-work-with-us {
+    width: 100%;
+  }
+
+  .titleJobs {
+    font-size: 18px;
+  }
+
+  .submit-button-contact-work-with-us {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleJobs {
+    font-size: 16px;
+  }
+
+  .input-field,
+  .textarea-field {
+    padding: 8px;
+  }
+
+  .submit-button-contact-work-with-us {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .alert {
+    width: 90%;
+    padding: 10px;
+  }
 }
