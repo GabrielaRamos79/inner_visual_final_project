@@ -7,29 +7,18 @@ const apiClient = axios.create({
         Accept: 'application/json',
         'Content-Type': 'application/json'
     }
-})
+});
 
 export const ContentService = {
-    async getAllContent() {
+    async getAllContent(userId) {
         try {
-            let response = await apiClient.get("/content/get_content");
+            let response = await apiClient.get(`/user_content/get_user_content/${userId}`);
             let allContent = response.data;
             return allContent;
         } catch (error) {
             console.error("Error al obtener los videos:", error);
         }
-    },
-
-    async getContentById(id) {
-        try {
-            let response = await apiClient.get("/content/get_content/" + id);
-            let oneContent = response.data;
-            return oneContent;
-        } catch (error) {
-            console.error("Error al obtener los videos:", error);
-        }
     }
-
-}
+};
 
 export default ContentService;

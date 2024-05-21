@@ -13,7 +13,7 @@ const VideoCard = ({ video, onVideoComplete }) => {
           <ReactPlayer 
             url={video.url_video} 
             controls={true} 
-            onEnded={() => onVideoComplete(video)}  // Додаємо зворотний виклик для обробки завершення відео
+            onEnded={() => onVideoComplete(video)}  // Añade una llamada de retorno para gestionar la finalización del vídeo
           />
         </Col>
       </Row>

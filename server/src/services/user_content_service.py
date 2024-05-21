@@ -4,13 +4,13 @@ from src.models.user_content_model import User_content
 
 class UserContentService():
     @classmethod
-    def get_user_content(cls):
+    def get_user_content(cls, id):
         try:
             connection = get_connection()
             print(connection)
             with connection.cursor() as cursor:
                 # cursor.execute('SELECT * FROM user_content')
-                cursor.callproc('sp_get_user_content')
+                cursor.callproc('sp_get_user_content_by_id', (id))
                 result = cursor.fetchall()
                 print(result)
 
@@ -20,23 +20,42 @@ class UserContentService():
         except Exception as ex:
             print(ex)
 
+
     @classmethod
-    def post_user_content(cls, user_content_table:User_content):
+    def post_user_content(cls, userFK):
         try:
-            connection  = get_connection()
+            connection = get_connection()
             print(connection)
-            
-            userFK = user_content_table.userFK
-            contentFK = user_content_table.contentFK
-            status_video = user_content_table.status_video
-            
-                 
+
             with connection.cursor() as cursor:
-                cursor.callproc('sp_post_user_content', (userFK,contentFK,status_video))
+                cursor.callproc('AddUserContent', (userFK,))
                 connection.commit()
                 print('User_content added successfully')
+
             connection.close()
-            return "Data base user_contentis close"
+            return "Database connection closed"
         except Exception as ex:
             print(ex)
+            return str(ex)
+        
+        
+    # @classmethod
+    # def post_user_content(cls, user_content_table:User_content):
+    #     try:
+    #         connection  = get_connection()
+    #         print(connection)
+            
+    #         userFK = user_content_table.userFK
+    #         contentFK = user_content_table.contentFK
+    #         status_video = user_content_table.status_video
+            
+                 
+    #         with connection.cursor() as cursor:
+    #             cursor.callproc('sp_post_user_content', (userFK,contentFK,status_video))
+    #             connection.commit()
+    #             print('User_content added successfully')
+    #         connection.close()
+    #         return "Data base user_contentis close"
+    #     except Exception as ex:
+    #         print(ex)
                        
