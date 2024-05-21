@@ -38,7 +38,7 @@ const LevelsCourse = () => {
         <Container>
               <Row>
                 <Col>
-                  <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls={true} />
+                  <ReactPlayer data-testid="youtube-player" url='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls={true} />
                 </Col>
               </Row>
               <Row>
