@@ -11,21 +11,21 @@ import LayoutPublic from "../layout/LayoutPublic";
 export const RouterProvider = () => {
   return (
 
-     <Routes>
-       <Route path="/admin" element={<LayoutAdmin />}>
-         <Route path="dashboard" element={<AdminDashboard />} />
-       </Route>
+    <Routes>
+      <Route path="/admin" element={<LayoutAdmin />}>
+        <Route path="dashboard" element={<AdminDashboard />} />
+      </Route>
 
-       <Route path="/client" element={<LayoutClient />}>
-         <Route path="dashboard" element={<ClientDashboard />} />
-       </Route>
+      <Route path="/client" element={<LayoutClient />}>
+        <Route path="dashboard" element={<ClientDashboard />} />
+      </Route>
 
-       <Route path="/" element={<LayoutPublic />}>
-         <Route index element={<Home />} />
-         <Route path="login" element={<Login />} />
-         <Route path="about" element={<About />} />
-       </Route>
-     </Routes>
+      <Route path="/" element={<LayoutPublic />}>
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="about" element={<About />} />
+      </Route>
+    </Routes>
 
   );
- };
+};
