@@ -62,44 +62,7 @@ const Register = () => {
   };
   return (
     <>
-    {/* <Container>
-      <form className='registerForm'  onSubmit={handleSubmit} >
-        <section className='containerForm'>
-          <h2 className='dates_products d-flex justify-content-center'>Registro</h2>
-          <div className='title_productGroup'>
-            <label className='titleLabel'>
-              Nombre
-              <input className='titleInput' type="text" name="name"  value={userName} onChange={(e) => setuserName(e.target.value)}  />
-            </label>
-            <label className='titleLabel'>
-              Apellidos :
-              <input className='titleInput' type="text" name="surname" value={surname} onChange={(e) => setSurname(e.target.value)}  />
-            </label>
-            <label className='titleLabel'>
-              Email :
-              <input className='titleInput' type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}  />
-            </label> 
-            <label className='titleLabel'>
-              Contraseña :
-              <input className='titleInput' type="text" name="password"  value={password} onChange={(e) => setPassword(e.target.value)} />
-            </label>
-            <label className='titleLabel'>
-              Teléfono :
-              <input className='titleInput' type="number" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-            </label>
-            <Form.Group controlId="formFile" className="mb-3">
-              <Form.Label>Foto :</Form.Label>
-              <Form.Control type="file" onChange={(e) => setSelectedFile(e.target.files[0])} />
-            </Form.Group>
-          </div>
-          <div className='productPriceGroup'>
-          </div>
-          <button type="submit" className='sendBotton'>Comprar</button>
-        </section>
-      </form>
-    </Container> */}
-
-<div className="container d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+<div className=" d-flex justify-content-center align-items-center container-custom-register" style={{ height: '100vh' }}>
   <form onSubmit={handleSubmit}>
     <h2 className='title'>Registro</h2>
     <div className="form-outline mb-4">

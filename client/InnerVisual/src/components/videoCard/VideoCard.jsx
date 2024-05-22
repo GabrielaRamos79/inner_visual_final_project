@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import ReactPlayer from 'react-player';
 
 const VideoCard = ({ video, onVideoComplete }) => {
+  console.log(video); // borrar en su momento
   return (
     <Container>
       <Row>

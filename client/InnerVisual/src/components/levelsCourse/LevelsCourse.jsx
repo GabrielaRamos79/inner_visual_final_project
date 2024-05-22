@@ -7,19 +7,18 @@ import Col from 'react-bootstrap/Col';
 import { ContentHandler } from '../../handler/ContentHandler';
 import VideoCard from '../videoCard/VideoCard';
 import VideoList from '../videoList/VideoList'; 
-import {UserContext} from '../../context/AuthContext.jsx' 
+import { UserContext } from '../../context/AuthContext.jsx'; 
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext); 
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [watchedVideos, setWatchedVideos] = useState([]);
+  const [activeKey, setActiveKey] = useState("0");
 
   const fetchData = async () => {
     if (user && user.id) {
       const contentData = await ContentHandler.getAllContent(user.id);
       setVideos(contentData);
-      setWatchedVideos(new Array(contentData.length).fill(false));
     }
   };
 
@@ -32,17 +31,17 @@ const LevelsCourse = () => {
   };
 
   const handleVideoComplete = (video) => {
-    const videoIndex = videos.findIndex(v => v.id_content === video.id_content);
-    if (videoIndex !== -1) {
-      const updatedWatchedVideos = [...watchedVideos];
-      updatedWatchedVideos[videoIndex] = true;
-      setWatchedVideos(updatedWatchedVideos);
-    }
+    console.log(`Video ${video.title_video} has ended`);
+  };
+
+  const handleAccordionChange = (key) => {
+    setActiveKey(key);
+    setSelectedVideo(null); // Clear the selected video when the accordion section changes
   };
 
   return (
     <>
-      <Accordion defaultActiveKey="0">
+      <Accordion activeKey={activeKey} onSelect={handleAccordionChange}>
         <Accordion.Item eventKey="0">
           <Accordion.Header>Level 1</Accordion.Header>
           <Accordion.Body>
@@ -52,7 +51,6 @@ const LevelsCourse = () => {
                   <VideoList
                     videos={videos.slice(0, 3)}
                     onVideoSelect={handleVideoSelect}
-                    watchedVideos={watchedVideos.slice(0, 3)}
                   />
                 </Col>
                 <Col>
@@ -77,7 +75,6 @@ const LevelsCourse = () => {
                   <VideoList
                     videos={videos.slice(3, 5)}
                     onVideoSelect={handleVideoSelect}
-                    watchedVideos={watchedVideos.slice(3, 5)}
                   />
                 </Col>
                 <Col>
@@ -102,7 +99,6 @@ const LevelsCourse = () => {
                   <VideoList
                     videos={videos.slice(5, 10)}
                     onVideoSelect={handleVideoSelect}
-                    watchedVideos={watchedVideos.slice(5, 10)}
                   />
                 </Col>
                 <Col>
@@ -118,7 +114,6 @@ const LevelsCourse = () => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-
     </>
   );
 };
