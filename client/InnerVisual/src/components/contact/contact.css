@@ -112,6 +112,34 @@
   margin-bottom: 5px;
 }
 
+.input-group-terms-contact-with-us { 
+  display: flex;  
+  align-items: center;
+  margin-bottom: 10px;
+  width: auto;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.input-group-terms-contact-with-us input {
+  margin-right: 5px;
+}
+
+.input-group-terms-contact-with-us label {
+  margin: 0;
+}
+
+.input-group-terms-contact-with-us a {
+  color: #00B1E2;
+  text-decoration: none;
+}
+
+.input-group-terms-contact-with-us a:hover {
+  text-decoration: underline;
+}
+.error {
+  border: 1px solid red;
+}
 .submit-button-wrapper-contact-with-us {
   display: flex;
   justify-content: center;

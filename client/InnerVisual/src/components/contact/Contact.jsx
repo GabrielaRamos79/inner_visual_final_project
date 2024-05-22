@@ -17,7 +17,10 @@ const Contact = () => {
   
   const [message, setMessage] = useState('');
   const [messageTouched, setMessageTouched] = useState(false);
- 
+
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [acceptTermsTouched, setAcceptTermsTouched] = useState(false); 
+  
   const emailRegex = /^\S+@\S+\.\S+$/;
   const telephoneRegex = /^\d{9}$/;
 
@@ -53,6 +56,12 @@ const Contact = () => {
       setMessageTouched(true);
       return;
     }
+
+    if (!acceptTerms) { 
+      CustomSweetAlertError('Debes aceptar el tratamiento de datos.');
+      setAcceptTermsTouched(true);
+      return;
+    }
     CustomSweetAlertOk('Mensaje enviado correctamente, nuestro administrador se pondará en contacto usted. Gracias');
     
     setName('');
@@ -60,12 +69,14 @@ const Contact = () => {
     setTelephone('');
     setEmail('');
     setMessage('');
+    setAcceptTerms('');
        
     setNameTouched(false);
     setSurnameTouched(false);
     setTelephoneTouched(false);
     setEmailTouched(false);
     setMessageTouched(false);
+    setAcceptTermsTouched(false);
   };
 
   return (
@@ -147,6 +158,17 @@ const Contact = () => {
                       onBlur={() => setMessageTouched(true)}
                       className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
                     />
+                  </div>
+                  <div className="input-group-terms-contact-with-us">
+                    <input
+                      type="checkbox"
+                      id="accept-terms-contact-with-us"
+                      checked={acceptTerms}
+                      onChange={(e) => setAcceptTerms(e.target.checked)}
+                      onBlur={() => setAcceptTermsTouched(true)}
+                    />
+                    <label htmlFor="accept-terms-contact-with-us">Acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer">términos y condiciones</a></label>
+                 
                   </div>
                       
                   <div className="submit-button-wrapper-contact-with-us">
