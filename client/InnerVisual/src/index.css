@@ -46,8 +46,9 @@ p {
     --darkblue: #043B4E;
     --lightblue: #00B1E2;
     --orange: #E95115;
-    --black: #000;
+    --black: #1E1E1F;
     --white: #FFFFFF;
+    --lightgray : #EEEEEE;
 }
 
 .raleway {
