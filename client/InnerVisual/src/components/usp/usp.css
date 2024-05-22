@@ -1,29 +1,46 @@
 .titleUsp {
 margin: 50px;
+
 }
 
-
+.UspTitle{
+font-family: Raleway;
+font-size: 100px;
+font-weight: 600;
+line-height: 129.14px;
+text-align: left;
+;
+   
+}
 .photoUsp1,
 .photoUsp2 {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
-
 .photoUsp2 {
     margin-bottom: 100px;
 }
 
-.photo1,
+
 .photo2 {
     width: 540px;
-    height: 360px;
-    border-radius: 0px;
+    width: 713px;
+    height: 525px;
+    top: 2141px;
+    left: 800px;
+    gap: 0px;
+    opacity: 0px;
+    
 }
 
 .photo1 {
-    margin-bottom: 150px;
-    margin-left: 50px;
+    width: 707px;
+    height: 525px;
+    top: 1444px;
+    left: 94px;
+    gap: 0px;
+    opacity: 0px;
 }
 
 .textPhoto1,
@@ -33,13 +50,45 @@ margin: 50px;
 
 .titleUsp1,
 .titleUsp2 {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+font-family: Inter;
+font-size: 42px;
+font-weight: 400;
+line-height: 50.83px;
+text-align: left;
+
 }
 
 .uspSection {
     margin: 0 100px 50px;
 }
 
+.textUsp1,
+.textUsp2 {
+font-family: Inter;
+font-size: 20px;
+font-weight: 300;
+line-height: 26.6px;
+text-align: left;
+}
+.layoutgray1 {
+width: 714px;
+height: 697px;
+top: 1360px;
+gap: 0px;
+opacity: 0px;
+background-color: lightgray;
+}
+
+.layoutgray2 {
+width: 709px;
+height: 697px;
+top: 2057px;
+left: 891px;
+gap: 0px;
+opacity: 0px;
+background-color: lightgrey;
+}
 
 @media screen and (max-width: 1200px) {
     .uspSection {

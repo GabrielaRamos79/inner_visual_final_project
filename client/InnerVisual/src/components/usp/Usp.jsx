@@ -8,10 +8,11 @@ const Usp = () => {
     <>
       <section className='uspSection'>
         <div className='titleUsp'>
-          <h1>EL PROYECTO</h1>
+          <h1 className='UspTitle' >EL PROYECTO</h1>
         </div>
 
         <div className="photoUsp1">
+          <div className='layoutgray1'></div>
           <img className='photo1' src={innerphoto} alt="swimming guy" />
           <div className='textPhoto1'>
             <h2 className='titleUsp1'>¿EN QUÉ CONSISTE?</h2>
@@ -26,6 +27,7 @@ const Usp = () => {
             <p className='textUsp2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
           </div>
+          <div className='layoutgray2'></div>
           <img className='photo2' src={innerphoto2} alt="jumping biker" />
         </div>
       </section>
