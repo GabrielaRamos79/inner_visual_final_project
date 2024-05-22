@@ -6,7 +6,7 @@ module.exports = {
         '\\.(jpg|jpeg|png|gif|webp|svg)$': 'jest-transform-stub',
         '\\.css$':'identity-obj-proxy',
     },
-    testEnvironment: 'jsdom',
+    testEnvironment: 'jest-environment-jsdom',
 
     setupFilesAfterEnv: ['../InnerVisual/jest.setup.js'],
 };
