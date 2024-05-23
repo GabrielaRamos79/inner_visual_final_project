@@ -41,7 +41,7 @@ const Review = () => {
               </div>
             </div>
           </Carousel.Item>
-{/* 
+ 
           <Carousel.Item>
             <div className='cardsReview'>
               <div className='card4Review'>
@@ -65,7 +65,7 @@ const Review = () => {
                 <img className='review6' src={review6} alt="hombre sonriente barbudo pelirrojo" />
               </div>
             </div>
-          </Carousel.Item> */}
+          </Carousel.Item>
           
         </Carousel>
       </section>
