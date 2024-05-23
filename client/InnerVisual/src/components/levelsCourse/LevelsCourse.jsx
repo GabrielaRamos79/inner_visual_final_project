@@ -13,7 +13,7 @@ const LevelsCourse = () => {
   const { user } = useContext(UserContext); 
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [activeKey, setActiveKey] = useState("0");
+  //const [activeKey, setActiveKey] = useState("0");
 
   const fetchData = async () => {
     if (user && user.id) {
@@ -31,28 +31,29 @@ const LevelsCourse = () => {
   };
 
   const handleVideoComplete = async (video) => {
-        console.log(`Video ${video.title_video} has ended`);
-        const videoIndex = videos.findIndex(v => v.id_content === video.id_content);
-        const nextVideo = videos[videoIndex + 1];
-    
-        if (nextVideo) {
-          try {
-            await fetch(`http://127.0.0.1:5000/user_content/update_user_content/${user.id}/${nextVideo.id_content}`, { method: 'PATCH' });
-            fetchData(); // Оновлення даних, щоб отримати оновлений статус перегляду
-          } catch (error) {
-            console.error("Помилка при оновленні статусу відео:", error);
-          }
-        }
-      };
-
-  const handleAccordionChange = (key) => {
-    setActiveKey(key);
-    setSelectedVideo(null);
+    console.log(`Video ${video.title_video} has ended`);
+    const videoIndex = videos.findIndex(v => v.id_content === video.id_content);
+    const nextVideo = videos[videoIndex + 1];
+  
+    if (nextVideo) {
+      try {
+        await ContentHandler.updateStatusVideo(user.id, nextVideo.id_content);
+        fetchData(); 
+      } catch (error) {
+        console.error("Помилка при оновленні статусу відео:", error);
+      }
+    }
   };
 
+  // const handleAccordionChange = (key) => {
+  //   setActiveKey(key);
+  //   setSelectedVideo(null);
+  // };
+//onSelect={handleAccordionChange}
+//activeKey={activeKey}
   return (
     <>
-      <Accordion activeKey={activeKey} onSelect={handleAccordionChange}>
+      <Accordion>
         <Accordion.Item eventKey="0">
           <Accordion.Header>Level 1</Accordion.Header>
           <Accordion.Body>
