@@ -13,28 +13,35 @@ jest.mock('../../assets/img/review6.jpg', () => 'review6.jpg');
 test('renders Review component without crashing', () => {
     render(<Review />);
 
-    expect(screen.getByText('Dicen de nosotros')).toBeInTheDocument();
+    expect(screen.getByText('reseñas')).toBeInTheDocument();
 
     const luciaReview = screen.getByAltText('mujer sonriente moño recogido').parentElement;
-    expect(luciaReview).toHaveTextContent('Lucia Gil');
+    expect(luciaReview).toHaveTextContent('Lucía');
+    expect(luciaReview).toHaveTextContent('Lucena');
     expect(luciaReview).toHaveTextContent('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint');
 
     const raulReview = screen.getByAltText('hombre sonriente pelo rizado').parentElement;
+    expect(raulReview).toHaveTextContent('Raúl');
+    expect(raulReview).toHaveTextContent('González');
     expect(raulReview).toHaveTextContent('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint');
 
-    const mariaReview = screen.getByAltText('mujer sonriente pelirroja').parentElement;
-    expect(mariaReview).toHaveTextContent('María Hernández');
-    expect(mariaReview).toHaveTextContent('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint');
+    const anaReview = screen.getByAltText('mujer sonriente pelirroja').parentElement;
+    expect(anaReview).toHaveTextContent('Ana');
+    expect(anaReview).toHaveTextContent('Hernández');
+    expect(anaReview).toHaveTextContent('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint');
 
     const gabrielaRewiew = screen.getByAltText('mujer con gafas pasta negra, pelo largo liso').parentElement;
-    expect(gabrielaRewiew).toHaveTextContent('Gabriela Ramos');
+    expect(gabrielaRewiew).toHaveTextContent('Gabriela');
+    expect(gabrielaRewiew).toHaveTextContent('Ramos');
     expect(gabrielaRewiew).toHaveTextContent('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint');
 
     const javierReview = screen.getByAltText('hombre moreno con barba').parentElement;
-    expect(javierReview).toHaveTextContent('Javier Escudero');
+    expect(javierReview).toHaveTextContent('Javier');
+    expect(javierReview).toHaveTextContent('Escudero');
     expect(javierReview).toHaveTextContent('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint');
 
     const gonzaloReview = screen.getByAltText('hombre sonriente barbudo pelirrojo').parentElement;
-    expect(gonzaloReview).toHaveTextContent('Gonzalo Parra');
+    expect(gonzaloReview).toHaveTextContent('Gonzalo');
+    expect(gonzaloReview).toHaveTextContent('Parra');
     expect(gonzaloReview).toHaveTextContent('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis at officiis quos dolorem debitis quam aliquid voluptas es sint');
 });
