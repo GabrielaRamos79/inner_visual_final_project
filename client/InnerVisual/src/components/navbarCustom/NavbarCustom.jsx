@@ -22,6 +22,10 @@ function NavbarCustom() {
   };
 
   useEffect(() => {
+    handleLogout();
+  }, []);
+
+  useEffect(() => {
     setIsLoginPage(location.pathname === '/login');
   }, [location.pathname]);
 

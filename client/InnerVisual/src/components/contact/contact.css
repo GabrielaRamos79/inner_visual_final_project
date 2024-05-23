@@ -3,11 +3,25 @@
   padding: 300px;
 }
 
-.titleJobs {
-  margin: 0;
-  font-size: 24px;
+.titleJobs-container-contact-with-us {
+
+  font-family: 'Raleway', sans-serif; /* Asegúrate de que la fuente Raleway esté disponible */
+  width: 1046px;
+  font-size: 110px;
+  font-weight: 600;
+  line-height: 130px;
+  text-align: left;
+  /*background: #353333;*/
+  opacity: 0.7; /* Ajusta la opacidad según sea necesario */
+  color: black; /* Asegura que el texto sea visible contra el fondo oscuro */
+  position: absolute;
+  top: 1722px;
+  left: 90px;
+  z-index: 1; /* Para asegurarse de que el título se muestre por encima de otros elementos */
+  /* margin: 0;
+  font-size: 110px;
   white-space: nowrap;
-  line-height: 1.2;
+  line-height: 1.2; */
 }
 
 .jobs-section-contact-with-us {
@@ -80,6 +94,17 @@
 .input-group-email-contact-with-us label {
   align-self: flex-start;
   margin-bottom: 5px;
+
+  width: 206px;
+  height: 19px;
+  gap: 0px;
+  /* opacity: 0; */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.36px;
+  text-align: left;
+  
 }
 
 .input-field {
@@ -108,10 +133,74 @@
 
 .input-group-message-contact-with-us label {
   align-self: flex-start;
-  width: 100%; /* Ancho total */
+  width: 206px;
+  height: 19px;
+  gap: 0px;
+  /* opacity: 0; */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.36px;
+  text-align: left;
+  /* background: #1E1E1F; */
+  color: black; /* Asegúrate de que el texto sea visible contra el fondo oscuro */
   margin-bottom: 5px;
+
+}
+.input-group-terms-contact-with-us { 
+  display: flex;  
+  align-items: center;
+  margin-bottom: 10px;
+  width: auto;
+  justify-content: flex-start;
+  gap: 0px;
 }
 
+.input-group-terms-contact-with-us input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  top: 2197px;
+  left: 90px;
+  gap: 0px;
+  border: 0.5px solid #000000;
+  /* opacity: 0; */
+  margin-right: 5px;
+  /* width: 24px;
+  height: 24px;
+  border: 0.5px solid #000000;
+  opacity: 0;
+  margin-right: 5px; */
+}
+
+ .input-group-terms-contact-with-us label {
+  width: 565px;
+  height: 19px;
+  top: 2199px;
+  left: 131px;
+  gap: 0px;
+  /* opacity: 0; */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19.36px;
+  text-align: left;
+  /* background: #1E1E1F; */
+  color: black;
+  margin: 0;
+
+}
+
+.input-group-terms-contact-with-us a {
+  color: #00B1E2;
+  text-decoration: none;
+}
+
+.input-group-terms-contact-with-us a:hover {
+  text-decoration: underline;
+}
+.error {
+  border: 1px solid red;
+}
 .submit-button-wrapper-contact-with-us {
   display: flex;
   justify-content: center;
@@ -119,14 +208,19 @@
 }
 
 .submit-button-contact-with-us {
-  padding: 10px 20px;
-  color: black;
-  border: none;
-  border-radius: 20px;
+  width: 713px;
+  height: 41px;
+  top: 2188px;
+  left: 799px;
+  gap: 0px;
+  background: #1E1E1F;
+  border: 2px solid #000000;
+  color: white;  
   cursor: pointer;
   font-size: 20px;
   text-align: center;
   margin: 0 auto;
+
 }
 
 .alert {
@@ -159,7 +253,7 @@
     width: 100%;
   }
 
-  .titleJobs {
+  .titleJobs-container-contact-with-us {
     font-size: 18px;
   }
 
@@ -170,7 +264,7 @@
 }
 
 @media (max-width: 480px) {
-  .titleJobs {
+  .titleJobs-container-contact-with-us {
     font-size: 16px;
   }
 
