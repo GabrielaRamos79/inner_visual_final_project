@@ -49,9 +49,9 @@ function NavbarCustom() {
 
         <div className="overlay" onClick={toggleMenu}></div>
 
-        <Link to="/">
+        <figure>
           <img className="link" id="logo" src={logo} alt="logo Inner Visuals" />
-        </Link>
+        </figure>
 
         <div className="iconHolder">
           <Link to="/" className="nav-link-custom">

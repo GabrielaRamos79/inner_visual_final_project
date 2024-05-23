@@ -1,24 +1,39 @@
 
+.hero {
+    background-image: url('../../assets/img/hero.png'); 
+    background-size: cover;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items:flex-start;
+    color: white;
+    margin-top: -140px;
+    padding-top: 140px;
+}
+
 .titleHero{
+    text-transform: uppercase;
     margin-left: 100px;
     margin-right: 100px;
-    font-size: 64px;
+    font-size: 80px;
+    color: var(--orange);
     margin-bottom: 20px;
 }
 
-.subtitleHero{
-    margin-left: 100px;
-    max-width: 500px;
-    margin-bottom: 20px;
+.titleHero1{
+    font-size: 64px;
+    text-transform: uppercase;
+    margin-left: 50px;
 }
+
 
 .buttonHero{
     margin-left: 100px;
     margin-bottom: 70px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    background-color: transparent;
+    color:var(--white);
+    border: 1px solid var(--white);
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -26,21 +41,37 @@
 }
 
 .buttonHero:hover{
-    background-color:rgb(0, 0, 141);
+    transform: scale(1.2);
+    background-color: var(--white);
+    color: var(--black);
 }
 
-@media screen and (max-width: 630px) {
-    .subtitleHero, .subtitleHero{
-        margin-left: 80px;
-        margin-right: 80px;
+@media screen and (max-width: 840px){
+
+    .titleHero1{
+        font-size: 60px;
+        margin-left: 20px;
+    }
+
+    .titleHero1{
+        font-size: 48px;
     }
     
 }
 
-@media screen and (max-width: 400px) {
-    .titleHero, .subtitleHero{
+@media screen and (max-width: 770px){
+    .titleHero, .titleHero1{
         margin-left: 30px;
         margin-right: 30px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .titleHero1{
+        font-size: 40px;
+    }
+
+    .titleHero1{
+        font-size: 36px;
     }
     
 }
