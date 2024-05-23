@@ -75,94 +75,95 @@ const Jobs = () => {
   return (
     <>
       <div className='jobs-container-contact-work-with-us'>
+        <div className='container-title-Jobs'>
+          <h2 className='titleJobs-jobs-work-with-us'>WORK WITH US</h2>
+          <br></br>
+          <h1 className='subtitleJobs-jobs-work-with-us'>Aqui te invitamos a que trabajes con nosotros, cuentanos sobre ti </h1>
+         </div> 
+          <form onSubmit={handleSubmit}>
 
-        <h2 className='titleJobs'>¿Quieres trabajar con Nosotros? <br></br> Escribenos y nos pondremos en contacto contigo</h2>
-        <br></br>
-        
-        <form onSubmit={handleSubmit}>
+              <div className="contact-form-jobs-work-with-us">
 
-            <div className="contact-form-contact-work-with-us">
+                    <div className="input-group-name-jobs-work-with-us-row">
 
-                  <div className="input-group-name-contact-work-with-us-row">
+                      <div className="input-group-name-jobs-work-with-us">
+                        <label htmlFor="name-jobs-work-with-us">Nombre:</label>
+                        <input
+                          type="text"
+                          id="name-jobs-work-with-us"
+                          value={name}
+                          placeholder="Introduce tu nombre"
+                          onChange={(e) => setName(e.target.value)}
+                          onBlur={() =>  setNameTouched(true)}
+                          className={`input-field ${nameTouched && !name.trim() ? 'error' : ''}`}
+                      />
+                      </div>
 
-                    <div className="input-group-name-contact-work-with-us">
-                      <label htmlFor="name-contact-work-with-us">Nombre:</label>
-                      <input
-                        type="text"
-                        id="name-contact-work-with-us"
-                        value={name}
-                        placeholder="Introduce tu nombre"
-                        onChange={(e) => setName(e.target.value)}
-                        onBlur={() =>  setNameTouched(true)}
-                        className={`input-field ${nameTouched && !name.trim() ? 'error' : ''}`}
-                     />
+                      <div className="input-group-surname-jobs-work-with-us">
+                        <label htmlFor="surname-contact-work-with-us">Apellido:</label>
+                        <input
+                          type="text"
+                          id="surname-jobs-work-with-us"
+                          value={surname}
+                          placeholder="Introduce tu apellido"
+                          onChange={(e) => setSurname(e.target.value)}
+                          onBlur={() =>  setSurnameTouched(true)}
+                          className={`input-field ${surnameTouched && !surname.trim() ? 'error' : ''}`}
+                        />
+                      </div>
+
                     </div>
 
-                    <div className="input-group-surname-contact-work-with-us">
-                      <label htmlFor="surname-contact-work-with-us">Apellido:</label>
-                      <input
-                        type="text"
-                        id="surname-contact-work-with-us"
-                        value={surname}
-                        placeholder="Introduce tu apellido"
-                        onChange={(e) => setSurname(e.target.value)}
-                        onBlur={() =>  setSurnameTouched(true)}
-                        className={`input-field ${surnameTouched && !surname.trim() ? 'error' : ''}`}
-                      />
-                     </div>
+                    <div className="input-group-jobs-work-row">
 
-                  </div>
+                      <div className="input-group-telephone-jobs-work-with-us">
+                        <label htmlFor="telephone-contact-work-with-us">Teléfono:</label>
+                        <input
+                          type="tel"
+                          id="telephone-jobs-work-with-us"
+                          value={telephone}
+                          placeholder="Introduce tu telféfono"
+                          onChange={(e) => setTelephone(e.target.value)}
+                          onBlur={() =>setTelephoneTouched(true)}
+                          className={`input-field ${telephoneTouched && (!telephone.trim() || !telephoneRegex.test(telephone)) ? 'error' : ''}`}
+                        />
+                      </div>
 
-                  <div className="input-group-contact-work-row">
+                      <div className="input-group-email-jobs-work-with-us">
+                        <label htmlFor="email-jobs-work-with-us">Correo Electrónico:</label>
+                        <input
+                          type="email"
+                          id="email-jobs-work-with-us"
+                          value={email}
+                          placeholder="Introduce tu correo electrónico"
+                          onChange={(e) => setEmail(e.target.value)}
+                          onBlur={() => setEmailTouched(true)}
+                          className={`input-field half-width ${emailTouched && !emailRegex.test(email) ? 'error' : ''}`}
+                        />
+                      </div>
 
-                    <div className="input-group-telephone-contact-work-with-us">
-                      <label htmlFor="telephone-contact-work-with-us">Teléfono:</label>
-                      <input
-                        type="tel"
-                        id="telephone-contact-work-with-us"
-                        value={telephone}
-                        placeholder="Introduce tu telféfono"
-                        onChange={(e) => setTelephone(e.target.value)}
-                        onBlur={() =>setTelephoneTouched(true)}
-                        className={`input-field ${telephoneTouched && (!telephone.trim() || !telephoneRegex.test(telephone)) ? 'error' : ''}`}
-                       />
-                     </div>
-
-                    <div className="input-group-email-contact-work-with-us">
-                      <label htmlFor="email-contact-work-with-us">Correo Electrónico:</label>
-                      <input
-                        type="email"
-                        id="email-contact-work-with-us"
-                        value={email}
-                        placeholder="Introduce tu correo electrónico"
-                        onChange={(e) => setEmail(e.target.value)}
-                        onBlur={() => setEmailTouched(true)}
-                        className={`input-field half-width ${emailTouched && !emailRegex.test(email) ? 'error' : ''}`}
-                      />
                     </div>
 
-                  </div>
+                    <div className="input-group-message-jobs-work-with-us">
+                      <label htmlFor="message-jobs-work-with-us">Mensaje:</label>
+                      <textarea
+                        id="message-jobs-work-with-us"
+                        value={message}
+                        placeholder="Introduce tu consulta"
+                        onChange={(e) => setMessage(e.target.value)}
+                        onBlur={() => setMessageTouched(true)}
+                        className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
+                      />
+                    </div>                     
+              
+                    <div className="submit-button-wrapper-jobs-with-us">
+                        <button type="submit" className="submit-button-jobs-with-us">Enviar Mensaje</button>
+                    </div>
+              </div>        
+            </form>
+          </div>
+        </>
+    );
+  };
 
-                  <div className="input-group-message-contact-work-with-us">
-                    <label htmlFor="message-contact-work-with-us">Mensaje:</label>
-                    <textarea
-                      id="message-contact-work-with-us"
-                      value={message}
-                      placeholder="Introduce tu consulta"
-                      onChange={(e) => setMessage(e.target.value)}
-                      onBlur={() => setMessageTouched(true)}
-                      className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                     />
-                   </div>                     
-             
-                  <div className="submit-button-wrapper-contact-with-us">
-                      <button type="submit" className="submit-button-contact-with-us">Enviar Mensaje</button>
-                  </div>
-             </div>        
-          </form>
-        </div>
-      </>
-  );
-};
-
-export default Jobs;
+  export default Jobs;

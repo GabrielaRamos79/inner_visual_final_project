@@ -83,7 +83,7 @@ const Contact = () => {
     <>
       <div className='jobs-container-contact-with-us'>
 
-        <h2 className='titleJobs'>¿Quieres mas información? <br></br>Contacta con Nosotros</h2>
+        <h1 className='titleJobs-container-contact-with-us'>CONTACTO</h1>
         <br />
          
         <form onSubmit={handleSubmit}>
@@ -167,12 +167,11 @@ const Contact = () => {
                       onChange={(e) => setAcceptTerms(e.target.checked)}
                       onBlur={() => setAcceptTermsTouched(true)}
                     />
-                    <label htmlFor="accept-terms-contact-with-us">Acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer">términos y condiciones</a></label>
-                 
-                  </div>
-                      
-                  <div className="submit-button-wrapper-contact-with-us">
+                    <label htmlFor="accept-terms-contact-with-us">He leido y acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer">términos y condiciones</a></label>
+                                                       
+                    <div className="submit-button-wrapper-contact-with-us">
                       <button type="submit" className="submit-button-contact-with-us">Enviar Mensaje</button>
+                    </div>
                   </div>
               </div>
           </form>     
