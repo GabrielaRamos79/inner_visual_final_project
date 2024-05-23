@@ -6,7 +6,10 @@
   justify-content: space-between;
   height: 140px;
   width: 100%;
-  background-color: var(--lightblue);
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  z-index: 1000;
 }
 
 #logo {
@@ -16,16 +19,7 @@
   position: absolute;
   left: 50px;
   top: 30px;
-  transition: transform 2s; 
-  transform-style: preserve-3d; 
 }
-
-#logo:hover {
-  background-color: var(--darkblue);
-  border-radius: 50px;
-  transform: rotateY(360deg); 
-}
-
 
 .links {
   font-size: 18px;
