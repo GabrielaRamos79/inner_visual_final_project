@@ -1,26 +1,14 @@
 .benefitcontainer{
     background-color: #f0f0f0;
     padding: 20px;
-}
-
-
-.titleBenefit{
-    text-align: left;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-size: 110px;
-    font-weight:lighter;
-    color: #333;
-    letter-spacing: 2px;
-    padding-left: 225px;
-    padding-top: 80px;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
 
 .sectionBenefit{
     display: flex;
-    align-items: center;
-    padding-bottom: 50px;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
     position: relative;
 }
 
@@ -35,18 +23,54 @@
     z-index: -1; 
 }
 
-.benefit1, .benefit2, .benefit3, .benefit4{
-    max-width: 450px;
-    /* border-radius: 20px; */
-    margin: 30px;
+.textContainer{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.titleBenefit{
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 110px;
+    font-weight:lighter;
+    color: #333;
+    letter-spacing: 2px;
+    /* padding-left: 225px; */
+    /* padding-top: 80px; */
 }
 
 .textBenefit{
-    max-width: 400px;
-    padding: 30px;
-    margin-left: 30px;
     font-size: 20px;
+    color: black;
+    font-weight: 400;
     text-transform: uppercase;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    padding: 30px;
+}
+
+.imageContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width:fit-content;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 50px;
+}
+
+/* .sectionBenefit > div:last-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+} */
+
+.imgBenefit{
+    width: 100%;
+    object-fit: cover;
+    margin: 10px;
 }
 
 .liBenefit{
@@ -62,10 +86,11 @@ margin-bottom: 20px;
 }
 
 @media screen and (max-width: 500px){
-    .benefit1, .benefit2{
-        max-width: 300px;
-        border-radius: 20px;
-        margin: 30px;
+    .textBenefit{
+        padding: 15px;
     }
-    
+
+    .liBenefit{
+        font-size: 1rem;
+    }
 }
