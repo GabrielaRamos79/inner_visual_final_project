@@ -5,23 +5,16 @@
 
 .titleJobs-container-contact-with-us {
 
-  font-family: 'Raleway', sans-serif; /* Asegúrate de que la fuente Raleway esté disponible */
-  width: 1046px;
-  font-size: 110px;
+  font-family: 'Raleway', sans-serif; 
+  font-size: 40px;
   font-weight: 600;
-  line-height: 130px;
+  line-height: 1.2;
+  margin: 0;
   text-align: left;
-  /*background: #353333;*/
-  opacity: 0.7; /* Ajusta la opacidad según sea necesario */
-  color: black; /* Asegura que el texto sea visible contra el fondo oscuro */
-  position: absolute;
-  top: 1722px;
-  left: 90px;
-  z-index: 1; /* Para asegurarse de que el título se muestre por encima de otros elementos */
-  /* margin: 0;
-  font-size: 110px;
-  white-space: nowrap;
-  line-height: 1.2; */
+} 
+.titleJobs-container-contact-with-us.subtitle {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .jobs-section-contact-with-us {
@@ -33,7 +26,6 @@
   max-width: 800px;
   margin: 0 auto;
   background-color: #f9f9f9;
-  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -94,11 +86,9 @@
 .input-group-email-contact-with-us label {
   align-self: flex-start;
   margin-bottom: 5px;
-
   width: 206px;
   height: 19px;
   gap: 0px;
-  /* opacity: 0; */
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -112,17 +102,16 @@
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 10px;
   box-sizing: border-box;
 }
 
 .textarea-field {
   resize: vertical;
   height: 200px;
-  width: 100%;
 }
 
-.input-group-message-contact-with-us {
+.input-group-message-contact-with-us,
+.input-group-terms-contact-with-us {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,58 +125,68 @@
   width: 206px;
   height: 19px;
   gap: 0px;
-  /* opacity: 0; */
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 19.36px;
   text-align: left;
-  /* background: #1E1E1F; */
-  color: black; /* Asegúrate de que el texto sea visible contra el fondo oscuro */
+  color: black; 
   margin-bottom: 5px;
 
 }
 .input-group-terms-contact-with-us { 
   display: flex;  
+ 
   align-items: center;
-  margin-bottom: 10px;
-  width: auto;
-  justify-content: flex-start;
-  gap: 0px;
+  gap: 10px;
+  width: 100%;
+
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.input-group-terms-contact-with-us input[type="checkbox"] {
-  width: 24px;
-  height: 24px;
-  top: 2197px;
-  left: 90px;
-  gap: 0px;
-  border: 0.5px solid #000000;
-  /* opacity: 0; */
-  margin-right: 5px;
-  /* width: 24px;
-  height: 24px;
-  border: 0.5px solid #000000;
-  opacity: 0;
-  margin-right: 5px; */
+.checkbox-label-container input[type="checkbox"] {
+  margin-right: 10px; /* Espacio entre el checkbox y la etiqueta */
 }
 
- .input-group-terms-contact-with-us label {
-  width: 565px;
-  height: 19px;
-  top: 2199px;
-  left: 131px;
-  gap: 0px;
-  /* opacity: 0; */
+.checkbox-label-container label {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 19.36px;
   text-align: left;
-  /* background: #1E1E1F; */
   color: black;
   margin: 0;
+  white-space: nowrap;
+}
 
+.checkbox-label-container a {
+  color: #00B1E2;
+  text-decoration: none;
+}
+
+.checkbox-label-container a:hover {
+  text-decoration: underline;
+}
+
+.input-group-terms-contact-with-us input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  border: 0.5px solid #000000;
+  margin-right: 10px;
+}
+
+ .input-group-terms-contact-with-us label {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19.36px;
+  text-align: left;
+  color: black;
+  margin: 0;
 }
 
 .input-group-terms-contact-with-us a {
@@ -203,23 +202,19 @@
 }
 .submit-button-wrapper-contact-with-us {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-end;
+  width:100%;
 }
 
 .submit-button-contact-with-us {
-  width: 713px;
+  width: 50%;
   height: 41px;
-  top: 2188px;
-  left: 799px;
-  gap: 0px;
   background: #1E1E1F;
   border: 2px solid #000000;
   color: white;  
   cursor: pointer;
   font-size: 20px;
   text-align: center;
-  margin: 0 auto;
 
 }
 
@@ -228,7 +223,6 @@
   background-color: #f44336;
   color: white;
   margin-bottom: 15px;
-  border-radius: 4px;
   width: 80%;
   text-align: center;
   position: relative;

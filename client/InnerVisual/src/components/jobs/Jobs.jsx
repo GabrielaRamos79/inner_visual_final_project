@@ -18,13 +18,14 @@ const Jobs = () => {
   const [message, setMessage] = useState('');
   const [messageTouched, setMessageTouched] = useState(false);
 
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [acceptTermsTouched, setAcceptTermsTouched] = useState(false); 
+  
   const emailRegex = /^\S+@\S+\.\S+$/;
   const telephoneRegex = /^\d{9}$/;
   
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    let hasError = false;    
+    e.preventDefault();   
 
     if (!name.trim()) {
       CustomSweetAlertError('El nombre es obligatorio.');
@@ -54,6 +55,11 @@ const Jobs = () => {
       setMessageTouched(true);
       return;
     }
+    if (!acceptTerms) { 
+      CustomSweetAlertError('Debes aceptar el tratamiento de datos.');
+      setAcceptTermsTouched(true);
+      return;
+    } 
 
     CustomSweetAlertOk('Mensaje enviado correctamente, nuestro administrador se pondará en contacto usted. Gracias');
 
@@ -62,31 +68,30 @@ const Jobs = () => {
     setTelephone('');
     setEmail('');
     setMessage('');
+    setAcceptTerms('');
        
     setNameTouched(false);
     setSurnameTouched(false);
     setTelephoneTouched(false);
     setEmailTouched(false);
     setMessageTouched(false);
-    
-   
+    setAcceptTermsTouched(false);   
   };
 
   return (
     <>
-      <div className='jobs-container-contact-work-with-us'>
+      <div className='jobs-container-jobs-work-with-us'>
+
         <div className='container-title-Jobs'>
           <h2 className='titleJobs-jobs-work-with-us'>WORK WITH US</h2>
           <br></br>
           <h1 className='subtitleJobs-jobs-work-with-us'>Aqui te invitamos a que trabajes con nosotros, cuentanos sobre ti </h1>
          </div> 
-          <form onSubmit={handleSubmit}>
 
-              <div className="contact-form-jobs-work-with-us">
+         <div className="contact-form-jobs-work-with-us">
+          <form onSubmit={handleSubmit}>                    
 
-                    <div className="input-group-name-jobs-work-with-us-row">
-
-                      <div className="input-group-name-jobs-work-with-us">
+                   
                         <label htmlFor="name-jobs-work-with-us">Nombre:</label>
                         <input
                           type="text"
@@ -97,10 +102,8 @@ const Jobs = () => {
                           onBlur={() =>  setNameTouched(true)}
                           className={`input-field ${nameTouched && !name.trim() ? 'error' : ''}`}
                       />
-                      </div>
-
-                      <div className="input-group-surname-jobs-work-with-us">
-                        <label htmlFor="surname-contact-work-with-us">Apellido:</label>
+                  
+                       <label htmlFor="surname-contact-work-with-us">Apellido:</label>
                         <input
                           type="text"
                           id="surname-jobs-work-with-us"
@@ -110,13 +113,7 @@ const Jobs = () => {
                           onBlur={() =>  setSurnameTouched(true)}
                           className={`input-field ${surnameTouched && !surname.trim() ? 'error' : ''}`}
                         />
-                      </div>
 
-                    </div>
-
-                    <div className="input-group-jobs-work-row">
-
-                      <div className="input-group-telephone-jobs-work-with-us">
                         <label htmlFor="telephone-contact-work-with-us">Teléfono:</label>
                         <input
                           type="tel"
@@ -127,9 +124,7 @@ const Jobs = () => {
                           onBlur={() =>setTelephoneTouched(true)}
                           className={`input-field ${telephoneTouched && (!telephone.trim() || !telephoneRegex.test(telephone)) ? 'error' : ''}`}
                         />
-                      </div>
 
-                      <div className="input-group-email-jobs-work-with-us">
                         <label htmlFor="email-jobs-work-with-us">Correo Electrónico:</label>
                         <input
                           type="email"
@@ -140,27 +135,31 @@ const Jobs = () => {
                           onBlur={() => setEmailTouched(true)}
                           className={`input-field half-width ${emailTouched && !emailRegex.test(email) ? 'error' : ''}`}
                         />
-                      </div>
-
-                    </div>
-
-                    <div className="input-group-message-jobs-work-with-us">
-                      <label htmlFor="message-jobs-work-with-us">Mensaje:</label>
-                      <textarea
-                        id="message-jobs-work-with-us"
-                        value={message}
-                        placeholder="Introduce tu consulta"
-                        onChange={(e) => setMessage(e.target.value)}
-                        onBlur={() => setMessageTouched(true)}
-                        className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                      />
-                    </div>                     
-              
-                    <div className="submit-button-wrapper-jobs-with-us">
-                        <button type="submit" className="submit-button-jobs-with-us">Enviar Mensaje</button>
-                    </div>
-              </div>        
+                         <label htmlFor="message-jobs-work-with-us">Mensaje:</label>
+                          <textarea
+                            id="message-jobs-work-with-us"
+                            value={message}
+                            placeholder="Introduce tu consulta"
+                            onChange={(e) => setMessage(e.target.value)}
+                            onBlur={() => setMessageTouched(true)}
+                            className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
+                          />
+                        <div className="input-group-terms-work-with-us">
+                          <input
+                            type="checkbox"
+                            id="terms-work-with-us"
+                            checked={acceptTerms}
+                            onChange={(e) => setAcceptTerms(e.target.checked)}
+                            onBlur={() => setAcceptTermsTouched(true)}
+                          />
+                          <label htmlFor="terms-work-with-us">He leido y acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer">términos y condiciones</a></label>
+                        </div> 
+                          <div className="submit-button-jobs-work-with-us">
+                              <button type="submit" className="submit-button-jobs-work-with-us">Enviar Mensaje</button>
+                          </div>
+                                    
             </form>
+            </div>  
           </div>
         </>
     );
