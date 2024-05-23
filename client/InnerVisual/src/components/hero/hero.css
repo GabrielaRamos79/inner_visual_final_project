@@ -47,10 +47,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .hero {
-        
-    }
-    
     .titleHero {
         font-size: 70px;
         margin-left: 80px;
