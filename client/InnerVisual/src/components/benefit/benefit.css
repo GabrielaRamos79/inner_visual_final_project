@@ -1,8 +1,19 @@
+.benefitcontainer{
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
 
 .titleBenefit{
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     margin-bottom: 20px;
+    font-size: 110px;
+    font-weight:lighter;
+    color: #333;
+    letter-spacing: 2px;
+    padding-left: 225px;
+    padding-top: 80px;
 }
 
 .sectionBenefit{
@@ -11,7 +22,6 @@
     padding-bottom: 50px;
     justify-content: center;
     position: relative;
-
 }
 
 .sectionBenefit::before {
@@ -25,9 +35,9 @@
     z-index: -1; 
 }
 
-.benefit1, .benefit2{
+.benefit1, .benefit2, .benefit3, .benefit4{
     max-width: 450px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     margin: 30px;
 }
 
@@ -35,6 +45,8 @@
     max-width: 400px;
     padding: 30px;
     margin-left: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 .liBenefit{
