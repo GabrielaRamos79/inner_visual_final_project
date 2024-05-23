@@ -21,9 +21,9 @@ function NavbarCustom() {
     navigate('/');
   };
 
-  useEffect(() => {
-    handleLogout();
-  }, []);
+  // useEffect(() => {
+  //   handleLogout();
+  // }, []);
 
   useEffect(() => {
     setIsLoginPage(location.pathname === '/login');
