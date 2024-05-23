@@ -18,14 +18,14 @@ export const RouterProvider = () => {
 
     <Routes>
       <Route path="/admin" element={<LayoutAdmin />}>
-        <Route path="dashboard" element={<ProtectedRouteAdmin><AdminDashboard /></ProtectedRouteAdmin>} />
+        <Route path="dashboard" element={<AdminDashboard />} />
       </Route>
 
       <Route path="/client" element={<LayoutClient />}>
-        <Route path="dashboard" element={<ProtectedRouteClient><ClientDashboard /></ProtectedRouteClient>} />
+        <Route path="dashboard" element={<ClientDashboard />} />
       </Route>
       
-      <Route path="/unauthorized" element={<ErrorPage />} />
+      {/* <Route path="/unauthorized" element={<ErrorPage />} /> */}
 
       <Route path="/" element={<LayoutPublic />}>
         <Route index element={<Home />} />
