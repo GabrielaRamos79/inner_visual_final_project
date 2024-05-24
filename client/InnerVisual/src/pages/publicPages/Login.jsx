@@ -4,7 +4,7 @@ import Register from './../../components/register/Register';
 const Login = () => {
   return (
     <>
-    <LoginComponent />
+    {/* <LoginComponent /> */}
     <Register />
     </>
   )
