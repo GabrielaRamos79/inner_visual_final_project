@@ -90,7 +90,7 @@ const Contact = () => {
                       <div className="input-group-contact-row">
 
                         <div className="input-group-name-contact-with-us">
-                          <label htmlFor="name-contact-with-us">Nombre:</label>
+                          <label htmlFor="name-contact-with-us">Nombre</label>
                           <input
                             type="text"
                             id="name-contact-with-us"
@@ -103,7 +103,7 @@ const Contact = () => {
                         </div>
 
                         <div className="input-group-surname-contact-with-us">
-                          <label htmlFor="surname-contact-with-us">Apellido:</label>
+                          <label htmlFor="surname-contact-with-us">Apellido</label>
                           <input
                             type="text"
                             id="surname-contact-with-us"
@@ -120,7 +120,7 @@ const Contact = () => {
                       <div className="input-group-contact-row">
 
                         <div className="input-group-telephone-contact-with-us">
-                          <label htmlFor="telephone-contact-with-us">Teléfono:</label>
+                          <label htmlFor="telephone-contact-with-us">Teléfono</label>
                           <input
                             type="tel"
                             id="telephone-contact-with-us"
@@ -133,7 +133,7 @@ const Contact = () => {
                         </div>
 
                         <div className="input-group-email-contact-with-us">
-                          <label htmlFor="email-contact-with-us">Correo Electrónico:</label>
+                          <label htmlFor="email-contact-with-us">Correo Electrónico</label>
                           <input
                             type="email"
                             id="email-contact-with-us"
@@ -149,7 +149,7 @@ const Contact = () => {
 
                       <div className="input-group-message-contact-with-us">
                         <div className='input-message-contact'>
-                        <label htmlFor="message-contact-with-us">Mensaje:</label>
+                        <label htmlFor="message-contact-with-us">Mensaje</label>
                         </div>
                         <div></div>
                         <textarea

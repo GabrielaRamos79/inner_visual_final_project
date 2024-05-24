@@ -85,14 +85,14 @@ const Jobs = () => {
         <div className='container-title-Jobs'>
           <h2 className='titleJobs-jobs-work-with-us'>WORK WITH US</h2>
           <br></br>
-          <h1 className='subtitleJobs-jobs-work-with-us'>Aqui te invitamos a que trabajes con nosotros, cuentanos sobre ti </h1>
+          <h3 className='subtitleJobs-jobs-work-with-us'>Aqui te invitamos a que trabajes con nosotros, cuentanos sobre ti </h3>
          </div> 
 
          <div className="contact-form-jobs-work-with-us">
           <form onSubmit={handleSubmit}>                    
 
                    
-                        <label htmlFor="name-jobs-work-with-us">Nombre:</label>
+                        <label htmlFor="name-jobs-work-with-us">Nombre</label>
                         <input
                           type="text"
                           id="name-jobs-work-with-us"
@@ -103,7 +103,7 @@ const Jobs = () => {
                           className={`input-field ${nameTouched && !name.trim() ? 'error' : ''}`}
                       />
                   
-                       <label htmlFor="surname-contact-work-with-us">Apellido:</label>
+                       <label htmlFor="surname-contact-work-with-us">Apellido</label>
                         <input
                           type="text"
                           id="surname-jobs-work-with-us"
@@ -114,7 +114,7 @@ const Jobs = () => {
                           className={`input-field ${surnameTouched && !surname.trim() ? 'error' : ''}`}
                         />
 
-                        <label htmlFor="telephone-contact-work-with-us">Teléfono:</label>
+                        <label htmlFor="telephone-contact-work-with-us">Teléfono</label>
                         <input
                           type="tel"
                           id="telephone-jobs-work-with-us"
@@ -125,7 +125,7 @@ const Jobs = () => {
                           className={`input-field ${telephoneTouched && (!telephone.trim() || !telephoneRegex.test(telephone)) ? 'error' : ''}`}
                         />
 
-                        <label htmlFor="email-jobs-work-with-us">Correo Electrónico:</label>
+                        <label htmlFor="email-jobs-work-with-us">Correo Electrónico</label>
                         <input
                           type="email"
                           id="email-jobs-work-with-us"
@@ -135,7 +135,7 @@ const Jobs = () => {
                           onBlur={() => setEmailTouched(true)}
                           className={`input-field half-width ${emailTouched && !emailRegex.test(email) ? 'error' : ''}`}
                         />
-                         <label htmlFor="message-jobs-work-with-us">Mensaje:</label>
+                         <label htmlFor="message-jobs-work-with-us">Mensaje</label>
                           <textarea
                             id="message-jobs-work-with-us"
                             value={message}
