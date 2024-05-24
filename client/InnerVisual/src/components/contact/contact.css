@@ -172,11 +172,16 @@
 }
 
 .input-group-terms-contact-with-us {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  
+  width: 100%; */
+  display: flex;  
+  align-items: center;
+  margin-bottom: 10px;
+  width: auto;
+  justify-content: flex-start;
+  gap: 0px;
 }
   
 

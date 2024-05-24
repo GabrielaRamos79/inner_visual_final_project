@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { CustomSweetAlertOk, CustomSweetAlertError } from '../../components/sweetAlertComponent/CustomSweetAlert';
+import { CustomSweetAlertVideoOk } from '../../components/sweetAlertComponent/CustomSweetAlertVideo';
+import { CustomSweetAlertVideoError } from '../../components/sweetAlertComponent/CustomSweetAlertVideo';
 import './contact.css';
 
 const Contact = () => {
