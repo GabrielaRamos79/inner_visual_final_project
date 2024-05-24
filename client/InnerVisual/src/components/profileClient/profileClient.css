@@ -1,95 +1,137 @@
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: var(--darkblue);
+  margin-top: -140px;
+}
 
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 50px;
+  width: 1140px;
+  margin: auto;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.welcome-message {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: left;
+  width: 450px;
+  margin-top: 20px;
+}
+
+.progress-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  color: white;
+  gap: 10px;
+}
+
+.CircularProgressbar {
+  height: 100px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 250px;
+  height: 250px;
+  box-shadow: 10px 10px rgb(255, 255, 255);
+}
+
+.btn-custom {
+  width: 300px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.btn-custom:hover {
+  background-color: white;
+  color: var(--darkblue);
+}
+
+
+@media screen and (min-width: 768px) {
+  .profile-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
-  
+
   .welcome-message {
-    margin-bottom: 20px;
+    /* flex: 1; */
+    margin-bottom: 0;
+    margin-right: auto;
   }
-  
+
   .action-buttons {
-    margin-top: 20px;
-    /* width: 15%; */
-    display: flex;
+    margin-top: 0;
     flex-direction: column;
     align-items: center;
-    /* display: flex;
-    justify-content: flex-end; */
   }
 
   .action-buttons button {
-    margin-bottom: 10px; 
-  }
-  .btn-custom{
-    width: 250px;
-  }
-  
-  
-  .profile-picture {
-    width: 100px; 
-    height: 100px; 
     margin-bottom: 10px;
-    border-radius: 50%;
   }
-  
-  
-  @media screen and (min-width: 768px) {
-    .profile-container {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .welcome-message {
-      /* flex: 1; */
-      margin-bottom: 0;
-      margin-right: auto; 
-    }
-  
-    .action-buttons {
-        margin-top: 0; 
-        flex-direction: column;
-        align-items:center;
-    }
+
+  .profile-picture {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profile-container {
+    justify-content: space-between;
+    flex-direction: row;
+    /* align-items: center; */
+  }
+
+  .welcome-message {
+    width: 50%;
+    margin-right: 20%;
+  }
+
+  .action-buttons {
+    margin-top: 20%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+  }
+
+  .action-buttons button {
+    margin-bottom: 10px;
+  }
+
+  .profile-picture {
+    margin-top: 5%;
 
     .action-buttons button {
-        margin-bottom: 10px; 
-      }
-  
-    .profile-picture {
-      margin: 0;
       margin-bottom: 10px;
     }
   }
-  @media screen and (min-width: 1024px) {
-    .profile-container {
-        justify-content: space-between;
-        flex-direction: row;
-        /* align-items: center; */
-    }
 
-    .welcome-message{
-        width: 50%;
-        margin-right: 20%;
-    }
-
-    .action-buttons {
-        margin-top: 20%;
-        flex-direction: column;
-        align-items:center;
-        margin-bottom: 10%;
-    }
-    .action-buttons button {
-        margin-bottom: 10px; 
-      }
-
-    .profile-picture {
-        margin-top: 5%; 
-            .action-buttons button {
-        margin-bottom: 10px; 
-      }   
-      }
-
-  }
+}
