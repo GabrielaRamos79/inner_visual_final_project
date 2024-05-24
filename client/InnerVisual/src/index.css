@@ -54,10 +54,89 @@ p {
 .raleway {
     font-family: 'Raleway', sans-serif;
     font-optical-sizing: auto;
-    font-weight:400;
+    font-weight: lighter;
     font-style: normal;
 }
 
-body{
+body {
     font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+}
+
+
+    /*titulo de las secciones*/
+    h2 {
+        font-size: 110px;
+        font-weight: lighter;
+    }
+
+    /*subtítulos*/
+    h3 {
+        font-size: 42px;
+        font-weight: lighter;
+    }
+
+    /*párrafos*/
+    p {
+        font-size: 20px;
+    }
+
+
+
+@media screen and (max-width: 950px) {
+
+    /*titulo de las secciones*/
+    h2 {
+        font-size: 80px;
+        font-weight: lighter;
+    }
+
+    /*subtítulos*/
+    h3 {
+        font-size: 42px;
+        font-weight: lighter;
+    }
+
+    /*párrafos*/
+    p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /*titulo de las secciones*/
+    h2{
+        font-size: 60px;
+        font-weight: lighter;
+    }
+
+    /*subtítulos*/
+    h3{
+        font-size: 42px;
+        font-weight: lighter;
+    }
+
+    /*párrafos*/
+    p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /*titulo de las secciones*/
+    h2{
+        font-size: 36px;
+        font-weight: lighter;
+    }
+
+    /*subtítulos*/
+    h3{
+        font-size: 24px;
+        font-weight: lighter;
+    }
+
+    /*párrafos*/
+    p{
+        font-size: 18px;
+    }
 }
