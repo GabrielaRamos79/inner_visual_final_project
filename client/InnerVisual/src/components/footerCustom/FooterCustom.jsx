@@ -1,8 +1,9 @@
 import React from 'react'
 import './footerCustom.css'
-import facebook from '../../assets/img/icons/facebook.png'
-import instagram from '../../assets/img/icons/instagram.png'
-import linkedin from '../../assets/img/icons/linkedin.png'
+import facebook from '../../assets/img/icons/facebooklogo.svg'
+import instagram from '../../assets/img/icons/instagramlogo.svg'
+import linkedin from '../../assets/img/icons/linkedinlogo.svg'
+import whatsapp from '../../assets/img/icons/whatsapplogo.svg'
 
 const FooterCustom = () => {
   return (
@@ -17,6 +18,9 @@ const FooterCustom = () => {
           </a>
           <a href="https://www.linkedin.com" target="_blank">
             <img className='imgFooter' src={linkedin} alt="logo de linkedin" />
+          </a>
+          <a href="https://www.whatsapp.com" target="_blank">
+            <img className='imgWhatsapp' src={whatsapp} alt="logo de whatsapp" />
           </a>
         </div>
 
