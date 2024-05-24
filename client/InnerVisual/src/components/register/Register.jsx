@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import "./register.css";
 import register from "../../assets/img/register.svg";
-
+import { CustomSweetAlertOk, CustomSweetAlertError } from '../../components/sweetAlertComponent/CustomSweetAlert';
 import LoginComponent from "./../loginComponent/LoginComponent";
 
 const Register = () => {
@@ -17,10 +17,16 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
 
   const handleLoginClick = () => {
     setShowLoginForm(true);
+  };
+
+  const handleRepeatPasswordChange = (event) => {
+    setRepeatPassword(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -28,30 +34,33 @@ const Register = () => {
 
     let isValid = true;
 
+    if (password !== repeatPassword) {
+      CustomSweetAlertError('Las contraseñas no coinciden');
+      return; 
+    }
     if (!userName || !surname || !email || !password || !phone) {
       isValid = false;
-      Swal.fire("Error", "Debes completar todos los campos", "error");
+      CustomSweetAlertError('Debes completar todos los campos');
       return;
     }
-
+    if (!termsAccepted) {
+      CustomSweetAlertError('Debes aceptar términos y condiciones');
+      return;
+    }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       isValid = false;
-      Swal.fire("Error", "El correo electrónico no es válido", "error");
+      CustomSweetAlertError('Debes ingresar un email álido');
       return;
     }
     if (password.length < 8) {
       isValid = false;
-      Swal.fire(
-        "Error",
-        "La contraseña debe tener al menos 8 caracteres",
-        "error"
-      );
+      CustomSweetAlertError('La contraseña debe tener al menos 8 caracteres');
       return;
     }
     if (phone.length < 8) {
       isValid = false;
-      Swal.fire("Error", "El teléfono debe tener al menos 9", "error");
+      CustomSweetAlertError('El teléfono debe contener al menos 8 números');
       return;
     }
     const formObject = {
@@ -66,12 +75,24 @@ const Register = () => {
 
     try {
       await UserHandler.postUser(formObject);
-      Swal.fire("Éxito", "Usuario creado exitosamente.", "success");
+      CustomSweetAlertOk('¡Usuario creado correctamente!');
+      resetForm();
     } catch (error) {
       console.error(error);
-      Swal.fire("Error", "Hubo un problema al crear el usuario.", "error");
+      CustomSweetAlertError('Hubo un error al crear el usuario');
     }
   };
+
+  const resetForm = () => {
+    setuserName ("");
+    setSurname("");
+    setEmail(""); 
+    setPassword(""); 
+    setPhone(""); 
+    setSelectedFile(null);
+    setRepeatPassword("");
+  };
+
   return (
     <>
       <section className="login-register">
@@ -164,11 +185,11 @@ const Register = () => {
                       <Col>
                         <p className="fw-bold"> Contraseña</p>
                         <input
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
+                          value={repeatPassword}
+                          onChange={(e) => setRepeatPassword(e.target.value)}
                           type="password"
-                          id="inputPassword5"
-                          aria-describedby="passwordHelpBlock"
+                          
+                          aria-describedby="passwordHelpBlocka"
                           placeholder="Repetir contraseña"
                         />
                       </Col>
@@ -178,6 +199,7 @@ const Register = () => {
                     <Form.Check
                       type="checkbox"
                       label="Acepto los términos y condiciones"
+                      onChange={() => setTermsAccepted(!termsAccepted)}
                     />
                   </Form.Group>
                   <Col className="d-flex justify-content-center mb-4">
