@@ -7,10 +7,10 @@
 
 .sectionBenefit{
     display: flex;
-    align-items: center;
-    padding-bottom: 50px;
-    justify-content: center;
-    position: relative;
+    align-items:end;
+    padding-bottom:50px;
+    justify-content:center;
+    position:relative;
 
 }
 
