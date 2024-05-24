@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../../assets/img/logo.svg';
+import logoDefault from '../../assets/img/logo.svg';
+import logoAdmin from '../../assets/img/Logo_Orange.png';
+import logoCursos from '../../assets/img/Logo_Orange.png';
+import logoClient from '../../assets/img/Logo_Orange.png';
+import logoLogin from '../../assets/img/Logo_Orange.png';
 import './navbarCustom.css';
 import { UserContext } from '../../context/AuthContext';
 
@@ -38,6 +42,33 @@ function NavbarCustom() {
     return "/";
   };
 
+  const getLinkClass = () => {
+    switch (location.pathname) {
+      case '/cursos':
+      case '/client':
+      case '/login':
+      case '/admin':
+        return 'orange-links';
+      default:
+        return '';
+    }
+  };
+
+  const getLogoSrc = () => {
+    switch (location.pathname) {
+      case '/cursos':
+        return logoCursos;
+      case '/client':
+        return logoClient;
+      case '/login':
+        return logoLogin;
+      case '/admin':
+          return logoAdmin;  
+      default:
+        return logoDefault;
+    }
+  };
+
   return (
     <>
       <nav className={`navbar ${menuOpen ? 'menuOpen' : ''}`}>
@@ -50,44 +81,44 @@ function NavbarCustom() {
         <div className="overlay" onClick={toggleMenu}></div>
 
         <figure>
-          <img className="link" id="logo" src={logo} alt="logo Inner Visuals" />
+          <img className="link" id="logo" src={getLogoSrc()} alt="logo Inner Visuals" />
         </figure>
 
         <div className="iconHolder">
-          <Link to="/" className="nav-link-custom">
-            <h3 className='links closeactive'>home</h3>
+          <Link to="/" className={`nav-link-custom ${getLinkClass()}`}>
+            <h3 className={`links closeactive ${getLinkClass()}`}>home</h3>
           </Link>
 
-          <Link to="/about" className="nav-link-custom">
+          <Link to="/about" className={`nav-link-custom ${getLinkClass()}`}>
             <div className="aboutLink">
-              <h3 className='links closeactive'>about</h3>
+              <h3 className={`links closeactive ${getLinkClass()}`}>about</h3>
             </div>
           </Link>
 
-          <Link to="/cursos" className="nav-link-custom">
+          <Link to="/cursos" className={`nav-link-custom ${getLinkClass()}`}>
             <div className="cursosLink">
-              <h3 className='links closeactive'>cursos</h3>
+              <h3 className={`links closeactive ${getLinkClass()}`}>cursos</h3>
             </div>
           </Link>
 
           {isLoggedIn && (user?.role === 'admin' || user?.role === 'client') && (
-            <Link to={getDashboardLink()} className="nav-link-custom">
+            <Link to={getDashboardLink()} className={`nav-link-custom ${getLinkClass()}`}>
               <div className="areaLink">
-                <h3 className='links closeactive'>área privada</h3>
+                <h3 className={`links closeactive ${getLinkClass()}`}>área privada</h3>
               </div>
             </Link>
           )}
 
           {isLoggedIn ? (
-            <div className="nav-link-custom" onClick={handleLogout}>
+            <div className={`nav-link-custom ${getLinkClass()}`} onClick={handleLogout}>
               <div className="logoutLink">
-                <h3 className='links closeactive'>logout</h3>
+                <h3 className={`links closeactive ${getLinkClass()}`}>logout</h3>
               </div>
             </div>
           ) : (
-            <Link to="/login" className="nav-link-custom">
+            <Link to="/login" className={`nav-link-custom ${getLinkClass()}`}>
               <div className="loginLink">
-                <h3 className='links closeactive'>login</h3>
+                <h3 className={`links closeactive ${getLinkClass()}`}>login</h3>
               </div>
             </Link>
           )}
