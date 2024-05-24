@@ -1,76 +1,91 @@
 import React, { useState } from 'react';
+import { CustomSweetAlertOk, CustomSweetAlertError } from '../../components/sweetAlertComponent/CustomSweetAlert';
 import './contact.css';
 
 const Contact = () => {
   const [email, setEmail] = useState('');
   const [emailTouched, setEmailTouched] = useState(false);
-  const [emailError, setEmailError] = useState('');
+ 
   const [name, setName] = useState('');
   const [nameTouched, setNameTouched] = useState(false);
-  const [nameError, setNameError] = useState('');
+  
   const [surname, setSurname] = useState('');
   const [surnameTouched, setSurnameTouched] = useState(false);
-  const [surnameError, setSurnameError] = useState('');
+  
   const [telephone, setTelephone] = useState('');
   const [telephoneTouched, setTelephoneTouched] = useState(false);
-  const [telephoneError, setTelephoneError] = useState('');
+  
   const [message, setMessage] = useState('');
   const [messageTouched, setMessageTouched] = useState(false);
-  const [messageError, setMessageError] = useState('');
-  const [showAlert, setShowAlert] = useState(false);
-  const [missingFields, setMissingFields] = useState([]);
+
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [acceptTermsTouched, setAcceptTermsTouched] = useState(false); 
+  
+  const emailRegex = /^\S+@\S+\.\S+$/;
+  const telephoneRegex = /^\d{9}$/;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const emailRegex = /^\S+@\S+\.\S+$/;
-    const missing = [];
+    if (!name.trim()) {
+      CustomSweetAlertError('El nombre es obligatorio.');
+      setNameTouched(true);
+      return;    
+    }
+
+    if (!surname.trim()) {
+      CustomSweetAlertError('El apellido es obligatorio.');
+      setSurnameTouched(true);
+      return;   
+    } 
+
+    if (!telephone.trim() || !telephoneRegex.test(telephone)) {
+      CustomSweetAlertError('Introduce un teléfono válido.');
+      setTelephoneTouched(true);
+      return;
+    } 
 
     if (!emailRegex.test(email)) {
-      missing.push('Introduce email');
-      alert('Por favor, introduce un correo electrónico válido.');
+      CustomSweetAlertError('Introduce un email válido.');
+      setEmailTouched(true);
       return;
     }
 
-    if (message.length < 5) {
-      setMissingFields(missing);
-      alert('El mensaje debe tener al menos 5 caracteres.');
+    if (message.length < 5) {      
+      CustomSweetAlertError('El mensaje debe tener al menos 5 caracteres.');
+      setMessageTouched(true);
       return;
     }
 
-    if (missing.length > 0) {
-      setMissingFields(missing);
-      alert('Hay campos vacios. Por favor, completa todos los campos son obligatorios.');
+    if (!acceptTerms) { 
+      CustomSweetAlertError('Debes aceptar el tratamiento de datos.');
+      setAcceptTermsTouched(true);
       return;
     }
-
-    setShowAlert(true);
-    setEmail('');
+    CustomSweetAlertOk('Mensaje enviado correctamente, nuestro administrador se pondará en contacto usted. Gracias');
+    
     setName('');
     setSurname('');
     setTelephone('');
+    setEmail('');
     setMessage('');
-    setMissingFields([]);
-
-    setEmailError('');
-    setNameError('');
-    setSurnameError('');
-    setTelephoneError('');
-    setMessageError('');
-  };
-
-
-  const handleCloseAlert = () => {
-    setShowAlert(false);
+    setAcceptTerms('');
+       
+    setNameTouched(false);
+    setSurnameTouched(false);
+    setTelephoneTouched(false);
+    setEmailTouched(false);
+    setMessageTouched(false);
+    setAcceptTermsTouched(false);
   };
 
   return (
     <>
       <div className='jobs-container-contact-with-us'>
 
-        <h2 className='titleJobs'>¿Quieres mas información? <br></br>Contacta con Nosotros</h2>
-        <br></br>
-        
+        <h1 className='titleJobs-container-contact-with-us'>CONTACTO</h1>
+        <br />
+         
         <form onSubmit={handleSubmit}>
 
             <div className="contact-form-contact-with-us">
@@ -85,15 +100,9 @@ const Contact = () => {
                         value={name}
                         placeholder="Introduce tu nombre"
                         onChange={(e) => setName(e.target.value)}
-                        onBlur={() => {
-                          setNameTouched(true);
-                          if (!name.trim()) {
-                            setNameError();
-                          }
-                        }}
-                        className={`input-field ${nameError && nameTouched ? 'error' : ''}`}
+                        onBlur={() => setNameTouched(true)}
+                        className={`input-field ${nameTouched && !name.trim() ? 'error' : ''}`}
                       />
-                      {nameError && <p>{nameError}</p>}
                     </div>
 
                     <div className="input-group-surname-contact-with-us">
@@ -104,17 +113,10 @@ const Contact = () => {
                         value={surname}
                         placeholder="Introduce tu apellido"
                         onChange={(e) => setSurname(e.target.value)}
-                        onBlur={() => {
-                          setSurnameTouched(true);
-                          if (!surname.trim()) {
-                            setSurnameError();
-                          }
-                        }}
-                        className={`input-field ${surnameError && surnameTouched ? 'error' : ''}`}
+                        onBlur={() => setSurnameTouched(true)}
+                        className={`input-field ${surnameTouched && !surname.trim() ? 'error' : ''}`}
                       />
-                      {surnameError && <p>{surnameError}</p>}
                     </div>
-
                   </div>
 
                   <div className="input-group-contact-row">
@@ -127,16 +129,10 @@ const Contact = () => {
                         value={telephone}
                         placeholder="Introduce tu telféfono"
                         onChange={(e) => setTelephone(e.target.value)}
-                        onBlur={() => {
-                          setTelephoneTouched(true);
-                          if (!telephone.trim()) {
-                            setTelephoneError();
-                          }
-                        }}
-                        className={`input-field ${telephoneError && telephoneTouched ? 'error' : ''}`}
+                        onBlur={() => setTelephoneTouched(true)}
+                        className={`input-field ${telephoneTouched && (!telephone.trim() || !telephoneRegex.test(telephone)) ? 'error' : ''}`}
                       />
-                      {telephoneError && <p>{telephoneError}</p>}
-                    </div>
+                   </div>
 
                     <div className="input-group-email-contact-with-us">
                       <label htmlFor="email-contact-with-us">Correo Electrónico:</label>
@@ -146,17 +142,10 @@ const Contact = () => {
                         value={email}
                         placeholder="Introduce tu correo electrónico"
                         onChange={(e) => setEmail(e.target.value)}
-                        onBlur={() => {
-                          setEmailTouched(true);
-                          if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-                            setEmailError();
-                          }
-                        }}
-                        className={`input-field half-width ${missingFields.includes('Introduce email') && emailTouched ? 'error' : ''}`}
+                        onBlur={() => setEmailTouched(true)}
+                        className={`input-field half-width ${emailTouched && !emailRegex.test(email) ? 'error' : ''}`}
                       />
-                      {emailError && <p>{emailError}</p>}
                     </div>
-
                   </div>
 
                   <div className="input-group-message-contact-with-us">
@@ -164,31 +153,28 @@ const Contact = () => {
                     <textarea
                       id="message-contact-with-us"
                       value={message}
-                      placeholder="Introduce tu consulta"
+                      placeholder="Escribe tu consulta"
                       onChange={(e) => setMessage(e.target.value)}
-                      onBlur={() => {
-                        setMessageTouched(true);
-                        if (message.length < 5) {
-                          setMessageError();
-                        }
-                      }}
-                      required
+                      onBlur={() => setMessageTouched(true)}
                       className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
                     />
-                    {messageError && <p>{messageError}</p>}
                   </div>
-                      
-                  <div className="submit-button-wrapper-contact-with-us">
+                  <div className="input-group-terms-contact-with-us">
+                    <input
+                      type="checkbox"
+                      id="accept-terms-contact-with-us"
+                      checked={acceptTerms}
+                      onChange={(e) => setAcceptTerms(e.target.checked)}
+                      onBlur={() => setAcceptTermsTouched(true)}
+                    />
+                    <label htmlFor="accept-terms-contact-with-us">He leido y acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer">términos y condiciones</a></label>
+                                                       
+                    <div className="submit-button-wrapper-contact-with-us">
                       <button type="submit" className="submit-button-contact-with-us">Enviar Mensaje</button>
+                    </div>
                   </div>
               </div>
-          </form>
-          {showAlert && (
-            <div className="alert">
-              <span className="close-btn-contact-with-us" onClick={handleCloseAlert}>X</span>
-              <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
-            </div>
-          )}
+          </form>     
         </div>
       </>
   );
