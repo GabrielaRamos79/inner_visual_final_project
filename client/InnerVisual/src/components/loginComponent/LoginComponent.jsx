@@ -14,7 +14,7 @@ const LoginComponent = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      handleLogin(email, password, userType);
+      handleLogin(email, password);
       Swal.fire({
         icon: 'success',
         title: 'OK',

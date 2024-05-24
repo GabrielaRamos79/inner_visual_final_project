@@ -1,9 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 
-
 export const UserContext = createContext();
-
 
 export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,16 +20,16 @@ export const UserProvider = ({ children }) => {
     if (cookies.id_user) {
       setUser({
         id: cookies.id_user,
-        role: cookies.name,
-        name: cookies.surname,
-        namePerson: cookies.email,
-        surnamePerson: cookies.phone,
-        surnamePerson: cookies.photo,
-        surnamePerson: cookies.user_type,
+        role: cookies.user_type,
+        name: cookies.name,
+        surname: cookies.surname,
+        email: cookies.email,
+        phone: cookies.phone,
+        photo: cookies.photo,
       });
       setIsLoggedIn(true);
     } else {
-      setIsLoggedIn(false)
+      setIsLoggedIn(false);
     }
   }, [cookies]);
 
@@ -45,15 +43,13 @@ export const UserProvider = ({ children }) => {
     removeCookie("user_type");
 
     setUser(null);
-
     setIsLoggedIn(false);
   };
-
 
   return (
     <UserContext.Provider value={{ user, setUser, isLoggedIn, logout }}>
       {children}
     </UserContext.Provider>
   );
-
 };
+

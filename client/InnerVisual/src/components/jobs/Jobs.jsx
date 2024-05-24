@@ -1,221 +1,169 @@
 import React, { useState } from 'react';
+import { CustomSweetAlertOk, CustomSweetAlertError } from '../../components/sweetAlertComponent/CustomSweetAlert';
 import './jobs.css';
 
 const Jobs = () => {
   const [email, setEmail] = useState('');
   const [emailTouched, setEmailTouched] = useState(false);
-  const [emailError, setEmailError] = useState('');
+
   const [name, setName] = useState('');
   const [nameTouched, setNameTouched] = useState(false);
-  const [nameError, setNameError] = useState('');
+ 
   const [surname, setSurname] = useState('');
   const [surnameTouched, setSurnameTouched] = useState(false);
-  const [surnameError, setSurnameError] = useState('');
+  
   const [telephone, setTelephone] = useState('');
   const [telephoneTouched, setTelephoneTouched] = useState(false);
-  const [telephoneError, setTelephoneError] = useState('');
+  
   const [message, setMessage] = useState('');
   const [messageTouched, setMessageTouched] = useState(false);
-  const [messageError, setMessageError] = useState('');
-  const [showAlert, setShowAlert] = useState(false);
-  const [missingFields, setMissingFields] = useState([]);
 
+  const emailRegex = /^\S+@\S+\.\S+$/;
+  const telephoneRegex = /^\d{9}$/;
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const emailRegex = /^\S+@\S+\.\S+$/;
-    const missing = [];
+
+    let hasError = false;    
 
     if (!name.trim()) {
-      setMissingName('Introduce nombre');
-      missing.push('name');
-    } else {
-      setMissingName('');
+      CustomSweetAlertError('El nombre es obligatorio.');
+      setNameTouched(true);
+      return; 
     }
 
     if (!surname.trim()) {
-      setMissingSurname('Introduce apellido');
-      missing.push('surname');
-    } else {
-      setMissingSurname('');
+      CustomSweetAlertError('El apellido es obligatorio.');
+      setSurnameTouched(true);
+      return;  
     }
     if (!telephone.trim()) {
-      setMissingTelephone('Introduce teléfono');
-      missing.push('telephone');
-    } else {
-      setMissingTelephone('');
+      CustomSweetAlertError('Introduce un teléfono válido.');
+      setTelephoneTouched(true);
+      return;
     }
 
     if (!emailRegex.test(email)) {
-      setMissingEmail('Introduce email');
-      missing.push('email');
-    } else {
-      setMissingEmail('');
+      CustomSweetAlertError('Introduce un email válido.');
+      setEmailTouched(true);
+      return;
     }
 
     if (message.length < 5) {
-      setMissingFields('El mensaje debe tener al menos 5 caracteres.');
-      missing.push('message');
-    } else {
-      setMissingFields('');
+      CustomSweetAlertError('El mensaje debe tener al menos 5 caracteres.');
+      setMessageTouched(true);
+      return;
     }
 
-    if (missing.length > 0) {
-      setMissingFields('Hay campos vacios. Por favor, completa todos los campos son obligatorios.');
-      missing.push('missingFields');
-    } else {
-      setMissingFields('');
-    }
+    CustomSweetAlertOk('Mensaje enviado correctamente, nuestro administrador se pondará en contacto usted. Gracias');
 
-    setShowAlert(true);    
     setName('');
     setSurname('');
     setTelephone('');
     setEmail('');
     setMessage('');
-    setMissingFields([]);
-
-    setMissingName('');
-    setMissingSurname('');
-    setMissingTelephone('');
-    setMissingEmail('');
-    setMissingMessage('');
+       
+    setNameTouched(false);
+    setSurnameTouched(false);
+    setTelephoneTouched(false);
+    setEmailTouched(false);
+    setMessageTouched(false);
     
    
-  };
-
-  const handleCloseAlert = () => {
-    setShowAlert(false);
   };
 
   return (
     <>
       <div className='jobs-container-contact-work-with-us'>
+        <div className='container-title-Jobs'>
+          <h2 className='titleJobs-jobs-work-with-us'>WORK WITH US</h2>
+          <br></br>
+          <h1 className='subtitleJobs-jobs-work-with-us'>Aqui te invitamos a que trabajes con nosotros, cuentanos sobre ti </h1>
+         </div> 
+          <form onSubmit={handleSubmit}>
 
-        <h2 className='titleJobs'>¿Quieres trabajar con Nosotros? <br></br> Escribenos y nos pondremos en contacto contigo</h2>
-        <br></br>
-        
-        <form onSubmit={handleSubmit}>
+              <div className="contact-form-jobs-work-with-us">
 
-            <div className="contact-form-contact-work-with-us">
+                    <div className="input-group-name-jobs-work-with-us-row">
 
-                  <div className="input-group-name-contact-work-with-us-row">
-
-                    <div className="input-group-name-contact-work-with-us">
-                      <label htmlFor="name-contact-work-with-us">Nombre:</label>
-                      <input
-                        type="text"
-                        id="name-contact-work-with-us"
-                        value={name}
-                        placeholder="Introduce tu nombre"
-                        onChange={(e) => setName(e.target.value)}
-                        onBlur={() => {
-                          setNameTouched(true);
-                          if (!name.trim()) {
-                            setNameError();
-                          }
-                        }}
-                        className={`input-field ${nameError && nameTouched ? 'error' : ''}`}
+                      <div className="input-group-name-jobs-work-with-us">
+                        <label htmlFor="name-jobs-work-with-us">Nombre:</label>
+                        <input
+                          type="text"
+                          id="name-jobs-work-with-us"
+                          value={name}
+                          placeholder="Introduce tu nombre"
+                          onChange={(e) => setName(e.target.value)}
+                          onBlur={() =>  setNameTouched(true)}
+                          className={`input-field ${nameTouched && !name.trim() ? 'error' : ''}`}
                       />
-                      {nameError && <p>{nameError}</p>}
+                      </div>
+
+                      <div className="input-group-surname-jobs-work-with-us">
+                        <label htmlFor="surname-contact-work-with-us">Apellido:</label>
+                        <input
+                          type="text"
+                          id="surname-jobs-work-with-us"
+                          value={surname}
+                          placeholder="Introduce tu apellido"
+                          onChange={(e) => setSurname(e.target.value)}
+                          onBlur={() =>  setSurnameTouched(true)}
+                          className={`input-field ${surnameTouched && !surname.trim() ? 'error' : ''}`}
+                        />
+                      </div>
+
                     </div>
 
-                    <div className="input-group-surname-contact-work-with-us">
-                      <label htmlFor="surname-contact-work-with-us">Apellido:</label>
-                      <input
-                        type="text"
-                        id="surname-contact-work-with-us"
-                        value={surname}
-                        placeholder="Introduce tu apellido"
-                        onChange={(e) => setSurname(e.target.value)}
-                        onBlur={() => {
-                          setSurnameTouched(true);
-                          if (!surname.trim()) {
-                            setSurnameError();
-                          }
-                        }}
-                        className={`input-field ${surnameError && surnameTouched ? 'error' : ''}`}
-                      />
-                      {surnameError && <p>{surnameError}</p>}
+                    <div className="input-group-jobs-work-row">
+
+                      <div className="input-group-telephone-jobs-work-with-us">
+                        <label htmlFor="telephone-contact-work-with-us">Teléfono:</label>
+                        <input
+                          type="tel"
+                          id="telephone-jobs-work-with-us"
+                          value={telephone}
+                          placeholder="Introduce tu telféfono"
+                          onChange={(e) => setTelephone(e.target.value)}
+                          onBlur={() =>setTelephoneTouched(true)}
+                          className={`input-field ${telephoneTouched && (!telephone.trim() || !telephoneRegex.test(telephone)) ? 'error' : ''}`}
+                        />
+                      </div>
+
+                      <div className="input-group-email-jobs-work-with-us">
+                        <label htmlFor="email-jobs-work-with-us">Correo Electrónico:</label>
+                        <input
+                          type="email"
+                          id="email-jobs-work-with-us"
+                          value={email}
+                          placeholder="Introduce tu correo electrónico"
+                          onChange={(e) => setEmail(e.target.value)}
+                          onBlur={() => setEmailTouched(true)}
+                          className={`input-field half-width ${emailTouched && !emailRegex.test(email) ? 'error' : ''}`}
+                        />
+                      </div>
+
                     </div>
 
-                  </div>
-
-                  <div className="input-group-contact-work-row">
-
-                    <div className="input-group-telephone-contact-work-with-us">
-                      <label htmlFor="telephone-contact-work-with-us">Teléfono:</label>
-                      <input
-                        type="tel"
-                        id="telephone-contact-work-with-us"
-                        value={telephone}
-                        placeholder="Introduce tu telféfono"
-                        onChange={(e) => setTelephone(e.target.value)}
-                        onBlur={() => {
-                          setTelephoneTouched(true);
-                          if (!telephone.trim()) {
-                            setTelephoneError();
-                          }
-                        }}
-                        className={`input-field ${telephoneError && telephoneTouched ? 'error' : ''}`}
+                    <div className="input-group-message-jobs-work-with-us">
+                      <label htmlFor="message-jobs-work-with-us">Mensaje:</label>
+                      <textarea
+                        id="message-jobs-work-with-us"
+                        value={message}
+                        placeholder="Introduce tu consulta"
+                        onChange={(e) => setMessage(e.target.value)}
+                        onBlur={() => setMessageTouched(true)}
+                        className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
                       />
-                      {telephoneError && <p>{telephoneError}</p>}
+                    </div>                     
+              
+                    <div className="submit-button-wrapper-jobs-with-us">
+                        <button type="submit" className="submit-button-jobs-with-us">Enviar Mensaje</button>
                     </div>
+              </div>        
+            </form>
+          </div>
+        </>
+    );
+  };
 
-                    <div className="input-group-email-contact-work-with-us">
-                      <label htmlFor="email-contact-work-with-us">Correo Electrónico:</label>
-                      <input
-                        type="email"
-                        id="email-contact-work-with-us"
-                        value={email}
-                        placeholder="Introduce tu correo electrónico"
-                        onChange={(e) => setEmail(e.target.value)}
-                        onBlur={() => {
-                          setEmailTouched(true);
-                          if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-                            setEmailError();
-                          }
-                        }}
-                        className={`input-field half-width ${missingFields.includes('Introduce email') && emailTouched ? 'error' : ''}`}
-                      />
-                      {emailError && <p>{emailError}</p>}
-                    </div>
-
-                  </div>
-
-                  <div className="input-group-message-contact-work-with-us">
-                    <label htmlFor="message-contact-work-with-us">Mensaje:</label>
-                    <textarea
-                      id="message-contact-work-with-us"
-                      value={message}
-                      placeholder="Introduce tu consulta"
-                      onChange={(e) => setMessage(e.target.value)}
-                      onBlur={() => {
-                        setMessageTouched(true);
-                        if (message.length < 5) {
-                          setMessageError();
-                        }
-                      }}
-                      required
-                      className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                    />
-                    {messageError && <p>{messageError}</p>}
-                  </div>
-                      
-                  <div className="submit-button-wrapper-contact-work-with-us">
-                     <button type="submit" className="submit-button-contact-work-with-us">Enviar Mensaje</button>
-                  </div>
-            </div>
-          </form>
-          {showAlert && (
-            <div className="alert" data-testid="success-message">
-              <span className="close-btn-contact-work-with-us" onClick={handleCloseAlert}>X</span>
-              <p>Mensaje enviado, nuestro administrador se pondrá en contacto con usted. Gracias por confiar en Inner Visuals.</p>
-            </div>
-          )}
-        </div>
-      </>
-  );
-};
-
-export default Jobs;
+  export default Jobs;

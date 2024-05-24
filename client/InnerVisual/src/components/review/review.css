@@ -1,130 +1,169 @@
 
 .reviewSection{
-    margin-bottom: 70px;
+    height: 764px;
+    background-color: var(--black);
+    margin-bottom: 350px;
 }
 
 .titleReview{
-    text-align: center;
+    color: white;
+    text-align: left;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-left: 120px;
 }
 
 .cardsReview{
     display: flex;
     align-items: center;
     justify-content:center;
-    text-align: center;
+    text-align: left;
     align-content: center;
-    padding: 0 50px;
+    padding: 0 30px;
 }
 
 .card1Review, .card2Review, .card3Review, .card4Review, .card5Review, .card6Review {
-    max-width: 280px;
-    border: 3px solid #007bff;
+    max-width: 380px;
     border-radius: 20px;
-    padding: 30px;
-    margin: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
+    padding: 0 10px;
+}
+
+.cardName{
+    color: white;
+    text-transform: uppercase;
+}
+
+.cardSurname{
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.cardP {
+    text-transform: uppercase;
+    color: white;
+    text-align: left;
+    margin-bottom: 40px;
 }
 
 .review1, .review2, .review3, .review4, .review5, .review6 {
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
+    width: 380px;
+    height: 380px;
     margin: auto;
-    margin-bottom: 20px;
-}
-
-.cardsName{
-    font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon{
-    background-color:#007bff;
+    visibility: hidden;
 }
 
-.carousel-control-prev-icon {
-    margin-right: 80px;
+.carousel-indicators [data-bs-target] {
+    background-color: var(--black) !important;
+    height: 7px;
+    position: relative;
+    top:50px;
 }
 
-.carousel-control-next-icon {
-    margin-left: 80px;
+
+@media screen and (max-width: 1260px){
+    .review1, .review2, .review3, .review4, .review5, .review6 {
+        width: 280px;
+        height: 280px;
+    }
 }
-
-
 
 
 @media screen and (max-width: 950px) {
+    .titleReview{
+        padding-left: 70px;
+    }
+    .reviewSection{
+        margin-bottom: 250px;
+    }
+
     .cardsReview{
-        padding:0 15px;
+        padding:0 50px;
+    }  
+
+    .cardP{
+        padding:0 30px;
+    }
+
+    .cardName, .cardSurname{
+        font-size: 32px;
+        padding:0 30px;
     }
 
     .review1, .review2, .review3, .review4, .review5, .review6 {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
 
-    .carousel-control-prev-icon {
-        margin-right: 100px;
+}
+
+@media screen and (max-width: 924px){
+    .review1, .review2, .review3, .review4, .review5, .review6 {
+        width: 180px;
+        height: 180px;
     }
-    
-    .carousel-control-next-icon {
-        margin-left: 100px;
+    .cardP{
+        font-size: 18px;
+        padding:0 41px;
+    }
+
+    .cardName, .cardSurname{
+        font-size: 24px;
+        padding:0 37px;
+    }
+
+    .reviewSection{
+        margin-bottom: 250px;
     }
 }
 
-@media screen and (max-width: 800px){
-    .carousel-control-prev-icon {
-        margin-right: 90px;
-    }
-    
-    .carousel-control-next-icon {
-        margin-left: 90px;
-    }
-}
+
 
 
 @media screen and (max-width: 700px) {
+    .reviewSection{
+        margin-bottom: 250px;
+        height: 1850px;
+    }
+    
     .cardsReview{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content:center;
         text-align: center;
-        padding: 0 50px;
+        padding: 0 15px;
     }
 
-    .carousel-control-prev-icon {
-        margin-right: 80px;
-    }
+    .review1, .review2, .review3, .review4, .review5, .review6 {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 80px;
     
-    .carousel-control-next-icon {
-        margin-left: 80px;
+    }
+
+    .cardName{   
+        margin-right: 215px;
+    }
+
+    .cardSurname, .cardP{
+        margin-bottom: 20px;
+    }
+
+    .carousel-indicators [data-bs-target]{
+        margin-bottom: 70px;
     }
 }
 
 
 
-@media screen and (max-width: 650px){
-    .carousel-control-prev-icon {
-        margin-right: 60px;
-    }
-    
-    .carousel-control-next-icon {
-        margin-left: 60px;
-    }
-}
-
-@media screen and (max-width: 530px){
-    .carousel-control-prev-icon {
-        margin-right: 30px;
-    }
-    
-    .carousel-control-next-icon {
-        margin-left: 30px;
-    }
-}

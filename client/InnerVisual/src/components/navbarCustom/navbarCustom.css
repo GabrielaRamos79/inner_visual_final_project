@@ -6,26 +6,20 @@
   justify-content: space-between;
   height: 140px;
   width: 100%;
-  background-color: var(--lightblue);
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  z-index: 1000;
 }
 
 #logo {
-  width: 260px;
+  width: 220px;
   height: 80px;
   padding: 5px;
   position: absolute;
   left: 50px;
   top: 30px;
-  transition: transform 2s; 
-  transform-style: preserve-3d; 
 }
-
-#logo:hover {
-  background-color: var(--darkblue);
-  border-radius: 50px;
-  transform: rotateY(360deg); 
-}
-
 
 .links {
   font-size: 18px;
@@ -77,9 +71,15 @@
   margin-left: 20px;
 }
 
+.orange-links .links {
+  color: var(--black);
+  font-weight: 400;
+}
 
 
-@media screen and (max-width: 690px) {
+
+
+@media screen and (max-width: 840px) {
   .navbar {
     display: flex;
     flex-direction: row-reverse;
@@ -128,6 +128,7 @@
     background-color: var(--lightblue);
     padding-top: 10px;
     padding-right: 15px;
+    text-align: center;
 }
 
 .closeactive {

@@ -1,83 +1,251 @@
-import './levelCourse.css'
-import React from 'react'
-import ReactPlayer from 'react-player'
+import './levelCourse.css';
+import React, { useEffect, useState, useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-// Render a YouTube video player
+import { ContentHandler } from '../../handler/ContentHandler';
+import VideoCard from '../videoCard/VideoCard';
+import VideoList from '../videoList/VideoList'; 
+import { UserContext } from '../../context/AuthContext.jsx'; 
 
 const LevelsCourse = () => {
+  const { user } = useContext(UserContext); 
+  const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [activeKey, setActiveKey] = useState("0");
+
+  const fetchData = async () => {
+    if (user && user.id) {
+      const contentData = await ContentHandler.getAllContent(user.id);
+      setVideos(contentData);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [user]);
+
+  const handleVideoSelect = (video) => {
+    setSelectedVideo(video);
+  };
+
+  const handleVideoComplete = (video) => {
+    console.log(`Video ${video.title_video} has ended`);
+  };
+
+  const handleAccordionChange = (key) => {
+    setActiveKey(key);
+    setSelectedVideo(null); // Clear the selected video when the accordion section changes
+  };
+
   return (
     <>
-      <Accordion defaultActiveKey="0">
+      <Accordion activeKey={activeKey} onSelect={handleAccordionChange}>
         <Accordion.Item eventKey="0">
-          <Accordion.Header>NIVEL 1</Accordion.Header>
+          <Accordion.Header>Level 1</Accordion.Header>
           <Accordion.Body>
-
-          <Container>
-      <Row>
-
-        <Col>
-
-        
-              <ButtonGroup vertical>
-                <Button>Button</Button>
-                <Button>Button</Button>
-                <Button>Button</Button>
-                <Button>Button</Button>
-              </ButtonGroup>
-            
-        </Col>
-
-        <Col>
-
-        <Container>
+            <Container>
               <Row>
                 <Col>
-                  <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls={true} />
+                  <VideoList
+                    videos={videos.slice(0, 3)}
+                    onVideoSelect={handleVideoSelect}
+                  />
+                </Col>
+                <Col>
+                  {selectedVideo && (
+                    <VideoCard 
+                      video={selectedVideo} 
+                      onVideoComplete={handleVideoComplete} 
+                    />
+                  )}
                 </Col>
               </Row>
-              <Row>
-                <Col>1 of 3</Col>
-                <Col>2 of 3</Col>
-              </Row>
-              <Row>
-                <Col>NOTAS</Col>
-              </Row>
             </Container>
-
-        </Col>
-      </Row>
-
-    </Container>
-
           </Accordion.Body>
         </Accordion.Item>
 
         <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus iste dignissimos, delectus excepturi ea quam alias soluta dolore voluptates animi reprehenderit sunt nulla deleniti possimus commodi neque quas praesentium?
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="2">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus repellat velit voluptatibus totam. Consectetur labore maxime, dicta, veritatis nemo repellendus eligendi vitae assumenda laborum hic similique incidunt, vel quidem totam.
-        </Accordion.Body>
-      </Accordion.Item>  
+          <Accordion.Header>Level 2</Accordion.Header>
+          <Accordion.Body>
+            <Container>
+              <Row>
+                <Col>
+                  <VideoList
+                    videos={videos.slice(3, 5)}
+                    onVideoSelect={handleVideoSelect}
+                  />
+                </Col>
+                <Col>
+                  {selectedVideo && (
+                    <VideoCard 
+                      video={selectedVideo} 
+                      onVideoComplete={handleVideoComplete} 
+                    />
+                  )}
+                </Col>
+              </Row>
+            </Container>
+          </Accordion.Body>
+        </Accordion.Item>
+
+        <Accordion.Item eventKey="2">
+          <Accordion.Header>Level 3</Accordion.Header>
+          <Accordion.Body>
+            <Container>
+              <Row>
+                <Col>
+                  <VideoList
+                    videos={videos.slice(5, 10)}
+                    onVideoSelect={handleVideoSelect}
+                  />
+                </Col>
+                <Col>
+                  {selectedVideo && (
+                    <VideoCard 
+                      video={selectedVideo} 
+                      onVideoComplete={handleVideoComplete} 
+                    />
+                  )}
+                </Col>
+              </Row>
+            </Container>
+          </Accordion.Body>
+        </Accordion.Item>
       </Accordion>
-
-
-
-
-      <p>Niveles del curso</p>
     </>
-  )
-}
+  );
+};
 
-export default LevelsCourse
+export default LevelsCourse;
+
+
+
+// import './levelCourse.css';
+// import React, { useEffect, useState } from 'react';
+// import Accordion from 'react-bootstrap/Accordion';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import { ContentHandler } from '../../handler/ContentHandler';
+// import VideoCard from '../videoCard/VideoCard';
+// import VideoList from '../videoList/VideoList'; 
+
+// const LevelsCourse = () => {
+//   const [videos, setVideos] = useState([]);
+//   const [selectedVideo, setSelectedVideo] = useState(null);
+//   const [watchedVideos, setWatchedVideos] = useState([]);
+
+//   const fetchData = async () => {
+//     const contentData = await ContentHandler.getAllContent();
+//     setVideos(contentData);
+//     setWatchedVideos(new Array(contentData.length).fill(false));
+//   };
+
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+
+//   const handleVideoSelect = (video) => {
+//     setSelectedVideo(video);
+//   };
+
+//   const handleVideoComplete = (video) => {
+//     const videoIndex = videos.findIndex(v => v.id_content === video.id_content);
+//     if (videoIndex !== -1) {
+//       const updatedWatchedVideos = [...watchedVideos];
+//       updatedWatchedVideos[videoIndex] = true;
+//       setWatchedVideos(updatedWatchedVideos);
+//     }
+//   };
+
+//   return (
+//     <>
+//       <Accordion defaultActiveKey="0">
+//         <Accordion.Item eventKey="0">
+//           <Accordion.Header>Level 1</Accordion.Header>
+//           <Accordion.Body>
+//             <Container>
+//               <Row>
+//                 <Col>
+//                   <VideoList
+//                     videos={videos.slice(0, 3)}
+//                     onVideoSelect={handleVideoSelect}
+//                     watchedVideos={watchedVideos.slice(0, 3)}
+//                   />
+//                 </Col>
+//                 <Col>
+//                   {selectedVideo && (
+//                     <VideoCard 
+//                       video={selectedVideo} 
+//                       onVideoComplete={handleVideoComplete} 
+//                     />
+//                   )}
+//                 </Col>
+//               </Row>
+//             </Container>
+//           </Accordion.Body>
+//         </Accordion.Item>
+
+//         <Accordion.Item eventKey="1">
+//           <Accordion.Header>Level 2</Accordion.Header>
+//           <Accordion.Body>
+//             <Container>
+//               <Row>
+//                 <Col>
+//                   <VideoList
+//                     videos={videos.slice(3, 5)}
+//                     onVideoSelect={handleVideoSelect}
+//                     watchedVideos={watchedVideos.slice(3, 5)}
+//                   />
+//                 </Col>
+//                 <Col>
+//                   {selectedVideo && (
+//                     <VideoCard 
+//                       video={selectedVideo} 
+//                       onVideoComplete={handleVideoComplete} 
+//                     />
+//                   )}
+//                 </Col>
+//               </Row>
+//             </Container>
+//           </Accordion.Body>
+//         </Accordion.Item>
+
+//         <Accordion.Item eventKey="2">
+//           <Accordion.Header>Level 3</Accordion.Header>
+//           <Accordion.Body>
+//             <Container>
+//               <Row>
+//                 <Col>
+//                   <VideoList
+//                     videos={videos.slice(5, 10)}
+//                     onVideoSelect={handleVideoSelect}
+//                     watchedVideos={watchedVideos.slice(5, 10)}
+//                   />
+//                 </Col>
+//                 <Col>
+//                   {selectedVideo && (
+//                     <VideoCard 
+//                       video={selectedVideo} 
+//                       onVideoComplete={handleVideoComplete} 
+//                     />
+//                   )}
+//                 </Col>
+//               </Row>
+//             </Container>
+//           </Accordion.Body>
+//         </Accordion.Item>
+//       </Accordion>
+
+//       <p>Рівні курсу</p>
+//     </>
+//   );
+// };
+
+// export default LevelsCourse;
+
+
+
+

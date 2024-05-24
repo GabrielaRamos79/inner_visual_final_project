@@ -16,10 +16,10 @@ describe('Team Component', () => {
         expect(screen.getByText(/Breve descripción del miembro 2/)).toBeInTheDocument();
 
         const kikeImage = screen.getByAltText('Miembro 1');
-        const juanImage = screen.getByAltText('Miembro2');
+        const juanImage = screen.getByAltText('Miembro 2');
 
-        expect(kikeImage).toHaveAttribute('src', Kike);
-        expect(juanImage).toHaveAttribute('src', Juan);
+        expect(kikeImage).toHaveAttribute('src', Kike.toString());
+        expect(juanImage).toHaveAttribute('src', Juan.toString());
     });
 });
 

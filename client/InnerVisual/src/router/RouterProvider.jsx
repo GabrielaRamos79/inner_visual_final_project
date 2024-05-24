@@ -7,6 +7,11 @@ import Home from "../pages/publicPages/Home";
 import Login from "../pages/publicPages/Login";
 import About from "../pages/publicPages/About";
 import LayoutPublic from "../layout/LayoutPublic";
+import Unauthorized from '../components/unauthorized/Unauthorized';
+import ProtectedRouteAdmin from '../utils/ProtectedRouteAdmin';
+import ProtectedRouteClient from '../utils/ProtectedRouteClient'
+import ErrorPage from '../pages/publicPages/ErrorPage';
+
 
 export const RouterProvider = () => {
   return (
@@ -19,6 +24,8 @@ export const RouterProvider = () => {
       <Route path="/client" element={<LayoutClient />}>
         <Route path="dashboard" element={<ClientDashboard />} />
       </Route>
+      
+      {/* <Route path="/unauthorized" element={<ErrorPage />} /> */}
 
       <Route path="/" element={<LayoutPublic />}>
         <Route index element={<Home />} />
