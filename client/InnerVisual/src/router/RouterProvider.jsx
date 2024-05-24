@@ -7,10 +7,10 @@ import Home from "../pages/publicPages/Home";
 import Login from "../pages/publicPages/Login";
 import About from "../pages/publicPages/About";
 import LayoutPublic from "../layout/LayoutPublic";
-import Unauthorized from '../components/unauthorized/Unauthorized';
-import ProtectedRouteAdmin from '../utils/ProtectedRouteAdmin';
-import ProtectedRouteClient from '../utils/ProtectedRouteClient'
-import ErrorPage from '../pages/publicPages/ErrorPage';
+//import Unauthorized from '../components/unauthorized/Unauthorized';
+//import ProtectedRouteAdmin from '../utils/ProtectedRouteAdmin';
+//import ProtectedRouteClient from '../utils/ProtectedRouteClient'
+//import ErrorPage from '../pages/publicPages/ErrorPage';
 
 
 export const RouterProvider = () => {
