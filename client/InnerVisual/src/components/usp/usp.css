@@ -1,122 +1,122 @@
 .UspTitle{
-font-size: 100px;
-text-align: left;
-margin-left: 120px;
-margin-top: 50px;
-margin-bottom: 50px;
-   
-}
-
-.uspSection {
-    width: 100%;
-    height: 100%;
-    margin-bottom: auto;
-     }
-
-.uspSection1,
-.uspSection2{
-    display: flex;
-    align-items: center;
-    justify-content:space-between
-}
-
-.uspSection1_pic,
-.uspSection2_pic {
-    width: 50%;
-}
-
-.photoUsp2 {
-    margin-bottom: 100px;
-}
-
-
-
-
-.photo1 {
-    width: 707px;
-    height: 525px;
-    position: absolute;
-    margin-top: 12%;
-    margin-left: 15%;
-
-}
-
-.photo2 {
-    width: 713px;
-    height: 525px;
-    position: absolute;
-    margin-top: 12%;
-    margin-right: 15%;
-   }
-
-.uspSection1_text,
-.uspSection2_text {
-   width: 50%;
-   /* height: 597px; */
-}
-.textUsp1,
-.textUsp2 {
-    max-width: 600px;
-}
-
-.titleUsp1,
-.titleUsp2 {
-    margin-bottom: 20px;
-    font-size: 70px
-}
-
-
-
-.layoutgray1 {
-width: 714px;
-height: 697px;
-background-color: lightgray;
-position: relative;
-}
-.layoutgray2 {
-    width: 709px;
+    font-size: 100px;
+    text-align: left;
+    margin-left: 120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+       
+    }
+    
+    .uspSection {
+        width: 100%;
+        height: 100%;
+        margin-bottom: auto;
+         }
+    
+    .uspSection1,
+    .uspSection2{
+        display: flex;
+        align-items: center;
+        justify-content:space-between
+    }
+    
+    .uspSection1_pic,
+    .uspSection2_pic {
+        width: 50%;
+    }
+    
+    .photoUsp2 {
+        margin-bottom: 100px;
+    }
+    
+    
+    
+    
+    .photo1 {
+        width: 707px;
+        height: 525px;
+        position: absolute;
+        margin-top: 12%;
+        margin-left: 15%;
+    
+    }
+    
+    .photo2 {
+        width: 713px;
+        height: 525px;
+        position: absolute;
+        margin-top: 12%;
+        margin-right: 15%;
+          }
+    
+    .uspSection1_text,
+    .uspSection2_text {
+       width: 50%;
+     
+    }
+    .textUsp1,
+    .textUsp2 {
+        max-width: 600px;
+    }
+    
+    .titleUsp1,
+    .titleUsp2 {
+        margin-bottom: 20px;
+        font-size: 70px
+    }
+    
+    .layoutgray1 {
+    width: 714px;
     height: 697px;
     background-color: lightgray;
     position: relative;
-    margin-right: 10px;
+    
     }
-
-
-@media screen and (max-width: 1200px) {
-    .uspSection {
-        margin: 0 50px 50px;
+    
+    .layoutgray2 {
+        width: 709px;
+        height: 697px;
+        background-color: lightgray;
+        position: relative;
+        
+        }
+    
+    
+    @media screen and (max-width: 1200px) {
+        .uspSection {
+            margin: 0 50px 50px;
+        }
+    
+        .uspSection1_text,
+        .divPhoto2 {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
     }
-
-    .uspSection1_text,
-    .divPhoto2 {
-        margin-left: 50px;
-        margin-right: 50px;
+    
+    
+    @media screen and (max-width: 940px) {
+        .photoUsp1,
+        .photoUsp2 {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .uspSection1_text,
+        .textPhoto2 {
+            margin-top: 20px;
+            margin-left: 0;
+        }
+    
+        .textPhoto2 {
+            order: 1;
+        }
     }
-}
-
-
-@media screen and (max-width: 940px) {
-    .photoUsp1,
-    .photoUsp2 {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .uspSection1_text,
-    .textPhoto2 {
-        margin-top: 20px;
-        margin-left: 0;
-    }
-
-    .textPhoto2 {
-        order: 1;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .photo1,
-    .photo2 {
-        width: 440px;
-        height: 260px;
-    }
-}
+    
+    @media screen and (max-width: 600px) {
+        .photo1,
+        .photo2 {
+            width: 440px;
+            height: 260px;
+        }
+    } 
