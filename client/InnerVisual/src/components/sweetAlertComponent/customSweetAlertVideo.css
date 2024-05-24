@@ -1,0 +1,73 @@
+/* Estilos para CustomSweetAlertVideoOk */
+
+.custom-video-icon-ok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre el icono y el texto */
+}
+
+.custom-video-icon-ok img {
+    width: 80px; /* Tamaño del icono */
+    height: 80px;
+    border-radius: 50%; /* Forma del icono */
+    background-color: #00B1E2; /* Color de fondo del icono */
+}
+
+.custom-video-text-ok {
+    font-size: 18px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    text-align: center; /* Alinear el texto al centro */
+    margin-bottom: 20px; /* Espacio entre el texto y el botón */
+}
+
+.custom-button-sw-ok {
+    background-color: #043B4E; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    font-family: 'Raleway', sans-serif; /* Fuente del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Efecto de transición suave */
+}
+
+.custom-button-sw-ok:hover {
+    background-color: #03698A; /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Estilos para CustomSweetAlertVideoError */
+
+.custom-video-icon-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre el icono y el texto */
+}
+
+.custom-video-icon-error img {
+    width: 80px; /* Tamaño del icono */
+    height: 80px;
+    border-radius: 50%; /* Forma del icono */
+    background-color: #E95111; /* Color de fondo del icono para error */
+}
+
+.custom-video-text-error {
+    font-size: 18px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    text-align: center; /* Alinear el texto al centro */
+    margin-bottom: 20px; /* Espacio entre el texto y el botón */
+}
+
+.custom-button-sw-error {
+    background-color: #E95111; /* Color de fondo del botón para error */
+    color: white; /* Color del texto del botón */
+    font-family: 'Raleway', sans-serif; /* Fuente del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Efecto de transición suave */
+}
+
+.custom-button-sw-error:hover {
+    background-color: #B93E07; /* Color de fondo del botón al pasar el ratón */
+}
