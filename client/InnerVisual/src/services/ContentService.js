@@ -30,7 +30,18 @@ export const ContentService = {
             CustomSweetAlertError("No se ha podido actualizar el estado del vídeo. Vuelva a intentarlo más tarde.");
             throw error;
         }
+    },
+    async updateNotes(userId, contentId, notes) {
+        try {
+            let response = await apiClient.patch(`/user_content/update_notes/${userId}/${contentId}`, { notes });
+            return response.data;
+        } catch (error) {
+            console.error("Error updating notes:", error);
+            CustomSweetAlertError("No se ha podido actualizar las notas. Vuelva a intentarlo más tarde.");
+            throw error;
+        }
     }
+    
 };
 
 export default ContentService;

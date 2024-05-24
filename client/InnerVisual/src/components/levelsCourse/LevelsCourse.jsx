@@ -71,6 +71,7 @@ const LevelsCourse = () => {
                     <VideoCard
                       video={selectedVideo}
                       onVideoComplete={handleVideoComplete}
+                      user={user}
                     />
                   )}
                 </Col>
@@ -95,6 +96,7 @@ const LevelsCourse = () => {
                     <VideoCard
                       video={selectedVideo}
                       onVideoComplete={handleVideoComplete}
+                      user={user}
                     />
                   )}
                 </Col>
@@ -112,6 +114,7 @@ const LevelsCourse = () => {
                   <VideoList
                     videos={videos.slice(5, 10)}
                     onVideoSelect={handleVideoSelect}
+                    
                   />
                 </Col>
                 <Col>
@@ -119,6 +122,7 @@ const LevelsCourse = () => {
                     <VideoCard
                       video={selectedVideo}
                       onVideoComplete={handleVideoComplete}
+                      user={user}
                     />
                   )}
                 </Col>
