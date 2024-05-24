@@ -44,7 +44,6 @@ function NavbarCustom() {
 
   const getLinkClass = () => {
     switch (location.pathname) {
-      case '/cursos':
       case '/client':
       case '/login':
       case '/admin':
@@ -56,8 +55,6 @@ function NavbarCustom() {
 
   const getLogoSrc = () => {
     switch (location.pathname) {
-      case '/cursos':
-        return logoCursos;
       case '/client':
         return logoClient;
       case '/login':
@@ -95,12 +92,7 @@ function NavbarCustom() {
             </div>
           </Link>
 
-          <Link to="/cursos" className={`nav-link-custom ${getLinkClass()}`}>
-            <div className="cursosLink">
-              <h3 className={`links closeactive ${getLinkClass()}`}>cursos</h3>
-            </div>
-          </Link>
-
+          
           {isLoggedIn && (user?.role === 'admin' || user?.role === 'client') && (
             <Link to={getDashboardLink()} className={`nav-link-custom ${getLinkClass()}`}>
               <div className="areaLink">
