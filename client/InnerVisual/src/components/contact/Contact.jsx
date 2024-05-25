@@ -299,7 +299,10 @@ const Contact = () => {
                     <Form.Group className="mb-3 ms-2" id="formGridCheckbox">
                       <Form.Check
                         type="checkbox"
-                        onChange={() => setTermsAccepted(!termsAccepted)}
+
+                        checked={acceptTerms}
+                        onChange={(e) => setAcceptTerms(e.target.checked)}
+                        onBlur={() => setAcceptTermsTouched(true)}
                       />
                     </Form.Group>
                     <label htmlFor="terms-contact-with-us" className="ms-2 mb-3">
@@ -309,6 +312,7 @@ const Contact = () => {
                         className="terms-link"
                         target="_blank"
                         rel="noopener noreferrer"
+                        
                       >
                         términos y condiciones
                       </a>
