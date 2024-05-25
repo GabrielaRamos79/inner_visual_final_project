@@ -28,11 +28,11 @@ const ProfileClient = ({ handleShow }) => {
                 <p style={{ color: "white" }}>Curso 1</p>
               </div>
               <div className="progress-info">
-                <CircularProgressbar value={75} text={`${75}%`} />
+                <CircularProgressbar value={30} text={`${30}%`} />
                 <p style={{ color: "white" }}>Curso 2</p>
               </div>
               <div className="progress-info">
-                <CircularProgressbar value={75} text={`${75}%`} />
+                <CircularProgressbar value={42} text={`${42}%`} />
                 <p style={{ color: "white" }}>Curso 3</p>
               </div>
             </div>
@@ -44,13 +44,13 @@ const ProfileClient = ({ handleShow }) => {
               src={fotoperfil}
               alt="Foto del Cliente"
             />
-            <button className="btn-custom" onClick={handleContinue}>
+            <button className="btn-customP" onClick={handleContinue}>
               Continuar Prácticas
             </button>
-            <button className="btn-custom" onClick={handleShow}>
+            <button className="btn-customP" onClick={handleShow}>
               Notas
             </button>
-            <button className="btn-custom" onClick={handleDelete}>
+            <button className="btn-customP" onClick={handleDelete}>
               Eliminar
             </button>
           </div>
