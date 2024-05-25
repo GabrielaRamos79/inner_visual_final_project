@@ -1,5 +1,7 @@
 from src.database.db_mysql import get_connection
 from src.models.user_content_model import User_content
+
+
 class UserContentService():
     @classmethod
     def get_user_content(cls, id):
@@ -27,20 +29,26 @@ class UserContentService():
             return users_content_json
         except Exception as ex:
             print(ex)
+
+
     @classmethod
     def post_user_content(cls, userFK):
         try:
             connection = get_connection()
             print(connection)
+
             with connection.cursor() as cursor:
                 cursor.callproc('AddUserContent', (userFK,))
                 connection.commit()
                 print('User_content added successfully')
+
             connection.close()
             return "Database connection closed"
         except Exception as ex:
             print(ex)
             return str(ex)
+        
+        
     @classmethod
     def patch_user_content(cls, userFK, contentFK):
         try:
@@ -48,6 +56,8 @@ class UserContentService():
             # userFK = user_content_table.userFK
             # contentFK = user_content_table.contentFK
             # status_video = user_content_table.status_video
+
+        
             with connection.cursor() as cursor:
                 cursor.callproc('sp_update_status_video', (userFK,contentFK))
                 connection.commit()
