@@ -12,12 +12,7 @@ import { VideoContext } from './../../context/VideoContext'; // імпорт к�
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext);
-  const { videos, setVideos } = useContext(VideoContext); 
-
-  // Локальний стан для вибраних відео кожного рівня
-  const [selectedVideoLevel1, setSelectedVideoLevel1] = useState(null);
-  const [selectedVideoLevel2, setSelectedVideoLevel2] = useState(null);
-  const [selectedVideoLevel3, setSelectedVideoLevel3] = useState(null);
+  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext); 
 
   const fetchData = async () => {
     if (user && user.id) {
@@ -34,10 +29,8 @@ const LevelsCourse = () => {
     fetchData();
   }, [user]);
 
-  const handleVideoSelect = (video, level) => {
-    if (level === 1) setSelectedVideoLevel1(video);
-    if (level === 2) setSelectedVideoLevel2(video);
-    if (level === 3) setSelectedVideoLevel3(video);
+  const handleVideoSelect = (video) => {
+    setSelectedVideo(video); 
   };
 
   const handleVideoComplete = async (video) => {
@@ -65,13 +58,14 @@ const LevelsCourse = () => {
               <Col>
                 <VideoList
                   videos={videos.slice(0, 3)}
-                  onVideoSelect={(video) => handleVideoSelect(video, 1)}
+                  onVideoSelect={handleVideoSelect}
                 />
               </Col>
               <Col>
-                {selectedVideoLevel1 && (
+                {selectedVideo && (
                   <VideoCard
-                    video={selectedVideoLevel1}
+                    key={selectedVideo.id_content} // Añadir una clave única a la VideoCard obliga a React a volver a montar el componente cuando cambia el selectedVideo. Esto garantiza que las notas se muestren correctamente para cada vídeo.
+                    video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
                   />
@@ -90,13 +84,14 @@ const LevelsCourse = () => {
               <Col>
                 <VideoList
                   videos={videos.slice(3, 5)}
-                  onVideoSelect={(video) => handleVideoSelect(video, 2)}
+                  onVideoSelect={handleVideoSelect}
                 />
               </Col>
               <Col>
-                {selectedVideoLevel2 && (
+                {selectedVideo && (
                   <VideoCard
-                    video={selectedVideoLevel2}
+                    key={selectedVideo.id_content} 
+                    video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
                   />
@@ -115,13 +110,14 @@ const LevelsCourse = () => {
               <Col>
                 <VideoList
                   videos={videos.slice(5, 10)}
-                  onVideoSelect={(video) => handleVideoSelect(video, 3)}
+                  onVideoSelect={handleVideoSelect}
                 />
               </Col>
               <Col>
-                {selectedVideoLevel3 && (
+                {selectedVideo && (
                   <VideoCard
-                    video={selectedVideoLevel3}
+                    key={selectedVideo.id_content} 
+                    video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
                   />
