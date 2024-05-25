@@ -97,9 +97,9 @@ const Register = ({ showLoginForm }) => {
               <Col lg={12} xl={6} md={12}>
                 <p className="fw-bold">CREA TU CUENTA</p>
                 <p className="fs-6">
-                  Si ya tienes cuenta puedes{" "}
+                  Si ya tienes cuenta{" "}
                   <a className="login-link" onClick={handleLoginClick}>
-                    loguearte pinchando aquí
+                    loguéate pinchando aquí
                   </a>
                   .
                 </p>

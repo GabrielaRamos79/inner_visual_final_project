@@ -42,7 +42,7 @@ const LoginComponent = ({ showRegisterForm }) => {
               <p className="fs-6">
                 Si ya tienes cuenta {" "}
                 <a className="login-link" onClick={handleRegisterLinkClick}>
-                  logueate pinchando aquí
+                  loguéate pinchando aquí
                 </a>
                 .
               </p>
