@@ -1,5 +1,5 @@
 import './videoCard.css';
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 //bootstrap
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -10,11 +10,15 @@ import Col from 'react-bootstrap/Col';
 import ReactPlayer from 'react-player';
 
 import { ContentHandler } from '../../handler/ContentHandler';
-import {CustomSweetAlertError, CustomSweetAlertOk} from '../sweetAlertComponent/CustomSweetAlert'
+import { CustomSweetAlertError, CustomSweetAlertOk } from '../sweetAlertComponent/CustomSweetAlert'
 
-
+// ---- IMPORTANT---///
+// 1. Añada la URL en este formato (https://docs.google.com/document/d/1BXeUUNFMux6tSApwVOnqsUf9Ki0Em2H7xhskUlmsiiE/export?format=pdf) 
+// a la columna <pdf> de la tabla de <content> en <phpmyadmin> para que funcione la carga de archivos
+//¿Por qué? Lea el archivo Read.me 
 
 const VideoCard = ({ video, onVideoComplete, user }) => {
+  //console.log(video)
   const [notes, setNotes] = useState('');
   const [isEditing, setIsEditing] = useState(false);
 
@@ -59,22 +63,32 @@ const VideoCard = ({ video, onVideoComplete, user }) => {
             <Accordion.Body>
 
               <Col>
-                
-                  <Form.Control
-                    as="textarea"
-                    placeholder="Deje su notas aquí"
-                    style={{ height: '100px' }}
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                  />
-            
-              <Button variant="outline-primary" onClick={handleSaveClick}>Guardar</Button>
+
+                <Form.Control
+                  as="textarea"
+                  placeholder="Deje su notas aquí"
+                  style={{ height: '100px' }}
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                />
+
+                <Button variant="outline-primary" onClick={handleSaveClick}>Guardar</Button>
               </Col>
 
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
 
+      </Row>
+      <Row>
+        <Col>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolor vero reiciendis,
+            eveniet tempora, eos rem repudiandae atque rerum iste quasi quisquam enim, ea iusto doloremque
+            praesentium excepturi? Porro, nemo.</p>
+          <a href={video.pdf} download>
+            <Button variant="outline-primary">Descargar PDF</Button>
+          </a>
+        </Col>
       </Row>
     </Container>
   );
