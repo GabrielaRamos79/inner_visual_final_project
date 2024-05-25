@@ -7,13 +7,15 @@ import Usp from '../../components/usp/Usp';
 const Home = () => {
   return (
     <>
-    <Hero />
-    <Usp />
-    <Review />
-    <Benefit />
-    <Contact />
+      <Hero />
+      <Usp />
+      <Review />
+      <Benefit />
+      <div id="contact">
+        <Contact />
+      </div>
     </>
   )
 }
 
-export default Home
+export default Home;

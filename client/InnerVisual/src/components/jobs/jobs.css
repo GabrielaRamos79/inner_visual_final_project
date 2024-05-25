@@ -111,7 +111,7 @@
 .submit-button-jobs-work-with-us:hover {
   background: #4d4d4e;
 }
-label {
+/* label {
   align-self: flex-start;
   margin-bottom: 5px;
   width: 206px;
@@ -122,7 +122,7 @@ label {
   line-height: 19.36px;
   text-align: left;
   color: black;
-}
+} */
 .alert {
   padding: 20px;
   background-color: #f44336;

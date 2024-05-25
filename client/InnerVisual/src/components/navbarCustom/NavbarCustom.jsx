@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logoDefault from '../../assets/img/logo.svg';
 import logoAdmin from '../../assets/img/Logo_Orange.png';
-import logoCursos from '../../assets/img/Logo_Orange.png';
 import logoClient from '../../assets/img/Logo_Orange.png';
 import logoLogin from '../../assets/img/Logo_Orange.png';
 import './navbarCustom.css';
@@ -110,7 +109,7 @@ function NavbarCustom() {
           ) : (
             <Link to="/login" className={`nav-link-custom ${getLinkClass()}`}>
               <div className="loginLink">
-                <h3 className={`links closeactive ${getLinkClass()}`}>login</h3>
+                <h3 className={`links closeactive ${getLinkClass()}`}>login/registro</h3>
               </div>
             </Link>
           )}

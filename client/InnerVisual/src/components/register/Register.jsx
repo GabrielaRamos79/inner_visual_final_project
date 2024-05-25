@@ -1,6 +1,5 @@
 import { UserHandler } from "./../../handler/UserHandler";
 import React, { useState } from "react";
-import Swal from "sweetalert2";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,9 +7,9 @@ import Form from "react-bootstrap/Form";
 import "./register.css";
 import register from "../../assets/img/register.svg";
 import { CustomSweetAlertOk, CustomSweetAlertError } from '../../components/sweetAlertComponent/CustomSweetAlert';
-import LoginComponent from "./../loginComponent/LoginComponent";
 
-const Register = () => {
+
+const Register = ({ showLoginForm }) => {
   const [userName, setuserName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -19,15 +18,11 @@ const Register = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [repeatPassword, setRepeatPassword] = useState('');
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const [showLoginForm, setShowLoginForm] = useState(false);
 
   const handleLoginClick = () => {
-    setShowLoginForm(true);
+    showLoginForm();
   };
 
-  const handleRepeatPasswordChange = (event) => {
-    setRepeatPassword(event.target.value);
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -75,7 +70,7 @@ const Register = () => {
 
     try {
       await UserHandler.postUser(formObject);
-      CustomSweetAlertOk('¡Usuario creado correctamente!');
+      CustomSweetAlertOk('¡Felicidades, ya eres miembro de Inner Visuals!');
       resetForm();
     } catch (error) {
       console.error(error);
@@ -96,20 +91,18 @@ const Register = () => {
   return (
     <>
       <section className="login-register">
-        <div className="d-flex justify-content-center  container-custom-register ">
-          <Container className="card-custom ">
+        <div className="d-flex justify-content-center container-custom-register ">
+          <Container className="card-custom p-4">
             <Row className="mt-5">
-              <Col xl={6} md={12}>
+              <Col lg={12} xl={6} md={12}>
                 <p className="fw-bold">CREA TU CUENTA</p>
                 <p className="fs-6">
-                  Si ya tienes cuenta puedes{" "}
-                  <a href="#" className="login-link" onClick={handleLoginClick}>
-                    loguearte pinchando aquí
+                  Si ya tienes cuenta{" "}
+                  <a className="login-link" onClick={handleLoginClick}>
+                    loguéate pinchando aquí
                   </a>
                   .
                 </p>
-                {showLoginForm && <LoginForm />}
-
                 <hr class="hr" />
                 <form onSubmit={handleSubmit}>
                   <div className="form-outline mb-4">
@@ -213,7 +206,7 @@ const Register = () => {
                 <img
                   src={register}
                   alt="foto registro"
-                  className="responsive-image"
+                  
                 />
               </Col>
             </Row>
