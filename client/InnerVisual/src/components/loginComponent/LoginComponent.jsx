@@ -1,141 +1,118 @@
 import React, { useState } from "react";
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faFacebookF, faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import Swal from 'sweetalert2';
-import { useUserHandler } from '../../handler/AuthHandler';
-import { useNavigate } from "react-router-dom";
+import { useUserHandler } from "../../handler/AuthHandler";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import loginphoto from "../../assets/img/loginphoto.svg";
+import Form from "react-bootstrap/Form";
+import { CustomSweetAlertError, CustomSweetAlertOk } from "../sweetAlertComponent/CustomSweetAlert";
 
-const LoginComponent = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
+
+const LoginComponent = ({ showRegisterForm }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { handleLogin } = useUserHandler();
-  const navigate = useNavigate();
+
+  const handleRegisterLinkClick = () => {
+    showRegisterForm();
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       handleLogin(email, password);
-      Swal.fire({
-        icon: 'success',
-        title: 'OK',
-        text: 'Tu solicitud ha sido procesada.',
- 
-     }).then(() =>{
-       setEmail('');
-       setPassword('');
-     })
-    } catch (error) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Error al iniciar sesión. Compruebe sus datos e inténtelo de nuevo.',
+      CustomSweetAlertOk('¡Login exitoso!').then(() => {
+        setEmail("");
+        setPassword("");
       });
+    } catch (error) {
+      console.log(error)
     }
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <form onSubmit={handleSubmit}>
-        <h2 className='title'>Login</h2>
-        <div className="form-outline mb-4">
-          <input type="email"
-            id="form2Example1"
-            className="form-control"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)} />
-          <label className="form-label" htmlFor="form2Example1">Email address</label>
-        </div>
+    <>
+      <div className="d-flex justify-content-center  container-custom-register ">
+        <Container className="card-custom p-4">
+          <Container>
+          <Row className="mt-5 mb-5 ">
+            <Col lg={12} xl={6} md={12} >
+              <p className="fw-bold mb-2">LOGIN</p>
+              <p className="fs-6">
+                Si ya tienes cuenta {" "}
+                <a className="login-link" onClick={handleRegisterLinkClick}>
+                  logueate pinchando aquí
+                </a>
+                .
+              </p>
+              <hr class="hr" />
+             
+              <form onSubmit={handleSubmit} style={{ marginTop: '150px' }}>
+                <label className="fw-bold" htmlFor="form2Example1">
+                  EMAIL
+                </label>
+                <div className="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="form2Example1"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Introduce tu email"
+                  />
+                </div>
 
-        <div className="form-outline mb-4">
-          <input type="password"
-            id="form2Example2"
-            className="form-control"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)} />
-          <label className="form-label" htmlFor="form2Example2">Password</label>
-        </div>
+                <label className="fw-bold">CONTRASEÑA</label>
+                <div className="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="form2Example2"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Introduce tu contraseña"
+                  />
+                </div>
+                
+                <Container className="mb-4 ms-0">
+                  <Row className="row-checkbox"> 
+                    <Col>
+                      <Form.Group id="formGridCheckbox">
+                        <Form.Check
+                          type="checkbox"
+                          label="Recordar contraseña"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <p className="fs-6">
+                        {" "}
+                        <a href="#" className="login-link">
+                          Olvidé mi contraseña
+                        </a>
+                        .
+                      </p>
+                    </Col>
+                  </Row>
+                </Container>
+                <button type="submit" className="btn-register p-1">
+                  ENVIAR
+                </button>
+              </form>
+            </Col>
 
-        <div className="row mb-4">
-          <div className="col d-flex justify-content-center">
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="form2Example31" />
-              <label className="form-check-label" htmlFor="form2Example31"> Remember me </label>
-            </div>
-          </div>
-          <div className="col">
-            <button type="button" className="btn btn-link">Forgot password?</button>
-          </div>
-        </div>
-
-        <button type="submit" className="btn btn-primary btn-block mb-4">Sign in</button>
-
-        <div className="text-center">
-          <p>Not a member? <button type="button" className="btn btn-link">Register</button></p>
-          {/* <p>or sign up with:</p>
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <FontAwesomeIcon icon={faFacebookF} />
-          </button>
-
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <FontAwesomeIcon icon={faGoogle} />
-          </button>
-
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <FontAwesomeIcon icon={faTwitter} />
-          </button>
-
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <FontAwesomeIcon icon={faGithub} />
-          </button> */}
-        </div>
-      </form>
-    </div>
+            <Col>
+              <img
+                src={loginphoto}
+                alt="foto login"
+                
+              />
+            </Col>
+          </Row>
+          </Container>
+        </Container>
+      </div>
+    </>
   );
 };
 
 export default LoginComponent;
-
-
-
-
-
-
-
-// import { useEffect } from 'react'
-
-
-// function LoginComponent() {
-//   const loginUser = async () => {
-//     try {
-//     const response = await fetch('http://127.0.0.1:5000/login/', {
-//           method: 'POST',
-//           headers: {
-//             Accept: 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//           email:"yulia@mail.com",
-//           password:"12345"
-//         })
-//       });
-//       const data = await response.json();
-//       console.log(data);
-//   } catch (error) {
-//     console.log(error);
-//     }
-//   };
-
-// useEffect (() => {
-//   loginUser();
-//   console.log("hola Yuliia");
-// }), [];
- 
-  
-//   return (
-//     <>
-//      <h1>Esto es login</h1>
-//     </>
-//   )
-// }
-
-// export default LoginComponent

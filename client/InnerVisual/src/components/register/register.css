@@ -32,7 +32,6 @@ input::placeholder {
 
 .form-check-input[type=checkbox] {
     border-radius: 0;
-
 }
 
 .form-check-input:checked {
@@ -49,12 +48,20 @@ input::placeholder {
 .login-link {
     text-decoration: 1px underline;
     color: black;
+    transition: color 0.3s ease;
+}
+.login-link:hover {
+    text-decoration: 1px underline;
+    color: black;
+    font-weight: bold;
 }
 
 .responsive-image {
     display: none;
 }
-
+form.form-custom-margin {
+    margin-top: 50px;
+}
 @media (min-width: 1400px) {
     .responsive-image {
         display: inline-block;
