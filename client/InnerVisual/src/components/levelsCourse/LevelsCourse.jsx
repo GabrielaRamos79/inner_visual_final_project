@@ -12,13 +12,14 @@ import { VideoContext } from './../../context/VideoContext'; // імпорт к�
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext);
-  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext); 
+  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext);
+  const [activeKey, setActiveKey] = useState('0'); // Додати стан для відстеження поточного відкритого рівня
 
   const fetchData = async () => {
     if (user && user.id) {
       try {
         const contentData = await ContentHandler.getAllContent(user.id);
-        setVideos(contentData); 
+        setVideos(contentData);
       } catch (error) {
         console.error("Error getting the videos:", error);
       }
@@ -30,7 +31,7 @@ const LevelsCourse = () => {
   }, [user]);
 
   const handleVideoSelect = (video) => {
-    setSelectedVideo(video); 
+    setSelectedVideo(video);
   };
 
   const handleVideoComplete = async (video) => {
@@ -48,8 +49,13 @@ const LevelsCourse = () => {
     }
   };
 
+  const handleAccordionSelect = (eventKey) => {
+    setActiveKey(eventKey);
+    setSelectedVideo(null); // Скинути обраний відео при відкритті нового рівня
+  };
+
   return (
-    <Accordion>
+    <Accordion activeKey={activeKey} onSelect={handleAccordionSelect}>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Level 1</Accordion.Header>
         <Accordion.Body>
@@ -64,7 +70,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
-                    key={selectedVideo.id_content} // Añadir una clave única a la VideoCard obliga a React a volver a montar el componente cuando cambia el selectedVideo. Esto garantiza que las notas se muestren correctamente para cada vídeo.
+                    key={selectedVideo.id_content} // Додавання ключа змушує React перемонтувати компонент, коли змінюється selectedVideo.
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
@@ -90,7 +96,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
-                    key={selectedVideo.id_content} 
+                    key={selectedVideo.id_content}
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
@@ -116,7 +122,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
-                    key={selectedVideo.id_content} 
+                    key={selectedVideo.id_content}
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
