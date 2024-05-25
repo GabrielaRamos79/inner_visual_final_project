@@ -45,7 +45,7 @@ function NavbarCustom() {
     switch (location.pathname) {
       case '/client':
       case '/login':
-      case '/admin':
+      case '/admin/dashboard':
         return 'orange-links';
       default:
         return '';
@@ -58,7 +58,7 @@ function NavbarCustom() {
         return logoClient;
       case '/login':
         return logoLogin;
-      case '/admin':
+      case '/admin/dashboard':
           return logoAdmin;  
       default:
         return logoDefault;

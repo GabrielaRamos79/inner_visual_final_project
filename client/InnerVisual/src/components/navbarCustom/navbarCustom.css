@@ -112,12 +112,6 @@
     z-index: 2;
 }
 
-#logo {
-    left: 30px;
-    top: 55px;
-    padding: 0;
-}
-
 .link {
     font-size: 20px;
     padding: 0;
@@ -172,12 +166,6 @@
     color: var(--coralito);
 }
 
-#logo:hover {
-  background-color: initial;
-  border-radius: initial;
-  transform: none;
-}
-
 .links:hover:after {
   left: -100%;
 }
@@ -188,18 +176,11 @@
 }
 
 #logo {
-  width: 180px;
-  height: 80px;
   padding: 5px;
   position: absolute;
   left: 50px;
   top: 30px;
 }
 
-#logo:hover {
-  background-color: initial;
-  border-radius: initial;
-  transform: none;
-}
 
 }
