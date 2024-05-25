@@ -10,8 +10,6 @@ import { UserContext } from '../../context/AuthContext';
 function NavbarCustom() {
   const { isLoggedIn, logout, user } = useContext(UserContext);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isLoginPage, setIsLoginPage] = useState(false);
-
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -24,14 +22,6 @@ function NavbarCustom() {
     navigate('/');
   };
 
-  // useEffect(() => {
-  //   handleLogout();
-  // }, []);
-
-  useEffect(() => {
-    setIsLoginPage(location.pathname === '/login');
-  }, [location.pathname]);
-
   const getDashboardLink = () => {
     if (user?.role === 'admin') {
       return "/admin/dashboard";
@@ -41,14 +31,18 @@ function NavbarCustom() {
     return "/";
   };
 
-  const getLinkClass = () => {
+  const getLinkClass = (path) => {
+    return location.pathname === path ? 'active-link' : '';
+  };
+
+  const getLinkColorClass = () => {
     switch (location.pathname) {
       case '/client':
       case '/login':
-      case '/admin':
+      case '/admin/dashboard':
         return 'orange-links';
       default:
-        return '';
+        return 'white-links';
     }
   };
 
@@ -58,8 +52,8 @@ function NavbarCustom() {
         return logoClient;
       case '/login':
         return logoLogin;
-      case '/admin':
-          return logoAdmin;  
+      case '/admin/dashboard':
+        return logoAdmin;
       default:
         return logoDefault;
     }
@@ -81,35 +75,34 @@ function NavbarCustom() {
         </figure>
 
         <div className="iconHolder">
-          <Link to="/" className={`nav-link-custom ${getLinkClass()}`}>
-            <h3 className={`links closeactive ${getLinkClass()}`}>home</h3>
+          <Link to="/" className={`nav-link-custom ${getLinkClass('/')} ${getLinkColorClass()}`}>
+            <h3 className={`links ${getLinkClass('/')}`}>home</h3>
           </Link>
 
-          <Link to="/about" className={`nav-link-custom ${getLinkClass()}`}>
+          <Link to="/about" className={`nav-link-custom ${getLinkClass('/about')} ${getLinkColorClass()}`}>
             <div className="aboutLink">
-              <h3 className={`links closeactive ${getLinkClass()}`}>about</h3>
+              <h3 className={`links ${getLinkClass('/about')}`}>about</h3>
             </div>
           </Link>
 
-          
           {isLoggedIn && (user?.role === 'admin' || user?.role === 'client') && (
-            <Link to={getDashboardLink()} className={`nav-link-custom ${getLinkClass()}`}>
+            <Link to={getDashboardLink()} className={`nav-link-custom ${getLinkClass(getDashboardLink())} ${getLinkColorClass()}`}>
               <div className="areaLink">
-                <h3 className={`links closeactive ${getLinkClass()}`}>área privada</h3>
+                <h3 className={`links ${getLinkClass(getDashboardLink())}`}>área privada</h3>
               </div>
             </Link>
           )}
 
           {isLoggedIn ? (
-            <div className={`nav-link-custom ${getLinkClass()}`} onClick={handleLogout}>
+            <div className={`nav-link-custom ${getLinkColorClass()}`} onClick={handleLogout}>
               <div className="logoutLink">
-                <h3 className={`links closeactive ${getLinkClass()}`}>logout</h3>
+                <h3 className={`links`}>logout</h3>
               </div>
             </div>
           ) : (
-            <Link to="/login" className={`nav-link-custom ${getLinkClass()}`}>
+            <Link to="/login" className={`nav-link-custom ${getLinkClass('/login')} ${getLinkColorClass()}`}>
               <div className="loginLink">
-                <h3 className={`links closeactive ${getLinkClass()}`}>login/registro</h3>
+                <h3 className={`links ${getLinkClass('/login')}`}>login/registro</h3>
               </div>
             </Link>
           )}
