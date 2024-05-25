@@ -1,4 +1,3 @@
-// LevelsCourse.jsx
 import './levelCourse.css';
 import React, { useEffect, useState, useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
@@ -13,13 +12,18 @@ import { VideoContext } from './../../context/VideoContext'; // імпорт к�
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext);
-  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext); // використання контексту
+  const { videos, setVideos } = useContext(VideoContext); 
+
+  // Локальний стан для вибраних відео кожного рівня
+  const [selectedVideoLevel1, setSelectedVideoLevel1] = useState(null);
+  const [selectedVideoLevel2, setSelectedVideoLevel2] = useState(null);
+  const [selectedVideoLevel3, setSelectedVideoLevel3] = useState(null);
 
   const fetchData = async () => {
     if (user && user.id) {
       try {
         const contentData = await ContentHandler.getAllContent(user.id);
-        setVideos(contentData); // зберігає всі відео у контексті
+        setVideos(contentData); 
       } catch (error) {
         console.error("Error getting the videos:", error);
       }
@@ -30,8 +34,10 @@ const LevelsCourse = () => {
     fetchData();
   }, [user]);
 
-  const handleVideoSelect = (video) => {
-    setSelectedVideo(video); // встановлює вибране відео
+  const handleVideoSelect = (video, level) => {
+    if (level === 1) setSelectedVideoLevel1(video);
+    if (level === 2) setSelectedVideoLevel2(video);
+    if (level === 3) setSelectedVideoLevel3(video);
   };
 
   const handleVideoComplete = async (video) => {
@@ -59,13 +65,13 @@ const LevelsCourse = () => {
               <Col>
                 <VideoList
                   videos={videos.slice(0, 3)}
-                  onVideoSelect={handleVideoSelect}
+                  onVideoSelect={(video) => handleVideoSelect(video, 1)}
                 />
               </Col>
               <Col>
-                {selectedVideo && (
+                {selectedVideoLevel1 && (
                   <VideoCard
-                    video={selectedVideo}
+                    video={selectedVideoLevel1}
                     onVideoComplete={handleVideoComplete}
                     user={user}
                   />
@@ -84,13 +90,13 @@ const LevelsCourse = () => {
               <Col>
                 <VideoList
                   videos={videos.slice(3, 5)}
-                  onVideoSelect={handleVideoSelect}
+                  onVideoSelect={(video) => handleVideoSelect(video, 2)}
                 />
               </Col>
               <Col>
-                {selectedVideo && (
+                {selectedVideoLevel2 && (
                   <VideoCard
-                    video={selectedVideo}
+                    video={selectedVideoLevel2}
                     onVideoComplete={handleVideoComplete}
                     user={user}
                   />
@@ -109,13 +115,13 @@ const LevelsCourse = () => {
               <Col>
                 <VideoList
                   videos={videos.slice(5, 10)}
-                  onVideoSelect={handleVideoSelect}
+                  onVideoSelect={(video) => handleVideoSelect(video, 3)}
                 />
               </Col>
               <Col>
-                {selectedVideo && (
+                {selectedVideoLevel3 && (
                   <VideoCard
-                    video={selectedVideo}
+                    video={selectedVideoLevel3}
                     onVideoComplete={handleVideoComplete}
                     user={user}
                   />
