@@ -34,3 +34,20 @@ def updade_status_video(id_user, id_content):
     except Exception as ex:
         print(ex)
         return jsonify({"error": str(ex)}), 500
+    
+@main.route('/update_notes/<id_user>/<id_content>', methods = ['PATCH'])
+def updade_notes(id_user, id_content):
+    print("Hola patch, user_router")
+    try:
+        userFK = id_user
+        contentFK = id_content
+        notes = request.json['notes'] 
+
+    
+        user_content_table = User_content(None, userFK, contentFK, None, notes)
+        patch_notes = UserContentService.patch_user_content_notes(user_content_table)
+        print(patch_notes)
+        return jsonify({"message": "Registro exitoso"}), 200
+    except Exception as ex:
+        print(ex)
+        return jsonify({"error": str(ex)}), 500
