@@ -194,7 +194,7 @@ const Contact = () => {
                    </form>                                 
              </div>
          </div> */}
-      <Container fluid className="mb-5">
+      <Container fluid className="mb-5 mt-4">
         <Row>
           <Col>
             <h2 className="contact-title ms-5">CONTACTO</h2>
