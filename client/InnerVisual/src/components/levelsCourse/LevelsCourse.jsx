@@ -1,4 +1,3 @@
-// LevelsCourse.jsx
 import './levelCourse.css';
 import React, { useEffect, useState, useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
@@ -13,13 +12,13 @@ import { VideoContext } from './../../context/VideoContext'; // імпорт к�
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext);
-  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext); // використання контексту
+  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext); 
 
   const fetchData = async () => {
     if (user && user.id) {
       try {
         const contentData = await ContentHandler.getAllContent(user.id);
-        setVideos(contentData); // зберігає всі відео у контексті
+        setVideos(contentData); 
       } catch (error) {
         console.error("Error getting the videos:", error);
       }
@@ -31,7 +30,7 @@ const LevelsCourse = () => {
   }, [user]);
 
   const handleVideoSelect = (video) => {
-    setSelectedVideo(video); // встановлює вибране відео
+    setSelectedVideo(video); 
   };
 
   const handleVideoComplete = async (video) => {
@@ -65,6 +64,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
+                    key={selectedVideo.id_content} // Añadir una clave única a la VideoCard obliga a React a volver a montar el componente cuando cambia el selectedVideo. Esto garantiza que las notas se muestren correctamente para cada vídeo.
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
@@ -90,6 +90,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
+                    key={selectedVideo.id_content} 
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
@@ -115,6 +116,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
+                    key={selectedVideo.id_content} 
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
