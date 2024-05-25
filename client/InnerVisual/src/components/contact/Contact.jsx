@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  CustomSweetAlertOk,
-  CustomSweetAlertError,
-} from "../../components/sweetAlertComponent/CustomSweetAlert";
+import {CustomSweetAlertOk,CustomSweetAlertError} from "../../components/sweetAlertComponent/CustomSweetAlert";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -204,7 +201,7 @@ const Contact = () => {
       <Container fluid className="d-flex row">
         <Row>
           <Col>
-            <form action="post" onSubmit={handleSubmit}>
+            <form action="post" onSubmit={handleSubmit} style={{ marginBottom: '130px' }}>
               <Container fluid className="ms-5">
                 <Row className="me-5">
                   <Col md={7}>

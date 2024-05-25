@@ -1,86 +1,95 @@
-import React, { useState } from 'react';
-import { CustomSweetAlertOk, CustomSweetAlertError } from '../../components/sweetAlertComponent/CustomSweetAlert';
-import './jobs.css';
+import React, { useState } from "react";
+import {
+  CustomSweetAlertOk,
+  CustomSweetAlertError,
+} from "../../components/sweetAlertComponent/CustomSweetAlert";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import "./jobs.css";
 
 const Jobs = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [emailTouched, setEmailTouched] = useState(false);
 
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const [nameTouched, setNameTouched] = useState(false);
- 
-  const [surname, setSurname] = useState('');
+
+  const [surname, setSurname] = useState("");
   const [surnameTouched, setSurnameTouched] = useState(false);
-  
-  const [telephone, setTelephone] = useState('');
+
+  const [telephone, setTelephone] = useState("");
   const [telephoneTouched, setTelephoneTouched] = useState(false);
-  
-  const [message, setMessage] = useState('');
+
+  const [message, setMessage] = useState("");
   const [messageTouched, setMessageTouched] = useState(false);
 
   const [acceptTerms, setAcceptTerms] = useState(false);
-  const [acceptTermsTouched, setAcceptTermsTouched] = useState(false); 
-  
+  const [acceptTermsTouched, setAcceptTermsTouched] = useState(false);
+
   const emailRegex = /^\S+@\S+\.\S+$/;
   const telephoneRegex = /^\d{9}$/;
-  
+
   const handleSubmit = async (e) => {
-    e.preventDefault();   
+    e.preventDefault();
 
     if (!name.trim()) {
-      CustomSweetAlertError('El nombre es obligatorio.');
+      CustomSweetAlertError("El nombre es obligatorio.");
       setNameTouched(true);
-      return; 
+      return;
     }
 
     if (!surname.trim()) {
-      CustomSweetAlertError('El apellido es obligatorio.');
+      CustomSweetAlertError("El apellido es obligatorio.");
       setSurnameTouched(true);
-      return;  
+      return;
     }
     if (!telephone.trim()) {
-      CustomSweetAlertError('Introduce un teléfono válido.');
+      CustomSweetAlertError("Introduce un teléfono válido.");
       setTelephoneTouched(true);
       return;
     }
 
     if (!emailRegex.test(email)) {
-      CustomSweetAlertError('Introduce un email válido.');
+      CustomSweetAlertError("Introduce un email válido.");
       setEmailTouched(true);
       return;
     }
 
     if (message.length < 5) {
-      CustomSweetAlertError('El mensaje debe tener al menos 5 caracteres.');
+      CustomSweetAlertError("El mensaje debe tener al menos 5 caracteres.");
       setMessageTouched(true);
       return;
     }
-    if (!acceptTerms) { 
-      CustomSweetAlertError('Debes aceptar el tratamiento de datos.');
+    if (!acceptTerms) {
+      CustomSweetAlertError("Debes aceptar el tratamiento de datos.");
       setAcceptTermsTouched(true);
       return;
-    } 
+    }
 
-    CustomSweetAlertOk('Mensaje enviado correctamente, nuestro administrador se pondará en contacto usted. Gracias');
+    CustomSweetAlertOk(
+      "Mensaje enviado correctamente, nuestro administrador se pondará en contacto usted. Gracias"
+    );
 
-    setName('');
-    setSurname('');
-    setTelephone('');
-    setEmail('');
-    setMessage('');
-    setAcceptTerms('');
-       
+    setName("");
+    setSurname("");
+    setTelephone("");
+    setEmail("");
+    setMessage("");
+    setAcceptTerms("");
+
     setNameTouched(false);
     setSurnameTouched(false);
     setTelephoneTouched(false);
     setEmailTouched(false);
     setMessageTouched(false);
-    setAcceptTermsTouched(false);   
+    setAcceptTermsTouched(false);
   };
 
   return (
     <>
-      <div className='jobs-container-jobs-work-with-us'>
+      {/* <div className='jobs-container-jobs-work-with-us'>
 
         <div className='container-title-Jobs'>
           <h2 className='titleJobs-jobs-work-with-us'>WORK WITH US</h2>
@@ -160,9 +169,91 @@ const Jobs = () => {
                                     
             </form>
             </div>  
-          </div>
-        </>
-    );
-  };
+          </div> */}
 
-  export default Jobs;
+      <Container fluid className="mt-4 content-jobs">
+        <Container>
+          <Row>
+            <Col md={6}>
+              <h2 className="jobs-title mb-5">WORK WITH US</h2>
+              <article className="fw-bold">
+                AT VERO EOS ET ACCUSAMUS ET IUSTO ODIO DIGNISSIMOS DUCIMUS QUI
+                BLANDITIIS PRAESENTIUM VOLUPTATUM DELENITI ATQUE CORRUPTI QUOS
+                DOLORES ET QUAS MOLESTIAS EXCEPTURI SINT OCCAECATI CUPIDITATE
+                NON PROVIDENT.
+              </article>
+            </Col>
+
+            <Col md={6} className="">
+              <form action="post" className="form-jobs" onSubmit={handleSubmit}>
+                <p className="fw-bold mb-2">NOMBRE</p>
+                <input
+                  type="text"
+                  id="name-jobs-work-with-us"
+                  value={name}
+                  placeholder="Introduce tu nombre"
+                  onChange={(e) => setName(e.target.value)}
+                  onBlur={() => setNameTouched(true)}
+                  className={`input-jobs ${
+                    nameTouched && !name.trim() ? "error" : ""
+                  }`}
+                />
+                <p className="fw-bold mb-2 mt-4">TELÉFONO</p>
+                <input
+                  type="text"
+                  id="telephone-jobs-work-with-us"
+                  value={telephone}
+                  placeholder="Introduce tu telfónico"
+                  onChange={(e) => setTelephone(e.target.value)}
+                  onBlur={() => setTelephoneTouched(true)}
+                  className={`input-jobs ${
+                    telephoneTouched &&
+                    (!telephone.trim() || !telephoneRegex.test(telephone))
+                      ? "error"
+                      : ""
+                  }`}
+                />
+                <p className="fw-bold mb-2 mt-4">EMAIL</p>
+                <input
+                  type="text"
+                  id="email-jobs-work-with-us"
+                  value={email}
+                  placeholder="Introduce tu correo electrónico"
+                  onChange={(e) => setEmail(e.target.value)}
+                  onBlur={() => setEmailTouched(true)}
+                  className={`input-jobs ${
+                    emailTouched && !emailRegex.test(email) ? "error" : ""
+                  }`}
+                />
+                <Col className="d-flex mt-3">
+                  <Form.Group className="mb-3 " id="formGridCheckbox">
+                    <Form.Check
+                      type="checkbox"
+                      onChange={() => setTermsAccepted(!termsAccepted)}
+                    />
+                  </Form.Group>
+                  <label htmlFor="terms-contact-with-us" className="ms-2 mb-3">
+                    He leído y acepto los{" "}
+                    <a
+                      href="/terms"
+                      className="terms-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      términos y condiciones
+                    </a>
+                  </label>
+                </Col>
+                <button className="btn-register p-1" type="submit">
+                  ENVIAR
+                </button>
+              </form>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+    </>
+  );
+};
+
+export default Jobs;
