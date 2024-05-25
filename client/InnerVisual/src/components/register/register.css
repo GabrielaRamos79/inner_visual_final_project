@@ -1,6 +1,69 @@
-.registerForm{
+.registerForm {
     background-color: antiquewhite;
 }
-.container-custom-register{
+
+.container-custom-register {
     background-color: var(--lightgray);
+    width: 100%;
+    height: auto;
+}
+
+.card-custom {
+    margin: 93px 318px 92px 318px;
+    background-color: white;
+}
+
+.login-register {
+    margin-top: -140px;
+    padding-top: 140px;
+}
+
+.btn-register {
+    width: 100%;
+    background-color: var(--black);
+    border: 0;
+    color: var(--white);
+}
+
+input::placeholder {
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 0;
+}
+
+.form-check-input:checked {
+    background-color: var(--black);
+    border-color: none;
+}
+
+.form-check-input:focus {
+    border-color: var(--black);
+    outline: 0;
+    box-shadow: none;
+}
+
+.login-link {
+    text-decoration: 1px underline;
+    color: black;
+    transition: color 0.3s ease;
+}
+.login-link:hover {
+    text-decoration: 1px underline;
+    color: black;
+    font-weight: bold;
+}
+
+.responsive-image {
+    display: none;
+}
+form.form-custom-margin {
+    margin-top: 50px;
+}
+@media (min-width: 1400px) {
+    .responsive-image {
+        display: inline-block;
+    }
 }

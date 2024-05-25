@@ -1,34 +1,138 @@
-footer{
+footer {
+    height: 278px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--black);
+    padding: 0 50px;
 }
 
-.redesFooter{
+.groupFooter {
     display: flex;
 }
 
-.imgFooter{
-    width: 50px;
-    height: 50px;
-    margin: 20px;
-    margin-top: 30px;
+.leftFooter{
+    display: flex;
+    flex-direction: column;
 }
 
-.textFooter {
+.textFooter,
+.navFooter {
+    color: var(--white);
+    display: flex;
+}
+
+.navFooter {
+    margin-left: 50px;
     font-size: 16px;
-    padding: 30px;
 }
 
-.copy{
-    margin-bottom: 15px;
+.redesFooter {
+    display: flex;
 }
 
-.politic {
-    margin-bottom: 50px;
+.imgFooter {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    margin-top: 5px;
 }
 
 .imgFooter:hover {
     transform: scale(1.3);
+    background-color: var(--orange);
+    border-radius: 100%;
+}
+
+.var {
+    display: flex;
+    height: 65px;
+    margin-top: 4px;
+    padding-right: 10px;
+}
+
+.redesFooter {
+    display: flex;
+    margin-left: 70px;
+}
+
+.textFooter {
+    margin-left: 50px;
+    font-size: 16px;
+}
+
+.navFooter {
+    margin-left: 200px;
+}
+
+.gruop1 {
+    margin-right: 50px;
+}
+
+.homeFooter,
+.politicFooter,
+.cookiesFooter,
+.legalFooter,
+.aboutFooter,
+.contactFooter {
+    font-size: 16px;
+}
+
+.leftFooter,
+.rightFooter {
+    margin-left: 10px;
+}
+
+.homeFooter, .aboutFooter, .contactFooter{
+    color: inherit;
+    text-decoration: none;
+}
+
+.homeFooter:hover, .aboutFooter:hover, .contactFooter:hover{
+    color: var(--orange);
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .navFooter {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 895px) {
+    .footer {
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .imgLogo {
+        margin: 50px auto 30px;
+    }
+
+    .groupFooter {
+        display: flex;
+    }
+
+    .group1,
+    .group2 {
+        display: flex;
+    }
+
+    .redesFooter {
+        margin: 30px auto 50px;
+    }
+
+}
+
+@media screen and (max-width: 474px) {
+    .groupFooter {
+        display: flex;
+        flex-direction: column;
+        margin-left: ;
+    }
+
+    .navFooter {
+        margin-bottom: 20px;
+    }
 }
