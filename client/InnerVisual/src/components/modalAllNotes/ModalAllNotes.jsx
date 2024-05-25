@@ -1,26 +1,36 @@
-import './modalAllNotes.css';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+// ModalAllNotes.jsx
+import React, { useContext } from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import { VideoContext } from './../../context/VideoContext'; // імпорт контексту
 
-function ModalAllNotes({ show, handleClose }) {
+const ModalAllNotes = ({ show, handleClose }) => {
+  const { videos } = useContext(VideoContext); // використання контексту для отримання всіх відео
+
   return (
-    <>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+    <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>Notas</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {videos.length > 0 ? (
+          videos.map(video => (
+            <div key={video.id_content}>
+              <h5>{video.title_video}</h5>
+              <p>{video.notes}</p>
+              <hr />
+            </div>
+          ))
+        ) : (
+          <p>No videos available</p>
+        )}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Close
+        </Button>
+      </Modal.Footer>
+    </Modal>
   );
-}
+};
 
 export default ModalAllNotes;
