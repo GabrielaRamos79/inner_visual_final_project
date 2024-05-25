@@ -1,4 +1,4 @@
-.titleJobs-container-contact-with-us {
+/* .titleJobs-container-contact-with-us {
   text-align: center;
   padding: 50px;
   display: flex;
@@ -111,7 +111,7 @@
 }
 
 
-/* .input-group-message-contact-with-us label {
+.input-group-message-contact-with-us label {
   align-self: flex-start;
   width: 206px;
   height: 19px;
@@ -124,7 +124,7 @@
   color: black; 
   margin-bottom: 5px;
   flex-direction: column; 
-} */
+}
 .input-message-contact {
   display: flex;
 }
@@ -296,4 +296,32 @@ label {
     width: 90%;
     padding: 10px;
   }
+} */
+.contact-title {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.error {
+  border: 1px solid red;
+}
+.terms-link{
+  text-decoration: 1px underline;
+    color: black;
+    transition: color 0.3s ease;
+}
+.terms-link:hover{
+  text-decoration: 1px underline;
+  color: black;
+  font-weight: bold;
+}
+.form-control {
+  
+  border: solid black;
+  border-radius: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.form-control:focus{
+  border-color: black;
+  box-shadow: none;
 }

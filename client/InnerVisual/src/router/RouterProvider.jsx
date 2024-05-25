@@ -11,6 +11,7 @@ import Unauthorized from '../components/unauthorized/Unauthorized';
 import ProtectedRouteAdmin from '../utils/ProtectedRouteAdmin';
 import ProtectedRouteClient from '../utils/ProtectedRouteClient'
 import ErrorPage from '../pages/publicPages/ErrorPage';
+import Terms from '../pages/publicPages/Terms';
 
 
 export const RouterProvider = () => {
@@ -31,6 +32,7 @@ export const RouterProvider = () => {
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="about" element={<About />} />
+        <Route path = "terms" element={<Terms />}></Route>
       </Route>
     </Routes>
 
