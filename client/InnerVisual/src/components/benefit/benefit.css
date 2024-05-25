@@ -2,11 +2,6 @@
     background-color: #f0f0f0;
 }
 
-.sectionBenefit {
-    display: flex;
-    justify-content: space-between;
-}
-
 .textContainer {
     width: 50%;
     display: flex;
@@ -24,11 +19,8 @@
 
 .sectionBenefit{
     display: flex;
-    align-items:end;
-    padding-bottom:50px;
     justify-content:center;
     position:relative;
-
 }
 
 .imageContainer {
