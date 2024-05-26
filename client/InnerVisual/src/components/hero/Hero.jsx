@@ -6,12 +6,15 @@ const Hero = () => {
   return (
     <>
       <section className='hero'>
-        <h2 className='titleHero1'>Welcome to </h2>
-        <h1 className='titleHero'>Inner Visuals</h1>
+        <h2 className='titleHero1'>Entrena tu mente </h2>
+        <h1 className='titleHero'>Marca la diferencia</h1>
         <Link to="/about" className='buttonHero'>Conócenos</Link>
+      
       </section>
     </>
   );
 };
 
 export default Hero;
+
+

@@ -1,50 +1,31 @@
-/* src/components/Team.css */
+
 .team-container {
-  background-color: #f0f0f0; 
-  padding: 30px;
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 850px;
+  background-color: var(--lightgray); 
+  padding: 80px;
 }
 
 .team-title {
   text-align: left;
   text-transform: uppercase;
-  font-size: 110px;
-  font-weight:lighter;
-  margin-top: 90px;
   margin-bottom: 40px;
-  margin-left: 80px;
   color: #333;
-  letter-spacing: 2px;
 }
 
-.team-members {
-  display: flex;
-  flex-direction:row;
-  gap: 200px;
-  margin-left: 80px;
-}
-
-.team-member {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  text-align: left; /* Centrar el texto dentro de cada miembro */
-  width: 100%; /* Ajusta el ancho según sea necesario */
+.team-member1{
+  margin-right: 30px;
 }
 
 .member-photo-container {
   display: flex;
   justify-content: center;
-  /* margin-bottom: 20px;  */
+  margin-bottom: 60px;
 }
 
 .member-photo {
-  width: 150px;
-  height: 150px;
+  width: 320px;
+  height: 320px;
   object-fit: cover;
-  margin-right: 20px
+  margin-right: 20px;
 }
 
 .member-info{
@@ -54,62 +35,25 @@
 }
 
 .member-name {
-  color: #333;; 
   margin-top: 10px;
   margin-bottom: 20px;
-  font-weight: 300;
 }
 
 .member-description {
-  color: black;
   padding: 0px;
-  /* border-radius: 3px; */
   margin-top: 10px;
-  /* text-align: left; Ajusta la alineación del texto si es necesario */
-  line-height: 1.5em; /* Ajusta la altura de línea para que coincida con el patrón */
-  font-size: 16px; /* Tamaño de fuente para asegurar que el patrón se ajuste */
-  font-weight: 400;
 }
 
-@media (max-width: 900px) {
-  .team-members {
+
+@media (max-width: 880px) {
+  .member-photo-container {
     flex-direction: column;
-    align-items: center;
-    /* gap: 50px; */
+    margin-bottom: 80px;
   }
-
-  .member-photo {
-    width: 120px;
-    height: 120px;
-  }
-
-  .member-description{
-    font-size: 14px;
-    line-height: 1.4em;
+  
+  .team-container {
+    padding: 50px;
   }
 }
 
-@media (max-width: 600px) {
-  .team-members {
-    /* flex-direction: column;
-    align-items: center; */
-    gap: 40px;
-  }
 
-  .team-member {
-    flex-direction: column;
-    align-items: center;
-    /* width: 100%;
-    max-width: 400px; */
-  }
-
-  .member-photo {
-    width: 100px;
-    height: 100px;
-  }
-
-  .member-description {
-    font-size: 14px;
-    line-height: 1.4em;
-  }
-}
