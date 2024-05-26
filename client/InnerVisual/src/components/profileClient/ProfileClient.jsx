@@ -2,15 +2,58 @@ import "./profileClient.css";
 import fotoperfil from "../../assets/img/review1.jpg";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { VideoContext } from './../../context/VideoContext'; 
+import { UserContext } from '../../context/AuthContext.jsx';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'; 
+import UserHandler from "../../handler/UserHandler.js";
 
 const ProfileClient = ({ handleShow }) => {
+  const { user, logout } = useContext(UserContext);
+  const { videos } = useContext(VideoContext); 
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    console.log("Continuar Prácticas");
+  };
+
+  const handleDelete = async () => {
+    const result = await Swal.fire({
+      title: '¿Está seguro?',
+      text: '¡Todos sus datos se perderán, incluyendo el acceso al curso!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar!',
+      cancelButtonText: 'Cancelar'
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await UserHandler.handleDeleteUserProfile(user.id); 
+        Swal.fire("'Eliminado", "Su cuenta ha sido eliminada", 'success');
+        logout(); //  logout para limpiar cookies
+        navigate('/'); // a casa
+      } catch (error) {
+        Swal.fire("Error", "Se ha producido un error al eliminar tu cuenta.", 'error');
+      }
+    }
+  };
+
+
   return (
     <>
       <div className="profile-container">
         <section className="profile-content">
           <div className="left-column">
             <div className="welcome-message">
-              <h2>Hola, [username]</h2>
+              {user ? (
+                <h2 key={user.id_user}>Hola, {user.name}</h2>
+              ) : (
+                <h2>Hola!</h2>
+              )}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 convallis libero in nisl fringilla, at ultricies libero aliquet.
@@ -39,11 +82,19 @@ const ProfileClient = ({ handleShow }) => {
           </div>
 
           <div className="action-buttons">
-            <img
-              className="profile-picture"
-              src={fotoperfil}
-              alt="Foto del Cliente"
-            />
+            {user ? (
+              <img key={user.id_user}
+                className="profile-picture"
+                src={user.photo}
+                alt="Foto del Cliente"
+              />
+            ) : (
+              <img
+                className="profile-picture"
+                src={fotoperfil}
+                alt="Foto del Cliente"
+              />
+            )}
             <button className="btn-customP" onClick={handleContinue}>
               Continuar Prácticas
             </button>
@@ -58,14 +109,6 @@ const ProfileClient = ({ handleShow }) => {
       </div>
     </>
   );
-};
-
-const handleContinue = () => {
-  console.log("Continuar Prácticas");
-};
-
-const handleDelete = () => {
-  console.log("Eliminar");
 };
 
 export default ProfileClient;

@@ -34,13 +34,15 @@ export const UserProvider = ({ children }) => {
   }, [cookies]);
 
   const logout = () => {
-    removeCookie("id_user");
-    removeCookie("name");
-    removeCookie("surname");
-    removeCookie("email");
-    removeCookie("phone");
-    removeCookie("photo");
-    removeCookie("user_type");
+    const cookieOptions = { path: '/' };
+
+    removeCookie("id_user", cookieOptions);
+    removeCookie("name", cookieOptions);
+    removeCookie("surname", cookieOptions);
+    removeCookie("email", cookieOptions);
+    removeCookie("phone", cookieOptions);
+    removeCookie("photo", cookieOptions);
+    removeCookie("user_type", cookieOptions);
 
     setUser(null);
     setIsLoggedIn(false);
