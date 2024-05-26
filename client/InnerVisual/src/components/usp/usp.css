@@ -39,6 +39,23 @@
 }
 
 
+@media screen and (max-width: 1200px) {
+    .uspSection {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .UspTitle {
+        margin-bottom: 25px;
+    }
+
+    .uspSection1,
+    .uspSection2 {
+    padding-bottom: 65px;
+    gap: 100px;
+}
+}
+
 @media screen and (max-width: 950px) {
 
     .uspSection {
