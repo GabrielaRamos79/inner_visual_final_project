@@ -1,0 +1,41 @@
+.container-custom-register {
+    background-color: var(--lightgray);
+    width: 100%;
+    height: auto;
+}
+
+.card-custom {
+    margin: 93px 318px 92px 318px;
+    background-color: white;
+}
+.login-link {
+    transition: font-size 0.3s ease; 
+}
+
+.login-link:hover {
+    font-size: 1.2em;
+}
+.responsive-image {
+    display: none;
+}
+.btn-register {
+    width: 100%;
+    background-color: var(--black);
+    border: 0;
+    color: var(--white);
+}
+
+.row-checkbox{
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0; /* Asegura que no haya padding a la derecha */
+    padding-left: 0;  /* Asegura que no haya padding a la izquierda */
+    margin-top: var(--bs-gutter-y);
+}
+
+@media (min-width: 1400px) {
+    .responsive-image {
+        display: inline-block;
+    }
+}

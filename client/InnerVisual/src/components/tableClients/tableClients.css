@@ -1,5 +1,10 @@
+.tableSection {
+    margin-top: -140px;
+    padding-top: 140px;
+}
+
 .titleClient {
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     padding: 80px;
 }
@@ -11,25 +16,24 @@
 /*Table*/
 
 #myTable {
-    border-collapse: collapse;
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin: 0 80px;
 }
 
 .thTable {
-    background-color: #007bff;
+    background-color: var(--white);
     padding: 15px;
-    color: #FFFFFF;
+    color: var(--black);
     text-transform: uppercase;
 
 }
 
 tr:nth-child(even) {
-    background-color: #dfeaf7;
+    background-color: var(--white);
 }
 
 tr:nth-child(odd) {
-    background-color: #FFFFFF;
+    background-color: var(--lightgray);
 }
 
 
@@ -37,9 +41,22 @@ tr:nth-child(odd) {
     padding: 15px;
 }
 
+.tdTable:hover {
+    background-color: var(--lightblue);
+    font-weight: 400;
+}
 
-@media screen and (max-width: 405px) {
+
+@media screen and (max-width: 730px) {
+
     .titleClient {
-        padding: 60px;
+        padding-left: 40px;
+        padding-bottom: 40px;
+    }
+
+    #myTable {
+        margin: 40px;
+        margin-top: 0;
     }
 }
+

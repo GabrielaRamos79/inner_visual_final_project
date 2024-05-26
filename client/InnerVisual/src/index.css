@@ -66,19 +66,20 @@ body {
 
     /*titulo de las secciones*/
     h2 {
-        font-size: 110px;
+        font-size: 80px;
         font-weight: lighter;
     }
 
     /*subtítulos*/
     h3 {
-        font-size: 42px;
-        font-weight: lighter;
+        font-size: 28px;
+        font-weight: normal ;
     }
 
     /*párrafos*/
     p {
-        font-size: 20px;
+        font-size: 16px;
+        font-weight: normal ;
     }
 
 
