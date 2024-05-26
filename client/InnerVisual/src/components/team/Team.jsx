@@ -2,14 +2,14 @@
 import React from 'react';
 import './team.css'; 
 import Kike from '../../assets/img/Kike.png';
-import Juan from '../../assets/img/icons/Juan.png';
+import Juan from '../../assets/img/jjuan.jpg';
 
 const Team = () => {
   return (
-    <div className="team-container">
+    <section className="team-container">
       <h2 className="team-title">Nosotros</h2>
       <div className="team-members">
-        <div className="team-member">
+        <div className="team-member1">
           <div className="member-photo-container">
           <img src={Kike} alt="Miembro 1" className="member-photo" />
             <div className='member-info'>
@@ -20,7 +20,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div className="team-member">
+        <div className="team-member2">
           <div className="member-photo-container">
           <img src={Juan} alt="Miembro 2" className="member-photo" />
           <div className='member-info'>
@@ -32,7 +32,7 @@ const Team = () => {
           </div>  
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
