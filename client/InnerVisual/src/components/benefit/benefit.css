@@ -8,12 +8,13 @@
     flex-direction: column;
     margin-left: 50px;
     padding-right: 7%;
-    margin-bottom: 8%;
+    margin-bottom: 7%;
 }
 
 .titleBenefit {
     text-align: left;
     text-transform: uppercase;
+
     margin-bottom: 20px;
     margin-top: 40px;
 }
@@ -21,14 +22,14 @@
 .sectionBenefit{
     display: flex;
     justify-content:center;
-    position:relative;
+   
 }
 
 .imageContainer {
     display: flex;
     justify-content: flex-end;
     width: 50%;
-    margin-right: 50px;
+    
 }
 
 .imgBenefit {
@@ -38,9 +39,6 @@
     padding-left: 45px;
 }
 
-.liBenefit {
-    margin-bottom: 20px;
-}
 
 @media screen and (max-width: 1200px) {
     .sectionBenefit {
