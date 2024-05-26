@@ -1,28 +1,21 @@
-.jobs-container-contact-with-us {
+/* .titleJobs-container-contact-with-us {
   text-align: center;
-  padding: 300px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+
 }
 
+.container-title-contact {
+  text-align: left;
+  width: 100%;
+  padding: 20px
+}
 .titleJobs-container-contact-with-us {
 
-  font-family: 'Raleway', sans-serif; /* Asegúrate de que la fuente Raleway esté disponible */
-  width: 1046px;
-  font-size: 110px;
-  font-weight: 600;
-  line-height: 130px;
+  margin: 0;
   text-align: left;
-  /*background: #353333;*/
-  opacity: 0.7; /* Ajusta la opacidad según sea necesario */
-  color: black; /* Asegura que el texto sea visible contra el fondo oscuro */
-  position: absolute;
-  top: 1722px;
-  left: 90px;
-  z-index: 1; /* Para asegurarse de que el título se muestre por encima de otros elementos */
-  /* margin: 0;
-  font-size: 110px;
-  white-space: nowrap;
-  line-height: 1.2; */
-}
+} 
 
 .jobs-section-contact-with-us {
   text-align: center;
@@ -33,7 +26,6 @@
   max-width: 800px;
   margin: 0 auto;
   background-color: #f9f9f9;
-  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,14 +37,14 @@
   justify-content: center;
   width: 100%;
 }
-
-.contact-form-contact-with-us {
+.contact-form-contact-with-us form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
+}
+.contact-form-contact-with-us {
+
   width: 100%;
+  padding: 60px;
 }
 
 .input-group-contact-row {
@@ -94,11 +86,9 @@
 .input-group-email-contact-with-us label {
   align-self: flex-start;
   margin-bottom: 5px;
-
   width: 206px;
   height: 19px;
   gap: 0px;
-  /* opacity: 0; */
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -107,47 +97,80 @@
   
 }
 
-.input-field {
+.input-field,.textarea-field  {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 10px;
   box-sizing: border-box;
 }
 
 .textarea-field {
   resize: vertical;
   height: 200px;
-  width: 100%;
 }
 
-.input-group-message-contact-with-us {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  width: 100%;
-}
 
 .input-group-message-contact-with-us label {
   align-self: flex-start;
   width: 206px;
   height: 19px;
   gap: 0px;
-  /* opacity: 0; */
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 19.36px;
   text-align: left;
-  /* background: #1E1E1F; */
-  color: black; /* Asegúrate de que el texto sea visible contra el fondo oscuro */
+  color: black; 
   margin-bottom: 5px;
+  flex-direction: column; 
+}
+.input-message-contact {
+  display: flex;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;  
 
 }
-.input-group-terms-contact-with-us { 
+.checkbox-label-container {
+  width: 100%;
+  display: flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.checkbox-label-container input[type="checkbox"] {
+  margin-right: 10px; 
+  width: 24px;
+  height: 24px;
+  border: 0.5px solid #000000;
+}
+
+.checkbox-label-container label {
+  flex-grow: 1;
+  font-family: 'Inter', sans-serif;
+  
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19.36px;
+  text-align: left;
+  color: black;
+  margin: 0;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.checkbox-label-container a {
+  color: #00B1E2;
+  text-decoration: none;
+}
+
+.checkbox-label-container a:hover {
+  text-decoration: underline;
+}
+
+.input-group-terms-contact-with-us {
   display: flex;  
   align-items: center;
   margin-bottom: 10px;
@@ -155,39 +178,24 @@
   justify-content: flex-start;
   gap: 0px;
 }
+  
 
 .input-group-terms-contact-with-us input[type="checkbox"] {
-  width: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   height: 24px;
-  top: 2197px;
-  left: 90px;
-  gap: 0px;
   border: 0.5px solid #000000;
-  /* opacity: 0; */
   margin-right: 5px;
-  /* width: 24px;
-  height: 24px;
-  border: 0.5px solid #000000;
-  opacity: 0;
-  margin-right: 5px; */
+  gap: 0px;
 }
 
  .input-group-terms-contact-with-us label {
-  width: 565px;
+  width: 206px; 
   height: 19px;
-  top: 2199px;
-  left: 131px;
-  gap: 0px;
-  /* opacity: 0; */
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 19.36px;
   text-align: left;
-  /* background: #1E1E1F; */
-  color: black;
-  margin: 0;
-
+  margin: 10px;
+ 
 }
 
 .input-group-terms-contact-with-us a {
@@ -201,26 +209,34 @@
 .error {
   border: 1px solid red;
 }
-.submit-button-wrapper-contact-with-us {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
 
 .submit-button-contact-with-us {
-  width: 713px;
-  height: 41px;
-  top: 2188px;
-  left: 799px;
-  gap: 0px;
+  
+  width: 60%;
+  padding: 10px;
   background: #1E1E1F;
   border: 2px solid #000000;
   color: white;  
   cursor: pointer;
-  font-size: 20px;
-  text-align: center;
-  margin: 0 auto;
+  align-self: flex-end;
+ 
+}
 
+.submit-button-contact-with-us:hover {
+  background-color: #00B1E2;
+}
+
+label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  width: 206px;
+  height: 19px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.36px;
+  text-align: left;
+  color: black;
 }
 
 .alert {
@@ -228,7 +244,6 @@
   background-color: #f44336;
   color: white;
   margin-bottom: 15px;
-  border-radius: 4px;
   width: 80%;
   text-align: center;
   position: relative;
@@ -243,7 +258,6 @@
   cursor: pointer;
 }
 
-/* Media Queries para Responsividad */
 @media (max-width: 768px) {
   .jobs-section-contact-with-us {
     padding: 10px;
@@ -282,4 +296,32 @@
     width: 90%;
     padding: 10px;
   }
+} */
+.contact-title {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.error {
+  border: 1px solid red;
+}
+.terms-link{
+  text-decoration: 1px underline;
+    color: black;
+    transition: color 0.3s ease;
+}
+.terms-link:hover{
+  text-decoration: 1px underline;
+  color: black;
+  font-weight: bold;
+}
+.form-control {
+  
+  border: solid black;
+  border-radius: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.form-control:focus{
+  border-color: black;
+  box-shadow: none;
 }

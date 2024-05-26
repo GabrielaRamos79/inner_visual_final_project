@@ -1,32 +1,30 @@
 import React from 'react';
-import benefit1 from '../../assets/img/benefit1.jpg';
-import benefit2 from '../../assets/img/benefit2.jpg';
+import gallery from '../../assets/img/gallery (1).png'
 import './benefit.css'
 
 const Benefit = () => {
   return (
-    <>
-    <h2 className='titleBenefit'>Beneficios</h2>
+  <div className='benefitcontainer'>
     <section className='sectionBenefit'>
-  
-    <div>
-    <img className='benefit1' src={benefit1} alt="mujer sonriente moño recogido" />
-    <img className='benefit2' src={benefit2} alt="mujer sonriente moño recogido" />
-    </div>
-
-    <div className='textBenefit'>
-    <ul>
-      <li className='liBenefit'>Lorem ipsum dolor, excepturi eos iusto at animi sint eius, ratione ipsam accusamus blanditiis, neque voluptate.
-      reprehenderit aut perferendis officiis.</li>
-      <li className='liBenefit'>Lorem ipsum dolor, Lorem, ipsum. Excepturi eos iusto at animi sint eius, ratione ipsam accusamus blanditiis, neque voluptate.
-      reprehenderit aut perferendis officiis.</li>
-      <li className='liBenefit'>Lorem ipsum dolor, excepturi eos iusto at animi sint eius, ratione ipsam accusamus blanditiis, neque voluptate.
-      reprehenderit aut perferendis officiis.</li>
-    </ul>
-    </div>
+      <div className='textContainer'>
+        <h2 className='titleBenefit'>BENEFICIOS</h2>
+        <div className='textBenefit'>
+          <ul>
+            <li className='liBenefit'>Lorem ipsum dolor, excepturi eos iusto at animi sint eius, ratione ipsam accusamus blanditiis, neque voluptate.
+            reprehenderit aut perferendis officiis.</li>
+            <li className='liBenefit'>Lorem ipsum dolor, Lorem, ipsum. Excepturi eos iusto at animi sint eius, ratione ipsam accusamus blanditiis, neque voluptate.
+            reprehenderit aut perferendis officiis.</li>
+            <li className='liBenefit'>Lorem ipsum dolor, excepturi eos iusto at animi sint eius, ratione ipsam accusamus blanditiis, neque voluptate.
+            reprehenderit aut perferendis officiis.</li>
+          </ul>
+        </div>
+      </div>
+      <div className='imageContainer'>
+        <img src={gallery} alt='gallery' className='imgBenefit' />
+      </div>
     </section>
-    </>
-  )
-}
+  </div>
+  );
+};
 
 export default Benefit
