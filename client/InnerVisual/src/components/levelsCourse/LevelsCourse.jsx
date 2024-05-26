@@ -1,28 +1,24 @@
 import './levelCourse.css';
 import React, { useEffect, useState, useContext } from 'react';
-
 import Accordion from 'react-bootstrap/Accordion';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 import { ContentHandler } from '../../handler/ContentHandler';
 import VideoCard from '../videoCard/VideoCard';
 import VideoList from '../videoList/VideoList';
 import { UserContext } from '../../context/AuthContext.jsx';
-
+import { VideoContext } from './../../context/VideoContext'; // імпорт контексту
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext);
-  const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState(null);
-
+  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext); 
 
   const fetchData = async () => {
     if (user && user.id) {
       try {
         const contentData = await ContentHandler.getAllContent(user.id);
-        setVideos(contentData);
+        setVideos(contentData); 
       } catch (error) {
         console.error("Error getting the videos:", error);
       }
@@ -34,7 +30,7 @@ const LevelsCourse = () => {
   }, [user]);
 
   const handleVideoSelect = (video) => {
-    setSelectedVideo(video);
+    setSelectedVideo(video); 
   };
 
   const handleVideoComplete = async (video) => {
@@ -53,88 +49,86 @@ const LevelsCourse = () => {
   };
 
   return (
-    <>
-      <Accordion>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Level 1</Accordion.Header>
-          <Accordion.Body>
-            <Container>
-              <Row>
-                <Col>
-                  <VideoList
-                    videos={videos.slice(0, 3)}
-                    onVideoSelect={handleVideoSelect}
+    <Accordion>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Level 1</Accordion.Header>
+        <Accordion.Body>
+          <Container>
+            <Row>
+              <Col>
+                <VideoList
+                  videos={videos.slice(0, 3)}
+                  onVideoSelect={handleVideoSelect}
+                />
+              </Col>
+              <Col>
+                {selectedVideo && (
+                  <VideoCard
+                    key={selectedVideo.id_content} // Añadir una clave única a la VideoCard obliga a React a volver a montar el componente cuando cambia el selectedVideo. Esto garantiza que las notas se muestren correctamente para cada vídeo.
+                    video={selectedVideo}
+                    onVideoComplete={handleVideoComplete}
+                    user={user}
                   />
-                </Col>
-                <Col>
-                  {selectedVideo && (
-                    <VideoCard
-                      video={selectedVideo}
-                      onVideoComplete={handleVideoComplete}
-                    />
-                  )}
-                </Col>
-              </Row>
-            </Container>
-          </Accordion.Body>
-        </Accordion.Item>
+                )}
+              </Col>
+            </Row>
+          </Container>
+        </Accordion.Body>
+      </Accordion.Item>
 
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Level 2</Accordion.Header>
-          <Accordion.Body>
-            <Container>
-              <Row>
-                <Col>
-                  <VideoList
-                    videos={videos.slice(3, 5)}
-                    onVideoSelect={handleVideoSelect}
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Level 2</Accordion.Header>
+        <Accordion.Body>
+          <Container>
+            <Row>
+              <Col>
+                <VideoList
+                  videos={videos.slice(3, 5)}
+                  onVideoSelect={handleVideoSelect}
+                />
+              </Col>
+              <Col>
+                {selectedVideo && (
+                  <VideoCard
+                    key={selectedVideo.id_content} 
+                    video={selectedVideo}
+                    onVideoComplete={handleVideoComplete}
+                    user={user}
                   />
-                </Col>
-                <Col>
-                  {selectedVideo && (
-                    <VideoCard
-                      video={selectedVideo}
-                      onVideoComplete={handleVideoComplete}
-                    />
-                  )}
-                </Col>
-              </Row>
-            </Container>
-          </Accordion.Body>
-        </Accordion.Item>
+                )}
+              </Col>
+            </Row>
+          </Container>
+        </Accordion.Body>
+      </Accordion.Item>
 
-        <Accordion.Item eventKey="2">
-          <Accordion.Header>Level 3</Accordion.Header>
-          <Accordion.Body>
-            <Container>
-              <Row>
-                <Col>
-                  <VideoList
-                    videos={videos.slice(5, 10)}
-                    onVideoSelect={handleVideoSelect}
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Level 3</Accordion.Header>
+        <Accordion.Body>
+          <Container>
+            <Row>
+              <Col>
+                <VideoList
+                  videos={videos.slice(5, 10)}
+                  onVideoSelect={handleVideoSelect}
+                />
+              </Col>
+              <Col>
+                {selectedVideo && (
+                  <VideoCard
+                    key={selectedVideo.id_content} 
+                    video={selectedVideo}
+                    onVideoComplete={handleVideoComplete}
+                    user={user}
                   />
-                </Col>
-                <Col>
-                  {selectedVideo && (
-                    <VideoCard
-                      video={selectedVideo}
-                      onVideoComplete={handleVideoComplete}
-                    />
-                  )}
-                </Col>
-              </Row>
-            </Container>
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-    </>
+                )}
+              </Col>
+            </Row>
+          </Container>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
   );
 };
 
 export default LevelsCourse;
-
-
-
-
-
-

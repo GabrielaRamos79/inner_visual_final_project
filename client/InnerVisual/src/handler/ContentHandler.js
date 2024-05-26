@@ -19,6 +19,14 @@ export const ContentHandler = {
             console.error("Error updating video status:", error);
             throw error;
         }
+    },
+    async updateNotes(userId, contentId, notes) {
+        try {
+            return await ContentService.updateNotes(userId, contentId, notes);
+        } catch (error) {
+            console.error("Error updating notes:", error);
+            throw error;
+        }
     }
 };
 
