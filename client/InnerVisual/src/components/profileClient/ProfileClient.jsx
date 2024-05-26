@@ -25,20 +25,20 @@ const ProfileClient = ({ handleShow }) => {
             <div className="progress-section">
               <div className="progress-info">
                 <CircularProgressbar value={75} text={`${75}%`} />
-                <p style={{ color: "white" }}>Curso 1</p>
+                <p style={{ color: "white" }}>Nivel 1</p>
               </div>
               <div className="progress-info">
                 <CircularProgressbar value={30} text={`${30}%`} />
-                <p style={{ color: "white" }}>Curso 2</p>
+                <p style={{ color: "white" }}>Nivel 2</p>
               </div>
               <div className="progress-info">
                 <CircularProgressbar value={42} text={`${42}%`} />
-                <p style={{ color: "white" }}>Curso 3</p>
+                <p style={{ color: "white" }}>Nivel 3</p>
               </div>
             </div>
           </div>
 
-          <div className="action-buttons">
+          <div className="right-column">
             <img
               className="profile-picture"
               src={fotoperfil}
