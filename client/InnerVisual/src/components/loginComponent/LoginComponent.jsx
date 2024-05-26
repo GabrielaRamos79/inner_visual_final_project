@@ -46,32 +46,37 @@ const LoginComponent = ({ showRegisterForm }) => {
                 </a>
                 .
               </p>
-              <hr class="hr" />
+              <hr className="hr" />
              
               <form onSubmit={handleSubmit} style={{ marginTop: '150px' }}>
-                <label className="fw-bold" htmlFor="form2Example1">
+                <Form.Group className="mb-3">
+                <Form.Label className="fw-bold" htmlFor="formEmail">
                   EMAIL
-                </label>
-                <div className="form-outline mb-4">
-                  <input
+                </Form.Label>
+                <Form.Control
+                // <div className="form-outline mb-4">
+                //   <input
                     type="email"
-                    id="form2Example1"
+                    id="formEmail"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Introduce tu email"
                   />
-                </div>
-
-                <label className="fw-bold">CONTRASEÑA</label>
-                <div className="form-outline mb-4">
-                  <input
+                  </Form.Group>
+                {/* </div> */}
+              <Form.Group className="mb-3">
+                <Form.Label className="fw-bold" htmlFor="formPassword">CONTRASEÑA</Form.Label>
+                <Form.Control
+                // <div className="form-outline mb-4">
+                //   <input
                     type="password"
-                    id="form2Example2"
+                    id="formPassword"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Introduce tu contraseña"
                   />
-                </div>
+              </Form.Group>
+                {/* </div> */}
                 
                 <Container className="mb-4 ms-0">
                   <Row className="row-checkbox"> 

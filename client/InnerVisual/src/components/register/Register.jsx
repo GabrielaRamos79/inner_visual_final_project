@@ -103,7 +103,7 @@ const Register = ({ showLoginForm }) => {
                   </a>
                   .
                 </p>
-                <hr class="hr" />
+                <hr className="hr" />
                 <form onSubmit={handleSubmit}>
                   <div className="form-outline mb-4">
                     <p className="fw-bold">Nombre</p>
@@ -188,7 +188,7 @@ const Register = ({ showLoginForm }) => {
                       </Col>
                     </Row>
                   </Container>
-                  <Form.Group className="mb-3 ms-2" id="formGridCheckbox">
+                  <Form.Group className="mb-3 ms-2" controlId="termsCheckbox">
                     <Form.Check
                       type="checkbox"
                       label="Acepto los términos y condiciones"
