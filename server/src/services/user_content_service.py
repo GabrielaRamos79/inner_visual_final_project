@@ -10,7 +10,7 @@ class UserContentService():
             print(connection)
             with connection.cursor() as cursor:
                 # cursor.execute('SELECT * FROM user_content')
-                cursor.callproc('sp_get_user_content_by_id', (id))
+                cursor.callproc('sp_get_user_content_by_id', (id,))
                 result = cursor.fetchall()
                 print(result)
 
@@ -59,7 +59,7 @@ class UserContentService():
 
         
             with connection.cursor() as cursor:
-                cursor.callproc('sp_update_status_video', (userFK,contentFK))
+                cursor.callproc('sp_update_status_video', (userFK,contentFK,))
                 connection.commit()
                 print('User updated successfully')
             connection.close()
@@ -78,7 +78,7 @@ class UserContentService():
 
         
             with connection.cursor() as cursor:
-                cursor.callproc('sp_update_notes_video', (userFK,contentFK,notes))
+                cursor.callproc('sp_update_notes_video', (userFK,contentFK,notes,))
                 connection.commit()
                 print('User updated successfully')
             connection.close()

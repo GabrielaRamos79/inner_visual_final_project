@@ -7,9 +7,9 @@ main = Blueprint('inner_visual_user_content_blueprint', __name__)
 
 @main.route('/get_user_content/<id>', methods = ['GET'])
 def get_user_content(id):
-    id_userFK = id 
+    #id_userFK = id 
     print("Hola get, user_content_router")
-    get_user_content = UserContentService.get_user_content(id_userFK)
+    get_user_content = UserContentService.get_user_content(id)
     print('Estoy dentro de metodo get_user_content')
     return jsonify(get_user_content)
 
