@@ -57,7 +57,8 @@
 .profile-picture {
   width: 250px;
   height: 250px;
-  box-shadow: 10px 10px rgb(255, 255, 255);
+  margin-bottom: 20px;
+  box-shadow: 20px 20px rgb(255, 255, 255);
 }
 
 .btn-customP {
@@ -71,9 +72,12 @@
   margin-top: 30px;
 }
 
-.btn-custom:hover {
+.btn-customP:hover {
   background-color: white;
   color: var(--darkblue);
 }
 
-media (max-width: 950px) {
+@media (max-width: 950px) {
+
+
+}
