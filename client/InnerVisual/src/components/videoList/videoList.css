@@ -7,4 +7,13 @@
     width: 100%;
     padding: 20px 15px;
     border: none;
+    text-transform: uppercase;
+  }
+  .button-list:hover{
+    color: var(--white);
+    background-color: var(--orange);
+  }
+  .button-list:active{
+    color: var(--white);
+    background-color: var(--orange);
   }
