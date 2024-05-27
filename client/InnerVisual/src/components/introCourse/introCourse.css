@@ -35,14 +35,20 @@
 .video {
     width: 500px;
     height: 280px;
-    background-color: white;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     margin-bottom: 20px;
 }
 
-.video_title {
+/* .video_title {
     font-size: 16px;
+    text-align: center;
+} */
+
+.player{
+    margin-bottom: 10px;
+
 }
 
 
@@ -58,6 +64,7 @@
     .course {
         align-items: center;
         margin-left: 0;
+        flex-direction: column;
     }
 
     .course_video2 {
@@ -70,10 +77,15 @@
         margin-right: 15px;
     }
 
-    .video_title {
+    /* .video_title {
         font-size: 14px;
         margin-left: 0;
         text-align: center;
+    } */
+    .player{
+        margin-bottom: 10px;
+        width: 50%;
+        height: 50%;
     }
 
 }
