@@ -40,9 +40,9 @@ const LoginComponent = ({ showRegisterForm }) => {
             <Col lg={12} xl={6} md={12} >
               <p className="fw-bold mb-2">LOGIN</p>
               <p className="fs-6">
-                Si ya tienes cuenta {" "}
+                Si no tienes cuenta {" "}
                 <a className="login-link" onClick={handleRegisterLinkClick}>
-                  loguéate pinchando aquí
+                  regístrate pinchando aquí
                 </a>
                 .
               </p>
