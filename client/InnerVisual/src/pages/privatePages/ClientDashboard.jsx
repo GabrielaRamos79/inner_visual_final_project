@@ -6,7 +6,7 @@ import IntroCourse from './../../components/introCourse/IntroCourse';
 import LevelsCourse from './../../components/levelsCourse/LevelsCourse';
 import ProgressBar from '../../components/progressBar/ProgressBar';
 import ModalAllNotes from '../../components/modalAllNotes/ModalAllNotes';
-import { VideoProvider, VideoContext } from './../../context/VideoContext'; // імпорт контексту
+import { VideoProvider, VideoContext } from './../../context/VideoContext'; 
 
 const ClientDashboard = () => {
   const [show, setShow] = useState(false);
@@ -15,12 +15,11 @@ const ClientDashboard = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <VideoProvider> {/* Обгортка в провайдер контексту */}
+    <VideoProvider> 
       <ProfileClient handleShow={handleShow} />
       <Achievements />
       <IntroCourse />
       <LevelsCourse />
-      <ProgressBar />
       <ModalAllNotes show={show} handleClose={handleClose} />
     </VideoProvider>
   );
