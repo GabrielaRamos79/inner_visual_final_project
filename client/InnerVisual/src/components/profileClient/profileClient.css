@@ -11,12 +11,9 @@
   
   .action-buttons {
     margin-top: 20px;
-    /* width: 15%; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* display: flex;
-    justify-content: flex-end; */
   }
 
   .action-buttons button {
@@ -25,7 +22,6 @@
   .btn-custom{
     width: 250px;
   }
-  
   
   .profile-picture {
     width: 100px; 
@@ -43,7 +39,6 @@
     }
   
     .welcome-message {
-      /* flex: 1; */
       margin-bottom: 0;
       margin-right: auto; 
     }
@@ -63,11 +58,11 @@
       margin-bottom: 10px;
     }
   }
+  
   @media screen and (min-width: 1024px) {
     .profile-container {
         justify-content: space-between;
         flex-direction: row;
-        /* align-items: center; */
     }
 
     .welcome-message{
