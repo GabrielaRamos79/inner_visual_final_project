@@ -6,9 +6,9 @@ import FooterCustom from './../../components/footerCustom/FooterCustom';
 const ErrorPage = () => {
   return (
     <>
-        <NavbarCustom />
-        <Unauthorized />
-        <FooterCustom />
+      <NavbarCustom />
+      <Unauthorized />
+      <FooterCustom />
     </>
   )
 }

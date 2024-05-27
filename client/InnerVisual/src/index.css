@@ -48,9 +48,10 @@ p {
     --orange: #E95115;
     --black: #1E1E1F;
     --white: #FFFFFF;
-    --lightgray : #EEEEEE;
+    --lightgray: #EEEEEE;
 }
 
+/*FONTS*/
 .raleway {
     font-family: 'Raleway', sans-serif;
     font-optical-sizing: auto;
@@ -58,29 +59,31 @@ p {
     font-style: normal;
 }
 
+
+
 body {
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
 }
 
 
-    /*titulo de las secciones*/
-    h2 {
-        font-size: 80px;
-        font-weight: lighter;
-    }
+/*titulo de las secciones*/
+h2 {
+    font-size: 80px;
+    font-weight: lighter;
+}
 
-    /*subtítulos*/
-    h3 {
-        font-size: 28px;
-        font-weight: normal ;
-    }
+/*subtítulos*/
+h3 {
+    font-size: 28px;
+    font-weight: normal;
+}
 
-    /*párrafos*/
-    p {
-        font-size: 16px;
-        font-weight: normal ;
-    }
+/*párrafos*/
+p {
+    font-size: 16px;
+    font-weight: normal;
+}
 
 
 
@@ -105,39 +108,41 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+
     /*titulo de las secciones*/
-    h2{
+    h2 {
         font-size: 60px;
         font-weight: lighter;
     }
 
     /*subtítulos*/
-    h3{
+    h3 {
         font-size: 42px;
         font-weight: lighter;
     }
 
     /*párrafos*/
-    p{
+    p {
         font-size: 20px;
     }
 }
 
 @media screen and (max-width: 480px) {
+
     /*titulo de las secciones*/
-    h2{
+    h2 {
         font-size: 36px;
         font-weight: lighter;
     }
 
     /*subtítulos*/
-    h3{
+    h3 {
         font-size: 24px;
         font-weight: lighter;
     }
 
     /*párrafos*/
-    p{
+    p {
         font-size: 18px;
     }
 }

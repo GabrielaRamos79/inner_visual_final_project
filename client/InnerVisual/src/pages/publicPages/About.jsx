@@ -6,10 +6,10 @@ import Contact from '../../components/contact/Contact';
 const About = () => {
   return (
     <>
-    <History />
-    <Team />
-    < Contact />
-    <Jobs />
+      <History />
+      <Team />
+      <Contact />
+      <Jobs />
     </>
   )
 }

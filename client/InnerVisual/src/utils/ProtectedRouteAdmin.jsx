@@ -7,12 +7,12 @@ const ProtectedRouteAdmin = ({ children }) => {
   const { userType } = useUserHandler();
 
   useEffect(() => {
-    if (userType!== 'admin') {
+    if (userType !== 'admin') {
       navigate('/unauthorized');
     }
   }, [userType, navigate]);
 
-  return userType === 'admin'? children : null;
+  return userType === 'admin' ? children : null;
 };
 
 export default ProtectedRouteAdmin;

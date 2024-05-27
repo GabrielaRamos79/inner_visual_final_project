@@ -40,8 +40,8 @@ const Review = () => {
                 <img className='review3' src={review3} alt="mujer sonriente pelirroja" />
               </div>
             </div>
-          </Carousel.Item>                     
-  
+          </Carousel.Item>
+
           <Carousel.Item>
             <div className='cardsReview'>
               <div className='card4Review'>

@@ -31,7 +31,7 @@ const Register = ({ showLoginForm }) => {
 
     if (password !== repeatPassword) {
       CustomSweetAlertError('Las contraseñas no coinciden');
-      return; 
+      return;
     }
     if (!userName || !surname || !email || !password || !phone) {
       isValid = false;
@@ -79,11 +79,11 @@ const Register = ({ showLoginForm }) => {
   };
 
   const resetForm = () => {
-    setuserName ("");
+    setuserName("");
     setSurname("");
-    setEmail(""); 
-    setPassword(""); 
-    setPhone(""); 
+    setEmail("");
+    setPassword("");
+    setPhone("");
     setSelectedFile(null);
     setRepeatPassword("");
   };
@@ -181,7 +181,7 @@ const Register = ({ showLoginForm }) => {
                           value={repeatPassword}
                           onChange={(e) => setRepeatPassword(e.target.value)}
                           type="password"
-                          
+
                           aria-describedby="passwordHelpBlocka"
                           placeholder="Repetir contraseña"
                         />
@@ -206,7 +206,7 @@ const Register = ({ showLoginForm }) => {
                 <img
                   src={register}
                   alt="foto registro"
-                  
+
                 />
               </Col>
             </Row>

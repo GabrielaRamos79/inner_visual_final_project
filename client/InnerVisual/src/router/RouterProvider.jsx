@@ -25,14 +25,13 @@ export const RouterProvider = () => {
       <Route path="/client" element={<LayoutClient />}>
         <Route path="dashboard" element={<ClientDashboard />} />
       </Route>
-      
-      {/* <Route path="/unauthorized" element={<ErrorPage />} /> */}
+
 
       <Route path="/" element={<LayoutPublic />}>
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="about" element={<About />} />
-        <Route path = "terms" element={<Terms />}></Route>
+        <Route path="terms" element={<Terms />}></Route>
       </Route>
     </Routes>
 

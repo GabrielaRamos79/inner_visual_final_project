@@ -4,7 +4,7 @@ import TableClients from './../../components/tableClients/TableClients';
 const AdminDashboard = () => {
   return (
     <>
-    <TableClients />
+      <TableClients />
     </>
   )
 }

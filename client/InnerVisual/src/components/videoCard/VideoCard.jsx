@@ -6,15 +6,15 @@ import Col from 'react-bootstrap/Col';
 import ReactPlayer from 'react-player';
 
 const VideoCard = ({ video, onVideoComplete }) => {
-  console.log(video); // borrar en su momento
+  console.log(video);
   return (
     <Container>
       <Row>
         <Col>
-          <ReactPlayer 
-            url={video.url_video} 
-            controls={true} 
-            onEnded={() => onVideoComplete(video)}  // Añade una llamada de retorno para gestionar la finalización del vídeo
+          <ReactPlayer
+            url={video.url_video}
+            controls={true}
+            onEnded={() => onVideoComplete(video)}
           />
         </Col>
       </Row>

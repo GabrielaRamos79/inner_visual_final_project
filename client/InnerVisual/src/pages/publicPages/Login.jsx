@@ -15,12 +15,12 @@ const Login = () => {
 
   return (
     <>
-     {showLogin ? (
+      {showLogin ? (
         <LoginComponent showRegisterForm={showRegisterForm} />
       ) : (
         <Register showLoginForm={showLoginForm} />
       )}
-  
+
     </>
   )
 }

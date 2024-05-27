@@ -20,17 +20,17 @@ export const UserService = {
     async postUser(newUser) {
         try {
             const response = await apiClient.post("/user_client/post_user", newUser);
-            // Si la respuesta incluye 'Email or password already exists', rechaza la promesa con un mensaje personalizado
+
             if (response.data.includes('Email or password already exists')) {
                 throw new Error('El correo electrónico ya existe.');
             }
             return response;
         } catch (error) {
             console.error("Error al enviar el usuario:", error);
-            throw error; // Lanza el error para ser manejado por el llamador
+            throw error;
         }
     },
-    
+
     async updateUser(id, updatedUser) {
         try {
             return await apiClient.patch(

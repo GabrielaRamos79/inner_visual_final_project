@@ -6,10 +6,10 @@ import LevelsCourse from './../../components/levelsCourse/LevelsCourse';
 const ClientDashboard = () => {
   return (
     <>
-    <ProfileClient />
-    <Achievements />
-    <IntroCourse />
-    <LevelsCourse />
+      <ProfileClient />
+      <Achievements />
+      <IntroCourse />
+      <LevelsCourse />
     </>
   )
 }

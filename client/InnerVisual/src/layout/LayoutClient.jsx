@@ -5,9 +5,9 @@ import FooterCustom from '../components/footerCustom/FooterCustom'
 const LayoutClient = () => {
   return (
     <>
-    <NavbarCustom />
-    <Outlet />
-    <FooterCustom />
+      <NavbarCustom />
+      <Outlet />
+      <FooterCustom />
     </>
   )
 }

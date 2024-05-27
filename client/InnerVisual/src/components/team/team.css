@@ -1,6 +1,5 @@
-
 .team-container {
-  background-color: var(--lightgray); 
+  background-color: var(--lightgray);
   padding: 80px;
 }
 
@@ -11,7 +10,7 @@
   color: #333;
 }
 
-.team-member1{
+.team-member1 {
   margin-right: 30px;
 }
 
@@ -28,7 +27,7 @@
   margin-right: 20px;
 }
 
-.member-info{
+.member-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,10 +50,8 @@
     flex-direction: column;
     margin-bottom: 80px;
   }
-  
+
   .team-container {
     padding: 50px;
   }
 }
-
-

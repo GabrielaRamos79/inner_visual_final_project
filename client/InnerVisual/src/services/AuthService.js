@@ -12,7 +12,7 @@ function setCookie(name, value, days, minutes) {
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-export const loginUser = async (email, password,user_type) => {
+export const loginUser = async (email, password, user_type) => {
 
   try {
     const url = "http://127.0.0.1:5000/login/";
@@ -30,21 +30,20 @@ export const loginUser = async (email, password,user_type) => {
       const token = response.data.token;
       const decodedToken = jwtDecode(token);
       console.log(decodedToken)
-      setCookie ("id_user",decodedToken.id_user);
-      setCookie ("name", decodedToken.name);
-      setCookie ("surname", decodedToken.surname);
-      // setCookie ("password", decodedToken.password);
-      setCookie ("email", decodedToken.email);
-      setCookie ("phone", decodedToken.phone);
-      setCookie ("photo", decodedToken.photo);
-      setCookie ("user_type", decodedToken.user_type);
+      setCookie("id_user", decodedToken.id_user);
+      setCookie("name", decodedToken.name);
+      setCookie("surname", decodedToken.surname);
+      setCookie("email", decodedToken.email);
+      setCookie("phone", decodedToken.phone);
+      setCookie("photo", decodedToken.photo);
+      setCookie("user_type", decodedToken.user_type);
 
       console.log("Token decodificado:", decodedToken);
 
       const user_type = decodedToken.user_type;
       console.log("Tipo de rol del usuario:", user_type);
 
-      return { success: true, userId: decodedToken.id_user, user_type: user_type};
+      return { success: true, userId: decodedToken.id_user, user_type: user_type };
     } else {
       console.error("Error al autenticar al usuario:", response.statusText);
       return { success: false };
