@@ -52,7 +52,7 @@
     color: white;
     text-align: left;
     margin-bottom: 40px;
-    height: 150px;
+    height: 210px;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -86,7 +86,7 @@
 
 @media screen and (max-width: 1260px) {
     .reviewSection {
-        height: 650px;
+        height: 720px;
     }
 
     .review1,
@@ -109,7 +109,7 @@
     }
 
     .cardP {
-        height: 200px;
+        height: 282px;
     }
 }
 
@@ -120,8 +120,8 @@
     }
 
     .reviewSection {
-        height: 800px;
-        margin-bottom: 130px;
+        height: 850px;
+        margin-bottom: 230px;
     }
 
     .cardsReview {
@@ -130,7 +130,7 @@
 
     .cardP {
         padding: 0 30px;
-        height: 270px;
+        height: 550px;
     }
 
     .cardName,
@@ -149,9 +149,17 @@
         height: 200px;
     }
 
+    .uno,
+    .dos,
+    .tres,
+    .cuatro,
+    .cinco,
+    .seis {
+        height: 420px;
+    }
 }
 
-@media screen and (max-width: 924px) {
+@media screen and (max-width: 931px) {
 
     .review1,
     .review2,
@@ -164,6 +172,7 @@
     }
 
     .cardP {
+        font-size: 16px;
         padding: 0 35px;
     }
 
@@ -173,7 +182,7 @@
     }
 
     .reviewSection {
-        height: 750px;
+        height: 920px;
         margin-bottom: 150px;
     }
 }
@@ -181,7 +190,12 @@
 
 @media screen and (max-width: 700px) {
     .reviewSection {
-        height: 2300px;
+        height: 2550px;
+        margin-bottom: 210px;
+    }
+
+    .cardP {
+        height: 630px;
     }
 
     .cardsReview {
@@ -215,5 +229,75 @@
 
     .carousel-indicators [data-bs-target] {
         margin-bottom: 70px;
+    }
+
+    .card1Review,
+    .card2Review,
+    .card3Review,
+    .card4Review,
+    .card5Review,
+    .card6Review {
+        max-width: 275px;
+    }
+
+    .uno,
+    .cuatro {
+        height: 380px;
+    }
+
+    .dos,
+    .cinco {
+        height: 320px;
+    }
+
+    .tres,
+    .seis {
+        height: 410px;
+    }
+
+
+    @media screen and (max-width: 490px) {
+        .reviewSection {
+            height: 2500px;
+            margin-bottom: 150px;
+        }
+
+        .cardP {
+            height: 510px;
+            padding: 0 25px;
+        }
+
+        .card2Review .carpP {
+            height: 300px;
+        }
+
+        .card3Review .cardP {
+            margin-bottom: 40px;
+        }
+
+        .card1Review,
+        .card2Review,
+        .card3Review,
+        .card4Review,
+        .card5Review,
+        .card6Review {
+            max-width: 265px;
+        }
+
+        .uno,
+        .cuatro {
+            height: 340px;
+        }
+
+        .dos,
+        .cinco {
+            height: 320px;
+        }
+
+        .tres,
+        .seis {
+            height: 355px;
+        }
+
     }
 }
