@@ -45,7 +45,7 @@ const LoginComponent = ({ showRegisterForm }) => {
                   </a>
                   .
                 </p>
-                <hr class="hr" />
+                <hr className="hr" />
                 <form onSubmit={handleSubmit} style={{ marginTop: '150px' }}>
                   <label className="fw-bold" htmlFor="form2Example1">
                     EMAIL
@@ -60,7 +60,7 @@ const LoginComponent = ({ showRegisterForm }) => {
                     />
                   </div>
 
-                  <label className="fw-bold">CONTRASEÑA</label>
+                  <label className="fw-bold" htmlFor="form2Example2">CONTRASEÑA</label>
                   <div className="form-outline mb-4">
                     <input
                       type="password"

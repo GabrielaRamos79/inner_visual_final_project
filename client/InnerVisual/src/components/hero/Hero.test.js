@@ -11,11 +11,11 @@ describe('Hero component', () => {
                 <Hero />
             </MemoryRouter>);
 
-        const welcomeText = screen.getByText('Welcome to');
-        expect(welcomeText).toBeInTheDocument();
+        const title1 = screen.getByText('Entrena tu mente');
+        expect(title1).toBeInTheDocument();
 
-        const innerVisualsText = screen.getByText('Inner Visuals');
-        expect(innerVisualsText).toBeInTheDocument();
+        const title2 = screen.getByText('Marca la diferencia');
+        expect(title2).toBeInTheDocument();
             
         const button = screen.getByText('Conócenos');
         expect(button).toBeInTheDocument();

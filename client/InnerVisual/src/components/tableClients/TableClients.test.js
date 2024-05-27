@@ -3,6 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import TableClients from './TableClients';
 import { UserHandler } from '../../handler/UserHandler';
+import { act } from 'react-dom/test-utils';
 
 jest.mock('../../handler/UserHandler', () => ({
     UserHandler: {
@@ -19,9 +20,10 @@ describe('TableClients Component', () => {
     });
 
     test('renders TableClients component without crashing', async () => {
-        render(<TableClients />);
+            render(<TableClients />);
+      
 
-        expect(screen.getByText('Lista de clientes')).toBeInTheDocument();
+        expect(screen.getByText('Alumnos')).toBeInTheDocument();
 
         await waitFor(() => {
             expect(screen.getByText('John')).toBeInTheDocument();

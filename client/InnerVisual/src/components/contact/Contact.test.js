@@ -9,7 +9,7 @@ describe('Contact component', () => {
 
         expect(screen.getByText('CONTACTO')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Introduce tu nombre')).toBeInTheDocument();
-        expect(screen.getByPlaceholderText('Introduce tu Apellido')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Introduce tu apellido')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Introduce tu teléfono')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Introduce tu email')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Escribe tu consulta')).toBeInTheDocument();
@@ -21,9 +21,6 @@ describe('Contact component', () => {
         const messageInput = screen.getByPlaceholderText('Escribe tu consulta');
         fireEvent.change(messageInput, { target: { value: 'test' } });
         fireEvent.blur(messageInput);
-        // await waitFor(() => {
-        //     expect(screen.getByText('La mensaje debe tener al menos 5 caracteres.')).toBeInTheDocument();
-        // });
     });
 
     test('displays error message if email is invalid', async () => {
@@ -39,16 +36,16 @@ describe('Contact component', () => {
         fireEvent.blur(nameInput);
     });
 
-    test('displays error essage if surname is empty', async() => {
+    test('displays error message if surname is empty', async() => {
         render(<Contact />);
-        const surnameInput = screen.getByPlaceholderText('Introduce tu Apellido');
+        const surnameInput = screen.getByPlaceholderText('Introduce tu apellido');
         fireEvent.blur(surnameInput);
     });
 
     test('displays error message if telephone is invalid', async () => {
         render(<Contact />);
         const telephoneInput = screen.getByPlaceholderText('Introduce tu teléfono');
-        fireEvent.change(telephoneInput, { target: { value: '123' } });
+        fireEvent.change(telephoneInput, { target: { value: '' } });
         fireEvent.blur(telephoneInput);
     });
   

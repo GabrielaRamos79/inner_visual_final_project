@@ -1,18 +1,18 @@
 import React from 'react';
-import { render, screen, fireEvent, getAllByAltText, getByText, waitFor, getByAltText } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import History from './History';
 
 describe('History component', () => {
     test('renders component without crashing', () => {
-        const { getByText, getByAltText } = render(<History />);
+        render(<History />);
 
-        expect(getByText('Nos importa tu salud')).toBeInTheDocument();
-        expect(getByText('Tratamiento individual')).toBeInTheDocument();
-        expect(getByText('Estamos para atenderte')).toBeInTheDocument();
+        expect(screen.getByText('BREVE HISTORIA')).toBeInTheDocument();
+        expect(screen.getByText('TRATAMIENTO INDIVIDUAL')).toBeInTheDocument();
+        expect(screen.getByText('SI QUIERES CAMBIAR HAZLO DESDE DENTRO')).toBeInTheDocument();
 
-        expect(getByAltText('Terapeuta con niña paciente')).toBeInTheDocument();
-        expect(getByAltText('Terapeuta ayudando a mujer')).toBeInTheDocument();
-        expect(getByAltText('Terapeuta haciendo ejercicio de rehabilitacion')).toBeInTheDocument();
+        expect(screen.getByAltText('Deportista haciendo plancha lateral')).toBeInTheDocument();
+        expect(screen.getByAltText('Nadador')).toBeInTheDocument();
+        expect(screen.getByAltText('Hombre haciendo Motocross')).toBeInTheDocument();
     });
 });
