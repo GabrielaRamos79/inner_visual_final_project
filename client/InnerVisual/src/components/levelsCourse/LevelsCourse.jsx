@@ -12,12 +12,14 @@ import { VideoContext } from './../../context/VideoContext'; // імпорт к�
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext);
-  const { videos, setVideos, selectedVideo, setSelectedVideo } = useContext(VideoContext); 
+  const { videos, setVideos, selectedVideo, setSelectedVideo, progress, setProgress } = useContext(VideoContext); 
+  //const [progress, setProgress] = useState({ level1: 0, level2: 0, level3: 0 });
 
   const fetchData = async () => {
     if (user && user.id) {
       try {
         const contentData = await ContentHandler.getAllContent(user.id);
+        console.log('Fetched videos:', contentData);
         setVideos(contentData); 
       } catch (error) {
         console.error("Error getting the videos:", error);
@@ -33,25 +35,52 @@ const LevelsCourse = () => {
     setSelectedVideo(video); 
   };
 
+  const updateProgress = (level) => {
+    const totalVideos = level.length;
+    const watchedVideos = level.filter(video => video.status_video === 1).length;
+
+    console.log('Total videos:', totalVideos, 'Watched videos:', watchedVideos);
+
+    if (totalVideos === 0) {
+      return 0;
+    }
+
+    return Math.round((watchedVideos / totalVideos) * 100);
+  };
+
+  useEffect(() => {
+    setProgress({
+      level1: updateProgress(videos.slice(0, 3)),
+      level2: updateProgress(videos.slice(3, 5)),
+      level3: updateProgress(videos.slice(5, 10))
+    });
+  }, [videos]);
+
   const handleVideoComplete = async (video) => {
     console.log(`Video ${video.title_video} has ended`);
+    
     const videoIndex = videos.findIndex(v => v.id_content === video.id_content);
     const nextVideo = videos[videoIndex + 1];
 
     if (nextVideo) {
       try {
         await ContentHandler.updateStatusVideo(user.id, nextVideo.id_content);
-        fetchData();
+        console.log('Video status updated successfully');
+        await fetchData();
       } catch (error) {
         console.error("Error updating video status:", error);
       }
     }
   };
 
+  useEffect(() => {
+    console.log('Updated progress:', progress);
+  }, [progress]);
+
   return (
     <Accordion>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Level 1</Accordion.Header>
+        <Accordion.Header>Level 1 ({progress.level1}%)</Accordion.Header>
         <Accordion.Body>
           <Container>
             <Row>
@@ -64,7 +93,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
-                    key={selectedVideo.id_content} // Añadir una clave única a la VideoCard obliga a React a volver a montar el componente cuando cambia el selectedVideo. Esto garantiza que las notas se muestren correctamente para cada vídeo.
+                    key={selectedVideo.id_content}
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
@@ -77,7 +106,7 @@ const LevelsCourse = () => {
       </Accordion.Item>
 
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Level 2</Accordion.Header>
+        <Accordion.Header>Level 2 ({progress.level2}%)</Accordion.Header>
         <Accordion.Body>
           <Container>
             <Row>
@@ -90,7 +119,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
-                    key={selectedVideo.id_content} 
+                    key={selectedVideo.id_content}
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
@@ -103,7 +132,7 @@ const LevelsCourse = () => {
       </Accordion.Item>
 
       <Accordion.Item eventKey="2">
-        <Accordion.Header>Level 3</Accordion.Header>
+        <Accordion.Header>Level 3 ({progress.level3}%)</Accordion.Header>
         <Accordion.Body>
           <Container>
             <Row>
@@ -116,7 +145,7 @@ const LevelsCourse = () => {
               <Col>
                 {selectedVideo && (
                   <VideoCard
-                    key={selectedVideo.id_content} 
+                    key={selectedVideo.id_content}
                     video={selectedVideo}
                     onVideoComplete={handleVideoComplete}
                     user={user}
