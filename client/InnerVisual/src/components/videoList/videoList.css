@@ -2,3 +2,9 @@
     color: var(--orange);
     margin-right: 10px;
   }
+  .button-list{
+    background-color: var(--lightgray);
+    width: 100%;
+    padding: 20px 15px;
+    border: none;
+  }

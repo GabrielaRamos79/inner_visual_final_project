@@ -35,6 +35,7 @@ const VideoCard = ({ video, onVideoComplete, user }) => {
             url={video.url_video}
             controls={true}
             onEnded={() => onVideoComplete(video)}
+            width="100%"
           />
 
         <Col>{video.title_video}</Col>

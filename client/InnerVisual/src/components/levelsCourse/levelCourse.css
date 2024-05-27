@@ -63,7 +63,15 @@
 .accordion-button collapsed {
   background-color: blue;
 } */
+
+
+
+
 .accordion-button.collapsed {
+  color: white; 
+  background: var(--darkblue) 
+}
+.accordion-button {
   color: white; 
   background: var(--darkblue) 
 }
@@ -86,12 +94,16 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
+.levels-course {
+  width: 100%;
+  margin: auto;
+  background-color: #f8f9fa;
+}
 
-
-.video-card img {
+/* .video-card img {
   width: 100%;
   height: auto;
-}
+} */
 
 /* .video-card h3 {
   margin: 10px 0;

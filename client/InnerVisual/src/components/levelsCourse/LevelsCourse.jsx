@@ -144,6 +144,7 @@ const LevelsCourse = () => {
     // </section>
     <>
       <section className="levelContainer">
+      <section className="levels-course">
         <h2 className="titleCourse">PRÁCTICAS</h2>
         <Accordion activeKey={activeKey} onSelect={handleAccordionSelect}>
           <Accordion.Item eventKey="0">
@@ -173,6 +174,7 @@ const LevelsCourse = () => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
+        </section>
         </section>
     </>
   );

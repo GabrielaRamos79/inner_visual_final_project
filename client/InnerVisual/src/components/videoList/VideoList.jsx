@@ -27,7 +27,7 @@ const VideoList = ({ videos, onVideoSelect }) => (
   // </ListGroup>
       <ButtonGroup vertical>
       {videos.map((video) => (
-        <Button
+        <button className='button-list mb-2'
           key={video.id_content}
           onClick={() => onVideoSelect(video)}
           disabled={!video.status_video}
@@ -38,7 +38,7 @@ const VideoList = ({ videos, onVideoSelect }) => (
             <FaLock className="orange-icon" /> // Icono bloqueado
           )}
           {video.title_video}
-        </Button>
+        </button>
       ))}
     </ButtonGroup>
 );
