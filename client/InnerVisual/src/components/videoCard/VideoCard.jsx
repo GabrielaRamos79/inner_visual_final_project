@@ -53,7 +53,7 @@ const VideoCard = ({ video, onVideoComplete, user }) => {
               <p className="fw-bold text-uppercase mb-4 mt-4">
                 {video.title_video}
               </p>
-              <p className="scrollable-text mb-4">{video.description}</p>
+              <p className="mb-4">{video.description}</p>
 
               <Accordion defaultActiveKey="0" flush>
                 <Accordion.Item eventKey="0">
@@ -65,7 +65,7 @@ const VideoCard = ({ video, onVideoComplete, user }) => {
                       style={{ height: "100px" }}
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
-                      className="mb-4"
+                      className="mb-4 textarea-notes"
                     />
                     <button
                       className="btn-notes p-1 mb-4"
