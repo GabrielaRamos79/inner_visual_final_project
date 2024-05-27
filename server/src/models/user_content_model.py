@@ -5,4 +5,3 @@ class User_content():
         self.contentFK = contentFK
         self.status_video = status_video
         self.notes = notes
-        

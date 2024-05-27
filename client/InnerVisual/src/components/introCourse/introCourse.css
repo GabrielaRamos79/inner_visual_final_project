@@ -1,55 +1,54 @@
 .introCourse-container {
-    background-color: lightgray;
-    padding: 40px 100px 50px;
+    background-color: var(--lightgray);
+
+}
+  
+.introCourse-content {
+    display: flex;
+    flex-direction:  column;
+    padding-top: 50px;
+    width: 1140px;
     margin: auto;
+    padding-bottom: 50px;
 }
 
 .introCourse-title {
-    font-size: 24px;
-    font-weight: bold;
     margin-bottom: 30px;
-    text-align: center;
-    margin-right: 280px;
 }
 
 .course {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
     align-items: center;
     justify-content: center;
 }
 
-.course_video1,
-.course_video2 {
+.course_video {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: space-between;
     width: 100%;
 }
 
-.course_video2 {
-    margin-right: 50px;
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .video {
-    padding: 5px 50px;
-    font-size: 16px;
-    background-color: white;
+    width: 500px;
+    height: 280px;
+    background-color: transparent;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
-.video_title {
+/* .video_title {
     font-size: 16px;
-    margin-left: 10px;
+    text-align: center;
+} */
+
+.player{
+    margin-bottom: 10px;
+
 }
 
 
@@ -65,6 +64,7 @@
     .course {
         align-items: center;
         margin-left: 0;
+        flex-direction: column;
     }
 
     .course_video2 {
@@ -77,10 +77,15 @@
         margin-right: 15px;
     }
 
-    .video_title {
+    /* .video_title {
         font-size: 14px;
         margin-left: 0;
         text-align: center;
+    } */
+    .player{
+        margin-bottom: 10px;
+        width: 50%;
+        height: 50%;
     }
 
 }
