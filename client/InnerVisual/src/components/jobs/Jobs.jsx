@@ -89,95 +89,17 @@ const Jobs = () => {
 
   return (
     <>
-      {/* <div className='jobs-container-jobs-work-with-us'>
-
-        <div className='container-title-Jobs'>
-          <h2 className='titleJobs-jobs-work-with-us'>WORK WITH US</h2>
-          <br></br>
-          <h3 className='subtitleJobs-jobs-work-with-us'>Aqui te invitamos a que trabajes con nosotros, cuentanos sobre ti </h3>
-         </div> 
-
-         <div className="contact-form-jobs-work-with-us">
-          <form onSubmit={handleSubmit}>                    
-
-                   
-                        <label htmlFor="name-jobs-work-with-us">Nombre</label>
-                        <input
-                          type="text"
-                          id="name-jobs-work-with-us"
-                          value={name}
-                          placeholder="Introduce tu nombre"
-                          onChange={(e) => setName(e.target.value)}
-                          onBlur={() =>  setNameTouched(true)}
-                          className={`input-field ${nameTouched && !name.trim() ? 'error' : ''}`}
-                      />
-                  
-                       <label htmlFor="surname-contact-work-with-us">Apellido</label>
-                        <input
-                          type="text"
-                          id="surname-jobs-work-with-us"
-                          value={surname}
-                          placeholder="Introduce tu apellido"
-                          onChange={(e) => setSurname(e.target.value)}
-                          onBlur={() =>  setSurnameTouched(true)}
-                          className={`input-field ${surnameTouched && !surname.trim() ? 'error' : ''}`}
-                        />
-
-                        <label htmlFor="telephone-contact-work-with-us">Teléfono</label>
-                        <input
-                          type="tel"
-                          id="telephone-jobs-work-with-us"
-                          value={telephone}
-                          placeholder="Introduce tu telféfono"
-                          onChange={(e) => setTelephone(e.target.value)}
-                          onBlur={() =>setTelephoneTouched(true)}
-                          className={`input-field ${telephoneTouched && (!telephone.trim() || !telephoneRegex.test(telephone)) ? 'error' : ''}`}
-                        />
-
-                        <label htmlFor="email-jobs-work-with-us">Correo Electrónico</label>
-                        <input
-                          type="email"
-                          id="email-jobs-work-with-us"
-                          value={email}
-                          placeholder="Introduce tu correo electrónico"
-                          onChange={(e) => setEmail(e.target.value)}
-                          onBlur={() => setEmailTouched(true)}
-                          className={`input-field half-width ${emailTouched && !emailRegex.test(email) ? 'error' : ''}`}
-                        />
-                         <label htmlFor="message-jobs-work-with-us">Mensaje</label>
-                          <textarea
-                            id="message-jobs-work-with-us"
-                            value={message}
-                            placeholder="Introduce tu consulta"
-                            onChange={(e) => setMessage(e.target.value)}
-                            onBlur={() => setMessageTouched(true)}
-                            className={`textarea-field ${messageTouched && message.length < 5 ? 'error' : ''}`}
-                          />
-                        <div className="input-group-terms-work-with-us">
-                          <input
-                            type="checkbox"
-                            id="terms-work-with-us"
-                            checked={acceptTerms}
-                            onChange={(e) => setAcceptTerms(e.target.checked)}
-                            onBlur={() => setAcceptTermsTouched(true)}
-                          />
-                          <label htmlFor="terms-work-with-us">He leido y acepto los <a href="/terminos-y-condiciones" target="_blank" rel="noopener noreferrer">términos y condiciones</a></label>
-                        </div> 
-                          <div className="submit-button-jobs-work-with-us">
-                              <button type="submit" className="submit-button-jobs-work-with-us">Enviar Mensaje</button>
-                          </div>
-                                    
-            </form>
-            </div>  
-          </div> */}
-
       <Container fluid className="mt-4 content-jobs d-flex justify-content-center">
         <Container>
           <Row>
-            <Col xs={12} md={12} lg={6} className="text-center">
+            <Col xs={12} md={12} lg={6} >
               <h2 className="jobs-title mb-5">TRABAJA CON NOSOTROS</h2>
               <p>
-                
+                NOS ENCANTA EL TALENTO CON ESPÍRITU JÓVEN Y RESPONSABLE.
+              </p><br />
+              <p>
+                SI TE GUSTA LO QUE HACEMOS EN INNER VISUALS Y CREES QUE PUEDES AYUDARNOS A EXPANDIRNOS,
+                NO TE CORTES Y ENVÍANOS UN EMAIL.
               </p>
             </Col>
 
@@ -191,24 +113,22 @@ const Jobs = () => {
                   placeholder="Introduce tu nombre"
                   onChange={(e) => setName(e.target.value)}
                   onBlur={() => setNameTouched(true)}
-                  className={`input-jobs ${
-                    nameTouched && !name.trim() ? "error" : ""
-                  }`}
+                  className={`input-jobs ${nameTouched && !name.trim() ? "error" : ""
+                    }`}
                 />
                 <p className="fw-bold mb-2 mt-4">TELÉFONO</p>
                 <input
                   type="text"
                   id="telephone-jobs-work-with-us"
                   value={telephone}
-                  placeholder="Introduce tu telfónico"
+                  placeholder="Introduce tu teléfono"
                   onChange={(e) => setTelephone(e.target.value)}
                   onBlur={() => setTelephoneTouched(true)}
-                  className={`input-jobs ${
-                    telephoneTouched &&
-                    (!telephone.trim() || !telephoneRegex.test(telephone))
+                  className={`input-jobs ${telephoneTouched &&
+                      (!telephone.trim() || !telephoneRegex.test(telephone))
                       ? "error"
                       : ""
-                  }`}
+                    }`}
                 />
                 <p className="fw-bold mb-2 mt-4">EMAIL</p>
                 <input
@@ -218,9 +138,8 @@ const Jobs = () => {
                   placeholder="Introduce tu correo electrónico"
                   onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => setEmailTouched(true)}
-                  className={`input-jobs ${
-                    emailTouched && !emailRegex.test(email) ? "error" : ""
-                  }`}
+                  className={`input-jobs ${emailTouched && !emailRegex.test(email) ? "error" : ""
+                    }`}
                 />
                 <Col className="d-flex mt-3">
                   <Form.Group className="mb-3 " id="formGridCheckbox">

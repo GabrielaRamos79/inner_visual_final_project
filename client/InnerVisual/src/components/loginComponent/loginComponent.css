@@ -29,8 +29,8 @@
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
-    padding-right: 0; /* Asegura que no haya padding a la derecha */
-    padding-left: 0;  /* Asegura que no haya padding a la izquierda */
+    padding-right: 0;
+    padding-left: 0;
     margin-top: var(--bs-gutter-y);
 }
 

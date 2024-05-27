@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import  loginUser  from '../services/AuthService';
-import { CustomSweetAlertOk} from '../components/sweetAlertComponent/CustomSweetAlert';
+import { CustomSweetAlertError, CustomSweetAlertOk} from '../components/sweetAlertComponent/CustomSweetAlert';
 
 export const useUserHandler = () => {
  const [userType, setUserType] = useState(null);
@@ -24,7 +24,7 @@ export const useUserHandler = () => {
           break;
       }
     } else {
-      CustomSweetAlertOk('¡Login exitoso!');
+      CustomSweetAlertError('Error en el inicio de sesión.');
     }
  };
 

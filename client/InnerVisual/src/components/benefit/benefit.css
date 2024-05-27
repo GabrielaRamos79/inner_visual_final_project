@@ -19,23 +19,22 @@
     margin-top: 40px;
 }
 
-.sectionBenefit{
+.sectionBenefit {
     display: flex;
-    justify-content:center;
-   
+    justify-content: center;
 }
 
 .imageContainer {
     display: flex;
     justify-content: flex-end;
     width: 50%;
-    
+
 }
 
 .imgBenefit {
-    width: 90%; 
-    height: auto; 
-    object-fit: cover; 
+    width: 90%;
+    height: auto;
+    object-fit: cover;
     padding-left: 45px;
 }
 
@@ -43,36 +42,32 @@
 @media screen and (max-width: 1200px) {
     .sectionBenefit {
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
     }
 
     .textContainer {
         width: 100%;
         margin-left: 0;
-        padding-right: 0; 
+        padding-right: 0;
         display: flex;
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
     }
 
     .titleBenefit {
-        align-self: flex-start; 
-        margin-left: 50px; 
+        align-self: flex-start;
+        margin-left: 50px;
     }
 
     .imgBenefit {
-        width: 100%; 
-        height: auto; 
-        object-fit: cover; 
-        padding-left: 0; 
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        padding-left: 0;
     }
 
-    .textBenefit{
+    .textBenefit {
         margin-right: 80px;
         margin-left: 80px;
     }
 }
-
-
-
-

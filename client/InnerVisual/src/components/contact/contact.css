@@ -1,327 +1,33 @@
-/* .titleJobs-container-contact-with-us {
-  text-align: center;
-  padding: 50px;
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.container-title-contact {
-  text-align: left;
-  width: 100%;
-  padding: 20px
-}
-.titleJobs-container-contact-with-us {
-
-  margin: 0;
-  text-align: left;
-} 
-
-.jobs-section-contact-with-us {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.jobs-section-contact-with-us form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  width: 100%;
-}
-.contact-form-contact-with-us form {
-  display: flex;
-  flex-direction: column;
-}
-.contact-form-contact-with-us {
-
-  width: 100%;
-  padding: 60px;
-}
-
-.input-group-contact-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.input-group-contact-row .input-group-name-contact-with-us,
-.input-group-contact-row .input-group-surname-contact-with-us,
-.input-group-contact-row .input-group-telephone-contact-with-us,
-.input-group-contact-row .input-group-email-contact-with-us {
-  display: flex;
-  flex-direction: column;
-  width: 48%; 
-}
-
-.input-group-name-contact-with-us {
-  align-items: flex-start; 
-}
-
-.input-group-surname-contact-with-us {
-  align-items: flex-end; 
-}
-
-.input-group-email-contact-with-us,
-.input-group-telephone-contact-with-us {
-  align-items: flex-start;
-}
-
-.input-group-email-contact-with-us {
-  margin-left: 2%;
-}
-
-.input-group-name-contact-with-us label,
-.input-group-surname-contact-with-us label,
-.input-group-telephone-contact-with-us label,
-.input-group-email-contact-with-us label {
-  align-self: flex-start;
-  margin-bottom: 5px;
-  width: 206px;
-  height: 19px;
-  gap: 0px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19.36px;
-  text-align: left;
-  
-}
-
-.input-field,.textarea-field  {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.textarea-field {
-  resize: vertical;
-  height: 200px;
-}
-
-
-.input-group-message-contact-with-us label {
-  align-self: flex-start;
-  width: 206px;
-  height: 19px;
-  gap: 0px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19.36px;
-  text-align: left;
-  color: black; 
-  margin-bottom: 5px;
-  flex-direction: column; 
-}
-.input-message-contact {
-  display: flex;
-}
-.checkbox-container {
-  display: flex;
-  align-items: center;  
-
-}
-.checkbox-label-container {
-  width: 100%;
-  display: flex;
-  align-items:center;
-  gap: 10px;
-}
-
-.checkbox-label-container input[type="checkbox"] {
-  margin-right: 10px; 
-  width: 24px;
-  height: 24px;
-  border: 0.5px solid #000000;
-}
-
-.checkbox-label-container label {
-  flex-grow: 1;
-  font-family: 'Inter', sans-serif;
-  
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 19.36px;
-  text-align: left;
-  color: black;
-  margin: 0;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-.checkbox-label-container a {
-  color: #00B1E2;
-  text-decoration: none;
-}
-
-.checkbox-label-container a:hover {
-  text-decoration: underline;
-}
-
-.input-group-terms-contact-with-us {
-  display: flex;  
-  align-items: center;
-  margin-bottom: 10px;
-  width: auto;
-  justify-content: flex-start;
-  gap: 0px;
-}
-  
-
-.input-group-terms-contact-with-us input[type="checkbox"] {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 24px;
-  border: 0.5px solid #000000;
-  margin-right: 5px;
-  gap: 0px;
-}
-
- .input-group-terms-contact-with-us label {
-  width: 206px; 
-  height: 19px;
-  text-align: left;
-  margin: 10px;
- 
-}
-
-.input-group-terms-contact-with-us a {
-  color: #00B1E2;
-  text-decoration: none;
-}
-
-.input-group-terms-contact-with-us a:hover {
-  text-decoration: underline;
-}
-.error {
-  border: 1px solid red;
-}
-
-.submit-button-contact-with-us {
-  
-  width: 60%;
-  padding: 10px;
-  background: #1E1E1F;
-  border: 2px solid #000000;
-  color: white;  
-  cursor: pointer;
-  align-self: flex-end;
- 
-}
-
-.submit-button-contact-with-us:hover {
-  background-color: #00B1E2;
-}
-
-label {
-  align-self: flex-start;
-  margin-bottom: 5px;
-  width: 206px;
-  height: 19px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19.36px;
-  text-align: left;
-  color: black;
-}
-
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  margin-bottom: 15px;
-  width: 80%;
-  text-align: center;
-  position: relative;
-}
-
-.close-btn-contact-with-us {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .jobs-section-contact-with-us {
-    padding: 10px;
-  }
-
-  .contact-form-contact-with-us {
-    width: 100%;
-  }
-
-  .titleJobs-container-contact-with-us {
-    font-size: 18px;
-  }
-
-  .submit-button-contact-with-us {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .titleJobs-container-contact-with-us {
-    font-size: 16px;
-  }
-
-  .input-field,
-  .textarea-field {
-    padding: 8px;
-  }
-
-  .submit-button-contact-with-us {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  .alert {
-    width: 90%;
-    padding: 10px;
-  }
-} */
 .contact-title {
   text-align: left;
   margin-bottom: 20px;
   margin-top: 40px;
 }
+
 .error {
   border: 1px solid red;
 }
-.terms-link{
+
+.terms-link {
   text-decoration: 1px underline;
-    color: black;
-    transition: color 0.3s ease;
+  color: black;
+  transition: color 0.3s ease;
 }
-.terms-link:hover{
+
+.terms-link:hover {
   text-decoration: 1px underline;
   color: black;
   font-weight: bold;
 }
+
 .form-control {
-  
+
   border: solid black;
   border-radius: none;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-.form-control:focus{
+
+.form-control:focus {
   border-color: black;
   box-shadow: none;
 }
