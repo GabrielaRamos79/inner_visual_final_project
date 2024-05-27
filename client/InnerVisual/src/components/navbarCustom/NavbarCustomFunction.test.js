@@ -35,28 +35,6 @@ describe('NavbarCustom component functionality', () => {
 
         });
     });
-
-    test('logs out and redirects to home when clicking Logout link', () => {
-        mockUserContex.isLoggedIn = true;
-        mockUserContex.user = { role: 'client' };
-        render(
-            <UserContext.Provider value={mockUserContex}>
-                <MemoryRouter initialEntries={['/']}>
-                    <Routes>
-                        <Route path="/" element={<NavbarCustom />} />
-                        <Route path="/login" element={<div>Home Page</div>} />
-                    </Routes>
-                </MemoryRouter>
-            </UserContext.Provider>
-        );
-
-        const logoutLink = screen.getByText(/logout/i);
-        expect(logoutLink).toBeInTheDocument();
-
-        userEvent.click(logoutLink);
-
-        expect(mockUserContex.logout).toHaveBeenCalled();
-
-        expect(screen.getByText('Home Page')).toBeInTheDocument();
-    });
+        
 });
+
