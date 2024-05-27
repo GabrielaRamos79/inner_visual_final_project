@@ -4,6 +4,12 @@
 .caption-title {
     text-align: center;  
 }
+.history1,
+.history2,
+.history3 {
+    height: auto;
+    width: 100%; 
+}
 
 @media screen and (max-width: 768px) {
     .history1,
