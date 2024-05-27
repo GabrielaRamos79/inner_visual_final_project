@@ -6,12 +6,21 @@ import Col from "react-bootstrap/Col";
 import loginphoto from "../../assets/img/loginphoto.svg";
 import Form from "react-bootstrap/Form";
 import { CustomSweetAlertError, CustomSweetAlertOk } from "../sweetAlertComponent/CustomSweetAlert";
+import { Button, InputGroup } from 'react-bootstrap';
+import { FiLock, FiUnlock } from 'react-icons/fi';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const LoginComponent = ({ showRegisterForm }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { handleLogin } = useUserHandler();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleRegisterLinkClick = () => {
     showRegisterForm();
@@ -51,25 +60,38 @@ const LoginComponent = ({ showRegisterForm }) => {
                     EMAIL
                   </label>
                   <div className="form-outline mb-4">
-                    <input
+                    {/* <input
                       type="email"
                       id="form2Example1"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Introduce tu email"
-                    />
+                    /> */}
+                     <Form.Control className="pt-0 pb-0 pl-1 pr-0 border-1 rounded-0 bg-gray" style={{ borderColor: "#cccccc" }}
+                        type="email"
+                        id="form2Example1"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Introduce tu email"
+                      />
                   </div>
 
                   <label className="fw-bold">CONTRASEÑA</label>
                   <div className="form-outline mb-4">
-                    <input
-                      type="password"
-                      id="form2Example2"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Introduce tu contraseña"
-                    />
+                  <InputGroup>
+                      <Form.Control className="pt-0 pb-0 pl-1 pr-0 border-1 rounded-0 bg-gray " style={{ borderColor: "#cccccc" }}
+                        type={showPassword ? 'text' : 'password'}
+                        id="form2Example2"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Introduce tu contraseña"
+                      />
+                      <InputGroup.Text onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }} className=" pt-0 pb-0 pl-1 pr-0 border-1 rounded-0 bg-gray ">
+                        {showPassword ? <FiUnlock /> : <FiLock />}
+                      </InputGroup.Text>
+                    </InputGroup>
                   </div>
+
 
                   <Container className="mb-4 ms-0">
                     <Row className="row-checkbox">
