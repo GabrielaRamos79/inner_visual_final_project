@@ -5,6 +5,7 @@ export const VideoContext = createContext();
 export const VideoProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [progress, setProgress] = useState({ level1: 0, level2: 0, level3: 0 });
 
   const updateVideoNotes = (videoId, newNotes) => {
     setVideos(prevVideos =>
@@ -15,7 +16,7 @@ export const VideoProvider = ({ children }) => {
   };
 
   return (
-    <VideoContext.Provider value={{ videos, setVideos, selectedVideo, setSelectedVideo, updateVideoNotes }}>
+    <VideoContext.Provider value={{ videos, setVideos, selectedVideo, setSelectedVideo, progress, setProgress, updateVideoNotes }}>
       {children}
     </VideoContext.Provider>
   );

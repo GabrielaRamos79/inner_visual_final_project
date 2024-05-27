@@ -2,16 +2,16 @@ import "./profileClient.css";
 import fotoperfil from "../../assets/img/review1.jpg";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { VideoContext } from './../../context/VideoContext'; 
+import { VideoContext } from './../../context/VideoContext';
 import { UserContext } from '../../context/AuthContext.jsx';
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'; 
+import Swal from 'sweetalert2';
 import UserHandler from "../../handler/UserHandler.js";
 
 const ProfileClient = ({ handleShow }) => {
   const { user, logout } = useContext(UserContext);
-  const { videos } = useContext(VideoContext); 
+  const { progress } = useContext(VideoContext);
   const navigate = useNavigate();
 
   const handleContinue = () => {
@@ -32,7 +32,7 @@ const ProfileClient = ({ handleShow }) => {
 
     if (result.isConfirmed) {
       try {
-        await UserHandler.handleDeleteUserProfile(user.id); 
+        await UserHandler.handleDeleteUserProfile(user.id);
         Swal.fire("'Eliminado", "Su cuenta ha sido eliminada", 'success');
         logout(); //  logout para limpiar cookies
         navigate('/'); // a casa
@@ -67,16 +67,16 @@ const ProfileClient = ({ handleShow }) => {
             </div>
             <div className="progress-section">
               <div className="progress-info">
-                <CircularProgressbar value={75} text={`${75}%`} />
-                <p style={{ color: "white" }}>Práctica 1</p>
+                <CircularProgressbar value={progress.level1} text={`${progress.level1}%`} />
+                <p style={{ color: "white" }}>Curso 1</p>
               </div>
               <div className="progress-info">
-                <CircularProgressbar value={30} text={`${30}%`} />
-                <p style={{ color: "white" }}>Práctica 2</p>
+                <CircularProgressbar value={progress.level2} text={`${progress.level2}%`} />
+                <p style={{ color: "white" }}>Curso 2</p>
               </div>
               <div className="progress-info">
-                <CircularProgressbar value={42} text={`${42}%`} />
-                <p style={{ color: "white" }}>Práctica 3</p>
+                <CircularProgressbar value={progress.level3} text={`${progress.level3}%`} />
+                <p style={{ color: "white" }}>Curso 3</p>
               </div>
             </div>
           </div>
