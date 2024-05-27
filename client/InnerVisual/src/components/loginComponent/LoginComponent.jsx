@@ -18,15 +18,6 @@ const LoginComponent = ({ showRegisterForm }) => {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const customStylesLogin = {
-    backgroundColor: '#3D5B81',
-    color: '#FFF',
-    width: '80%',
-    height: 'auto',
-    border: 'none',
-    borderRadius: '0',
-  };
-
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -69,26 +60,33 @@ const LoginComponent = ({ showRegisterForm }) => {
                     EMAIL
                   </label>
                   <div className="form-outline mb-4">
-                    <input
+                    {/* <input
                       type="email"
                       id="form2Example1"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Introduce tu email"
-                    />
+                    /> */}
+                     <Form.Control className="pt-0 pb-0 pl-1 pr-0 border-1 rounded-0 bg-gray" style={{ borderColor: "#cccccc" }}
+                        type="email"
+                        id="form2Example1"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Introduce tu email"
+                      />
                   </div>
 
                   <label className="fw-bold">CONTRASEÑA</label>
                   <div className="form-outline mb-4">
                   <InputGroup>
-                      <Form.Control className="p-0 border-1 rounded-0 bg-gray text-dark"
+                      <Form.Control className="pt-0 pb-0 pl-1 pr-0 border-1 rounded-0 bg-gray " style={{ borderColor: "#cccccc" }}
                         type={showPassword ? 'text' : 'password'}
                         id="form2Example2"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Introduce tu contraseña"
                       />
-                      <InputGroup.Text onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }} className=" rounded-0 bg-gray text-dark">
+                      <InputGroup.Text onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }} className=" pt-0 pb-0 pl-1 pr-0 border-1 rounded-0 bg-gray ">
                         {showPassword ? <FiUnlock /> : <FiLock />}
                       </InputGroup.Text>
                     </InputGroup>
