@@ -13,19 +13,19 @@ const Benefit = () => {
               <p className='mb-5'> EL RITUAL ES ESA FORMACIÓN CREADA PARA TI, POR DEPORTISTAS QUE HAN SUFRIDO MENTALMENTE IGUAL QUE TÚ.
                 EN SU INTERIOR ENCONTRARÁS 3 TÉCNICAS DE VISUALIZACIÓN Y MEDITACIÓN QUE TE AYUDARÁN A:</p>
               <p>ESTAR MÁS CONCENTRADO</p>
-              <hr class="hr" />
+              <hr className="hr" />
               <p>DESCONECTAR DEL RUIDO INNECESARIO DENTRO DE TU CABEZA</p>
-              <hr class="hr" />
-              <p>TRANSFORMAR TUS MIEDOS DUDAS E INNSEGURIDADES EN ENERGIA POSITIVA</p>
-              <hr class="hr" />
+              <hr className="hr" />
+              <p>TRANSFORMAR TUS MIEDOS DUDAS E INSEGURIDADES EN ENERGIA POSITIVA</p>
+              <hr className="hr" />
               <p>
                 CONSEGUIR ESA RELAJACIÓN FÍSICA Y MENTAL EN LA COMPETICIÓN QUE TE PERMITA HACER LO QUE TAN BIEN HACÍAS EN LOS ENTRENAMIENTOS
               </p>
-              <hr class="hr" />
+              <hr className="hr" />
               <p>
                 Y SOBRE TODO COMENZAR A CONOCERTE MEJOR, MÁS ALLÁ DE OBJETIVOS Y METAS DEPORTIVAS
               </p>
-              <hr class="hr" />
+              <hr className="hr" />
             </ul>
           </div>
         </div>

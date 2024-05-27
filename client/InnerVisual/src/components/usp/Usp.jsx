@@ -1,3 +1,4 @@
+import React from "react";
 import innerphoto from "../../assets/img/swimming_guy.png";
 import innerphoto2 from "../../assets/img/biker_guy.png";
 import "./usp.css";

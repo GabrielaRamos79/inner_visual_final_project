@@ -1,33 +1,49 @@
 import React from 'react';
-import { render, screen,fireEvent, getAllByAltText } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
+import { MemoryRouter } from 'react-router-dom';
 import FooterCustom from './FooterCustom';
 
 describe('FooterCustom component', () => {
     test('renders component without crashing',() => {
-        const { getByText } = render(<FooterCustom />);
+        render(
+            <MemoryRouter>
+                <FooterCustom />
+            </MemoryRouter>
+        );
 
-        expect(getByText('Inner Visuals Copyright ©2024 | Todos los derechos reservados')).toBeInTheDocument();
-        expect (getByText('Aviso Legal - Política de Cookies - Política de Privacidad')).toBeInTheDocument();
-
+        expect(screen.getByAltText('logo InnerVisual')).toBeInTheDocument();
+        expect(screen.getByText('Home')).toBeInTheDocument();
+        expect(screen.getByText('About us')).toBeInTheDocument();
+        expect(screen.getByText('Contacto')).toBeInTheDocument();
+        expect(screen.getByText('Política de privacidad')).toBeInTheDocument();
+        expect(screen.getByText('Política de cookies')).toBeInTheDocument();
+        expect(screen.getByText('Aviso legal')).toBeInTheDocument();
     });
 
     test('renders all social media icons', () => {
-        const { getAllByAltText } = render(<FooterCustom />);
-        const icons = getAllByAltText(/logo de/);
-    
-        expect(icons.length).toBe(3);
+        render(
+            <MemoryRouter>
+                <FooterCustom />
+            </MemoryRouter>
+        );
+        
+        expect(screen.getByAltText('logo de facebook')).toBeInTheDocument();
+        expect(screen.getByAltText('logo de instagram')).toBeInTheDocument();
+        expect(screen.getByAltText('logo de linkedin')).toBeInTheDocument();
+        expect(screen.getByAltText('logo de whatsapp')).toBeInTheDocument();
     });
 
     test('links to correct social media urls', () => {
-        const { container } = render (<FooterCustom />);
-        const facebookLink = container.querySelector('a[href="https://www.facebook.com"]');
-        const instagramLink = container.querySelector('a[href="https://www.instagram.com"]');
-        const linkedinLink = container.querySelector('a[href="https://www.linkedin.com"]');
-    
-        expect(facebookLink).toBeInTheDocument();
-        expect(instagramLink).toBeInTheDocument();
-        expect(linkedinLink).toBeInTheDocument();
+        render(
+            <MemoryRouter>
+                <FooterCustom />
+            </MemoryRouter>
+        );
+        
+        expect(screen.getByRole('link', { name: /facebook/i })).toHaveAttribute('href', 'https://www.facebook.com');
+        expect(screen.getByRole('link', { name: /instagram/i })).toHaveAttribute('href', 'https://www.instagram.com');
+        expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com');
+        expect(screen.getByRole('link', { name: /whatsapp/i })).toHaveAttribute('href', 'https://www.whatsapp.com');    
     });
-    
 });

@@ -8,14 +8,20 @@ describe('Register Component', () => {
 
         render(<Register />);
 
-        expect(screen.getByText('Registro')).toBeInTheDocument();
-        expect(screen.getByLabelText('Nombre')).toBeInTheDocument();
-        expect(screen.getByLabelText('Apellido')).toBeInTheDocument();
-        expect(screen.getByLabelText('Teléfono')).toBeInTheDocument();
-        expect(screen.getByLabelText('Foto :')).toBeInTheDocument();
-        expect(screen.getByLabelText('Email')).toBeInTheDocument();
-        expect(screen.getByLabelText('Password')).toBeInTheDocument();
-        expect(screen.getByText('Enviar')).toBeInTheDocument();
+        expect(screen.getByText('CREA TU CUENTA')).toBeInTheDocument();
+
+        expect(screen.getByPlaceholderText('Introduce tu nombre')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Introduce tu apellido')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Introduce tu teléfono')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Introduce tu email')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Introduce tu contraseña')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Repetir contraseña')).toBeInTheDocument();
+
+        expect(screen.getByText('Foto')).toBeInTheDocument();
+
+        expect(screen.getByLabelText('Acepto los términos y condiciones')).toBeInTheDocument();
+
+        expect(screen.getByRole('button', { name: 'ENVIAR' })).toBeInTheDocument();
     });
 
 });
