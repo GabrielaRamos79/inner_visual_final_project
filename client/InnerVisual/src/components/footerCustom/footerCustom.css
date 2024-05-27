@@ -1,4 +1,4 @@
-footer {
+.footer {
     height: 278px;
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@ footer {
     display: flex;
 }
 
-.leftFooter{
+.leftFooter {
     display: flex;
     flex-direction: column;
 }
@@ -83,12 +83,16 @@ footer {
     margin-left: 10px;
 }
 
-.homeFooter, .aboutFooter, .contactFooter{
+.homeFooter,
+.aboutFooter,
+.contactFooter {
     color: inherit;
     text-decoration: none;
 }
 
-.homeFooter:hover, .aboutFooter:hover, .contactFooter:hover{
+.homeFooter:hover,
+.aboutFooter:hover,
+.contactFooter:hover {
     color: var(--orange);
     font-weight: 600;
 }

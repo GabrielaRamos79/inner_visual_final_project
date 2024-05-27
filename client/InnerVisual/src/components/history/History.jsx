@@ -8,28 +8,28 @@ import history3 from '../../assets/img/history3.jpg';
 const History = () => {
   return (
     <>
-    <section className='componenthistory'>
-      <Carousel>
-      <Carousel.Item>
-        <img className='history1' src={history} alt='Deportista haciendo plancha lateral' />
-        <Carousel.Caption>
-          <h2 className='caption-title'>BREVE HISTORIA</h2>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img className='history2' src={history2} alt='Nadador' />
-        <Carousel.Caption>
-          <h2 className='caption-title'>TRATAMIENTO INDIVIDUAL</h2>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img className='history3' src={history3} alt='Hombre haciendo Motocross' />
-        <Carousel.Caption>
-          <h2 className='caption-title'>SI QUIERES CAMBIAR HAZLO DESDE DENTRO</h2>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-    </section>
+      <section className='componenthistory'>
+        <Carousel>
+          <Carousel.Item>
+            <img className='history1' src={history} alt='Deportista haciendo plancha lateral' />
+            <Carousel.Caption>
+              <h2 className='caption-title'>BREVE HISTORIA</h2>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className='history2' src={history2} alt='Nadador' />
+            <Carousel.Caption>
+              <h2 className='caption-title'>TRATAMIENTO INDIVIDUAL</h2>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className='history3' src={history3} alt='Hombre haciendo Motocross' />
+            <Carousel.Caption>
+              <h2 className='caption-title'>SI QUIERES CAMBIAR HAZLO DESDE DENTRO</h2>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </section>
     </>
   )
 }
