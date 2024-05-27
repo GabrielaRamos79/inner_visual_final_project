@@ -8,7 +8,7 @@ const Benefit = () => {
     <section className='sectionBenefit'>
       <div className='textContainer mt-5'>
         <h2 className='titleBenefit mb-5'>BENEFICIOS</h2>
-        <div className='textBenefit ms-3'>
+        <div className='textBenefit '>
           <ul>
             <p className='mb-5'> EL RITUAL ES ESA FORMACIÓN CREADA PARA TI, POR DEPORTISTAS QUE HAN SUFRIDO MENTALMENTE IGUAL QUE TÚ. 
             EN SU INTERIOR ENCONTRARÁS 3 TÉCNICAS DE VISUALIZACIÓN Y MEDITACIÓN QUE TE AYUDARÁN A:</p>
