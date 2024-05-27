@@ -6,25 +6,25 @@ const Benefit = () => {
   return (
   <div className='benefitcontainer'>
     <section className='sectionBenefit'>
-      <div className='textContainer'>
-        <h2 className='titleBenefit'>BENEFICIOS</h2>
-        <div className='textBenefit'>
+      <div className='textContainer mt-5'>
+        <h2 className='titleBenefit mb-5'>BENEFICIOS</h2>
+        <div className='textBenefit ms-3'>
           <ul>
-            <li className='liBenefit mb-5'> EL RITUAL ES ESA FORMACIÓN CREADA PARA TI, POR DEPORTISTAS QUE HAN SUFRIDO MENTALMENTE IGUAL QUE TÚ. 
-            EN SU INTERIOR ENCONTRARÁS 3 TÉCNICAS DE VISUALIZACIÓN Y MEDITACIÓN QUE TE AYUDARÁN A:</li>
-            <li className='liBenefit'>ESTAR MÁS CONCENTRADO</li>
+            <p className='mb-5'> EL RITUAL ES ESA FORMACIÓN CREADA PARA TI, POR DEPORTISTAS QUE HAN SUFRIDO MENTALMENTE IGUAL QUE TÚ. 
+            EN SU INTERIOR ENCONTRARÁS 3 TÉCNICAS DE VISUALIZACIÓN Y MEDITACIÓN QUE TE AYUDARÁN A:</p>
+            <p>ESTAR MÁS CONCENTRADO</p>
             <hr class="hr" />
-            <li className='liBenefit'>DESCONECTAR DEL RUIDO INNECESARIO DENTRO DE TU CABEZA</li>
+            <p>DESCONECTAR DEL RUIDO INNECESARIO DENTRO DE TU CABEZA</p>
             <hr class="hr" />
-            <li className='liBenefit'>TRANSFORMAR TUS MIEDOS DUDAS E INNSEGURIDADES EN ENERGIA POSITIVA</li>
+            <p>TRANSFORMAR TUS MIEDOS DUDAS E INNSEGURIDADES EN ENERGIA POSITIVA</p>
             <hr class="hr" />
-            <li className="liBenefit">
+            <p>
             CONSEGUIR ESA RELAJACIÓN FÍSICA Y MENTAL EN LA COMPETICIÓN QUE TE PERMITA HACER LO QUE TAN BIEN HACÍAS EN LOS ENTRENAMIENTOS
-            </li>
+            </p>
             <hr class="hr" />
-            <li className="liBenefit">
+            <p>
               Y SOBRE TODO COMENZAR A CONOCERTE MEJOR, MÁS ALLÁ DE OBJETIVOS Y METAS DEPORTIVAS
-            </li>
+            </p>
             <hr class="hr" />
           </ul>
         </div>

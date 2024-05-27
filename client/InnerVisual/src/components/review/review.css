@@ -1,8 +1,12 @@
 
 .reviewSection{
+<<<<<<< HEAD
     height: 700px;
+=======
+    height: 680px;
+>>>>>>> develop
     background-color: var(--black);
-    margin-bottom: 350px;
+    margin-bottom: 250px;
 }
 
 .titleReview{
@@ -76,7 +80,11 @@
 
 @media screen and (max-width: 1260px){
     .reviewSection{
+<<<<<<< HEAD
         height: 650px;
+=======
+        height: 580px;
+>>>>>>> develop
     }
     .review1, .review2, .review3, .review4, .review5, .review6 {
         width: 280px;
@@ -92,10 +100,8 @@
 
 
 @media screen and (max-width: 950px) {
-    .titleReview{
-        padding-left: 70px;
-    }
     .reviewSection{
+<<<<<<< HEAD
         height: 800px;
         margin-bottom: 130px;
     }
@@ -146,6 +152,10 @@
 @media screen and (max-width: 700px) {
     .reviewSection{
         height: 2300px;
+=======
+        margin-bottom: 350px;
+        height: 2000px;
+>>>>>>> develop
     }
     
     .cardsReview{
@@ -158,9 +168,13 @@
     }
 
     .review1, .review2, .review3, .review4, .review5, .review6 {
+<<<<<<< HEAD
         width: 280px;
         height: 280px;
         margin-bottom: 80px;
+=======
+        margin-bottom: 120px;
+>>>>>>> develop
     }
 
     .cardName{   
@@ -176,5 +190,11 @@
     }
 }
 
+@media screen and (max-width: 480px){
+    .reviewSection{
+        margin-bottom: 250px;
+        height: 1800px;
+    }
+}
 
 

@@ -171,20 +171,17 @@ const Jobs = () => {
             </div>  
           </div> */}
 
-      <Container fluid className="mt-4 content-jobs">
+      <Container fluid className="mt-4 content-jobs d-flex justify-content-center">
         <Container>
           <Row>
-            <Col md={6}>
-              <h2 className="jobs-title mb-5">WORK WITH US</h2>
-              <article className="fw-bold">
-                AT VERO EOS ET ACCUSAMUS ET IUSTO ODIO DIGNISSIMOS DUCIMUS QUI
-                BLANDITIIS PRAESENTIUM VOLUPTATUM DELENITI ATQUE CORRUPTI QUOS
-                DOLORES ET QUAS MOLESTIAS EXCEPTURI SINT OCCAECATI CUPIDITATE
-                NON PROVIDENT.
-              </article>
+            <Col xs={12} md={12} lg={6} className="text-center">
+              <h2 className="jobs-title mb-5">TRABAJA CON NOSOTROS</h2>
+              <p>
+                
+              </p>
             </Col>
 
-            <Col md={6} className="">
+            <Col xs={12} md={12} lg={6} className="d-flex justify-content-center">
               <form action="post" className="form-jobs" onSubmit={handleSubmit}>
                 <p className="fw-bold mb-2">NOMBRE</p>
                 <input
