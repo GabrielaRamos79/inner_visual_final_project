@@ -85,7 +85,7 @@ const LevelsCourse = () => {
   return (
     <Accordion activeKey={activeKey} onSelect={handleAccordionSelect}>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Level 1 ({progress.level1}%)</Accordion.Header>
+        <Accordion.Header>Level 1</Accordion.Header>
         <Accordion.Body>
           <Container>
             <Row>
@@ -111,7 +111,7 @@ const LevelsCourse = () => {
       </Accordion.Item>
 
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Level 2 ({progress.level2}%)</Accordion.Header>
+        <Accordion.Header>Level 2</Accordion.Header>
         <Accordion.Body>
           <Container>
             <Row>
@@ -137,7 +137,7 @@ const LevelsCourse = () => {
       </Accordion.Item>
 
       <Accordion.Item eventKey="2">
-        <Accordion.Header>Level 3 ({progress.level3}%)</Accordion.Header>
+        <Accordion.Header>Level 3 </Accordion.Header>
         <Accordion.Body>
           <Container>
             <Row>
