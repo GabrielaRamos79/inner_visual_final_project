@@ -9,7 +9,7 @@ const Hero = () => {
         <h2 className='titleHero1'>Entrena tu mente </h2>
         <h1 className='titleHero'>Marca la diferencia</h1>
         <Link to="/about" className='buttonHero'>Conócenos</Link>
-      
+
       </section>
     </>
   );
