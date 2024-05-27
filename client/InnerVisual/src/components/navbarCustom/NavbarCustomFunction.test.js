@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import userEvent from '@testing-library/user-event';
@@ -13,7 +13,7 @@ const mockUserContex = {
 };
 
 describe('NavbarCustom component functionality', () => {
-    test('redicts to login when clicking Login link', () => {
+    test('redirects to login when clicking Login link', async () => {
         render(
             <UserContext.Provider value={mockUserContex}>
                 <MemoryRouter initialEntries={['/']}>
@@ -30,13 +30,15 @@ describe('NavbarCustom component functionality', () => {
 
         userEvent.click(loginLink);
 
-        expect(screen.getByText('Login Page')).toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.getByText('Login Page')).toBeInTheDocument();
 
+        });
     });
 
     test('logs out and redirects to home when clicking Logout link', () => {
-        // mockUserContex.isLoggedIn = true;
-        // mockUserContex.user = { role: 'client' };
+        mockUserContex.isLoggedIn = true;
+        mockUserContex.user = { role: 'client' };
         render(
             <UserContext.Provider value={mockUserContex}>
                 <MemoryRouter initialEntries={['/']}>
@@ -48,13 +50,13 @@ describe('NavbarCustom component functionality', () => {
             </UserContext.Provider>
         );
 
-        mockUserContex.isLooggedIn = true;
-
-        const logoutLink = screen.getByRole('link',{ name:/logout/i});
+        const logoutLink = screen.getByText(/logout/i);
         expect(logoutLink).toBeInTheDocument();
 
         userEvent.click(logoutLink);
 
         expect(mockUserContex.logout).toHaveBeenCalled();
+
+        expect(screen.getByText('Home Page')).toBeInTheDocument();
     });
 });
