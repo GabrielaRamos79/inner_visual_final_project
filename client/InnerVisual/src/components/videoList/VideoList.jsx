@@ -7,7 +7,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 const VideoList = ({ videos, onVideoSelect }) => (
       <ButtonGroup vertical>
       {videos.map((video) => (
-        <button className='button-list mb-2'
+        <button className='button-list mb-2 d-flex'
           key={video.id_content}
           onClick={() => onVideoSelect(video)}
           disabled={!video.status_video}
