@@ -29,26 +29,22 @@ const VideoCard = ({ video, onVideoComplete, user }) => {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
+<>
+
           <ReactPlayer
             url={video.url_video}
             controls={true}
             onEnded={() => onVideoComplete(video)}
           />
-        </Col>
-      </Row>
-      <Row>
+
         <Col>{video.title_video}</Col>
         <Col className="scrollable-text">{video.description}</Col>
-      </Row>
-      <Row>
+
         <Accordion defaultActiveKey="0" flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Notas</Accordion.Header>
             <Accordion.Body>
-              <Col>
+
                 <Form.Control
                   as="textarea"
                   placeholder="Deje su notas aquí"
@@ -57,22 +53,17 @@ const VideoCard = ({ video, onVideoComplete, user }) => {
                   onChange={(e) => setNotes(e.target.value)}
                 />
                 <Button variant="outline-primary" onClick={handleSaveClick}>Guardar</Button>
-              </Col>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-      </Row>
-      <Row>
-        <Col>
+
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolor vero reiciendis,
             eveniet tempora, eos rem repudiandae atque rerum iste quasi quisquam enim, ea iusto doloremque
             praesentium excepturi? Porro, nemo.</p>
           <a href={video.pdf} download>
             <Button variant="outline-primary">Descargar PDF</Button>
           </a>
-        </Col>
-      </Row>
-    </Container>
+          </>
   );
 };
 

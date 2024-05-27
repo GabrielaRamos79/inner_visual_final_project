@@ -58,49 +58,108 @@ const LevelsCourse = () => {
   };
 
   return (
-    <section className="levelContainer">
-      <section className="levels-course">
+    // <section className="levelContainer">
+    //   <section className="levels-course">
+    //     <h2 className="titleCourse">PRÁCTICAS</h2>
+    //     <Accordion activeKey={activeKey} onSelect={handleAccordionSelect}>
+    //       <Accordion.Item eventKey="0">
+    //         <Accordion.Header>Level 1</Accordion.Header>
+    //         <Accordion.Body>
+    //           <Container>
+    //             <Row>
+    //               <Col>
+    //                 <VideoList
+    //                   videos={videos.slice(0, 3)}
+    //                   onVideoSelect={handleVideoSelect}
+    //                 />
+    //               </Col>
+    //               <Col>
+    //                 {selectedVideo && (
+    //                   <VideoCard
+    //                     key={selectedVideo.id_content} // Додавання ключа змушує React перемонтувати компонент, коли змінюється selectedVideo.
+    //                     video={selectedVideo}
+    //                     onVideoComplete={handleVideoComplete}
+    //                     user={user}
+    //                   />
+    //                 )}
+    //               </Col>
+    //             </Row>
+    //           </Container>
+    //         </Accordion.Body>
+    //       </Accordion.Item>
+
+    //       <Accordion.Item eventKey="1">
+    //         <Accordion.Header>Level 2</Accordion.Header>
+    //         <Accordion.Body>
+    //           <Container>
+    //             <Row>
+    //               <Col>
+    //                 <VideoList
+    //                   videos={videos.slice(3, 5)}
+    //                   onVideoSelect={handleVideoSelect}
+    //                 />
+    //               </Col>
+    //               <Col>
+    //                 {selectedVideo && (
+    //                   <VideoCard
+    //                     key={selectedVideo.id_content}
+    //                     video={selectedVideo}
+    //                     onVideoComplete={handleVideoComplete}
+    //                     user={user}
+    //                   />
+    //                 )}
+    //               </Col>
+    //             </Row>
+    //           </Container>
+    //         </Accordion.Body>
+    //       </Accordion.Item>
+
+    //       <Accordion.Item eventKey="2">
+    //         <Accordion.Header>Level 3</Accordion.Header>
+    //         <Accordion.Body>
+    //           <Container>
+    //             <Row>
+    //               <Col>
+    //                 <VideoList
+    //                   videos={videos.slice(5, 10)}
+    //                   onVideoSelect={handleVideoSelect}
+    //                 />
+    //               </Col>
+    //               <Col>
+    //                 {selectedVideo && (
+    //                   <VideoCard
+    //                     key={selectedVideo.id_content}
+    //                     video={selectedVideo}
+    //                     onVideoComplete={handleVideoComplete}
+    //                     user={user}
+    //                   />
+    //                 )}
+    //               </Col>
+    //             </Row>
+    //           </Container>
+    //         </Accordion.Body>
+    //       </Accordion.Item>
+    //     </Accordion>
+    //   </section>
+    // </section>
+    <>
+      <section className="levelContainer">
         <h2 className="titleCourse">PRÁCTICAS</h2>
         <Accordion activeKey={activeKey} onSelect={handleAccordionSelect}>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Level 1</Accordion.Header>
             <Accordion.Body>
-              <Container>
-                <Row>
-                  <Col>
-                    <VideoList
+             <Container fluid>
+              <Row >
+                <Col  className="p-0">
+                <VideoList
                       videos={videos.slice(0, 3)}
                       onVideoSelect={handleVideoSelect}
                     />
-                  </Col>
-                  <Col>
-                    {selectedVideo && (
-                      <VideoCard
-                        key={selectedVideo.id_content} // Додавання ключа змушує React перемонтувати компонент, коли змінюється selectedVideo.
-                        video={selectedVideo}
-                        onVideoComplete={handleVideoComplete}
-                        user={user}
-                      />
-                    )}
-                  </Col>
-                </Row>
-              </Container>
-            </Accordion.Body>
-          </Accordion.Item>
 
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>Level 2</Accordion.Header>
-            <Accordion.Body>
-              <Container>
-                <Row>
-                  <Col>
-                    <VideoList
-                      videos={videos.slice(3, 5)}
-                      onVideoSelect={handleVideoSelect}
-                    />
-                  </Col>
-                  <Col>
-                    {selectedVideo && (
+                </Col>
+                <Col xs={12} sm={12}lg={6} xl={6} >
+                {selectedVideo && (
                       <VideoCard
                         key={selectedVideo.id_content}
                         video={selectedVideo}
@@ -108,40 +167,14 @@ const LevelsCourse = () => {
                         user={user}
                       />
                     )}
-                  </Col>
-                </Row>
-              </Container>
-            </Accordion.Body>
-          </Accordion.Item>
-
-          <Accordion.Item eventKey="2">
-            <Accordion.Header>Level 3</Accordion.Header>
-            <Accordion.Body>
-              <Container>
-                <Row>
-                  <Col>
-                    <VideoList
-                      videos={videos.slice(5, 10)}
-                      onVideoSelect={handleVideoSelect}
-                    />
-                  </Col>
-                  <Col>
-                    {selectedVideo && (
-                      <VideoCard
-                        key={selectedVideo.id_content}
-                        video={selectedVideo}
-                        onVideoComplete={handleVideoComplete}
-                        user={user}
-                      />
-                    )}
-                  </Col>
-                </Row>
-              </Container>
+                </Col>
+              </Row>
+             </Container>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-      </section>
-    </section>
+        </section>
+    </>
   );
 };
 

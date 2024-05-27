@@ -1,5 +1,5 @@
 /* Estilos generales */
-body {
+/* body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -36,10 +36,10 @@ body {
 .col {
   flex-basis: calc(50% - 20px);
   margin-bottom: 20px;
-}
+} */
 
 /* Estilos para el Accordion */
-.accordion {
+/* .accordion {
   margin-top: 20px;
 }
 
@@ -62,8 +62,22 @@ body {
 
 .accordion-button collapsed {
   background-color: blue;
+} */
+.accordion-button.collapsed {
+  color: white; 
+  background: var(--darkblue) 
+}
+.accordion-button:not(.collapsed) {
+  color: white;
+  background: var(--darkblue)
 }
 
+.accordion-body {
+  padding: 0!important;
+}
+.levelContainer{
+  margin: 0 80px;
+}
 /* Estilos para los componentes de video */
 .video-list,
 .video-card {
@@ -73,20 +87,13 @@ body {
   overflow: hidden;
 }
 
-.video-list {
-  min-height: 400px;
-}
-
-.video-card {
-  min-height: 500px;
-}
 
 .video-card img {
   width: 100%;
   height: auto;
 }
 
-.video-card h3 {
+/* .video-card h3 {
   margin: 10px 0;
   font-size: 18px;
 }
@@ -95,7 +102,7 @@ body {
   margin: 10px 0;
   font-size: 14px;
   line-height: 1.5;
-}
+} */
 
 /* Estilos para botones y acciones */
 .btn-custom {
