@@ -6,12 +6,30 @@ import Col from "react-bootstrap/Col";
 import loginphoto from "../../assets/img/loginphoto.svg";
 import Form from "react-bootstrap/Form";
 import { CustomSweetAlertError, CustomSweetAlertOk } from "../sweetAlertComponent/CustomSweetAlert";
+import { Button, InputGroup } from 'react-bootstrap';
+import { FiLock, FiUnlock } from 'react-icons/fi';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const LoginComponent = ({ showRegisterForm }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { handleLogin } = useUserHandler();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const customStylesLogin = {
+    backgroundColor: '#3D5B81',
+    color: '#FFF',
+    width: '80%',
+    height: 'auto',
+    border: 'none',
+    borderRadius: '0',
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleRegisterLinkClick = () => {
     showRegisterForm();
@@ -62,14 +80,20 @@ const LoginComponent = ({ showRegisterForm }) => {
 
                   <label className="fw-bold">CONTRASEÑA</label>
                   <div className="form-outline mb-4">
-                    <input
-                      type="password"
-                      id="form2Example2"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Introduce tu contraseña"
-                    />
+                  <InputGroup>
+                      <Form.Control className="p-0 border-1 rounded-0 bg-gray text-dark"
+                        type={showPassword ? 'text' : 'password'}
+                        id="form2Example2"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Introduce tu contraseña"
+                      />
+                      <InputGroup.Text onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }} className=" rounded-0 bg-gray text-dark">
+                        {showPassword ? <FiUnlock /> : <FiLock />}
+                      </InputGroup.Text>
+                    </InputGroup>
                   </div>
+
 
                   <Container className="mb-4 ms-0">
                     <Row className="row-checkbox">
