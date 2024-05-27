@@ -174,10 +174,14 @@ const Jobs = () => {
       <Container fluid className="mt-4 content-jobs d-flex justify-content-center">
         <Container>
           <Row>
-            <Col xs={12} md={12} lg={6} className="text-center">
+            <Col xs={12} md={12} lg={6} >
               <h2 className="jobs-title mb-5">TRABAJA CON NOSOTROS</h2>
               <p>
-                
+              NOS ENCANTA EL TALENTO CON ESPÍRITU JÓVEN Y RESPONSABLE.
+              </p><br />
+              <p>
+              SI TE GUSTA LO QUE HACEMOS EN INNER VISUALS Y CREES QUE PUEDES AYUDARNOS A EXPANDIRNOS, 
+              NO TE CORTES Y ENVÍANOS UN EMAIL.
               </p>
             </Col>
 
