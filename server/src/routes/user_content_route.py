@@ -13,12 +13,12 @@ def get_user_content(id):
     print('Estoy dentro de metodo get_user_content')
     return jsonify(get_user_content)
 
-@main.route('/post_user_content', methods=['POST'])
-def post_user_content():
+@main.route('/post_user_content/<id>', methods=['POST'])
+def post_user_content(id):
     print("Hola post, user_content_router")
 
     try:
-        userFK = request.json['id_userFK']
+        userFK = id
         post_user_content = UserContentService.post_user_content(userFK)
         print(post_user_content)
         return jsonify({"message": "Registro exitoso"}), 200

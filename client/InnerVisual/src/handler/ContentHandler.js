@@ -27,7 +27,16 @@ export const ContentHandler = {
             console.error("Error updating notes:", error);
             throw error;
         }
-    }
+    },
+
+    async postUserContentHandler(userId) {
+        try {
+            return await ContentService.postUserContent(userId);
+        } catch (error) {
+            console.error("Error al enviar user_content:", error);
+            throw error; 
+        }
+    },
 };
 
 export default ContentHandler;
