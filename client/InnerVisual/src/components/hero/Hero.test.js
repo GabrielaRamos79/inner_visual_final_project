@@ -1,19 +1,24 @@
 import React from 'react';
-import { render, screen,fireEvent, getAllByAltText } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
+import { MemoryRouter } from 'react-router-dom';
 import Hero from './Hero';
 
 describe('Hero component', () => {
     test('renders component without crashing', () => {
-        const { getByText } = render(<Hero />);
+        render(
+            <MemoryRouter>
+                <Hero />
+            </MemoryRouter>);
 
-        const welcomeText = getByText(/Welcome/);
-        const toInnerVisualsText = getByText(/to Inner Visuals/);  
+        const title1 = screen.getByText('Entrena tu mente');
+        expect(title1).toBeInTheDocument();
+
+        const title2 = screen.getByText('Marca la diferencia');
+        expect(title2).toBeInTheDocument();
             
-        expect(welcomeText).toBeInTheDocument();
-        expect(toInnerVisualsText).toBeInTheDocument();
-        expect(getByText('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis veritatis natus distinctio, labore cumque quaerat unde, quo vero error autem ipsum sapiente a quas iste est magni, placeat ducimus!')).toBeInTheDocument();
-        expect(getByText('Conócenos')).toBeInTheDocument();
+        const button = screen.getByText('Conócenos');
+        expect(button).toBeInTheDocument();
     });
 
 });

@@ -1,90 +1,83 @@
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: var(--darkblue);
+  margin-top: -140px;
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
 
-  }
-  
-  .welcome-message {
-    margin-bottom: 20px;
-  }
-  
-  .action-buttons {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1140px;
+  margin: auto;
+}
 
-  .action-buttons button {
-    margin-bottom: 10px; 
-  }
-  .btn-custom{
-    width: 250px;
-  }
-  
-  .profile-picture {
-    width: 100px; 
-    height: 100px; 
-    margin-bottom: 10px;
-    border-radius: 50%;
-  }
-  
-  
-  @media screen and (min-width: 768px) {
-    .profile-container {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .welcome-message {
-      margin-bottom: 0;
-      margin-right: auto; 
-    }
-  
-    .action-buttons {
-        margin-top: 0; 
-        flex-direction: column;
-        align-items:center;
-    }
+.left-column {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: left;
+}
 
-    .action-buttons button {
-        margin-bottom: 10px; 
-      }
-  
-    .profile-picture {
-      margin: 0;
-      margin-bottom: 10px;
-    }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .profile-container {
-        justify-content: space-between;
-        flex-direction: row;
-    }
+.welcome-message {
+  margin-bottom: 20px;
+  color: white;
+}
 
-    .welcome-message{
-        width: 50%;
-        margin-right: 20%;
-    }
+.progress-section {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: left;
+  width: 450px;
+  margin-top: 20px;
+}
 
-    .action-buttons {
-        margin-top: 20%;
-        flex-direction: column;
-        align-items:center;
-        margin-bottom: 10%;
-    }
-    .action-buttons button {
-        margin-bottom: 10px; 
-      }
+.progress-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  color: white;
+  gap: 10px;
+}
 
-    .profile-picture {
-        margin-top: 5%; 
-            .action-buttons button {
-        margin-bottom: 10px; 
-      }   
-      }
+.CircularProgressbar {
+  height: 100px;
+}
 
-  }
+.right-column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 20px;
+  box-shadow: 20px 20px rgb(255, 255, 255);
+}
+
+.btn-customP {
+  width: 300px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.btn-customP:hover {
+  background-color: white;
+  color: var(--darkblue);
+}
+
+@media (max-width: 950px) {
+
+
+}

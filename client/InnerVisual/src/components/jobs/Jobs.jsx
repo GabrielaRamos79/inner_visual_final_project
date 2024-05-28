@@ -40,11 +40,7 @@ const Jobs = () => {
       return;
     }
 
-    if (!surname.trim()) {
-      CustomSweetAlertError("El apellido es obligatorio.");
-      setSurnameTouched(true);
-      return;
-    }
+   
     if (!telephone.trim()) {
       CustomSweetAlertError("Introduce un teléfono válido.");
       setTelephoneTouched(true);
@@ -54,17 +50,6 @@ const Jobs = () => {
     if (!emailRegex.test(email)) {
       CustomSweetAlertError("Introduce un email válido.");
       setEmailTouched(true);
-      return;
-    }
-
-    if (message.length < 5) {
-      CustomSweetAlertError("El mensaje debe tener al menos 5 caracteres.");
-      setMessageTouched(true);
-      return;
-    }
-    if (!acceptTerms) {
-      CustomSweetAlertError("Debes aceptar el tratamiento de datos.");
-      setAcceptTermsTouched(true);
       return;
     }
 

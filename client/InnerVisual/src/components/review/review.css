@@ -55,9 +55,7 @@
     height: 210px;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
-
 
 .review1,
 .review2,
@@ -82,7 +80,6 @@
     position: relative;
     top: 50px;
 }
-
 
 @media screen and (max-width: 1260px) {
     .reviewSection {
@@ -112,7 +109,6 @@
         height: 282px;
     }
 }
-
 
 @media screen and (max-width: 950px) {
     .titleReview {
@@ -187,7 +183,6 @@
     }
 }
 
-
 @media screen and (max-width: 700px) {
     .reviewSection {
         height: 2550px;
@@ -255,7 +250,6 @@
         height: 410px;
     }
 
-
     @media screen and (max-width: 490px) {
         .reviewSection {
             height: 2500px;
@@ -298,6 +292,5 @@
         .seis {
             height: 355px;
         }
-
     }
 }

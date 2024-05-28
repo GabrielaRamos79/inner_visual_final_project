@@ -1,0 +1,27 @@
+.orange-icon {
+    color: var(--orange);
+    margin-right: 10px;
+  }
+  .orange-icon:hover{
+    color: var(--darkblue)
+  }
+  .button-list{
+    background-color: var(--lightgray);
+    width: 100%;
+    padding: 20px 15px;
+    border: none;
+    text-transform: uppercase;
+  }
+  .button-list:hover{
+    color: var(--white);
+    background-color: var(--orange);
+  }
+  .button-list:active{
+    color: var(--white);
+    background-color: var(--orange);
+  }
+  .textarea-notes {
+    border: none; 
+    border-radius: 1px;
+    border: 1px solid var(--lightgray)!important;
+}

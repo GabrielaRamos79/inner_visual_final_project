@@ -1,4 +1,7 @@
 import axios from "axios";
+import {CustomSweetAlertError} from '../components/sweetAlertComponent/CustomSweetAlert'
+
+
 const apiClient = axios.create({
     baseURL: "http://127.0.0.1:5000",
     withCredentials: false,
@@ -42,13 +45,16 @@ export const UserService = {
             throw error;
         }
     },
-    async deleteUser(id) {
+    async deleteUserProfile(id) {
         try {
-            return await apiClient.delete("/user_client/delete_user/", { data: id });
+            return await apiClient.delete(`/user_client/delete_user/${id}`);
         } catch (error) {
             console.error("Error al eliminar el usuario:", error);
+            CustomSweetAlertError("Hubo un error al eliminar el usuario. Por favor, intente nuevamente más tarde.");
+            throw error;
         }
     },
+    
     async getAlltUsers() {
         try {
             let response = await apiClient.get("/user_client/get_user");

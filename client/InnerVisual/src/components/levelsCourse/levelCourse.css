@@ -1,0 +1,52 @@
+.accordion-button {
+  color: white; 
+  background: var(--darkblue) 
+}
+.accordion-button:not(.collapsed) {
+  color: var(--whithe);
+  background: var(--darkblue)
+}
+
+.accordion-body {
+  padding: 0!important;
+}
+.levelContainer{
+
+  max-width: 1140px;
+  margin: auto;
+  margin-bottom: 120px;
+}
+.levels-course {
+  width: 100%;
+  margin: auto;
+  background-color: #f8f9fa;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #f6faff!important;
+  background-color: var(--darkblue)!important;
+  text-transform: uppercase;
+}
+.accordion-button.collapsed {
+  color: var(--white)!important;
+  background-color: var(--darkblue)!important; 
+  text-transform: uppercase;
+}
+.accordion-button::after {
+  color: #f6faff!important;
+}
+.accordion-button:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: none!important;
+}
+
+@media screen and (max-width: 1100px) {
+  .levels-course{
+      margin: 80px;
+  }
+
+  .caption-title {
+      text-align: right;  
+  }
+}

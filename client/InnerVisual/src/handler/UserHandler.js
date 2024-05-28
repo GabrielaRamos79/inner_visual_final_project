@@ -1,4 +1,6 @@
 import UserService from '../services/UserService'
+import {CustomSweetAlertError} from '../components/sweetAlertComponent/CustomSweetAlert'
+
 export const UserHandler = {
     async getUser() {
         let user = await UserService.getUser();
@@ -25,11 +27,15 @@ export const UserHandler = {
             throw error;
         }
     },
-    async handleDelete(id) {
-        const userToDelete = {
-            id_user: id
-        };
-        await UserService.deleteUser(userToDelete);
+    async handleDeleteUserProfile(id) {
+        try {
+            await UserService.deleteUserProfile(id);
+            console.log("Usuario eliminado exitosamente");
+        } catch (error) {
+            console.error("Error al manejar la eliminación del usuario:", error);
+            CustomSweetAlertError("Hubo un error al eliminar el usuario. Por favor, intente nuevamente más tarde.");
+            throw error;
+        }
     }
 }
 export default UserHandler;

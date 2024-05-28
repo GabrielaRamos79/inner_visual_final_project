@@ -7,7 +7,7 @@ describe('Achievements component', () => {
     test('renders component without crashing', () => {
         const { getByText } = render(<Achievements />);
 
-        expect(getByText('LOGROS CONSEGUIDOS')).toBeInTheDocument();
+        expect(getByText('LOGROS')).toBeInTheDocument();
     });
 
 test('renders all achievement titles', () => {
@@ -21,7 +21,7 @@ test('renders all achievement icons', () => {
     const { getAllByAltText } = render(<Achievements />);
     const icons = getAllByAltText('icon');
 
-    expect(icons.length).toBe(5);
+    expect(icons.length).toBe(6);
 });
 });
 // expect(getByText('LOGRO')).ToBeInTheDocument();
