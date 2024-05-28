@@ -12,11 +12,17 @@ describe('IntroCourse component', () => {
         expect(screen.getByText('VISUALIZACIÓN 2 - INTRODUCCIÓN A LA MEDITACIÓN DE PIE')).toBeInTheDocument();
     });
 
-    test('plays video on button click', async () => {
+    test('video are clickable', () => {
         render(<IntroCourse />);
 
-        const playButton = screen.getByRole('button', { name: /VISUALIZACIÓN 1 - INTRODUCCIÓN A LA MEDITACIÓN/i });
-        fireEvent.click(playButton);
+        const firstVideoButton = screen.getByRole('button', { name: /VISUALIZACIÓN 1 - INTRODUCCIÓN A LA MEDITACIÓN/i });
+        const secondVideoButton = screen.getByRole('button', { name: /VISUALIZACIÓN 2 - INTRODUCCIÓN A LA MEDITACIÓN DE PIE/i});
+
+        fireEvent.click(firstVideoButton);
+        expect(screen.getByText(/playing/i)).toBeInTheDocument();
+
+        fireEvent.click(secondVideoButton);
+        expect(screen.getByText(/playing/i)).toBeInTheDocument();
     });
 
 });
