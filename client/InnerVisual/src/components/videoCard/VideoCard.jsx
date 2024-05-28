@@ -27,7 +27,7 @@ const VideoCard = ({ video, onVideoComplete, user }) => {
       if (response.message) {
         CustomSweetAlertOk("Las notas se han guardado correctamente");
         updateVideoNotes(video.id_content, notes); // Actualizamos notas en contexto
-        setNotes("");
+        //setNotes("");
       } else if (response.error) {
         CustomSweetAlertError(
           "No se ha podido modificar las notas. Vuelva a intentarlo más tarde"
