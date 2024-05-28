@@ -4,14 +4,14 @@ from src.services.user_client_service import UserClientService
 
 @pytest.fixture(scope='session')
 def user_by_id():
-    id_user = '5'
+    id_user = '6'
     return UserClientService.get_id_user(id_user)
 
 def test_get_id_user(user_by_id):
 
     assert user_by_id != None
     assert 'id_user' in user_by_id
-    assert user_by_id['id_user'] == 5
+    assert user_by_id['id_user'] == 6
 
 
 # def test_get_id_user_returns_expected_result():
