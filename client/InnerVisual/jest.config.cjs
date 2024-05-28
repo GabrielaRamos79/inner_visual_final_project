@@ -8,5 +8,5 @@ module.exports = {
     },
     testEnvironment: 'jest-environment-jsdom',
 
-    setupFilesAfterEnv: ['../InnerVisual/jest.setup.js'],
+    setupFilesAfterEnv: ['../InnerVisual/setupTests.js'],
 };

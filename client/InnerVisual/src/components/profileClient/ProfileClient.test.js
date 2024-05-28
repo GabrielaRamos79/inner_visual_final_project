@@ -6,17 +6,17 @@ import { VideoContext  } from '../../context/VideoContext';
 import { UserContext } from '../../context/AuthContext';
 // import fotoperfil from '../../assets/img/fotoperfil.jpg';
 
-const mockUser = {
-    id_user: '123',
-    name: 'Test User',
-    photo: 'test-photo-url',
-};
+// const mockUser = {
+//     id_user: '123',
+//     name: 'Test User',
+//     photo: 'test-photo-url',
+// };
 
-const mockProgress = {
-    level1: 50,
-    level2: 30,
-    level3: 70,
-};
+// const mockProgress = {
+//     level1: 50,
+//     level2: 30,
+//     level3: 70,
+// };
 
 // jest.mock('../../assets/img/fotoperfil.jpg', () => 'fotoperfil.jpg');
 // describe('ProfileClient component', () => {

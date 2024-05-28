@@ -5,25 +5,25 @@ import Achievements from './Achievements';
 
 describe('Achievements component', () => {
     test('renders component without crashing', () => {
-        const { getByText } = render(<Achievements />);
-
-        expect(getByText('LOGROS')).toBeInTheDocument();
+        render(<Achievements />);
+        expect(screen.getByText('LOGROS')).toBeInTheDocument();
     });
 
-test('renders all achievement titles', () => {
-    const { queryAllByText } =render(<Achievements />);
-    const titles =queryAllByText('LOGRO');
+    test('renders all achievement titles', () => {
+        render(<Achievements />);
 
-    expect(titles.length).toBe(6);
-})
+        const titles = screen.getAllByText('LOGRO');
 
-test('renders all achievement icons with correct specifity', () => {
-    const { getAllByAltText } = render(<Achievements />);
-    const cupIcons = getAllByAltText('icon').filter(icon => icon.src.includes('achievement_cup'));
-    const lockIcons = getAllByAltText('icon').filter(icon => icon.src.includes('achievement_lock'));
+        expect(titles.length).toBe(6);
+    });
 
-    expect(cupIcons.length).toBe(4);
-    expect(lockIcons.length).toBe(2);
-});
+    test('renders all achievement icons with correct specifity', () => {
+        render(<Achievements />);
+        const cupIcons = screen.getAllByAltText(/^achievement_cup_/);
+        const lockIcons = screen.getAllByAltText(/^achievement_lock_/);
+
+        expect(cupIcons.length).toBe(4);
+        expect(lockIcons.length).toBe(2);
+    });
 });
 // expect(getByText('LOGRO')).ToBeInTheDocument();
