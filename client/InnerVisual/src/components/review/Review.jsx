@@ -19,8 +19,8 @@ const Review = () => {
           <Carousel.Item>
             <div className="cardsReview">
               <div className="card1Review">
-                <h3 className="cardName">Aitor</h3>
-                <h3 className="cardSurname">Martínez</h3>
+                <h3 className="cardName">Aitor </h3>
+                <h3 className="cardSurname">Martínez </h3>
                 <p className="cardP uno">
                   <em>
                     Subcampeón de España y exmiembro de la selección española de
@@ -39,8 +39,8 @@ const Review = () => {
                 />
               </div>
               <div className="card2Review">
-                <h3 className="cardName">Fran</h3>
-                <h3 className="cardSurname">Quesada</h3>
+                <h3 className="cardName">Fran </h3>
+                <h3 className="cardSurname">Quesada </h3>
                 <p className="cardP dos">
                   <em>
                     3 records nacionales<br></br> en apnea.
@@ -58,8 +58,8 @@ const Review = () => {
                 />
               </div>
               <div className="card3Review">
-                <h3 className="cardName">Bárbara</h3>
-                <h3 className="cardSurname">Bergbauer</h3>
+                <h3 className="cardName">Bárbara </h3>
+                <h3 className="cardSurname">Bergbauer </h3>
                 <p className="cardP tres">
                   <em>
                     2x campeona de Europa y 1x subcampeona de Europa en
@@ -82,8 +82,8 @@ const Review = () => {
           <Carousel.Item>
             <div className="cardsReview">
               <div className="card4Review">
-                <h3 className="cardName">Gabriela</h3>
-                <h3 className="cardSurname">Ramos</h3>
+                <h3 className="cardName">Gabriela </h3>
+                <h3 className="cardSurname">Ramos </h3>
                 <p className="cardP cuatro">
                   <em>
                     Subcampeona de España y exmiembro de la selección española
@@ -121,8 +121,8 @@ const Review = () => {
                 />
               </div>
               <div className="card6Review">
-                <h3 className="cardName">Gonzalo</h3>
-                <h3 className="cardSurname">Parra</h3>
+                <h3 className="cardName">Gonzalo </h3>
+                <h3 className="cardSurname">Parra </h3>
                 <p className="cardP seis">
                   <em>
                     2x campeón de Europa y 1x subcampeón de Europa en Brazilian
