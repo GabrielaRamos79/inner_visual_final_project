@@ -2,20 +2,37 @@ import "./profileClient.css";
 import fotoperfil from "../../assets/img/review1.jpg";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { VideoContext } from './../../context/VideoContext';
-import { UserContext } from '../../context/AuthContext.jsx';
-import React, { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { UserContext } from '../../context/AuthContext.jsx';
+import { VideoContext } from '../../context/VideoContext';
 import UserHandler from "../../handler/UserHandler.js";
+import { ContentHandler } from "../../handler/ContentHandler";
+import { CustomSweetAlertOk, CustomSweetAlertError } from '../sweetAlertComponent/CustomSweetAlert.jsx';
 
 const ProfileClient = ({ handleShow }) => {
   const { user, logout } = useContext(UserContext);
-  const { progress } = useContext(VideoContext);
+  const { progress, fetchData } = useContext(VideoContext);
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleContinue = () => {
-    console.log("Continuar Prácticas");
+  const postUserContent = async () => {
+    if (user && user.id && !isLoading) {
+      setIsLoading(true);
+      try {
+        const user_content = await ContentHandler.postUserContentHandler(user.id);
+        console.log('user_content posted');
+        CustomSweetAlertOk('Los videos están disponibles, puedes empezar prácticas YA');
+        await fetchData();
+        return user_content;
+      } catch (error) {
+        console.error("Error posting user content:", error);
+        CustomSweetAlertError("No se ha podido enviar el contenido del usuario. Vuelva a intentarlo más tarde.");
+      } finally {
+        setIsLoading(false);
+      }
+    }
   };
 
   const handleDelete = async () => {
@@ -34,14 +51,13 @@ const ProfileClient = ({ handleShow }) => {
       try {
         await UserHandler.handleDeleteUserProfile(user.id);
         Swal.fire("'Eliminado", "Su cuenta ha sido eliminada", 'success');
-        logout(); //  logout para limpiar cookies
-        navigate('/'); // a casa
+        logout();
+        navigate('/');
       } catch (error) {
         Swal.fire("Error", "Se ha producido un error al eliminar tu cuenta.", 'error');
       }
     }
   };
-
 
   return (
     <>
@@ -58,12 +74,12 @@ const ProfileClient = ({ handleShow }) => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 convallis libero in nisl fringilla, at ultricies libero aliquet.
               </p>
-              <br></br>
-              <hr></hr>
+              <br />
+              <hr />
               <p>
                 <b>PROGRESO</b>
               </p>
-              <hr></hr>
+              <hr />
             </div>
             <div className="progress-section">
               <div className="progress-info">
@@ -95,8 +111,8 @@ const ProfileClient = ({ handleShow }) => {
                 alt="Foto del Cliente"
               />
             )}
-            <button className="btn-customP" onClick={handleContinue}>
-              Continuar Prácticas
+            <button className="btn-customP" onClick={postUserContent} disabled={isLoading}>
+              Empezar Prácticas
             </button>
             <button className="btn-customP" onClick={handleShow}>
               Notas

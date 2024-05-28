@@ -25,7 +25,7 @@ export const loginUser = async (email, password,user_type) => {
     const response = await axios.post(url, userData);
 
     if (response.status === 200 && response.data) {
-      console.log("Usuario autenticado con éxito:", response.data);
+      console.log("Usuario autenticado con éxito");
 
       const token = response.data.token;
       const decodedToken = jwtDecode(token);
@@ -33,16 +33,12 @@ export const loginUser = async (email, password,user_type) => {
       setCookie ("id_user",decodedToken.id_user);
       setCookie ("name", decodedToken.name);
       setCookie ("surname", decodedToken.surname);
-      // setCookie ("password", decodedToken.password);
       setCookie ("email", decodedToken.email);
       setCookie ("phone", decodedToken.phone);
       setCookie ("photo", decodedToken.photo);
       setCookie ("user_type", decodedToken.user_type);
 
-      console.log("Token decodificado:", decodedToken);
-
       const user_type = decodedToken.user_type;
-      console.log("Tipo de rol del usuario:", user_type);
 
       return { success: true, userId: decodedToken.id_user, user_type: user_type};
     } else {

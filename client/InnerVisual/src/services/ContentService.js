@@ -40,7 +40,16 @@ export const ContentService = {
             CustomSweetAlertError("No se ha podido actualizar las notas. Vuelva a intentarlo más tarde.");
             throw error;
         }
-    }
+    },
+    async postUserContent(userId) {
+        try {
+            const response = await apiClient.post(`/user_content/post_user_content/${userId}`);
+            return response;
+        } catch (error) {
+            console.error("Error al enviar el usuario:", error);
+            throw error; 
+        }
+    },
     
 };
 

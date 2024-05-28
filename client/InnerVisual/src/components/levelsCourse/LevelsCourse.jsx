@@ -12,24 +12,24 @@ import { VideoContext } from "./../../context/VideoContext";
 
 const LevelsCourse = () => {
   const { user } = useContext(UserContext);
-  const { videos, setVideos, selectedVideo, setSelectedVideo, progress, setProgress } = useContext(VideoContext); 
+  const { videos, setVideos, selectedVideo, setSelectedVideo, progress, setProgress, fetchData} = useContext(VideoContext); 
   const [activeKey, setActiveKey] = useState('0');
 
-  const fetchData = async () => {
-    if (user && user.id) {
-      try {
-        const contentData = await ContentHandler.getAllContent(user.id);
-        //console.log('Fetched videos:', contentData);
-        setVideos(contentData); 
-      } catch (error) {
-        console.error("Error getting the videos:", error);
-      }
-    }
-  };
+  // const fetchData = async () => {
+  //   if (user && user.id) {
+  //     try {
+  //       const contentData = await ContentHandler.getAllContent(user.id);
+  //       //console.log('Fetched videos:', contentData);
+  //       setVideos(contentData); 
+  //     } catch (error) {
+  //       console.error("Error getting the videos:", error);
+  //     }
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchData();
-  }, [user]);
+  // useEffect(() => {
+  //   fetchData();
+  // }, [user]);
 
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);
