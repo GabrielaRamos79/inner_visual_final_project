@@ -34,7 +34,7 @@ const Achievements = () => {
               <h4 className="achievement_title">LOGRO</h4>
             </div>
           </div>
-          <div className="achievement3">
+          <div className="achievement4">
             <div className="icon_picture">
               <img src={achievement_cup} alt="icon" className="icon" />
             </div>
@@ -43,7 +43,7 @@ const Achievements = () => {
             </div>
           </div>
 
-          <div className="achievement4">
+          <div className="achievement5">
             <div className="icon_picture">
               <img src={achievement_lock} alt="icon" className="icon" />
             </div>
@@ -51,7 +51,7 @@ const Achievements = () => {
               <h4 className="achievement_title">LOGRO</h4>
             </div>
           </div>
-          <div className="achievement4">
+          <div className="achievement6">
             <div className="icon_picture">
               <img src={achievement_lock} alt="icon" className="icon" />
             </div>
