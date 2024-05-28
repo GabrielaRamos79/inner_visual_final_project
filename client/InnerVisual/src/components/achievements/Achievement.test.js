@@ -14,14 +14,16 @@ test('renders all achievement titles', () => {
     const { queryAllByText } =render(<Achievements />);
     const titles =queryAllByText('LOGRO');
 
-    expect(titles.length).toBe(5);
+    expect(titles.length).toBe(6);
 })
 
-test('renders all achievement icons', () => {
+test('renders all achievement icons with correct specifity', () => {
     const { getAllByAltText } = render(<Achievements />);
-    const icons = getAllByAltText('icon');
+    const cupIcons = getAllByAltText('icon').filter(icon => icon.src.includes('achievement_cup'));
+    const lockIcons = getAllByAltText('icon').filter(icon => icon.src.includes('achievement_lock'));
 
-    expect(icons.length).toBe(6);
+    expect(cupIcons.length).toBe(4);
+    expect(lockIcons.length).toBe(2);
 });
 });
 // expect(getByText('LOGRO')).ToBeInTheDocument();
