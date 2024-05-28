@@ -50,9 +50,9 @@ const LevelsCourse = () => {
 
   useEffect(() => {
     setProgress({
-      level1: updateProgress(videos.slice(0, 3)),
-      level2: updateProgress(videos.slice(3, 5)),
-      level3: updateProgress(videos.slice(5, 10))
+      level1: updateProgress(videos.slice(0, 7)),
+      level2: updateProgress(videos.slice(7, 9)),
+      level3: updateProgress(videos.slice(9,11))
     });
   }, [videos]);
 
